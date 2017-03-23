@@ -9,7 +9,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
-        <title>Eksamen</title>
+        <title>Eksamen2017</title>
 
     </head>
     <body>
