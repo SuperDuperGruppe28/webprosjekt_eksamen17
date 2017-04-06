@@ -1,14 +1,29 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Database\Eloquent\Model as mod;
 
-// create a log channel
-$log = new Logger('G28');
-$log->pushHandler(new StreamHandler('logs/test.banan', Logger::WARNING));
-// add records to the log
-$log->warning('SuperTest');
-$log->error('Veldig farlig');
+$datbas = new DB();
+$datbas->addConnection(
+    [
+        'driver' => 'mysql',
+        'port' => 80,
+        'host' => '127.0.0.1',
+        'username' => 'root',
+        'password' => 'root',
+        'database' => 'yama',
+        'collation' => 'latin1_swedish_ci'
+        
+    ]);
 
-echo 'Skapte log for å teste Composer med laravel';
+$datbas->bootEloquent();
+
+class TestModel extends mod
+{
+    protected $dates = ["starts_at"];
+    public $timestamps = false;
+}
+
+$printTest = TestModel::all();
+print_r($printTest);
