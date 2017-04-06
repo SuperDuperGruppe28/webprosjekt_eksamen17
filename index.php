@@ -8,7 +8,7 @@ $datbas = new DB();
 $datbas->addConnection(
     [
         'driver' => 'mysql',
-        'port' => 80,
+        'port' => 3306,
         'host' => '127.0.0.1',
         'username' => 'root',
         'password' => 'root',
@@ -21,9 +21,11 @@ $datbas->bootEloquent();
 
 class TestModel extends mod
 {
+    public $table = "aper";
     protected $dates = ["starts_at"];
     public $timestamps = false;
 }
 
 $printTest = TestModel::all();
+echo '<pre>';
 print_r($printTest);
