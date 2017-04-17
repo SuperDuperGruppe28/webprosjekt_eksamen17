@@ -9,8 +9,8 @@ $datbas->addConnection(
         'host' => '127.0.0.1',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'yama',
-        'collation' => 'latin1_swedish_ci'
+        'database' => 'aktivitethjemmet',
+        'collation' => 'utf8_general_ci'
         
     ]);
 
