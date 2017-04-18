@@ -3,10 +3,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/database/databaseconfig.php';
 require_once __DIR__ . '/database/models.php';
 
-$printTest = Bruker::all();
+/*
+$printTest = Bruker::find(1)->tags;
 echo '<pre>';
 print_r($printTest);
+echo '</pre>';
+*/
 
-$printTest = Aktivitet::all();
 echo '<pre>';
-print_r($printTest);
+foreach (TagsBruker::all() as $tags)
+{
+    print_r($tags->brukere);
+    print_r($tags->tags);
+}
