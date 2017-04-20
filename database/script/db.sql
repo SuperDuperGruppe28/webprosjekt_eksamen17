@@ -47,23 +47,13 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Tags (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS aktivitethjemmet.Stemmer (
   id int NOT NULL AUTO_INCREMENT,
-  Bruker VARCHAR(30) NOT NULL,
-  PRIMARY KEY (id),
-    FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
-
--- -----------------------------------------------------
--- Table aktivitethjemmet.AktivitetStemmer
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.AktivitetStemmer (
-  id int NOT NULL AUTO_INCREMENT,
   Aktivitet int NOT NULL,
-  Stemme int NOT NULL,
+  Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Aktivitet)
     REFERENCES aktivitethjemmet.Aktivitet (id),
-    FOREIGN KEY (Stemme)
-    REFERENCES aktivitethjemmet.Stemmer (id));
+    FOREIGN KEY (Bruker)
+    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
 -- Table aktivitethjemmet.Deltagelse
@@ -71,23 +61,13 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.AktivitetStemmer (
 CREATE TABLE IF NOT EXISTS aktivitethjemmet.Deltagelse (
   id int NOT NULL AUTO_INCREMENT,
   Deltagelse int NOT NULL,
+  Aktivitet int NOT NULL,
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
-    FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
-
--- -----------------------------------------------------
--- Table aktivitethjemmet.Deltagere
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Deltagere (
-  id int NOT NULL AUTO_INCREMENT,
-  Aktivitet int NOT NULL,
-  Deltager int NOT NULL,
-  PRIMARY KEY (id),
     FOREIGN KEY (Aktivitet)
-    REFERENCES aktivitethjemmet.Aktivitet (id),
-    FOREIGN KEY (Deltager)
-    REFERENCES aktivitethjemmet.Deltagelse (id));
+        REFERENCES aktivitethjemmet.Aktivitet (id),
+    FOREIGN KEY (Bruker)
+        REFERENCES aktivitethjemmet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
 -- Table aktivitethjemmet.Kommentar
