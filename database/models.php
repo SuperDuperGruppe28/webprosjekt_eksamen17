@@ -136,28 +136,6 @@ class TagsAktivitet extends mod
 }
 
 //
-// AktivitetStemmer
-//
-
-class AktivitetStemmer extends mod
-{
-    public $table = "AktivitetStemmer";
-    public $primaryKey = 'id';
-    protected $dates = ["starts_at"];
-    public $timestamps = false;
-    
-    public function aktivitet()
-    {
-        return $this->hasMany("Aktivitet", "id", "Aktivitet");
-    }
-    
-    public function stemmer()
-    {
-        return $this->hasMany("Stemmer", "id", "Stemme");
-    }
-}
-
-//
 // Stemmer
 //
 
@@ -168,11 +146,17 @@ class Stemmer extends mod
     protected $dates = ["starts_at"];
     public $timestamps = false;
     
+    public function aktivitet()
+    {
+        return $this->hasMany("Aktivitet", "id", "Aktivitet");
+    }
+    
     public function brukere()
     {
         return $this->hasMany("Bruker", "Brukernavn", "Bruker");
     }
 }
+
 
 //
 // Kommentarfelt
@@ -217,9 +201,9 @@ class Kommentar extends mod
 // Deltagelse
 //
 
-class Deltagere extends mod
+class Deltagelse extends mod
 {
-    public $table = "Deltagere";
+    public $table = "Deltagelse";
     public $primaryKey = 'id';
     protected $dates = ["starts_at"];
     public $timestamps = false;
@@ -228,23 +212,6 @@ class Deltagere extends mod
     {
         return $this->hasMany("Aktivitet", "id", "Aktivitet");
     }
-    
-    public function deltagelse()
-    {
-        return $this->hasMany("Deltagelse", "id", "Deltager");
-    }
-}
-
-//
-// Deltager
-//
-
-class Deltagelse extends mod
-{
-    public $table = "Deltagelse";
-    public $primaryKey = 'id';
-    protected $dates = ["starts_at"];
-    public $timestamps = false;
     
     public function brukere()
     {

@@ -7,9 +7,11 @@ require_once __DIR__ . '/database/models.php';
 
 echo '<pre>';
 
+$a = Deltagelse::find(1);
+$a->Deltagelse = 12;
+$a->save();
 // Henter ut brukeren som opprette aktivitet nummer 1
-print_r(Aktivitet::find(1)->brukere);
-foreach (Aktivitet::all() as $ak)
+foreach (Stemmer::all() as $ak)
 {
     print_r($ak->brukere);
     //echo ($ak->brukere->Brukernavn);
