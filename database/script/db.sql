@@ -10,7 +10,7 @@ USE aktivitethjemmet;
 CREATE TABLE IF NOT EXISTS aktivitethjemmet.Bruker (
   Brukernavn VARCHAR(30) NOT NULL,
   Email VARCHAR(70) NOT NULL,
-  Passord VARCHAR(45) NOT NULL,
+  Passord VARCHAR(60) NOT NULL,
   Admin TINYINT(1) NOT NULL DEFAULT 0,
   Registrert DATETIME NOT NULL,
   Verifisert TINYINT(1) NOT NULL,

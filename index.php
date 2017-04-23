@@ -2,14 +2,9 @@
 require_once __DIR__ . '/database/tools/bruker.php';
 
 
-if(eksistererBruker("seb"))
-    echo "Brukeren seb eksisterer yo";
+registrerBruker("Seb", "seebzei@gmail.com", "123", 1);
 
-echo hentEmail("seab");
-
-settAdmin("seb", 1);
-
-if(erAdmin("seb"))
-    echo "admin";
-else 
-    echo "ikke admin";
+if(brukerLoggInn("Seb", "123"))
+    echo "<br>logget inn som Seb";
+else
+    echo "<br>FEIL LOGGINN nissefar";

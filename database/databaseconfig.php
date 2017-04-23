@@ -1,6 +1,9 @@
 <?php
 use Illuminate\Database\Capsule\Manager as DB;
 
+define("TIDSSONE", "Europe/Oslo");
+date_default_timezone_set(TIDSSONE);
+                          
 $datbas = new DB();
 $datbas->addConnection(
     [

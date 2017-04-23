@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 
-
+// Registrerer en ny bruker
 function registrerBruker($brukernavn, $email, $passord, $admin)
 {
     if(!eksistererBruker($brukernavn))
@@ -10,13 +10,14 @@ function registrerBruker($brukernavn, $email, $passord, $admin)
         $bruker = new Bruker();
         $bruker->Brukernavn = $brukernavn;
         $bruker->Email = $email;
-        $bruker->Passord = $passord;
-        $bruker->admin = $admin;
-        
+        $bruker->Passord = generatePasswordHash($passord);
+        $bruker->Admin = $admin; 
+        $bruker->Registrert = date('Y-m-d H:i:s');
+        $bruker->Veifiserthash = genererVerifikasjonHash($email);
+
         $bruker->save();
         return true;
     }
-    
     return false;
 }
 
@@ -68,6 +69,16 @@ function erVerifisert($bruker)
     return false;
 }
 
+// Returnerer brukerens verifikasjonshash
+function hentVerifikasjonsHash($bruker)
+{
+    if(eksistererBruker($bruker))
+    {
+        return Bruker::find($bruker)->Veifiserthash;
+    }
+    return null;
+}
+
 // Setter gitte bruker verifisert 0 = ikke verifisert > 1 = verifisert
 function settVerifisert($bruker, $veri)
 {
@@ -83,6 +94,25 @@ function settVerifisert($bruker, $veri)
 }
 
 // Genere mailverificationhash
+function genererVerifikasjonHash($email)
+{
+    return hash('sha256', $email . time());
+}
 
-// Sette mail verified
+// Genererer hash av passordet gitt
+function generatePasswordHash($pass)
+{
+    return password_hash($pass, PASSWORD_BCRYPT);
+}
 
+// Returnerer true om brukernavn og passord stemmer
+function brukerLoggInn($bruker, $pass)
+{
+    if(eksistererBruker($bruker))
+    {
+        $passHash = Bruker::find($bruker)->Passord;
+        if(password_verify($pass, $passHash))
+            return true;
+    }
+    return false;
+}
