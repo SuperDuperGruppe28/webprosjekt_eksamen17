@@ -1,10 +1,8 @@
 <?php
 require_once __DIR__ . '/database/tools/bruker.php';
+require_once __DIR__ . '/database/tools/tag.php';
+require_once __DIR__ . '/database/tools/aktivitet.php';
+require_once __DIR__ . '/database/tools/kommentar.php';
 
-
-registrerBruker("Seb", "seebzei@gmail.com", "123", 1);
-
-if(brukerLoggInn("Seb", "123"))
-    echo "<br>logget inn som Seb";
-else
-    echo "<br>FEIL LOGGINN nissefar";
+registrerTag("Bade");
+registrerBrukerTag("Seb", "Bade", 3);

@@ -70,7 +70,8 @@ class Tags extends mod
     public $primaryKey = "Tag";
     protected $dates = ["starts_at"];
     public $timestamps = false;
-    
+    public $incrementing = false;
+
     public function tagsBruker()
     {
         return $this->belongsTo("TagsBruker", "Tag", "Tag");
