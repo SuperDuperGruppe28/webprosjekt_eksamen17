@@ -8,3 +8,4 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 require_once "bruker.php";
+

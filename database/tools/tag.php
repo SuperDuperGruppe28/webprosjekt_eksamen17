@@ -17,8 +17,8 @@ function registrerTag($tag)
     {
         $tags = new Tags();
         $tags->Tag = $tag;
-
         $tags->save();
+        
         return true;
     }
     return false;
@@ -39,8 +39,8 @@ function registrerBrukerTag($bruker, $tag, $score)
         $tags->Tag = $tag;
         $tags->Bruker = $bruker;
         $tags->Score = $score;
-
         $tags->save();
+        
         return true;
     }
     return false;
