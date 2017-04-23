@@ -6,3 +6,4 @@ require_once __DIR__ . '/database/tools/kommentar.php';
 
 registrerTag("Bade");
 registrerBrukerTag("Seb", "Bade", 3);
+echo hentBrukerTagBesok("Seb", "Bade");

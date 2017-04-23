@@ -52,6 +52,22 @@ function eksistererBrukerTag($tag)
     return (TagsBruker::where("Tag", "LIKE", $tag)->first()) !== null ? true : false;
 }
 
+// Henter brukerens score for gitt tag
+function hentBrukerTagScore($bruker, $tag)
+{
+    $score = TagsBruker::where("Tag", "LIKE", $tag); 
+    $score = $score->where("Bruker", "LIKE", $bruker)->first(); 
+    return $score->Score;
+}
+
+// Henter brukerens besok for gitt tag
+function hentBrukerTagBesok($bruker, $tag)
+{
+    $besok = TagsBruker::where("Tag", "LIKE", $tag); 
+    $besok = $besok->where("Bruker", "LIKE", $bruker)->first(); 
+    return $besok->Besok;
+}
+
 // Registrerer ny tag på aktivitet
 function registrerAktivitetTag($aktivitet, $tag, $vekt)
 {
@@ -72,4 +88,12 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
 function eksistererAktivitetTag($tag)
 {
     return (TagsAktivitet::where("Tag", "LIKE", $tag)->first()) !== null ? true : false;
+}
+
+// Henter aktivitetens vekt for gitt tag
+function hentAktivitetTagVekt($aktivitet, $tag)
+{
+    $vekt = TagsAktivitet::where("Tag", "LIKE", $tag); 
+    $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first(); 
+    return $vekt->Vekt;
 }
