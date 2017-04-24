@@ -85,7 +85,7 @@ class Tags extends mod
 class Aktivitet extends mod
 {
     public $table = "Aktivitet";
-    public $primaryKey = 'id';
+    public $primaryKey = "id";
     protected $dates = ["starts_at"];
     public $timestamps = false;
     
@@ -180,7 +180,7 @@ class Kommentarfelt extends mod
     
     public function kommentarer()
     {
-        return $this->hasMany("Kommentar", "id", "Kommentar");
+        return $this->belongsTo("Kommentar", "id", "Kommentar");
     }
 }
 
@@ -198,6 +198,11 @@ class Kommentar extends mod
     public function brukere()
     {
         return $this->hasMany("Bruker", "Brukernavn", "Bruker");
+    }
+    
+    public function kommentarfelt()
+    {
+        return $this->hasmany("Kommentarfelt", "id", "Kommentarfelt");
     }
 }
 

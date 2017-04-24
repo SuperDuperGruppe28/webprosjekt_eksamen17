@@ -4,6 +4,5 @@ require_once __DIR__ . '/database/tools/tag.php';
 require_once __DIR__ . '/database/tools/aktivitet.php';
 require_once __DIR__ . '/database/tools/kommentar.php';
 
-registrerTag("Bade");
-registrerBrukerTag("Seb", "Bade", 3);
-echo hentBrukerTagBesok("Seb", "Bade");
+
+postKommentar("Seb", 1, "kommentar");

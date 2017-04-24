@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Aktivitet (
   id int NOT NULL AUTO_INCREMENT,
   Tittel VARCHAR(45) NULL DEFAULT 'Ingen tittel',
   Beskrivelse VARCHAR(45) NULL DEFAULT 'Ingen beskrivelse',
-  Åpningstider VARCHAR(45) NULL DEFAULT 'Ukjent',
+  Apningstider VARCHAR(45) NULL DEFAULT 'Ukjent',
   Pris FLOAT NULL DEFAULT 0,
   Statisk TINYINT(1) NULL DEFAULT 0,
   Bilde VARCHAR(45) NULL,
