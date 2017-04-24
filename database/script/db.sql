@@ -70,29 +70,29 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Deltagelse (
         REFERENCES aktivitethjemmet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
+-- Table aktivitethjemmet.Kommentarfelt
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentarfelt (
+  id int NOT NULL AUTO_INCREMENT,
+  Aktivitet int NOT NULL,
+  PRIMARY KEY (id),
+    FOREIGN KEY (Aktivitet)
+    REFERENCES aktivitethjemmet.Aktivitet (id));
+
+-- -----------------------------------------------------
 -- Table aktivitethjemmet.Kommentar
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentar (
   id int NOT NULL AUTO_INCREMENT,
   Tekst VARCHAR(512) NOT NULL,
   Dato DATETIME NULL,
+  Kommentarfelt int NOT NULL,
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
+    FOREIGN KEY (Kommentarfelt)
+    REFERENCES aktivitethjemmet.Kommentarfelt (id),
     FOREIGN KEY (Bruker)
     REFERENCES aktivitethjemmet.Bruker (Brukernavn));
-
--- -----------------------------------------------------
--- Table aktivitethjemmet.Kommentarfelt
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentarfelt (
-  id int NOT NULL AUTO_INCREMENT,
-  Kommentar int NOT NULL,
-  Aktivitet int NOT NULL,
-  PRIMARY KEY (id),
-    FOREIGN KEY (Kommentar)
-    REFERENCES aktivitethjemmet.Kommentar (id),
-    FOREIGN KEY (Aktivitet)
-    REFERENCES aktivitethjemmet.Aktivitet (id));
 
 -- -----------------------------------------------------
 -- Table aktivitethjemmet.TagsBruker

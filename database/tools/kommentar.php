@@ -8,3 +8,11 @@
 //                                                                                                                          
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 
+// Lage kommentarfelt
+
+// post kommentar
+
+// redigere kommentar
+
+// slette kommentar
+

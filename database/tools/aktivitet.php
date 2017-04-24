@@ -9,3 +9,16 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 require_once "bruker.php";
 
+function skapAktivitet()
+{
+    
+
+    
+}
+
+
+// skape aktivitet
+
+// Slette aktivitet
+
+// Redigere aktivitet
