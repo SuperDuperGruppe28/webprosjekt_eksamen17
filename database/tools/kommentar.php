@@ -26,17 +26,17 @@ function skapKommentarfelt($aktivitet)
 }
 
 // Poster en kommentar
-function postKommentar($bruker, $aktivitet, $kommentar)
+function postKommentar($bruker, $aktivitet, $tekst)
 {
     if(eksistererBruker($bruker) && eksistererAktivitet($aktivitet))
     {
-        $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
+        $kommentarfeltId = 1;// hentAktivitetKommentarfelt($aktivitet);
         if($kommentarfeltId > 0)
         {
-             $kommentar = new Kommentar();
+            $kommentar = new Kommentar();
             $kommentar->Bruker = $bruker;
             $kommentar->Kommentarfelt = $kommentarfeltId;
-            $kommentar->Tekst = $kommentar;
+            $kommentar->Tekst = $tekst;
             $kommentar->Dato = date('Y-m-d H:i:s');
             $kommentar->save();
         
