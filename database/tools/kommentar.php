@@ -30,7 +30,7 @@ function postKommentar($bruker, $aktivitet, $tekst)
 {
     if(eksistererBruker($bruker) && eksistererAktivitet($aktivitet))
     {
-        $kommentarfeltId = 1;// hentAktivitetKommentarfelt($aktivitet);
+        $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
         if($kommentarfeltId > 0)
         {
             $kommentar = new Kommentar();
@@ -46,8 +46,11 @@ function postKommentar($bruker, $aktivitet, $tekst)
     
     return false;
 }
-// post kommentar
 
+function redigerKommentar($kommentar)
+{
+        return (Komemntar::find($bruker)) !== null ? true : false;
+}
 // redigere kommentar
 
 // slette kommentar
