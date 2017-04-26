@@ -39,6 +39,7 @@ function slettAktivitet($aktivitet)
      if(eksistererAktivitet($aktivitet))
     {
         $akt = Aktivitet::find($aktivitet);
+        slettDeltagelser($aktivitet);
         slettStemmer($aktivitet);
         slettKommentarer($aktivitet);
         $akt->kommentarfelt->delete();
@@ -66,7 +67,16 @@ function hentAktivitetKommentarfelt($aktivitet)
     return -1;
 }
 
-// Redigere aktivitet
+// Todo
+// Redigere aktivitetfelter
+
+//   ______           __   _                        __                
+//  |_   _ `.        [  | / |_                     [  |               
+//    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  
+//    | |  | |/ /__\\ | | | | `'_\ : / /'`\;/ /__\\ | | ( (`\]/ /__\\ 
+//   _| |_.' /| \__., | | | |,// | |,\ \._//| \__., | |  `'.'.| \__., 
+//  |______.'  '.__.'[___]\__/\'-;__/.',__`  '.__.'[___][\__) )'.__.' 
+//                                  ( ( __))                          
 
 // Oppreter deltakelse i en gitt aktivtet, bruker, aktivitet, Integer
 function deltaAktivitet($bruker, $aktivitet, $delta)
@@ -122,6 +132,43 @@ function hentDeltagelse($bruker, $aktivitet)
     }
     return 0;
 }
+
+// Sletter stemme for bruker i gitt aktivtet
+function slettDeltagelse($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        {
+            $delta = Stemmer::where("Aktivitet", "=", $aktivitet);
+            $delta = $delta->where("Bruker", "LIKE", $bruker)->first();
+            $delta->delete();
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter alle stemmer for en aktivitet
+function slettDeltagelser($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $delta = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $delta->delete();
+         
+        return true;
+    }
+    return false;
+}
+
+//    ______    _                                                  
+//  .' ____ \  / |_                                                
+//  | (___ \_|`| |-'.---.  _ .--..--.   _ .--..--.  .---.  _ .--.  
+//   _.____`.  | | / /__\\[ `.-. .-. | [ `.-. .-. |/ /__\\[ `/'`\] 
+//  | \____) | | |,| \__., | | | | | |  | | | | | || \__., | |     
+//   \______.' \__/ '.__.'[___||__||__][___||__||__]'.__.'[___]    
+//                                                                 
 
 // Legger til en stemme for bruker i aktivitet
 function stemAktivitet($bruker, $aktivitet)
