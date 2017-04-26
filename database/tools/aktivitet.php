@@ -65,9 +65,61 @@ function hentAktivitetKommentarfelt($aktivitet)
     return -1;
 }
 
-
 // Redigere aktivitet
 
-// Deltagelse
+// Oppreter deltakelse i en gitt aktivtet, bruker, aktivitet, Integer
+function deltaAktivitet($bruker, $aktivitet, $delta)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        // Om brukeren allerede deltar i aktivtet, ikke lag ny
+        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        {
+            $deltagelse = new Deltagelse();
+            $deltagelse->Bruker = $bruker;
+            $deltagelse->Aktivitet = $aktivitet;
+            $deltagelse->Deltagelse = $delta; 
+            $deltagelse->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
+
+// Endrer deltagelse for gitt bruker og aktivitet
+function endreDeltagelse($bruker, $aktivitet, $delta)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($deltagelse !== null)
+        {
+            $deltagelse->Deltagelse = $delta; 
+            $deltagelse->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
+
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function hentDeltagelse($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($deltagelse !== null)
+        {
+            return $deltagelse->Deltagelse;
+        }
+    }
+    return 0;
+}
 
 // Stemmer
