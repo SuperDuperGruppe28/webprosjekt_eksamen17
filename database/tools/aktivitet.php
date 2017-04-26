@@ -33,24 +33,38 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk,
     return false;
 }
 
+// Sletter aktivtet og relasjoner
+function slettAktivitet($aktivitet)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        slettKommentarer($aktivitet);
+        $akt->kommentarfelt->delete();
+        $akt->delete();
+         
+        return true;
+    }
+    return false;
+}
+
+// Sjekker om aktivtet eksisterer
 function eksistererAktivitet($aktivitet)
 {
     return (Aktivitet::find($aktivitet)) !== null ? true : false;   
 }
 
+// Henter kommentarfeltiden til en gitt aktivitet
 function hentAktivitetKommentarfelt($aktivitet)
 {
     if(eksistererAktivitet($aktivitet))
     {
-        $kommentarfelt = Aktivitet::find(1)->kommentarfelt->where("Aktivitet", "=", $aktivitet)->first();
+        $kommentarfelt = Aktivitet::find($aktivitet)->kommentarfelt->where("Aktivitet", "=", $aktivitet)->first();
         return $kommentarfelt->id;
     }
     return -1;
 }
 
-// skape aktivitet
-
-// Slette aktivitet
 
 // Redigere aktivitet
 

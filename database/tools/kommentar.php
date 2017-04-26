@@ -81,3 +81,19 @@ function slettKommentar($kommentar)
     
     return false;
 }
+
+// Sletter alle kommentarer i aktivitet
+function slettKommentarer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
+        
+        $kommentarer = Kommentar::where("Kommentarfelt", "=", $kommentarfeltId);
+        $kommentarer->delete();
+        
+        return true;
+    }
+    
+    return false;
+}
