@@ -39,6 +39,7 @@ function slettAktivitet($aktivitet)
      if(eksistererAktivitet($aktivitet))
     {
         $akt = Aktivitet::find($aktivitet);
+        slettStemmer($aktivitet);
         slettKommentarer($aktivitet);
         $akt->kommentarfelt->delete();
         $akt->delete();
@@ -122,4 +123,66 @@ function hentDeltagelse($bruker, $aktivitet)
     return 0;
 }
 
-// Stemmer
+// Legger til en stemme for bruker i aktivitet
+function stemAktivitet($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        // Om brukeren allerede har stemt ikke lag ny
+        if(!harStemtAktivitet($bruker, $aktivitet))
+        {
+            $stem = new Stemmer();
+            $stem->Bruker = $bruker;
+            $stem->Aktivitet = $aktivitet;
+            $stem->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
+
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function harStemtAktivitet($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+        $stem = $stem->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($stem !== null)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter stemme for bruker i gitt aktivtet
+function slettStemme($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        if(harStemtAktivitet($bruker, $aktivitet))
+        {
+            $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+            $stem = $stem->where("Bruker", "LIKE", $bruker)->first();
+            $stem->delete();
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter alle stemmer for en aktivitet
+function slettStemmer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+        $stem->delete();
+         
+        return true;
+    }
+    return false;
+}
