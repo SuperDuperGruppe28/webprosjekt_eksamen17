@@ -4,10 +4,11 @@ require_once __DIR__ . '/database/tools/tag.php';
 require_once __DIR__ . '/database/tools/aktivitet.php';
 require_once __DIR__ . '/database/tools/kommentar.php';
 
-
 // Funksjonstesting
 
-//skapAktivitet("Seb", "Badiing", "Bade i vann", "Alltid åpent", 0, 1, "Bildeurl", 0, 0);
+registrerBruker("Seb", "seb", "seb", 1);
+skapAktivitet("Seb", "Badiing", "Bade i vann", "Alltid åpent", 0, 1, "Bildeurl", 0, 0);
+redigerAktivitetTittel(1, "Halla");
 //postKommentar("Seb", 3, "kommentar");
 
 //redigerKommentar(1, "Dette er en endring");
@@ -24,4 +25,3 @@ require_once __DIR__ . '/database/tools/kommentar.php';
     
     // Registrerer en ny bruker
     // registrerBruker($brukernavn, $email, $passord, $admin)
-
