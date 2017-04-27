@@ -47,8 +47,53 @@ function postKommentar($bruker, $aktivitet, $tekst)
     return false;
 }
 
-// Red
-function redigerKommentar($kommentar)
+// Sjekker om kommentar med id eksisterer
+function eksistererKommentar($kommentar)
 {
-        return (Kommentar::find($kommentar)) !== null ? true : false;
+    return (Kommentar::find($kommentar)) !== null ? true : false;
+}
+
+// Endrer teksten på en kommentar ved gitt id
+function redigerKommentar($kommentar, $tekst)
+{
+    if(eksistererKommentar($kommentar))
+    {
+        $kom = Kommentar::find($kommentar)->first();
+        $kom->Tekst = $tekst;
+        $kom->save();
+        
+        return true;
+    }
+    
+    return false;
+}
+
+// Sletter kommentar med gitt id
+function slettKommentar($kommentar)
+{
+    if(eksistererKommentar($kommentar))
+    {
+        $kom = Kommentar::find($kommentar)->first();
+        $kom->delete();
+        
+        return true;
+    }
+    
+    return false;
+}
+
+// Sletter alle kommentarer i aktivitet
+function slettKommentarer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
+        
+        $kommentarer = Kommentar::where("Kommentarfelt", "=", $kommentarfeltId);
+        $kommentarer->delete();
+        
+        return true;
+    }
+    
+    return false;
 }

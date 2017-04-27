@@ -33,27 +33,203 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk,
     return false;
 }
 
+// Sletter aktivtet og relasjoner
+function slettAktivitet($aktivitet)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        slettDeltagelser($aktivitet);
+        slettStemmer($aktivitet);
+        slettKommentarer($aktivitet);
+        $akt->kommentarfelt->delete();
+        $akt->delete();
+         
+        return true;
+    }
+    return false;
+}
+
+// Sjekker om aktivtet eksisterer
 function eksistererAktivitet($aktivitet)
 {
     return (Aktivitet::find($aktivitet)) !== null ? true : false;   
 }
 
+// Henter kommentarfeltiden til en gitt aktivitet
 function hentAktivitetKommentarfelt($aktivitet)
 {
     if(eksistererAktivitet($aktivitet))
     {
-        $kommentarfelt = Aktivitet::find(1)->kommentarfelt->where("Aktivitet", "=", $aktivitet)->first();
+        $kommentarfelt = Aktivitet::find($aktivitet)->kommentarfelt->where("Aktivitet", "=", $aktivitet)->first();
         return $kommentarfelt->id;
     }
     return -1;
 }
 
-// skape aktivitet
+// Todo
+// Redigere aktivitetfelter
 
-// Slette aktivitet
+//   ______           __   _                        __                
+//  |_   _ `.        [  | / |_                     [  |               
+//    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  
+//    | |  | |/ /__\\ | | | | `'_\ : / /'`\;/ /__\\ | | ( (`\]/ /__\\ 
+//   _| |_.' /| \__., | | | |,// | |,\ \._//| \__., | |  `'.'.| \__., 
+//  |______.'  '.__.'[___]\__/\'-;__/.',__`  '.__.'[___][\__) )'.__.' 
+//                                  ( ( __))                          
 
-// Redigere aktivitet
+// Oppreter deltakelse i en gitt aktivtet, bruker, aktivitet, Integer
+function deltaAktivitet($bruker, $aktivitet, $delta)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        // Om brukeren allerede deltar i aktivtet, ikke lag ny
+        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        {
+            $deltagelse = new Deltagelse();
+            $deltagelse->Bruker = $bruker;
+            $deltagelse->Aktivitet = $aktivitet;
+            $deltagelse->Deltagelse = $delta; 
+            $deltagelse->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
 
-// Deltagelse
+// Endrer deltagelse for gitt bruker og aktivitet
+function endreDeltagelse($bruker, $aktivitet, $delta)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($deltagelse !== null)
+        {
+            $deltagelse->Deltagelse = $delta; 
+            $deltagelse->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
 
-// Stemmer
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function hentDeltagelse($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($deltagelse !== null)
+        {
+            return $deltagelse->Deltagelse;
+        }
+    }
+    return 0;
+}
+
+// Sletter stemme for bruker i gitt aktivtet
+function slettDeltagelse($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        {
+            $delta = Stemmer::where("Aktivitet", "=", $aktivitet);
+            $delta = $delta->where("Bruker", "LIKE", $bruker)->first();
+            $delta->delete();
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter alle stemmer for en aktivitet
+function slettDeltagelser($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $delta = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $delta->delete();
+         
+        return true;
+    }
+    return false;
+}
+
+//    ______    _                                                  
+//  .' ____ \  / |_                                                
+//  | (___ \_|`| |-'.---.  _ .--..--.   _ .--..--.  .---.  _ .--.  
+//   _.____`.  | | / /__\\[ `.-. .-. | [ `.-. .-. |/ /__\\[ `/'`\] 
+//  | \____) | | |,| \__., | | | | | |  | | | | | || \__., | |     
+//   \______.' \__/ '.__.'[___||__||__][___||__||__]'.__.'[___]    
+//                                                                 
+
+// Legger til en stemme for bruker i aktivitet
+function stemAktivitet($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        // Om brukeren allerede har stemt ikke lag ny
+        if(!harStemtAktivitet($bruker, $aktivitet))
+        {
+            $stem = new Stemmer();
+            $stem->Bruker = $bruker;
+            $stem->Aktivitet = $aktivitet;
+            $stem->save();
+        
+            return true;
+        }
+    }
+    return false;
+}
+
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function harStemtAktivitet($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+        $stem = $stem->where("Bruker", "LIKE", $bruker)->first();
+        
+        if($stem !== null)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter stemme for bruker i gitt aktivtet
+function slettStemme($bruker, $aktivitet)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        if(harStemtAktivitet($bruker, $aktivitet))
+        {
+            $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+            $stem = $stem->where("Bruker", "LIKE", $bruker)->first();
+            $stem->delete();
+            return true;
+        }
+    }
+    return false;
+}
+
+// Sletter alle stemmer for en aktivitet
+function slettStemmer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $stem = Stemmer::where("Aktivitet", "=", $aktivitet);
+        $stem->delete();
+         
+        return true;
+    }
+    return false;
+}
