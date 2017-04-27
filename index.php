@@ -25,3 +25,4 @@ redigerAktivitetTittel(1, "Halla");
     
     // Registrerer en ny bruker
     // registrerBruker($brukernavn, $email, $passord, $admin)
+
