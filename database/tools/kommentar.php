@@ -47,11 +47,8 @@ function postKommentar($bruker, $aktivitet, $tekst)
     return false;
 }
 
+// Red
 function redigerKommentar($kommentar)
 {
-        return (Komemntar::find($bruker)) !== null ? true : false;
+        return (Kommentar::find($kommentar)) !== null ? true : false;
 }
-// redigere kommentar
-
-// slette kommentar
-
