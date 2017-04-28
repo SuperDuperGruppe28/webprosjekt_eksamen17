@@ -33,6 +33,9 @@ function eksistererTag($tag)
 // Registrerer ny tag på bruker
 function registrerBrukerTag($bruker, $tag, $score)
 {
+    if(!eksistererTag($tag)
+        registrerTag($tag);
+       
     if(eksistererTag($tag) && !eksistererBrukerTag($tag) && eksistererBruker($bruker))
     {
         $tags = new TagsBruker();
@@ -71,6 +74,9 @@ function hentBrukerTagBesok($bruker, $tag)
 // Registrerer ny tag på aktivitet
 function registrerAktivitetTag($aktivitet, $tag, $vekt)
 {
+    if(!eksistererTag($tag)
+        registrerTag($tag);
+       
     if(eksistererTag($tag) && !eksistererAktivitetTag($tag)) //  Sjekke om aktivitet eksisterer
     {
         $tags = new TagsAktivitet();

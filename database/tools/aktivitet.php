@@ -38,7 +38,7 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk,
 // Sletter aktivtet og relasjoner
 function slettAktivitet($aktivitet)
 {
-     if(eksistererAktivitet($aktivitet))
+    if(eksistererAktivitet($aktivitet))
     {
         $akt = Aktivitet::find($aktivitet);
         slettDeltagelser($aktivitet);
