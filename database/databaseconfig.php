@@ -10,11 +10,11 @@ $datbas = new DB();
 $datbas->addConnection(
     [
         'driver' => 'mysql',
-        'port' => 8889,
-        'host' => '127.0.0.1',
-        'username' => 'root',
-        'password' => 'root',
-        'database' => 'aktivitethjemmet',
+        'port' => 3306,
+        'host' => 'tek.westerdals.no',
+        'username' => 'berseb16_g28',
+        'password' => 'MmU{@N}@(#2c',
+        'database' => 'berseb16_aktivitet',
         'collation' => 'utf8_general_ci'
         
     ]);
