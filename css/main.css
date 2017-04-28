@@ -1,4 +1,9 @@
-html
+html 
 {
-    background: #FF3300;
+	background: #A37774;
+}
+
+body, header, footer 
+{
+    margin: 0;  
 }
