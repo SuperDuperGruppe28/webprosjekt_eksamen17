@@ -1,11 +1,8 @@
-<?php
-    // Header
-    require_once __DIR__ . '/components/header.php';
-?>
+<html>
+    <head><?php echo pathinfo(__FILE__, PATHINFO_FILENAME);?></head>
+    <header><?php require 'components/header.php'?></header>
     <body>
-        <h1>HALLO</h1>
+        <h1>HEY</h1>
     </body>
-<?php
-    // Footer
-    require_once __DIR__ . '/components/footer.php';
-?>
+    <footer><?php require 'components/footer.php'?></footer>
+</html>
