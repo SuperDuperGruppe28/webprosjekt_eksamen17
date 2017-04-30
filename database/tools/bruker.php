@@ -140,3 +140,31 @@ function brukerLoggInn($bruker, $pass)
     }
     return false;
 }
+
+// Returner profilbildelink
+function hentBrukerBilde()
+{
+    if(erBrukerLoggetInn())
+    {
+        $email = hentEmail(loggetInnBruker());
+        $default = "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_960_720.jpg";
+        $size = 40;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        return $grav_url;
+    }
+    return "";
+}
+
+function sendVerifiseringsEmail($bruker)
+{
+    if(eksistererBruker($bruker))
+    {
+        $email = hentEmail($bruker);
+        $veri = hentVerifikasjonsHash($bruker);
+        $url = "http://localhost/php/email.php?user=".$bruker."&ver=" . $veri;
+        $message = "Trykk på lenken for å verifisere din emailadresse: " . $url . " \n Ha en fin dag!";
+        mail($email, "Verifiser din emailadresse", $message);
+        return true;
+    }
+    return false;
+}
