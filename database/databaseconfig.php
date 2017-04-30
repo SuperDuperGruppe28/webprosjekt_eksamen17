@@ -11,10 +11,10 @@ $datbas->addConnection(
     [
         'driver' => 'mysql',
         'port' => 3306,
-        'host' => '127.0.0.1',
-        'username' => 'root',
-        'password' => 'root',
-        'database' => 'aktivitethjemmet',
+        'host' => 'tek.westerdals.no',
+        'username' => 'berseb16_g28',
+        'password' => 'MmU{@N}@(#2c',
+        'database' => 'berseb16_aktivitet',
         'collation' => 'utf8_general_ci'
         
     ]);

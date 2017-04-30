@@ -1,13 +1,13 @@
 -- -----------------------------------------------------
--- Schema aktivitethjemmet
+-- Schema berseb16_aktivitet
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS aktivitethjemmet DEFAULT CHARACTER SET utf8;
-USE aktivitethjemmet;
+CREATE SCHEMA IF NOT EXISTS berseb16_aktivitet DEFAULT CHARACTER SET utf8;
+USE berseb16_aktivitet;
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Bruker
+-- Table berseb16_aktivitet.Bruker
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Bruker (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Bruker (
   Brukernavn VARCHAR(30) NOT NULL,
   Email VARCHAR(70) NOT NULL,
   Passord VARCHAR(60) NOT NULL,
@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Bruker (
   PRIMARY KEY (Brukernavn));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Aktivitet
+-- Table berseb16_aktivitet.Aktivitet
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Aktivitet (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Aktivitet (
   id int NOT NULL AUTO_INCREMENT,
   Tittel VARCHAR(45) NULL DEFAULT 'Ingen tittel',
   Beskrivelse VARCHAR(45) NULL DEFAULT 'Ingen beskrivelse',
@@ -33,56 +33,56 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Aktivitet (
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
+    REFERENCES berseb16_aktivitet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Tags
+-- Table berseb16_aktivitet.Tags
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Tags (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Tags (
   Tag VARCHAR(45) NOT NULL,
   PRIMARY KEY (Tag));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Stemmer
+-- Table berseb16_aktivitet.Stemmer
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Stemmer (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Stemmer (
   id int NOT NULL AUTO_INCREMENT,
   Aktivitet int NOT NULL,
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Aktivitet)
-    REFERENCES aktivitethjemmet.Aktivitet (id),
+    REFERENCES berseb16_aktivitet.Aktivitet (id),
     FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
+    REFERENCES berseb16_aktivitet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Deltagelse
+-- Table berseb16_aktivitet.Deltagelse
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Deltagelse (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Deltagelse (
   id int NOT NULL AUTO_INCREMENT,
   Deltagelse int NOT NULL,
   Aktivitet int NOT NULL,
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Aktivitet)
-        REFERENCES aktivitethjemmet.Aktivitet (id),
+        REFERENCES berseb16_aktivitet.Aktivitet (id),
     FOREIGN KEY (Bruker)
-        REFERENCES aktivitethjemmet.Bruker (Brukernavn));
+        REFERENCES berseb16_aktivitet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Kommentarfelt
+-- Table berseb16_aktivitet.Kommentarfelt
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentarfelt (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Kommentarfelt (
   id int NOT NULL AUTO_INCREMENT,
   Aktivitet int NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Aktivitet)
-    REFERENCES aktivitethjemmet.Aktivitet (id));
+    REFERENCES berseb16_aktivitet.Aktivitet (id));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.Kommentar
+-- Table berseb16_aktivitet.Kommentar
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentar (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Kommentar (
   id int NOT NULL AUTO_INCREMENT,
   Tekst VARCHAR(512) NOT NULL,
   Dato DATETIME NULL,
@@ -90,14 +90,14 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.Kommentar (
   Bruker VARCHAR(30) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Kommentarfelt)
-    REFERENCES aktivitethjemmet.Kommentarfelt (id),
+    REFERENCES berseb16_aktivitet.Kommentarfelt (id),
     FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn));
+    REFERENCES berseb16_aktivitet.Bruker (Brukernavn));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.TagsBruker
+-- Table berseb16_aktivitet.TagsBruker
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.TagsBruker (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.TagsBruker (
   id int NOT NULL AUTO_INCREMENT,
   Besok int NOT NULL DEFAULT 0,
   Score int NULL DEFAULT 0,
@@ -105,20 +105,20 @@ CREATE TABLE IF NOT EXISTS aktivitethjemmet.TagsBruker (
   Tag VARCHAR(45) NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Bruker)
-    REFERENCES aktivitethjemmet.Bruker (Brukernavn),
+    REFERENCES berseb16_aktivitet.Bruker (Brukernavn),
     FOREIGN KEY (Tag)
-    REFERENCES aktivitethjemmet.Tags (Tag));
+    REFERENCES berseb16_aktivitet.Tags (Tag));
 
 -- -----------------------------------------------------
--- Table aktivitethjemmet.TagsAktivitet
+-- Table berseb16_aktivitet.TagsAktivitet
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS aktivitethjemmet.TagsAktivitet (
+CREATE TABLE IF NOT EXISTS berseb16_aktivitet.TagsAktivitet (
   id int NOT NULL AUTO_INCREMENT,
   Vekt int NULL DEFAULT 0,
   Tag VARCHAR(45) NOT NULL,
   Aktivitet int NOT NULL,
   PRIMARY KEY (id),
     FOREIGN KEY (Tag)
-    REFERENCES aktivitethjemmet.Tags (Tag),
+    REFERENCES berseb16_aktivitet.Tags (Tag),
     FOREIGN KEY (Aktivitet)
-    REFERENCES aktivitethjemmet.Aktivitet (id));
+    REFERENCES berseb16_aktivitet.Aktivitet (id));

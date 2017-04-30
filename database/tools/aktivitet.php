@@ -10,6 +10,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 require_once "bruker.php";
 
 // Oppretter en ny aktivitet
+// Todo
+// Legge til tags, eller håndtere det i aktivitetskapelseforalle.php
 function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk, $bilde, $lon, $lat)
 {
     if(eksistererBruker($bruker))
@@ -36,7 +38,7 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk,
 // Sletter aktivtet og relasjoner
 function slettAktivitet($aktivitet)
 {
-     if(eksistererAktivitet($aktivitet))
+    if(eksistererAktivitet($aktivitet))
     {
         $akt = Aktivitet::find($aktivitet);
         slettDeltagelser($aktivitet);
@@ -67,6 +69,67 @@ function hentAktivitetKommentarfelt($aktivitet)
     return -1;
 }
 
+// Returnerer aktivitet med aktivitetsID
+function hentAktivitet($aktivitet)
+{
+    return Aktivitet::find($aktivitet);
+}
+
+// Redigerer tittelen til en gitt aktivitet
+function redigerAktivitetTittel($aktivitet, $tittel)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        $akt->Tittel = $tittel;
+        $akt->save();
+        
+        return true;
+    }
+    return false;
+}
+
+// Redigerer beskrivelsen til en gitt aktivitet
+function redigerAktivtetBeskrivelse($aktivitet, $beskrivelse)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        $akt->Beskrivelse = $beskrivelse;
+        $akt->save();
+        
+        return true;
+    }
+    return false;
+}
+
+// Redigerer tittelen til en gitt aktivitet
+function redigerAktivitetApning($aktivitet, $apning)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        $akt->Apning = $apning;
+        $akt->save();
+        
+        return true;
+    }
+    return false;
+}
+
+// Redigerer tittelen til en gitt aktivitet
+function redigerAktivitetPris($aktivitet, $pris)
+{
+     if(eksistererAktivitet($aktivitet))
+    {
+        $akt = Aktivitet::find($aktivitet);
+        $akt->Pris = $pris;
+        $akt->save();
+        
+        return true;
+    }
+    return false;
+}
 // Todo
 // Redigere aktivitetfelter
 
