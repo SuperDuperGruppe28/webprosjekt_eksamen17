@@ -16,12 +16,3 @@ require_once __DIR__ . '/database/tools/kommentar.php';
 //deltaAktivitet("Seb", 4, 2);
 //echo hentDeltagelse("Seb", 4);
 //slettStemmer(4);
-
-
-// Funksjoner
-
-    // Bruker
-    
-    // Registrerer en ny bruker
-    // registrerBruker($brukernavn, $email, $passord, $admin)
-
