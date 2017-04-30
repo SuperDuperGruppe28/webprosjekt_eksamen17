@@ -8,6 +8,24 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 
+// Returnerer brukernavnet til logget inn bruker
+function loggetInnBruker()
+{
+    if(erBrukerLoggetInn())
+    {
+        return $_SESSION["user"];
+    }
+    return false;
+}
+
+// Returnerer om en bruker er logget inn
+function erBrukerLoggetInn()
+{
+    if(isset($_SESSION["user"]))
+        return true;
+    return false;
+}
+
 // Registrerer en ny bruker
 function registrerBruker($brukernavn, $email, $passord, $admin)
 {

@@ -10,10 +10,10 @@ if(isset($_GET["action"]))
     // Logge inn
     if($action === "in")
     {
-        if(isset($_GET["bruker"]) && isset($_GET["passord"]))
+        if(isset($_POST["bruker"]) && isset($_POST["passord"]))
         {
-            $bruker = $_GET["bruker"];
-            $pass = $_GET["passord"];
+            $bruker = $_POST["bruker"];
+            $pass = $_POST["passord"];
             if(brukerLoggInn($bruker, $pass))
             {
                 $_SESSION["user"] = $bruker;
@@ -23,7 +23,6 @@ if(isset($_GET["action"]))
                 echo "Logginn feilet!";
             }
         }
-        
     // Logge ut
     }else if($action === "out")
     {
@@ -32,3 +31,5 @@ if(isset($_GET["action"]))
         echo "logout";
     }
 }
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
