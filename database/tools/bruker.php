@@ -5,8 +5,11 @@
 //   | |_) | |  | |_| |   <  __/ |   
 //   |____/|_|   \__,_|_|\_\___|_|   
 //    
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+
+// Starter session
+if (session_status() == PHP_SESSION_NONE) 
+    session_start();
 
 // Returnerer brukernavnet til logget inn bruker
 function loggetInnBruker()

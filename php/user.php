@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__ . '/../database/tools/bruker.php';
-session_start();
+if (session_status() == PHP_SESSION_NONE) 
+    session_start();
+
+// Konstanter
+$PBruker = "bruker";
+$PPassord = "passord";
+$PEmail = "email";
 
 // Om action er valgt
 if(isset($_GET["action"]))
@@ -10,10 +16,10 @@ if(isset($_GET["action"]))
     // Logge inn
     if($action === "in")
     {
-        if(isset($_POST["bruker"]) && isset($_POST["passord"]))
+        if(isset($_POST[$PBruker]) && isset($_POST[$PPassord]))
         {
-            $bruker = $_POST["bruker"];
-            $pass = $_POST["passord"];
+            $bruker = $_POST[$PBruker];
+            $pass = $_POST[$PPassord];
             if(brukerLoggInn($bruker, $pass))
             {
                 $_SESSION["user"] = $bruker;
@@ -33,11 +39,11 @@ if(isset($_GET["action"]))
     // Registerer ny bruker
     }else if($action === "reg")
     {
-       if(isset($_POST["bruker"]) && isset($_POST["passord"]) && isset($_POST["email"]))
+       if(isset($_POST[$PBruker]) && isset($_POST[$PPassord]) && isset($_POST[$PEmail]))
         {
-            $bruker = $_POST["bruker"];
-            $pass = $_POST["passord"];
-            $email = $_POST["email"];
+            $bruker = $_POST[$PBruker];
+            $pass = $_POST[$PPassord];
+            $email = $_POST[$PEmail];
             
             if(!eksistererBruker($bruker))
             {

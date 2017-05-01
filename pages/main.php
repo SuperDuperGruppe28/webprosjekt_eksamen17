@@ -1,5 +1,10 @@
-<?php session_start();
-$filename=pathinfo(__FILE__, PATHINFO_FILENAME);?>
+<?php 
+require_once __DIR__ . '/../database/tools/bruker.php';
+
+if (session_status() == PHP_SESSION_NONE) 
+    session_start();
+$filename = pathinfo(__FILE__, PATHINFO_FILENAME);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,6 +37,27 @@ $filename=pathinfo(__FILE__, PATHINFO_FILENAME);?>
             <label for="password">Email:</label> <input type="email" id="email" name="email"><br /><br />
             <button type = "submit">Registrer bruker</button>
         </form>
+            
+        <h1>Lag ny aktivitet</h1>
+        <form action="php/activity.php?action=reg" method="post">
+            <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel"><br/><br/>
+            <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="10" cols="10"></textarea><br/><br/>
+            <label for="apning">Åpning</label> <input type="text" id="apning" name="apning"><br/><br/>
+            <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
+            <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
+            <input type = "hidden" id = "lengdegrad" name="lengdegrad" value = "0" />
+            <input type = "hidden" id = "breddegrad" name="breddegrad" value = "0" />
+            
+            <?php
+                if(isset($_SESSION["user"]))
+                {
+                    if(erAdmin($_SESSION["user"]))
+                        echo '<label for="statisk">Statisk</label> <input type="number" id="statisk" name="statisk"><br/><br/>';    
+                }
+            ?>
+            <button type = "submit">Registrer aktivitet</button>
+        </form>
+
 
         <footer><?php require $filename.'/footer.php'?></footer>
     </body>

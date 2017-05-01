@@ -1,11 +1,15 @@
 <?php
 require_once __DIR__ . '/../database/tools/bruker.php';
 
+// Konstanter
+$PVerifisert = "ver";
+$PUser = "user";
+
 // Om action er valgt
-if(isset($_GET["ver"]) && isset($_GET["user"]))
+if(isset($_GET[$PVerifisert]) && isset($_GET[$PUser]))
 {
-    $user = $_GET["user"];
-    $verification = $_GET["ver"];
+    $user = $_GET[$PUser];
+    $verification = $_GET[$PVerifisert];
     
     if(!erVerifisert($user))
     {
@@ -21,7 +25,7 @@ if(isset($_GET["ver"]) && isset($_GET["user"]))
     {
         echo "<h1>" . $user . " er allerede verifisert!</h1>";
     }
-  
+
 }else
 {
     echo "<h1>Mangler data!</h1>";
