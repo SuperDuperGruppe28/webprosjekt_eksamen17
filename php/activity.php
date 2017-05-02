@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../database/tools/bruker.php';
 require_once __DIR__ . '/../database/tools/aktivitet.php';
 
-
 $bruker = loggetInnBruker();
 
 // Konstanter
@@ -56,3 +55,6 @@ if($bruker)
 {
     echo "<h1>Må være logget inn!</h1>";
 }
+
+// Sender tilbake til forrige side
+header('Location: ' . $_SERVER['HTTP_REFERER']);

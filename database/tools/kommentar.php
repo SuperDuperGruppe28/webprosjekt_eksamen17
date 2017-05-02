@@ -97,3 +97,29 @@ function slettKommentarer($aktivitet)
     
     return false;
 }
+
+// Returnerer brukernavnet til eieren av kommentaren
+function finnKommentarEier($kommentar)
+{
+     if(eksistererKommentar($kommentar))
+    {
+        $kom = Kommentar::find($kommentar)->first();
+        return  $kom->Bruker;
+    }
+    
+    return false;
+}
+
+// Returnerer kommentarene i en aktivitet
+function hentKommentarer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
+        
+        $kommentarer = Kommentar::where("Kommentarfelt", "=", $kommentarfeltId)->get();
+        
+        return $kommentarer;
+    }
+    return false;
+}

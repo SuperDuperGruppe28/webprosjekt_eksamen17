@@ -57,6 +57,29 @@ $filename = pathinfo(__FILE__, PATHINFO_FILENAME);
             ?>
             <button type = "submit">Registrer aktivitet</button>
         </form>
+            
+        <h1>Post kommentar</h1>
+        <form action="php/comment.php?action=post" method="post">
+            <label for="tekst">Tekst</label> <textarea id="tekst" name="tekst" rows="10" cols="10"></textarea><br/><br/>
+            <input type="hidden" id="aktivitet" name="aktivitet" value="3" />            
+            <button type = "submit">post kommentar</button>
+        </form>
+        
+        <h1>Rediger kommentar</h1>
+        <form action="php/comment.php?action=edit" method="post">
+            <label for="tekst">Tekst</label> <textarea id="tekst" name="tekst" rows="10" cols="10"></textarea><br/><br/>
+            <input type="hidden" id="kommentar" name="kommentar" value="1" />            
+            <button type = "submit">Rediger kommentar</button>
+        </form>
+
+            
+             <h1>Slett kommentar</h1>
+        <form action="php/comment.php?action=del" method="post">
+
+            <input type="hidden" id="kommentar" name="kommentar" value="1" />            
+            <button type = "submit">post kommentar</button>
+        </form>
+
 
 
         <footer><?php require $filename.'/footer.php'?></footer>
