@@ -10,8 +10,8 @@ $GSide = "side";
 $tittel = "Default";
 if(isset($_GET[$GSide]))
     $tittel = $_GET[$GSide];
-
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,6 +22,7 @@ if(isset($_GET[$GSide]))
         <meta name="description" content="Veldig bra side">
         <meta name="author" content="Gruppe28">
     
+        <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/../../css/main.css">
         <title><?php echo $tittel?></title>
     </head>
@@ -29,9 +30,10 @@ if(isset($_GET[$GSide]))
     <body>
         <!-- HEADER -->
         <header><?php require 'pages/header.php'?></header>
-        <!-- BODY -->
         
+        <!-- BODY -->
         <?php
+            // Henter angitt side
             if(isset($_GET[$GSide]))
             {
                 switch($_GET[$GSide])
@@ -44,8 +46,12 @@ if(isset($_GET[$GSide]))
                             require 'pages/main.php';
                         break;
                 }
+            }else
+            {
+                require 'pages/main.php'; 
             }
         ?>
+        
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>
