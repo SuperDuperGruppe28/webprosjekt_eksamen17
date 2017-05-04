@@ -1,1 +1,3 @@
-<h1>HEADER</h1>
+<div id="headerContainer">
+    <center><h1>Hello</h1></center>
+</div>

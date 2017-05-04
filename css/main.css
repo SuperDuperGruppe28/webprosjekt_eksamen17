@@ -1,9 +1,59 @@
-html 
+html, body
 {
-	background: #A37774;
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    background: white;
 }
 
 body, header, footer 
 {
     margin: 0;  
+    height: 100%;
+    width: 100%;
+}    
+
+#headerContainer
+{
+   /*Containeren header*/
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    background: GREY;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+
+#headerContainer h1
+{
+    color: green;
+}
+
+#bodyContainer
+{
+   /*Containeren header*/
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    background: antiquewhite;
+    margin: 0;
+    left: 0;
+    top: 15%;
+}
+
+#footerContainer
+{
+   /*Containeren header*/
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    background: GREY;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    color: antiquewhite;
 }

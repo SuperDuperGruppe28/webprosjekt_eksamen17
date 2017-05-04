@@ -1,5 +1,5 @@
- <a href="/pages/test.php">test side</a>
-        
+<div id="bodyContainer">
+<a href="/pages/test.php">test side</a>   
         <form action="php/user.php?action=in" method="post">
             <label for="username">Brukernavn</label> <input type="username" id="bruker" name="bruker"><br /><br />
             <label for="password">Passord:</label> <input type="password" id="passord" name="passord"><br /><br />
@@ -60,3 +60,4 @@
             <input type="hidden" id="kommentar" name="kommentar" value="1" />            
             <button type = "submit">post kommentar</button>
         </form>
+</div>

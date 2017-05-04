@@ -1,1 +1,3 @@
-<h1>FOOOTER</h1>
+<div id="footerContainer">
+    <center>Seb (c) 2017</center>
+</div>

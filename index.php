@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/database/tools/bruker.php';
-
+/*
 echo "<h3>Demo bruker logget inn?</h3>";
 $brukernavn = loggetInnBruker();
 if($brukernavn)
@@ -10,5 +10,5 @@ if($brukernavn)
 }
 else
    echo "Ikke logget inn";
-
+*/
 require_once __DIR__ . '/pages/main.php';

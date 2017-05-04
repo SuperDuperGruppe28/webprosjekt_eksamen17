@@ -19,7 +19,7 @@ require_once __DIR__ . '/../database/tools/bruker.php';
         <!-- HEADER -->
         <header><?php require 'shared/header.php'?></header>
         <!-- BODY -->
-        <header><?php require $filename.'/body.php'?></header>
+        <?php require $filename.'/body.php'?>
         <!-- FOOTER -->
         <footer><?php require 'shared/footer.php'?></footer>
     </body>
