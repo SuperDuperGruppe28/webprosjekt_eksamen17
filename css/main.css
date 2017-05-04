@@ -1,6 +1,5 @@
 html
 {
-    position: relative;
     min-height: 100%;
     margin: 0;
     padding: 0;
@@ -8,17 +7,19 @@ html
 
 body
 {
-    position: absolute;
     margin: 0; 
     padding: 0;
     width: 100%;
-    top: 0;
     background-color: bisque;
+}
+
+h1 
+{
+    margin-top: 0;
 }
 
 header
 {
-    position: relative;
     height: 100px;
     width: 100%; 
     margin: 0;
@@ -40,7 +41,7 @@ footer
 
 #headerContainer h1
 {
-    color: green;
+    color: WHITE;
 }
 
 #bodyContainer
