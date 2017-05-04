@@ -24,6 +24,7 @@
             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel"><br/><br/>
             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="10" cols="10"></textarea><br/><br/>
             <label for="apning">Åpning</label> <input type="text" id="apning" name="apning"><br/><br/>
+            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
             <input type = "hidden" id = "lengdegrad" name="lengdegrad" value = "0" />

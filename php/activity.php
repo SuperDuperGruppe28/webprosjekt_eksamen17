@@ -8,6 +8,7 @@ $bruker = loggetInnBruker();
 $PTittel = "tittel";
 $PBeskrivelse = "beskrivelse";
 $PApning = "apning";
+$PDato = "dato";
 $PPris = "pris";
 $PStatisk = "statisk";
 $PBilde = "bilde";
@@ -25,13 +26,14 @@ if($bruker)
     // Logge inn
     if($action === "reg")
     {
-        if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PPris]) && isset($_POST[$PStatisk]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
+        if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PStatisk]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
         {
             // Registerer ny aktivitet
             skapAktivitet($bruker,
                           $_POST[$PTittel],
                           $_POST[$PBeskrivelse],
                           $_POST[$PApning],
+                          $_POST[$PDato],
                           $_POST[$PPris],
                           $_POST[$PStatisk],
                           $_POST[$PBilde],

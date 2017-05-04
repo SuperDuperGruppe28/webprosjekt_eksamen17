@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Aktivitet (
   Tittel VARCHAR(45) NULL DEFAULT 'Ingen tittel',
   Beskrivelse VARCHAR(45) NULL DEFAULT 'Ingen beskrivelse',
   Apningstider VARCHAR(45) NULL DEFAULT 'Ukjent',
+  Dato DATETIME NULL,
   Pris FLOAT NULL DEFAULT 0,
   Statisk TINYINT(1) NULL DEFAULT 0,
   Bilde VARCHAR(45) NULL,

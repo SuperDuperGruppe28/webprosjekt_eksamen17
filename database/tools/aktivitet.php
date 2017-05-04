@@ -13,7 +13,7 @@ require_once "kommentar.php";
 // Oppretter en ny aktivitet
 // Todo
 // Legge til tags, eller håndtere det i aktivitetskapelseforalle.php
-function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk, $bilde, $lon, $lat)
+function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $dato, $pris, $statisk, $bilde, $lon, $lat)
 {
     if(eksistererBruker($bruker))
     {
@@ -22,6 +22,7 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $pris, $statisk,
         $akti->Tittel = $tittel;
         $akti->Beskrivelse = $beskrivelse;
         $akti->Apningstider = $apning;
+        $akti->Dato = date("Y-m-d H:i:s", strtotime($dato));
         $akti->Pris = $pris;
         $akti->Statisk = $statisk;
         $akti->Bilde = $bilde;
