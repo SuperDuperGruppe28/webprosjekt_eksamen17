@@ -2,35 +2,36 @@ html
 {
     position: relative;
     min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body
 {
-    margin: 0 0 100px; 
-    background-color: bisque;
-    
-}
-
-footer 
-{
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%; 
-    background: grey;
-}    
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    top: 0;
+    background-color: bisque;
+}
 
 header
 {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
     height: 100px;
     width: 100%; 
     margin: 0;
     background: grey;
 }
+
+footer 
+{
+    position: relative;
+    height: 50px;
+    width: 100%; 
+    background: grey;
+}    
 
 #headerContainer
 {
@@ -44,7 +45,9 @@ header
 
 #bodyContainer
 {
-   
+    position: relative;
+    margin: 0;
+    height: 100%;
 }
 
 #footerContainer
