@@ -1,14 +1,52 @@
 <?php
+// PHP_verktoy
 require_once __DIR__ . '/database/tools/bruker.php';
-/*
-echo "<h3>Demo bruker logget inn?</h3>";
-$brukernavn = loggetInnBruker();
-if($brukernavn)
-{
-    echo "Logget inn som: " . $brukernavn;
-   echo "<img src=".hentBrukerBilde()." width='40px' height='40px'></img>";
-}
-else
-   echo "Ikke logget inn";
-*/
-require_once __DIR__ . '/pages/main.php';
+
+// Starte session
+if (session_status() == PHP_SESSION_NONE) 
+    session_start();
+
+$GSide = "side";
+$tittel = "Default";
+if(isset($_GET[$GSide]))
+    $tittel = $_GET[$GSide];
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- HEAD -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Veldig bra side">
+        <meta name="author" content="Gruppe28">
+    
+        <link rel="stylesheet" type="text/css" href="/../../css/main.css">
+        <title><?php echo $tittel?></title>
+    </head>
+    
+    <body>
+        <!-- HEADER -->
+        <header><?php require 'pages/header.php'?></header>
+        <!-- BODY -->
+        
+        <?php
+            if(isset($_GET[$GSide]))
+            {
+                switch($_GET[$GSide])
+                {
+                    case "test":
+                            require 'pages/forms.php';
+                        break;
+                    
+                    default:
+                            require 'pages/main.php';
+                        break;
+                }
+            }
+        ?>
+        <!-- FOOTER -->
+        <footer><?php require 'pages/footer.php'?></footer>
+    </body>
+</html>

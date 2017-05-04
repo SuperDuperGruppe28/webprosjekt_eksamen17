@@ -14,7 +14,7 @@ body, header, footer
     margin: 0;  
     height: 100%;
     width: 100%;
-}    
+} 
 
 #headerContainer
 {
@@ -35,7 +35,7 @@ body, header, footer
 
 #bodyContainer
 {
-   /*Containeren header*/
+   /*Containeren body*/
     position: absolute;
     height: 80%;
     width: 100%;
@@ -47,7 +47,7 @@ body, header, footer
 
 #footerContainer
 {
-   /*Containeren header*/
+   /*Containeren footer*/
     position: absolute;
     height: 5%;
     width: 100%;
