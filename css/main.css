@@ -158,10 +158,15 @@ header
 
 footer 
 {
-    position: relative;
-    height: 50px;
-    width: 100%; 
+    position: absolute;
+    height: 18px; 
     background: grey;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
 }    
 
 #headerContainer
