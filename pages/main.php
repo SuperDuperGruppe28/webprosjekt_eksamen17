@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../database/tools/bruker.php';
 
-echo "<h3>Hello main body!</h3>";
+echo "<h3>Vulkanelva!(main body)</h3>";
  $brukernavn = loggetInnBruker();
  if($brukernavn)
  {
@@ -12,4 +12,6 @@ echo "<h3>Hello main body!</h3>";
     echo "Ikke logget inn";
 ?>
 
-<h1>Snart blir denne siden veldig sexy</h1>
+<h1>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
+</h1>
