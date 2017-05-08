@@ -1,4 +1,4 @@
-<div id="bodyContainer">
+<div id="loggInnBoks">
 <a href="/pages/test.php">test side</a>   
         <form action="php/user.php?action=in" method="post">
             <label for="username">Brukernavn</label> <input type="username" id="bruker" name="bruker"><br /><br />

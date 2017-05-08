@@ -88,7 +88,7 @@ input, select
     box-sizing: border-box;
 }
 
-button
+.button
 {
     width: 100%;
     background-color: #118C4E;
@@ -99,11 +99,28 @@ button
     border-radius: 25px;
     cursor: pointer;
     font-size: large;
+    focus {outline:0;}
+
 }
 
-button:hover 
+.button:hover 
 {
     background-color: #17B765;
+}
+
+.button:focus
+{
+    outline: 0;
+}
+
+.buttonRed
+{
+    background-color: #AD2D39;
+}
+
+.buttonRed:hover
+{
+    background-color: #D33948;
 }
 
 /* Navigasjonsbar */

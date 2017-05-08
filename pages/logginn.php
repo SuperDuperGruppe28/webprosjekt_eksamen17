@@ -8,21 +8,22 @@
         {
             case "loggedinn":
                 break;
-            case "loggedinn":
+            case "logginn_failed":
+                    echo "Brukernavn eller passord er feil";
                 break;
-            case "loggedinn":
+            case "regged":
+                    echo "Brukeren har blitt registrert!";
                 break;
-            case "loggedinn":
+            case "regged_failed":
+                    echo "Registreringen feilet!";
                 break;
-            case "loggedinn":
-                break;
-            case "loggedinn":
-                break;
-            case "loggedinn":
-                break;
-                
-                
+            case "regged_failed_exist":
+                    echo "Brukeren eksisterer allerede!";
+                break;      
         }
+        
+        // Tilbakestill status
+        $_SESSION["status"] = "";
     }
 	 $brukernavn = loggetInnBruker();
 	 if($brukernavn)
@@ -30,7 +31,7 @@
 	    echo "Du er allerede logget inn som: " . $brukernavn;
 	    echo "<img src=".hentBrukerBilde()." width='40px' height='40px'></img>";
         echo '<form action="php/user.php?action=out" method="post">
-            <input type="submit" value="Logg ut" />
+            <input class="button buttonRed" type="submit" value="Logg ut"/>
         </form>';
 	 }
 	 else
@@ -39,7 +40,7 @@
 	      <form action="php/user.php?action=in" method="post">
 	           Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
 	           Passord<br><input type="password" id="passord" name="passord"><br>
-	            <button type = "submit">Logg inn</button>
+	            <input class="button" type="submit" value="Logg inn"/>
 	       </form>
     
             <h3>Registrer ny bruker</h3>
@@ -47,7 +48,7 @@
                 Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
                 Email<br><input type="email" id="email" name="email"><br>
                 Passord<br><input type="password" id="passord" name="passord"><br>
-                <button type="submit">Registrer bruker</button>
+                <input class="button" type="submit" value="Registrer bruker"/>
             </form>
 	<?php
      }
