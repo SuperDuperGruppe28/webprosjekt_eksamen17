@@ -11,6 +11,7 @@ html, body
 body
 {
     background-color: #A55540;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 
@@ -75,6 +76,35 @@ footer
     border-radius: 25px;
 }
 
+/*Input forms*/
+input, select 
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button
+{
+    width: 100%;
+    background-color: #118C4E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: large;
+}
+
+button:hover 
+{
+    background-color: #17B765;
+}
 
 /* Navigasjonsbar */
 nav {

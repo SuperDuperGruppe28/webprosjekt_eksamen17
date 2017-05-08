@@ -8,6 +8,8 @@ $PBruker = "bruker";
 $PPassord = "passord";
 $PEmail = "email";
 
+$Sstatus = "status";
+
 // Om action er valgt
 if(isset($_GET["action"]))
 {
@@ -24,9 +26,11 @@ if(isset($_GET["action"]))
             {
                 $_SESSION["user"] = $bruker;
                 echo "logget inn bruker " . $bruker;
+                $_SESSION[$Sstatus] = "loggedinn";
             }else
             {
                 echo "Logginn feilet!";
+                $_SESSION[$Sstatus] = "logginn_failed";
             }
         }
     // Logge ut
@@ -51,13 +55,16 @@ if(isset($_GET["action"]))
                 {
                     sendVerifiseringsEmail($bruker);
                     echo $bruker . " har blitt registrert, sjekk din email for å verifisere konto!";
+                    $_SESSION[$Sstatus] = "regged";
                 }else
                 {
+                    $_SESSION[$Sstatus] = "regged_failed";
                     echo "Noe gikk galt";
                 }
                     
             }else
             {
+                $_SESSION[$Sstatus] = "regged_failed_exist";
                 echo "Bruker eksisterer allerede!";
             }
         }

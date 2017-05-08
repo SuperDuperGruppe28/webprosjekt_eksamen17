@@ -27,6 +27,10 @@ if(isset($_GET[$GSide]))
     
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?=time();?>">
+        
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        
         <title><?php echo $tittel?></title>
     </head>
     
