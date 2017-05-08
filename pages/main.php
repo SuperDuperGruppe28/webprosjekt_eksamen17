@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../database/tools/bruker.php';
-
 echo "<h3>Vulkanelva!(main body)</h3>";
  $brukernavn = loggetInnBruker();
  if($brukernavn)

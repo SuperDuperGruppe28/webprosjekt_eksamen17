@@ -1,6 +1,9 @@
 <?php
 // PHP_verktoy
 require_once __DIR__ . '/database/tools/bruker.php';
+require_once __DIR__ . '/database/tools/aktivitet.php';
+require_once __DIR__ . '/database/tools/kommentar.php';
+require_once __DIR__ . '/database/tools/tag.php';
 
 // Starte session
 if (session_status() == PHP_SESSION_NONE) 
@@ -23,7 +26,7 @@ if(isset($_GET[$GSide]))
         <meta name="author" content="Gruppe28">
     
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="/../../css/main.css">
+        <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?=time();?>">
         <title><?php echo $tittel?></title>
     </head>
     
@@ -32,6 +35,7 @@ if(isset($_GET[$GSide]))
         <header><?php require 'pages/header.php'?></header>
         
         <!-- BODY -->
+        <div id="bodyContainer">
         <?php
             // Henter angitt side
             if(isset($_GET[$GSide]))
@@ -41,6 +45,10 @@ if(isset($_GET[$GSide]))
                     case "test":
                             require 'pages/forms.php';
                         break;
+                        
+                    case "logginn":
+                        require 'pages/logginn.php';
+                    break;
                     
                     default:
                             require 'pages/main.php';
@@ -51,6 +59,7 @@ if(isset($_GET[$GSide]))
                 require 'pages/main.php'; 
             }
         ?>
+        </div>
         
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>

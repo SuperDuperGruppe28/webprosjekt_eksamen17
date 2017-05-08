@@ -1,3 +1,82 @@
+html, body
+{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+body
+{
+    background-color: #A55540;
+}
+
+h1 
+{
+    margin-top: 0;
+}
+
+header
+{
+    height: 100px;
+    width: 100%; 
+    margin: 0;
+    background: #4B4A5A;
+}
+
+footer 
+{
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    background: grey;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding-top: 5px;
+    background-color: #E1D5D2;
+    text-align: center;
+}    
+
+#headerContainer
+{
+  
+}
+
+#headerContainer h1
+{
+    color: WHITE;
+}
+
+#bodyContainer
+{
+    position: relative;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#footerContainer
+{
+
+}
+
+#loggInnBoks
+{
+    position: relative;
+    margin: auto;
+    margin-top: 2.5%;
+    padding: 10px;
+    width: 30%;
+    height: 40%;
+    background: #E79A58;
+    border-radius: 25px;
+}
+
+
+/* Navigasjonsbar */
 nav {
   background-color: #fff;
   border: 1px solid #dedede;
@@ -127,66 +206,3 @@ nav {
               nav > ul > li > div ul > li:hover > a {
                 background-color: rgba( 255, 255, 255, 0.1);
               }
-
-html
-{
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body
-{
-    margin: 0; 
-    padding: 0;
-    width: 100%;
-    background-color: bisque;
-}
-
-h1 
-{
-    margin-top: 0;
-}
-
-header
-{
-    height: 100px;
-    width: 100%; 
-    margin: 0;
-    background: grey;
-}
-
-footer 
-{
-    position: absolute;
-    height: 18px; 
-    background: grey;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #efefef;
-    text-align: center;
-}    
-
-#headerContainer
-{
-  
-}
-
-#headerContainer h1
-{
-    color: WHITE;
-}
-
-#bodyContainer
-{
-    position: relative;
-    margin: 0;
-    height: 100%;
-}
-
-#footerContainer
-{
-
-}
