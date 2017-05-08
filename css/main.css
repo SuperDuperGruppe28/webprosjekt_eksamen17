@@ -76,6 +76,19 @@ footer
     border-radius: 25px;
 }
 
+#aktivitetBoks
+{
+    position: relative;
+    margin: auto;
+    margin-top: 2.5%;
+    padding: 10px;
+    width: 60%;
+    height: 70%;
+    background: #E79A58;
+    border-radius: 25px;
+}
+
+
 /*Input forms*/
 input, select 
 {
@@ -99,8 +112,6 @@ input, select
     border-radius: 25px;
     cursor: pointer;
     font-size: large;
-    focus {outline:0;}
-
 }
 
 .button:hover 

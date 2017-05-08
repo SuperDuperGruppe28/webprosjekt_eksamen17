@@ -53,6 +53,10 @@ if(isset($_GET[$GSide]))
                     case "logginn":
                         require 'pages/logginn.php';
                     break;
+                        
+                    case "aktivitet":
+                        require 'pages/aktivitet.php';
+                    break;
                     
                     default:
                             require 'pages/main.php';
