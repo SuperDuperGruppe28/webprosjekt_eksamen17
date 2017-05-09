@@ -32,7 +32,7 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $dato, $pris, $s
             
         // Oppretter kommentarfelt for aktivitet
         skapKommentarfelt($akti->id);
-        return true;
+        return $akti->id;
     }
     return false;
 }

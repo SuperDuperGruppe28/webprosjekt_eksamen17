@@ -29,7 +29,7 @@ if($bruker)
         if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PStatisk]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
         {
             // Registerer ny aktivitet
-            skapAktivitet($bruker,
+           $id = skapAktivitet($bruker,
                           $_POST[$PTittel],
                           $_POST[$PBeskrivelse],
                           $_POST[$PApning],
@@ -40,6 +40,7 @@ if($bruker)
                           $_POST[$PLengdegrad],
                           $_POST[$PBreddegrad]);
             echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+            header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=".$id);
         }else
         {
             echo "Mangler data";
@@ -50,13 +51,14 @@ if($bruker)
         {
             slettAktivitet($_GET[$GAktivitet]);
             echo "Slettet aktivitet!";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
   
 }else
 {
     echo "<h1>Må være logget inn!</h1>";
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 // Sender tilbake til forrige side
-header('Location: ' . $_SERVER['HTTP_REFERER']);
