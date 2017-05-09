@@ -1,24 +1,27 @@
 <div id="headerContainer">
     <center>
-      
-    <nav>
-    <ul>
-        <li><a href="?side=main">Hjem</a></li>
-        <li>
-            <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
-            <div>
-                <ul>
-                    <?php                                 
+
+        <nav>
+            <ul>
+                <li>
+                    <a><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
+                </li>
+                <li><a href="?side=main">Hjem</a></li>
+                <li>
+                    <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
+                    <div>
+                        <ul>
+                            <?php                                 
                         foreach(hentAlleAktivitetTags() as $tag) 
                         {
                             echo '<li><a href="#">' . $tag->Tag . '</a></li>';
                         }?>
-                </ul>
-            </div>
-        </li>
-        <li><a href="?side=aktivitet">Lag aktivitet</a></li>
-        <li><a href="?side=test">Søkefelt</a></li>
-        <?php
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="?side=aktivitet">Lag aktivitet</a></li>
+                <li><a href="?side=test">Søkefelt</a></li>
+                <?php
             if(erBrukerLoggetInn())
             {
                 echo '<li><a id="loginfo" href="?side=bruker">';
@@ -33,8 +36,8 @@
                 echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
             }
         ?>
-        </li>
-    </ul>
-</nav>
+                    </li>
+            </ul>
+        </nav>
     </center>
 </div>

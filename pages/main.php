@@ -15,6 +15,3 @@ echo "<h3>Vulkanelva!(main body)</h3>";
 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
 </h3>
 
-<header>
-   <img src= "logo.png" alt="logo" />
-</header>
