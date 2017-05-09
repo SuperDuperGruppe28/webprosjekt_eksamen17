@@ -31,7 +31,6 @@
             }else
             {
                 echo "<h1>Logg inn for å se profilen din!";
-                header('Location: ?side=bruker');
             }
         }
     ?>
