@@ -154,6 +154,21 @@ function brukerLoggInn($bruker, $pass)
 }
 
 // Returner profilbildelink
+function hentBrukerBildeEx($bruker)
+{
+    if(eksistererBruker($bruker))
+    {
+        $email = hentEmail($bruker);
+        $default = "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_960_720.jpg";
+        $size = 40;
+        $grav_url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        if($grav_url == '') $grav_url = $default;
+        return $grav_url;
+    }
+    return "";
+}
+
+// Returner profilbildelink
 function hentBrukerBilde()
 {
     if(erBrukerLoggetInn())
@@ -162,6 +177,7 @@ function hentBrukerBilde()
         $default = "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_960_720.jpg";
         $size = 40;
         $grav_url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode( $default ) . "&s=" . $size;
+        if($grav_url == '') $grav_url = $default;
         return $grav_url;
     }
     return "";

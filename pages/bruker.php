@@ -27,7 +27,7 @@
                 echo "<b>Email: " . $bruker->Email . "</b><br>";
                 echo "<b>Admin: " . $bruker->Admin . "</b><br>";
                 echo "<b>Registrert: " . $bruker->Registrert . "</b><br>";
-                echo '<img src="'.hentBrukerBilde($brukernavn).'" height="100px width="100px"/>';
+                echo '<img src="'.hentBrukerBildeEx($brukernavn).'" height="100px width="100px"/>';
             }else
             {
                 echo "<h1>Logg inn for å opprette en ny aktivitet!";
