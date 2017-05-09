@@ -19,7 +19,7 @@ body
   min-height:100%;
   background-color: ghostwhite;
 =======
-    background-color: #A55540;
+    background-color: ghostwhite;
     font-family: 'Roboto', sans-serif;
     min-height: 100%;
 >>>>>>> origin/master
@@ -35,7 +35,6 @@ header
     height: 100px;
     width: 100%; 
     margin: 0;
-    background: #4B4A5A;
 }
 
 footer 
@@ -59,7 +58,7 @@ footer
 
 #login
 {
-  background-color: blue;
+  background-color: lightblue;
 }
 
 #headerContainer
