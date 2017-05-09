@@ -25,7 +25,7 @@ if(isset($_GET["action"]))
             if(brukerLoggInn($bruker, $pass))
             {
                 $_SESSION["user"] = $bruker;
-                echo "logger inn som " . $bruker . "..";
+                echo "logger inn " . $bruker . "..";
                 $_SESSION[$Sstatus] = "loggedinn";
             }else
             {
