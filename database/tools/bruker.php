@@ -21,6 +21,15 @@ function loggetInnBruker()
     return false;
 }
 
+function hentBruker($bruker)
+{
+    if(eksistererBruker($bruker))
+    {
+        return Bruker::find($bruker);
+    }
+    return false;
+}
+
 // Returnerer om en bruker er logget inn
 function erBrukerLoggetInn()
 {
