@@ -11,7 +11,7 @@
                 echo "<b>Email: " . $bruker->Email . "</b><br>";
                 echo "<b>Admin: " . $bruker->Admin . "</b><br>";
                 echo "<b>Registrert: " . $bruker->Registrert . "</b><br>";
-                echo '<img src="'.hentBrukerBilde($id).'" height="100px width="100px"/>';
+                echo '<img src="'.hentBrukerBildeEx($id).'" height="100px width="100px"/>';
                 
             }else
             {
