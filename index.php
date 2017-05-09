@@ -42,26 +42,10 @@ if(isset($_GET[$GSide]))
         <div id="bodyContainer">
         <?php
             // Henter angitt side
-            if(isset($_GET[$GSide]))
+            $page = 'pages/'.$_GET[$GSide].'.php';
+            if(file_exists($page))
             {
-                switch($_GET[$GSide])
-                {
-                    case "test":
-                            require 'pages/forms.php';
-                        break;
-                        
-                    case "logginn":
-                        require 'pages/logginn.php';
-                    break;
-                        
-                    case "aktivitet":
-                        require 'pages/aktivitet.php';
-                    break;
-                    
-                    default:
-                            require 'pages/main.php';
-                        break;
-                }
+                require $page;
             }else
             {
                 require 'pages/main.php'; 
