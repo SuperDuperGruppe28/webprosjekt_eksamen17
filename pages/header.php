@@ -32,7 +32,7 @@ foreach(hentKommentarer(3) as $kom)
         </li>
         <li><a href="?side=test">Aktuelt</a></li>
         <li><a href="?side=test">Om Vulkanelva</a>
-        <li><a href="?side=test">Min side</a></li>
+        <li><a href="?side=bruker">Min side</a></li>
         <li><a href="?side=test">Søkefelt</a></li>
         <?php
             if(erBrukerLoggetInn())
