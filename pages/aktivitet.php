@@ -54,8 +54,8 @@
             {?>
              <h1>Lag ny aktivitet</h1>
         <form action="php/activity.php?action=reg" method="post">
-            <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel"><br/><br/>
-            <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100"></textarea><br/><br/>
+            <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
+            <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
             <label for="apning">Åpning</label> <input type="text" id="apning" name="apning"><br/><br/>
             <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>

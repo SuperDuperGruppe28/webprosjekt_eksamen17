@@ -114,6 +114,7 @@ function hentAktivitetTags($aktivitet)
         return $tags;
     }
     return false;
+}
 
 function hentAlleAktivitetTags()
 {
