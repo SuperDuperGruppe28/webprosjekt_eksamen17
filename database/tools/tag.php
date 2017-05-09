@@ -103,3 +103,15 @@ function hentAktivitetTagVekt($aktivitet, $tag)
     $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first(); 
     return $vekt->Vekt;
 }
+
+// Returnerer kommentarene i en aktivitet
+function hentAktivitetTags($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {        
+        $tags = TagsAktivitet::where("Aktivitet", "=", $aktivitet)->get();
+        
+        return $tags;
+    }
+    return false;
+}

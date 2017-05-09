@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../database/tools/bruker.php';
 require_once __DIR__ . '/../database/tools/aktivitet.php';
+require_once __DIR__ . '/../database/tools/tag.php';
 
 $bruker = loggetInnBruker();
 
@@ -14,6 +15,13 @@ $PStatisk = "statisk";
 $PBilde = "bilde";
 $PLengdegrad = "lengdegrad";
 $PBreddegrad = "breddegrad";
+
+$PTag1 = "tag_1";
+$PTag2 = "tag_2";
+$PTag3 = "tag_3";
+$PTagVekt1 = "tag_vekt1";
+$PTagVekt2 = "tag_vekt2";
+$PTagVekt3 = "tag_vekt3";
 
 $GAction = "action";
 $GAktivitet = "akti";
@@ -39,6 +47,14 @@ if($bruker)
                           $_POST[$PBilde],
                           $_POST[$PLengdegrad],
                           $_POST[$PBreddegrad]);
+            
+            if(isset($_POST[$PTag1]) && isset($_POST[$PTag2]) && isset($_POST[$PTag3]) && isset($_POST[$PTagVekt1]) && isset($_POST[$PTagVekt2]) && isset($_POST[$PTagVekt3]))
+            {
+                // Tags
+                registrerAktivitetTag($id, $_POST[$PTag1], $_POST[$PTagVekt1]);
+                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
+                registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
+            }
             echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
             header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=".$id);
         }else

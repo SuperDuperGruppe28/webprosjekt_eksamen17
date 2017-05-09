@@ -30,7 +30,7 @@
                 echo '<img src="'.hentBrukerBildeEx($brukernavn).'" height="100px width="100px"/>';
             }else
             {
-                echo "<h1>Logg inn for å opprette en ny aktivitet!";
+                echo "<h1>Logg inn for å se profilen din!";
             }
         }
     ?>

@@ -32,9 +32,23 @@ foreach(hentKommentarer(3) as $kom)
         </li>
         <li><a href="?side=test">Aktuelt</a></li>
         <li><a href="?side=test">Om Vulkanelva</a>
-        <li><a href="?side=test">Min side</a></li>
+        <li><a href="?side=bruker">Min side</a></li>
         <li><a href="?side=test">Søkefelt</a></li>
-                    
+        <?php
+            if(erBrukerLoggetInn())
+            {
+                echo '<li><a id="loginfo" href="?side=bruker">';
+                echo "<img style='vertical-align: middle' src=".hentBrukerBilde()." width='40px' height='40px'></img>";
+                echo ' '.loggetInnBruker();
+                echo '</a></li>';
+                
+                echo '<li><a id="logout" href="/php/user.php?action=out">Logg ut</a></li>';
+            }
+            else
+            {
+                echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
+            }
+        ?>
         </li>
     </ul>
 </nav>

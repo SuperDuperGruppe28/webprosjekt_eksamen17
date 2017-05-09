@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE)
     session_start();
 
 $GSide = "side";
-$tittel = "Default";
+$tittel = "main";
 if(isset($_GET[$GSide]))
     $tittel = $_GET[$GSide];
 ?>
@@ -27,12 +27,10 @@ if(isset($_GET[$GSide]))
     
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?=time();?>">
-        <link rel="stylesocial" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <a href="#" class="social social-facebook"</a>
-        <a href="#" class="social social-twitter"</a>
+        <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
         
         <title><?php echo $tittel?></title>
     </head>
@@ -45,7 +43,7 @@ if(isset($_GET[$GSide]))
         <div id="bodyContainer">
         <?php
             // Henter angitt side
-            $page = 'pages/'.$_GET[$GSide].'.php';
+            $page = 'pages/'.$tittel.'.php';
             if(file_exists($page))
             {
                 require $page;
@@ -55,9 +53,6 @@ if(isset($_GET[$GSide]))
             }
         ?>
         </div>
-        
-        <!-- GOOGLE MAP -->
-        <div id="map"></div>
         
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
