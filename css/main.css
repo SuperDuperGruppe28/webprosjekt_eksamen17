@@ -10,6 +10,7 @@ html, body
     margin: 0;
     padding: 0;
     overflow: auto;
+    background-image: url("logo.png")
 }
 
 body
@@ -51,7 +52,7 @@ footer
 
 #logout
 {
-    background-color: red;
+    background-color: lightcoral;
 }
 
 #login
