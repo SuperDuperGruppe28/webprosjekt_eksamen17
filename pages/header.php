@@ -3,9 +3,9 @@
       
     <nav>
     <ul>
-        <li><a href="?side=Home">Hjem</a></li>
+        <li><a href="?side=main">Hjem</a></li>
         <li>
-            <a href="?side=Activities">Aktiviteter <span class="caret"></span></a>
+            <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
             <div>
                 <ul>
                     <li>
@@ -30,9 +30,7 @@ foreach(hentKommentarer(3) as $kom)
                 </ul>
             </div>
         </li>
-        <li><a href="?side=test">Aktuelt</a></li>
-        <li><a href="?side=test">Om Vulkanelva</a>
-        <li><a href="?side=bruker">Min side</a></li>
+        <li><a href="?side=aktivitet">Lag aktivitet</a></li>
         <li><a href="?side=test">Søkefelt</a></li>
         <?php
             if(erBrukerLoggetInn())
