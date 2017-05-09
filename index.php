@@ -41,6 +41,7 @@ if(isset($_GET[$GSide]))
         
         <!-- BODY -->
         <div id="bodyContainer">
+        
         <?php
             // Henter angitt side
             $page = 'pages/'.$tittel.'.php';
@@ -52,10 +53,10 @@ if(isset($_GET[$GSide]))
                 require 'pages/main.php'; 
             }
         ?>
+        <div id="map">  
         </div>
         
-        <!-- GOOGLE MAP -->
-        <div id="map"></div>
+        
         
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
