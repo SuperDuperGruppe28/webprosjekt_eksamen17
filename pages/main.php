@@ -10,6 +10,7 @@ echo "<h3>Vulkanelva!(main body)</h3>";
     echo "Ikke logget inn";
 ?>
 
-<h1>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
+<h3>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
-</h1>
+</h3>
+

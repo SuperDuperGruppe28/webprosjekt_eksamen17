@@ -30,6 +30,7 @@ if(isset($_GET[$GSide]))
         
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
         
         <title><?php echo $tittel?></title>
     </head>

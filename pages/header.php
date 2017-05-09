@@ -34,7 +34,17 @@ foreach(hentKommentarer(3) as $kom)
         <li><a href="?side=test">Om Vulkanelva</a>
         <li><a href="?side=test">Min side</a></li>
         <li><a href="?side=test">Søkefelt</a></li>
-                    
+        <?php
+            if(erBrukerLoggetInn())
+            {
+                echo '<li><a id="logut" href="user.php?action=out">Logg ut</a></li>';
+            }
+            else
+            {
+                echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
+            }
+        ?>
+        
         </li>
     </ul>
 </nav>
