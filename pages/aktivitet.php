@@ -48,5 +48,21 @@
             }
         }
     ?>
+    
+        <h1>Post kommentar</h1>
+        <form action="php/comment.php?action=post" method="post">
+            <label for="tekst">Tekst</label> <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea><br/><br/>
+            <input type="hidden" id="aktivitet" name="aktivitet" value="<?=$id?>" />            
+            <button type = "submit">post kommentar</button>
+        </form>
+    
+    <?php
+        echo "<h1>Kommentarer</h1>";
+        foreach(hentKommentarer($id) as $kom)
+        {
+            echo $kom->Bruker . ": " . $kom->Tekst;
+            echo "<br>";
+        }
+    ?>
 
 </div>	

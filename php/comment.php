@@ -64,13 +64,5 @@ if($bruker)
     echo "<h1>Må være logget inn!</h1>";
 }
 
-// Demo vise kommentarer
-echo "<h1>Kommentarer</h1>";
-foreach(hentKommentarer(3) as $kom)
-{
-    echo $kom->Bruker . ": " . $kom->Tekst;
-    echo "<br>";
-}
-
 // Sender tilbake til forrige side
-//header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ' . $_SERVER['HTTP_REFERER']);
