@@ -37,14 +37,18 @@ foreach(hentKommentarer(3) as $kom)
         <?php
             if(erBrukerLoggetInn())
             {
-                echo '<li><a id="logut" href="user.php?action=out">Logg ut</a></li>';
+                echo '<li><a id="loginfo" href="?side=bruker">';
+                echo "<img src=".hentBrukerBilde()." width='40px' height='40px'></img>";
+                echo ' '.loggetInnBruker();
+                echo '</a></li>';
+                
+                echo '<li><a id="logout" href="user.php?action=out">Logg ut</a></li>';
             }
             else
             {
                 echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
             }
         ?>
-        
         </li>
     </ul>
 </nav>

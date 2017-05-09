@@ -46,7 +46,12 @@ footer
     text-align: center;
 }    
 
-#logut
+#loginfo
+{
+    
+}
+
+#logout
 {
     background-color: red;
 }
