@@ -54,6 +54,9 @@ if(isset($_GET[$GSide]))
         ?>
         </div>
         
+        <!-- GOOGLE MAP -->
+        <div id="map"></div>
+        
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>
