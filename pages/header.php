@@ -16,13 +16,7 @@
                 </ul>
             </div>
         </li>
-<<<<<<< HEAD
-        <li><a href="?side=test">Aktuelt</a></li>
-        <li><a href="?side=test">Om Vulkanelva</a>
-        <li><a href="?side=bruker">Min side</a></li>
-=======
         <li><a href="?side=aktivitet">Lag aktivitet</a></li>
->>>>>>> 94f68907ab05791c793d60c0fd1341eeb81f54be
         <li><a href="?side=test">Søkefelt</a></li>
         <?php
             if(erBrukerLoggetInn())
