@@ -10,6 +10,7 @@ html, body
     margin: 0;
     padding: 0;
     overflow: auto;
+    background-image: url("logo.png")
 }
 
 body
@@ -45,13 +46,21 @@ footer
 }    
 
 #loginfo
+<<<<<<< HEAD
+{
+    
+}
+
+#logout
+=======
+>>>>>>> 94f68907ab05791c793d60c0fd1341eeb81f54be
 {
     
 }
 
 #logout
 {
-    background-color: red;
+    background-color: lightcoral;
 }
 
 #login

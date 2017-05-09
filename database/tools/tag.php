@@ -114,4 +114,9 @@ function hentAktivitetTags($aktivitet)
         return $tags;
     }
     return false;
+
+function hentAlleAktivitetTags()
+{
+        $tags = TagsAktivitet::All();
+        return $tags;
 }

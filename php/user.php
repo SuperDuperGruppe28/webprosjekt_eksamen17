@@ -25,7 +25,7 @@ if(isset($_GET["action"]))
             if(brukerLoggInn($bruker, $pass))
             {
                 $_SESSION["user"] = $bruker;
-                echo "logget inn bruker " . $bruker;
+                echo "logger inn " . $bruker . "..";
                 $_SESSION[$Sstatus] = "loggedinn";
             }else
             {
@@ -38,7 +38,7 @@ if(isset($_GET["action"]))
     {
         session_unset(); 
         session_destroy();
-        echo "logout";
+        echo "logger ut..";
         
     // Registerer ny bruker
     }else if($action === "reg")
@@ -73,4 +73,4 @@ if(isset($_GET["action"]))
 }
 
 // Sender tilbake til forrige side
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
