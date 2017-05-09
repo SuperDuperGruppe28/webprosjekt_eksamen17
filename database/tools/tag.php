@@ -81,7 +81,7 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
     {
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
-        $tags->Bruker = $bruker;
+        $tags->Aktivitet = $aktivitet;
         $tags->Vekt = $vekt;
 
         $tags->save();
