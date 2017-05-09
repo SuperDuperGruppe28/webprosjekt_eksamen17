@@ -38,7 +38,7 @@ foreach(hentKommentarer(3) as $kom)
             if(erBrukerLoggetInn())
             {
                 echo '<li><a id="loginfo" href="?side=bruker">';
-                echo "<img src=".hentBrukerBilde()." width='40px' height='40px'></img>";
+                echo "<img style='vertical-align: middle' src=".hentBrukerBilde()." width='40px' height='40px'></img>";
                 echo ' '.loggetInnBruker();
                 echo '</a></li>';
                 
