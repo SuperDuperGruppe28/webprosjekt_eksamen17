@@ -32,6 +32,8 @@
             <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
+            
+            <!--Koordinater for GOOGLE MAPS KART-->
             <input type = "hidden" id = "lengdegrad" name="lengdegrad" value = "0" />
             <input type = "hidden" id = "breddegrad" name="breddegrad" value = "0" />
             
@@ -47,20 +49,25 @@
                 echo "<h1>Logg inn for å opprette en ny aktivitet!";
             }
         }
-    ?>
     
+    $brukernavn = loggetInnBruker();
+    // Sjekke om bruker er logget inn
+    if($brukernavn)
+    {
+    ?>
         <h1>Post kommentar</h1>
         <form action="php/comment.php?action=post" method="post">
-            <label for="tekst">Tekst</label> <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea><br/><br/>
+            <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea><br/><br/>
             <input type="hidden" id="aktivitet" name="aktivitet" value="<?=$id?>" />            
-            <button type = "submit">post kommentar</button>
+            <input class="button" type="submit" value="post kommentar"/>
         </form>
     
     <?php
+    }
         echo "<h1>Kommentarer</h1>";
         foreach(hentKommentarer($id) as $kom)
         {
-            echo $kom->Bruker . ": " . $kom->Tekst;
+            echo "<b>" . $kom->Dato . " - " . $kom->Bruker . "</b>: " . $kom->Tekst;
             echo "<br>";
         }
     ?>

@@ -117,7 +117,7 @@ function hentKommentarer($aktivitet)
     {
         $kommentarfeltId = hentAktivitetKommentarfelt($aktivitet);
         
-        $kommentarer = Kommentar::where("Kommentarfelt", "=", $kommentarfeltId)->get();
+        $kommentarer = Kommentar::where("Kommentarfelt", "=", $kommentarfeltId)->orderBy('Dato', 'desc')->get();
         
         return $kommentarer;
     }
