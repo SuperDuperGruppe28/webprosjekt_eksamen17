@@ -27,9 +27,12 @@ if(isset($_GET[$GSide]))
     
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?=time();?>">
+        <link rel="stylesocial" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <a href="#" class="social social-facebook"</a>
+        <a href="#" class="social social-twitter"</a>
         
         <title><?php echo $tittel?></title>
     </head>
@@ -52,6 +55,9 @@ if(isset($_GET[$GSide]))
             }
         ?>
         </div>
+        
+        <!-- GOOGLE MAP -->
+        <div id="map"></div>
         
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
