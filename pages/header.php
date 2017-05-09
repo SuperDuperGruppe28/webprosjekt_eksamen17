@@ -37,7 +37,7 @@ foreach(hentKommentarer(3) as $kom)
         <?php
             if(erBrukerLoggetInn())
             {
-                echo '<li><a id="logut" href="user.php?action=out">Logg ut</a></li>';
+                echo '<li><a id="logut" href="/php/user.php?action=out">Logg ut</a></li>';
             }
             else
             {
