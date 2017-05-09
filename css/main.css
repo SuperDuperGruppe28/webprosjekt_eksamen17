@@ -119,6 +119,11 @@ input,select
   background:#D33948;
 }
 
+.inputTag
+{
+    width: 50%;
+}
+
 nav
 {
   border:1px solid #dedede;
