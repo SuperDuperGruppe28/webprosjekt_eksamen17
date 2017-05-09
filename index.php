@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE)
     session_start();
 
 $GSide = "side";
-$tittel = "Default";
+$tittel = "main";
 if(isset($_GET[$GSide]))
     $tittel = $_GET[$GSide];
 ?>
@@ -43,7 +43,7 @@ if(isset($_GET[$GSide]))
         <div id="bodyContainer">
         <?php
             // Henter angitt side
-            $page = 'pages/'.$_GET[$GSide].'.php';
+            $page = 'pages/'.$tittel.'.php';
             if(file_exists($page))
             {
                 require $page;
