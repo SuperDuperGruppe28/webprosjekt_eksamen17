@@ -42,7 +42,7 @@ foreach(hentKommentarer(3) as $kom)
                 echo ' '.loggetInnBruker();
                 echo '</a></li>';
                 
-                echo '<li><a id="logout" href="user.php?action=out">Logg ut</a></li>';
+                echo '<li><a id="logout" href="/php/user.php?action=out">Logg ut</a></li>';
             }
             else
             {
