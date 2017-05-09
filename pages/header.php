@@ -8,25 +8,11 @@
             <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
             <div>
                 <ul>
-                    <li>
-                        <a href="?side=Activities">Ting <span class="caret"></span></a>
-                        <div>
-                            <ul>
-                                
-                                <li><a href="#">Arrangementer</a></li>
-                                <li><a href="#">Butikker</a></li>
-                                <li><a href="#">Restauranter</a></li>
-                                <li><a href="#">Fysisk aktivitet</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="?side=test">Tang</a></li>
-                    <?php 
-                                
-foreach(hentKommentarer(3) as $kom) 
-{
-    echo '<li><a href="#">' . $kom->Bruker . ": " . $kom->Tekst . '</a></li>';
-}                               ?>
+                    <?php                                 
+                        foreach(hentAlleAktivitetTags() as $tag) 
+                        {
+                            echo '<li><a href="#">' . $tag->Tag . '</a></li>';
+                        }?>
                 </ul>
             </div>
         </li>
