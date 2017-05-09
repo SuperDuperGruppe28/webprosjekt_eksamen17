@@ -7,13 +7,18 @@
             if(eksistererAktivitet($id))
             {
                 $akt = hentAktivitet($id);
+                $tags = hentAktivitetTags($id);
                 echo "<h1>" . $akt->Tittel . "</h1>";
                 echo "<b>Sjef: " . $akt->Bruker . "</b><br>";
                 echo "<b>" . $akt->Beskrivelse . "</b><br>";
                 echo "<b>" . $akt->Apningstider . "</b><br>";
                 echo "<b>" . $akt->Dato . "</b><br>";
                 echo "<b>" . $akt->Pris . "kr</b><br>";
-                echo '<img src="'.$akt->Bilde.'" height="100px width="100px"/>';
+                echo '<img src="'.$akt->Bilde.'" height="100px width="100px"/><br>';
+                foreach($tags as $tag)
+                        {
+                            echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
+                        }
                 
                 // Kommentarfelt
                 $brukernavn = loggetInnBruker();
