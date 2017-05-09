@@ -101,18 +101,13 @@ footer
     border-radius: 25px;
 }
 
-
-<<<<<<< HEAD
 .inputTag
 {
     width: 50%;
 }
 
-nav
-=======
 /*Input forms*/
 input, select 
->>>>>>> 787c51e7a77f8f96c6ea28f86e24d703bf1f4fc2
 {
     width: 100%;
     padding: 12px 20px;
