@@ -1,4 +1,8 @@
 <?php
+// vis feilmeildinger
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // PHP_verktoy
 require_once __DIR__ . '/database/tools/bruker.php';
 require_once __DIR__ . '/database/tools/aktivitet.php';
@@ -39,6 +43,7 @@ if(isset($_GET[$GSide]))
     </head>
     
     <body>
+        
         <!-- HEADER -->
         <header><?php require 'pages/header.php'?></header>
         
@@ -56,7 +61,8 @@ if(isset($_GET[$GSide]))
                 require 'pages/main.php'; 
             }
         ?>
-        
+            
+        </div>
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>

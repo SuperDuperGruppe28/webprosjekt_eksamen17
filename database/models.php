@@ -111,7 +111,8 @@ class Aktivitet extends mod
     
     public function deltagere()
     {
-        return $this->belongsTo("Deltagre", "id", "Aktivitet");
+        
+        return $this->belongsTo("Deltagelse", "id", "Aktivitet");
     }
 }
 
