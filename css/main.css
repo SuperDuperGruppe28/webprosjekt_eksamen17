@@ -44,6 +44,7 @@ footer {
     text-align: center;
 }    
 
+
 #loginfo
 {
     
@@ -55,6 +56,11 @@ footer {
 
 }
 
+#delta {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #6a6a6a;
+}
 
 #map
 {

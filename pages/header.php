@@ -8,36 +8,7 @@
                 </li>
                 <li><a href="?side=main">Hjem</a></li>
                 <li>
-                    <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
-                    <div>
-                        <ul>
-                        <?php 
-                            $aktiviteter = Aktivitet::All(); 
-                            foreach($aktiviteter as $aktivitet) {
-                                $deltagere = $aktivitet->deltagere()->get();
-                                $deltar = false;
-                                foreach($deltagere as $deltager)
-                                {
-                                    if ($deltager->Bruker == loggetInnBruker()) {
-                                        $deltar = true;
-                                        break;
-                                    }
-                                }
-                                $href = "?side=aktivitet&id=" . $aktivitet->id;
-                                if($deltar)
-                                {
-                                    echo '<li><a id="login" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
-                                } else
-                                {
-                                    echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
-                                }   
-                            }  
-                        ?>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="?side=aktiviteter">Tags <span class="caret"></span></a>
+                    <a href="?side=aktiviteter">Aktiviteter<span class="caret"></span></a>
                     <div>
                         <ul>
                             <?php                                 
@@ -50,7 +21,28 @@
                             //echo '<pre>';
                            // print_r($aktiviteter);
                             foreach($aktiviteter as $aktivitet) {
-                                echo '<li><a href="#">' . hentAktivitet($aktivitet->Aktivitet)->Tittel . '</li>';
+                                $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
+                                $aktivitet = hentAktivitet($aktivitet->Aktivitet);
+                                
+                                $deltagere = $aktivitet->deltagere()->get();
+                                $deltar = false;
+                                foreach($deltagere as $deltager)
+                                {
+                                    if ($deltager->Bruker == loggetInnBruker()) {
+                                        $deltar = true;
+                                        break;
+                                    }
+                                }
+                                
+                                //echo '<li><a href="'.$href.'">' . $aktivitet->Tittel . '</li>';
+                                $href = "?side=aktivitet&id=" . $aktivitet->id;
+                                if($deltar)
+                                {
+                                    echo '<li><a id="delta" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                } else
+                                {
+                                    echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                }
                             }
                             
                             echo '</ul></div></li>';
