@@ -58,11 +58,19 @@ footer {
 >>>>>>> Stashed changes
 }
 
+
  #map 
 {
     width: 300px;
     height: 300px;
     left: 850px;
+}
+
+#kalender
+{ 
+    top: 250px; 
+    left: 1200px;
+    position: absolute;
 }
 
 #vulkanlogo {

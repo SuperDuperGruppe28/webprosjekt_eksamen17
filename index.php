@@ -53,8 +53,8 @@ if(isset($_GET[$GSide]))
                 require 'pages/main.php'; 
             }
         ?>
-        <div id="map">  
-        </div>
+            <div id="map"></div>
+            <div id="kalender"></div>
         
         
         
