@@ -50,7 +50,28 @@
                             //echo '<pre>';
                            // print_r($aktiviteter);
                             foreach($aktiviteter as $aktivitet) {
-                                echo '<li><a href="#">' . hentAktivitet($aktivitet->Aktivitet)->Tittel . '</li>';
+                                $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
+                                $aktivitet = hentAktivitet($aktivitet->Aktivitet);
+                                
+                                $deltagere = $aktivitet->deltagere()->get();
+                                $deltar = false;
+                                foreach($deltagere as $deltager)
+                                {
+                                    if ($deltager->Bruker == loggetInnBruker()) {
+                                        $deltar = true;
+                                        break;
+                                    }
+                                }
+                                
+                                //echo '<li><a href="'.$href.'">' . $aktivitet->Tittel . '</li>';
+                                $href = "?side=aktivitet&id=" . $aktivitet->id;
+                                if($deltar)
+                                {
+                                    echo '<li><a id="login" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                } else
+                                {
+                                    echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                }
                             }
                             
                             echo '</ul></div></li>';
