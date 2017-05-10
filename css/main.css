@@ -55,6 +55,7 @@ footer {
 
 }
 
+
 #map
 {
     position: relative;
@@ -62,6 +63,13 @@ footer {
     padding: 0;
     height: 300px;
     width: 300px;
+}
+
+#kalender
+{ 
+    top: 250px; 
+    left: 1200px;
+    position: absolute;
 }
 
 #vulkanlogo {
