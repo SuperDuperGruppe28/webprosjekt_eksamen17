@@ -41,9 +41,20 @@
                     <div>
                         <ul>
                             <?php                                 
-                        foreach(hentAlleAktivitetTags() as $tag) 
+                        foreach(Tags::All() as $tag) 
                         {
-                            echo '<li><a href="#">' . $tag->Tag . '</a></li>';
+                            echo '<li><a href="#">' . $tag->Tag . '<span class="caret"></span></a>';
+                            echo '<div><ul>';
+                            
+                            $aktiviteter = TagsAktivitet::where("Tag", "=", $tag->Tag)->get();
+                            //echo '<pre>';
+                           // print_r($aktiviteter);
+                            foreach($aktiviteter as $aktivitet) {
+                                echo '<li><a href="#">' . hentAktivitet($aktivitet->Aktivitet)->Tittel . '</li>';
+                            }
+                            
+                            echo '</ul></div></li>';
+                            
                         }?>
                         </ul>
                     </div>
