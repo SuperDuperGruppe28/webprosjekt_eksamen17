@@ -23,12 +23,13 @@
                                     break;
                                 }
                             }
+                            $href = "?side=aktivitet&id=" . $aktivitet->id;
                             if($deltar)
                             {
-                                echo '<li><a id="login" href="#">' . $aktivitet->Tittel . '</a></li>';
+                                echo '<li><a id="login" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
                             } else
                             {
-                                echo '<li><a href="#">' . $aktivitet->Tittel . '</a></li>';
+                                echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
                             }
                             
                         }  
