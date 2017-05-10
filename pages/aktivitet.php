@@ -1,23 +1,41 @@
 <!--Javscript Map-->
     <script type="text/javascript">
-            google.maps.event.addDomListener(window, 'load', init);
+        //google.maps.event.addDomListener(window, 'load', init);
         
-            function init() {
-                    var mapOptions = {
+        function startMaps(x, y, side)
+        {
+             var mapOptions = 
+                {
                     zoom: 16,
 
-                    center: new google.maps.LatLng(59.922425, 10.751672), // Vulkan, Oslo
+                    center: new google.maps.LatLng(x, y), // Vulkan, Oslo
                     styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
                 };
+                
                 var mapElement = document.getElementById('map');
                 var map = new google.maps.Map(mapElement, mapOptions);
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(59.922425, 10.751672),
+                    marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(x, y),
                     map: map,
-                    draggable:true,
+                    draggable:side,
                     title: 'Vulkan'
                 });
-            }
+                
+                if(side)
+                {
+                    google.maps.event.addListener(marker, 'dragend', function() {settKoordinater(marker.getPosition().lat(), marker.getPosition().lng())});
+                    settKoordinater(marker.getPosition().lat(), marker.getPosition().lng());     
+                } 
+        }
+        
+        // Setter koordinatene fra map til Post submit
+        function settKoordinater(x,y)
+        {
+            console.log("x: " + x + " Y: " + y );
+            document.getElementById("breddegrad").value = x;
+            document.getElementById("lengdegrad").value = y;
+        }
+        
         </script>
 
 <div id="aktivitetBoks">
@@ -41,6 +59,10 @@
                         {
                             echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
                         }
+                echo "<div id='map'></div>";
+                
+                //<!--Laste google maps-->
+                echo "<script type='text/javascript'>startMaps(" . $akt->Breddegrad . ", " . $akt->Lengdegrad . ", false) </script>";
                 
                 // Kommentarfelt
                 $brukernavn = loggetInnBruker();
@@ -84,15 +106,17 @@
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
             
             <!--Koordinater for GOOGLE MAPS KART-->
-            <input type = "hidden" id = "lengdegrad" name="lengdegrad" value = "0" />
-            <input type = "hidden" id = "breddegrad" name="breddegrad" value = "0" />
+            <input type = "hidden" id="lengdegrad" name="lengdegrad" value = "0" />
+            <input type = "hidden" id= "breddegrad" name="breddegrad" value = "0" />
             
             <?php
             if(erAdmin($brukernavn))
                 echo '<label for="statisk">Statisk</label> <input type="number" id="statisk" name="statisk"><br/><br/>';    
             ?>
-                        
+            
             <div id="map"></div>
+            <!--Laste google maps-->
+            <script type='text/javascript'>startMaps(59.922425, 10.751672, true); </script>
             
             <!--TAGS-->
             <h3>Tags - Vekt</h3>
