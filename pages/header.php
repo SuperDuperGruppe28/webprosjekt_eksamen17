@@ -8,36 +8,7 @@
                 </li>
                 <li><a href="?side=main">Hjem</a></li>
                 <li>
-                    <a href="?side=aktiviteter">Aktiviteter <span class="caret"></span></a>
-                    <div>
-                        <ul>
-                        <?php 
-                            $aktiviteter = Aktivitet::All(); 
-                            foreach($aktiviteter as $aktivitet) {
-                                $deltagere = $aktivitet->deltagere()->get();
-                                $deltar = false;
-                                foreach($deltagere as $deltager)
-                                {
-                                    if ($deltager->Bruker == loggetInnBruker()) {
-                                        $deltar = true;
-                                        break;
-                                    }
-                                }
-                                $href = "?side=aktivitet&id=" . $aktivitet->id;
-                                if($deltar)
-                                {
-                                    echo '<li><a id="login" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
-                                } else
-                                {
-                                    echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
-                                }   
-                            }  
-                        ?>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="?side=aktiviteter">Tags <span class="caret"></span></a>
+                    <a href="?side=aktiviteter">Aktiviteter<span class="caret"></span></a>
                     <div>
                         <ul>
                             <?php                                 
@@ -67,7 +38,7 @@
                                 $href = "?side=aktivitet&id=" . $aktivitet->id;
                                 if($deltar)
                                 {
-                                    echo '<li><a id="login" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                    echo '<li><a id="delta" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
                                 } else
                                 {
                                     echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
