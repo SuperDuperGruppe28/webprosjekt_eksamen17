@@ -56,7 +56,7 @@ if($bruker)
                 registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
             }
             echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
-            header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=".$id);
+            //header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=".$id);
         }else
         {
             echo "Mangler data";

@@ -77,7 +77,7 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
     if(!eksistererTag($tag))
         registrerTag($tag);
        
-    if(eksistererTag($tag) && !eksistererAktivitetTag($tag)) //  Sjekke om aktivitet eksisterer
+    if(eksistererTag($tag) && eksistererAktivitet($aktivitet)) //  Sjekke om aktivitet eksisterer
     {
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
