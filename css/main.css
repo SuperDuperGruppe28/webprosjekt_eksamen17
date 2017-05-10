@@ -23,6 +23,10 @@ h1 {
     margin-top: 0;
 }
 
+h3{
+    text-align: center;
+}
+
 header {
     position: relative;
     z-index: 10;
@@ -82,8 +86,96 @@ footer {
     width: 50px;
     height: 50px;
     text-align: left;
+}   
+
+#katogorier 
+{
+    position: absolute;
+    width: 125px;
+    height: 200px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    text-align: center;
 }
 
+#topleft
+{
+    padding-left: 185px;
+    display: inline-block;  
+    left: 350px;
+    top: 150px;
+}
+
+#topcenter
+{
+    padding-left: 185px;
+    display: inline-block;
+    left: 700px;
+    top: 150px;
+}
+
+#topright
+{
+    padding-left: 185px;
+    display: inline-block;
+    left: 1100px;
+    top: 150px;
+}
+
+#bottomleft
+{
+    padding-left: 185px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: inline-block;
+    left: 350px;
+    top: 550px;
+}
+
+#bottomcenter
+{
+    padding-left: 185px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: inline-block;
+    left: 700px;
+    top: 550px;
+}
+
+#bottomright
+{
+    padding-left: 185px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: inline-block;
+    left: 1050px;
+    top: 550px;
+}
+#textbox
+{
+    width: 250px;
+    height: 290px;
+    border-style: solid;
+    border-color: black;    
+    border-width: 1px;
+    text-align: center;
+}
+
+#vannbilde
+{ 
+    width:250px;
+    height:200px;  
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#wrap
+{
+    width: 125px;
+    height: 100%;
+}
 #logout {
     background-color: darkred;
 }
@@ -105,7 +197,10 @@ footer {
     width: 100%;
 }
 
-#footerContainer {}
+#footerContainer 
+{
+    
+}
 
 #loggInnBoks {
     position: relative;
