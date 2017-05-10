@@ -59,6 +59,10 @@
                         {
                             echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
                         }
+                echo "Antall stemmer: " . antallStemmer($id);
+                echo '<form action="/php/activity.php?action=stem&akti='. $id .'">
+                        <input type="submit" value="Stem!" />
+                </form>';
                 echo "<div id='map'></div>";
                 
                 //<!--Laste google maps-->

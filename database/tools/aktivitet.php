@@ -298,3 +298,13 @@ function slettStemmer($aktivitet)
     }
     return false;
 }
+
+// Returner antall stemmer en aktivitet har
+function antallStemmer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        return count(Stemmer::where("Aktivitet", "=", $aktivitet)->get());         
+    }
+    return false;
+}

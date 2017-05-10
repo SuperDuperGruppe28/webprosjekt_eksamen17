@@ -26,10 +26,12 @@ $PTagVekt3 = "tag_vekt3";
 $GAction = "action";
 $GAktivitet = "akti";
 
+$action = "";
 // Om bruker er logget inn
 if($bruker)
 {
-    $action = $_GET[$GAction];
+    if(isset($_GET[$GAction]))
+        $action = $_GET[$GAction];
     
     // Logge inn
     if($action === "reg")
@@ -69,6 +71,22 @@ if($bruker)
             echo "Slettet aktivitet!";
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
+    }else if($action === "stem")
+    {
+        if(isset($_GET[$GAktivitet]))
+        {
+            if($bruker)
+            {
+                if(!harStemtAktivitet($bruker, $_GET[$GAktivitet]))
+                {
+                    stemAktivitet($bruker, $_GET[$GAktivitet]);
+                }else
+                {
+                    slettStemme($bruker, $_GET[$GAktivitet]);
+                }
+            }
+        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
   
 }else
