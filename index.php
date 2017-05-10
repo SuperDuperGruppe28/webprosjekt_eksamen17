@@ -32,6 +32,9 @@ if(isset($_GET[$GSide]))
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
         
+        <!--Scripts-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        
         <title><?php echo $tittel?></title>
     </head>
     
@@ -55,8 +58,6 @@ if(isset($_GET[$GSide]))
         ?>
             <div id="map"></div>
             <div id="kalender"></div>
-        
-        
         
         <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
