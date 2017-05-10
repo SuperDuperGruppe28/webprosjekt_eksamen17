@@ -40,29 +40,26 @@ footer {
     padding-top: 5px;
     background-color: #E1D5D2;
     text-align: center;
-<<<<<<< Updated upstream
 }    
 
 #loginfo
-<<<<<<< HEAD
 {
     
 }
 
 #logout
-=======
->>>>>>> 94f68907ab05791c793d60c0fd1341eeb81f54be
 {
     
-=======
->>>>>>> Stashed changes
+
 }
 
- #map 
+#map
 {
-    width: 300px;
+    position: relative;
+    margin: auto;
+    padding: 0;
     height: 300px;
-    left: 850px;
+    width: 300px;
 }
 
 #vulkanlogo {
