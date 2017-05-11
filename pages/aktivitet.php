@@ -71,6 +71,14 @@
                 $brukernavn = loggetInnBruker();
                 if($brukernavn)
                 {
+                    if($brukernavn === $akt->Bruker)
+                    {
+                        echo '<form action="?side=aktivitet&action=edit&id='.$id.'" method="post">
+                        
+                            <input type="submit" value="Rediger aktivitet" />
+                        </form>';
+                    }
+                    
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
                         <input type="submit" value="<?=!harStemtAktivitet($brukernavn, $id)? 'Liker!' : 'Liker ikke!';?>" />
                 </form>
@@ -84,18 +92,10 @@
                         
                         <input type="submit" value="Velg deltagelse" />
                 </form>
-    
-                <select name="deltagelse" form="deltaform">
-                  <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : '';?>>Deltar ikke</option>
-                  <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : '';?>>Deltar</option>
-                  <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : '';?>>Deltar kanskje</option>
-                </select>
-                <form action="php/activity.php?action=delta&akti=<?=$id?>" method="post" id="deltaform">
-                        
-                        <input type="submit" value="Velg deltagelse" />
-                </form>
                 <?php
                 }
+                    
+                
                 echo "<div id='mapaktivitet'></div>";
                 
                 //<!--Laste google maps-->
@@ -154,7 +154,7 @@
 
                             <div id="mapaktivitet"></div>
                             <!--Laste google maps-->
-                            <script type='text/javascript'>startMaps(<?=$akt->Lengdegrad;?>, <?=$akt->Breddegrad;?>, true); </script>
+                            <script type='text/javascript'>startMaps(<?=$akt->Breddegrad;?>, <?=$akt->Lengdegrad;?>, true); </script>
 
                             <input class="button" type="submit" value="Registrer redigering"/>
                         </form>
