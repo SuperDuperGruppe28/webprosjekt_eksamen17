@@ -32,6 +32,9 @@ if(isset($_GET[$GSide]))
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?=time();?>">
         
+        <!-- Ikoner -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
@@ -63,7 +66,11 @@ if(isset($_GET[$GSide]))
         ?>
             
         </div>
-        <!-- FOOTER -->
+    
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>
 </html>
