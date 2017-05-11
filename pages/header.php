@@ -52,7 +52,13 @@
                     </div>
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
-                <li><a href="?side=test">Søkefelt</a></li>
+                <li>
+                    <a <form>
+                        <input type="text" placeholder="Search..." required>
+                        <input type="button" value="Search">
+                        </form>
+                    </a>
+                </li>
                 <?php
             if(erBrukerLoggetInn())
             {
