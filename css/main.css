@@ -278,11 +278,17 @@ footer {
     border: 1px solid black;
 }
 
+#sosialemedier {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
     width: 50px;
-    text-align: center;
+    text-align:center;
     text-decoration: none;
 }
 
@@ -304,6 +310,7 @@ footer {
     background: #125688;
     color: white;
 }
+
 
 /*Input*/
 
