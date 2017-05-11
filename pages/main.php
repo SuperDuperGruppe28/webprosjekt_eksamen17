@@ -10,12 +10,15 @@ echo "<h3>Vulkanelva!(main body)</h3>";
  else
     echo "Ikke logget inn";
 ?>
-
+<div id = "cuntainer">
+    
 <h3>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
 </h3>
 
 <div id="map"></div>
+   
+</div>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         
