@@ -78,6 +78,41 @@ if($bruker)
         {
             echo "Mangler data";
         }
+    // Redigere aktivitet
+    }else if($action === "edit")
+    {
+        if(isset($_GET[$GAktivitet]))
+        {
+            if($bruker)
+            {
+                $aktivitetbruker = hentAktivitet($_GET[$GAktivitet])->Bruker;
+                if($bruker === $aktivitetbruker)
+                {
+                    if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
+                    {                        
+                        $statisk = 0;
+                        if(isset($_POST[$PStatisk]))
+                            $statisk = 1;
+                        // Registerer ny aktivitet
+                       redigerAktivitet($_GET[$GAktivitet],
+                                      $_POST[$PTittel],
+                                      $_POST[$PBeskrivelse],
+                                      $_POST[$PDato],
+                                      $_POST[$PPris],
+                                      $statisk,
+                                      $_POST[$PBilde],
+                                      $_POST[$PLengdegrad],
+                                      $_POST[$PBreddegrad]);
+
+                    }
+                }
+            }
+            echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }else
+        {
+            echo "Mangler data";
+        }
     }else if($action === "del")
     {
         if(isset($_GET[$GAktivitet]))

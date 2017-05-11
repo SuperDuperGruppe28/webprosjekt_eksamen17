@@ -47,7 +47,9 @@
             if(eksistererAktivitet($id))
             {
                 $akt = hentAktivitet($id);
-                $tags = hentAktivitetTags($id);
+                if(!isset($_GET['action']))
+                {
+                    $tags = hentAktivitetTags($id);
                 echo "<h1>" . $akt->Tittel . "</h1>";
                 echo "<b>Sjef: " . $akt->Bruker . "</b><br>";
                 echo "<b>" . $akt->Beskrivelse . "</b><br>";
@@ -120,8 +122,52 @@
                         echo "<b>" . $kom->Dato . " - " . $kom->Bruker . "</b>: " . $kom->Tekst;
                         echo "<br>";
                     }
-                
-                
+                    
+                // Redigeringsside
+                }else
+                {
+                        $brukernavn = loggetInnBruker();
+                        if($brukernavn)
+                        {
+                            if($brukernavn === $akt->Bruker)
+                            {
+                                
+                            
+                            ?>
+                             <h1>Rediger <?=$akt->Tittel?></h1>
+                        <form action="php/activity.php?action=edit&akti=<?=$id?>" method="post">
+                            <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.." value="<?=$akt->Tittel;?>"><br/><br/>
+                            <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."><?=$akt->Beskrivelse;?></textarea><br/><br/>
+                            <?php $dato =  new DateTime($akt->Dato); ?>
+                            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato" value="<?=$dato->format('Y-m-d\TH:i:s');?>"><br><br>
+                            <label for="pris">Pris</label> <input type="number" id="pris" name="pris" value="<?=$akt->Pris;?>"><br/><br/>
+                            <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde" value="<?=$akt->Bilde;?>"><br/><br/>
+
+                            <!--Koordinater for GOOGLE MAPS KART-->
+                            <input type="hidden" id="lengdegrad" name="lengdegrad" value="<?=$akt->Lengdegrad;?>" />
+                            <input type="hidden" id="breddegrad" name="breddegrad" value="<?=$akt->Breddegrad;?>" />
+
+                            <?php
+                            if(erAdmin($brukernavn))
+                                echo '<label for="statisk">Statisk</label> <input type="checkbox" id="statisk" name="statisk"' . ($akt->Statisk === 1 ? 'checked="checked"' : '') . '><br/><br/>';    
+                            ?>
+
+                            <div id="mapaktivitet"></div>
+                            <!--Laste google maps-->
+                            <script type='text/javascript'>startMaps(<?=$akt->Lengdegrad;?>, <?=$akt->Breddegrad;?>, true); </script>
+
+                            <input class="button" type="submit" value="Registrer redigering"/>
+                        </form>
+
+                    <?php
+                            }
+                            else
+                                echo "<h1>HEY DETTE ER IKKE DIN SIDE!</h1>";
+                        }else
+                        {
+                            echo "<h1>Logg inn for å opprette en ny aktivitet!";
+                        }
+                }
             }else
             {
                 echo "<h1>Aktivitet med id " . $_GET['id'] . " eksisterer ikke!</h1>";
@@ -135,7 +181,7 @@
         <form action="php/activity.php?action=reg" method="post">
             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
-            <input type="hiddem" id="apning" name="apning" value="">
+            <input type="hidden" id="apning" name="apning" value="">
             <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
