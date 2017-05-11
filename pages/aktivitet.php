@@ -60,10 +60,26 @@
                             echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
                         }
                 echo "Antall stemmer: " . antallStemmer($id);
+                
+                $brukernavn = loggetInnBruker();
+                echo "Deltagelse:" . hentDeltagelse($brukernavn, $id);
+                if($brukernavn)
+                {
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
                         <input type="submit" value="Stem!" />
                 </form>
+    
+                <select name="deltagelse" form="deltaform">
+                  <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : '';?>>Deltar ikke</option>
+                  <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : '';?>>Deltar</option>
+                  <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : '';?>>Deltar kanskje</option>
+                </select>
+                <form action="php/activity.php?action=delta&akti=<?=$id?>" method="post" id="deltaform">
+                        
+                        <input type="submit" value="Velg deltagelse" />
+                </form>
                 <?php
+                }
                 echo "<div id='map'></div>";
                 
                 //<!--Laste google maps-->
@@ -105,14 +121,14 @@
         <form action="php/activity.php?action=reg" method="post">
             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
-            <label for="apning">Åpning</label> <input type="text" id="apning" name="apning"><br/><br/>
+            <input type="hiddem" id="apning" name="apning" value="">
             <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
             
             <!--Koordinater for GOOGLE MAPS KART-->
-            <input type = "hidden" id="lengdegrad" name="lengdegrad" value = "0" />
-            <input type = "hidden" id= "breddegrad" name="breddegrad" value = "0" />
+            <input type="hidden" id="lengdegrad" name="lengdegrad" value = "0" />
+            <input type="hidden" id= "breddegrad" name="breddegrad" value = "0" />
             
             <?php
             if(erAdmin($brukernavn))
