@@ -5,7 +5,7 @@
         }
 ?>
 
-<h3>Aktiviteter</h3>
+<h3>Restauranter</h3>
 
 <div id="katogorier">
     <a href="?side=restauranter"><p>Restauranter</p></a>
@@ -19,7 +19,7 @@
     <img id="vannbilde" src="/img/COLOURBOX2340325.jpg" alt="Vann"> 
     <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
                 <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>
@@ -30,7 +30,7 @@
 
         <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
              <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>
@@ -41,7 +41,7 @@
 
         <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
              <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>
@@ -52,7 +52,7 @@
 
         <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
              <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>
@@ -62,7 +62,7 @@
     <img id="vannbilde" src="/img/COLOURBOX2340325.jpg" alt="Vann"> 
         <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
              <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>
@@ -72,7 +72,7 @@
     <img id="vannbilde" src="/img/COLOURBOX2340325.jpg" alt="Vann"> 
         <div id="textbox">
            <div>
-               <p>POKALEN PUB</p>
+               <p>POKALEN RESTAURANT</p>
              <span >Kun det beste innen sport på fjernsyn, musikk og godt drikke. Pokalen viser det aller meste av kamper fra Premier League, Champions league, utvalgte godbiter NFL, hockey, skiskytning, hopprenn, Sundby vs Northug og annen idrett. 10 skjermer som hengyer høyt nok til at alle ser, tre soner, bra lyd, digge sofaer og et herlig utvalg av godt drikke. Både flaske og tapp.</span ></br>
            </div>  
     </div>

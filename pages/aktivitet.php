@@ -59,6 +59,7 @@
                         {
                             echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
                         }
+
                 echo "<br><b>Likes: </b>" . antallStemmer($id);
                 
                 echo "<br><b>Deltar ikke: </b>" . hentAntallDeltagelser($id, 0);
@@ -70,6 +71,16 @@
                 {
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
                         <input type="submit" value="<?=!harStemtAktivitet($brukernavn, $id)? 'Liker!' : 'Liker ikke!';?>" />
+                </form>
+    
+                <select name="deltagelse" form="deltaform">
+                  <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : '';?>>Deltar ikke</option>
+                  <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : '';?>>Deltar</option>
+                  <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : '';?>>Deltar kanskje</option>
+                </select>
+                <form action="php/activity.php?action=delta&akti=<?=$id?>" method="post" id="deltaform">
+                        
+                        <input type="submit" value="Velg deltagelse" />
                 </form>
     
                 <select name="deltagelse" form="deltaform">
