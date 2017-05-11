@@ -153,13 +153,14 @@ footer {
     top: 550px;
 }
 #textbox
-{
+{         
     width: 250px;
     height: 290px;
     border-style: solid;
     border-color: black;    
     border-width: 1px;
-    text-align: center;
+    text-align: left;
+    padding-left: 3px;
 }
 
 #vannbilde
