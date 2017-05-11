@@ -195,6 +195,22 @@ function hentDeltagelse($bruker, $aktivitet)
             return $deltagelse->Deltagelse;
         }
     }
+    return -1;
+}
+
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function hentAntallDeltagelser($aktivitet, $deltagelse)
+{
+    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Deltagelse", "=", $deltagelse)->get();
+        
+        if($deltagelse !== null)
+        {
+            return count($deltagelse);
+        }
+    }
     return 0;
 }
 
@@ -203,7 +219,7 @@ function slettDeltagelse($bruker, $aktivitet)
 {
     if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
     {
-        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        if(hentDeltagelse($bruker, $aktivitet) !== null)
         {
             $delta = Stemmer::where("Aktivitet", "=", $aktivitet);
             $delta = $delta->where("Bruker", "LIKE", $bruker)->first();

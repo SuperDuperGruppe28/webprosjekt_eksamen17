@@ -26,6 +26,16 @@ h3 {
     text-align: center;
 }
 
+#cuntainer {
+    position: relative;
+    width: 60%;
+    height: 90%;
+    padding: 5px;
+    margin: auto;
+    background-color: aqua;
+    border-radius: 25px;
+}
+
 header {
     position: relative;
     z-index: 10;
@@ -42,7 +52,7 @@ footer {
     left: 0;
     margin: 0;
     padding-top: 5px;
-    background: #E1D5D2;
+    background: white;
     text-align: center;
 }
 
@@ -177,8 +187,7 @@ footer {
     padding: 10px;
     width: 30%;
     height: 40%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
 }
 
 #aktivitetBoks {
@@ -187,8 +196,76 @@ footer {
     padding: 10px;
     width: 60%;
     height: 70%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
+}
+
+#searchbox {
+    vertical-align: middle;
+    background-color: #eaf8fc;
+    background-image: linear-gradient(#fff, #d4e8ec);
+    border-radius: 38px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c4d9df #a4c3ca #83afb7;
+    width: 290px;
+    height: 35px;
+    padding: 5px;
+    overflow: hidden;
+    /* Clear floats */
+}
+
+#search,
+#submit {
+    float: left;
+}
+
+#search {
+    position: relative;
+    margin: auto;
+    padding: 5px 9px;
+    height: 23px;
+    width: 190px;
+    border: 1px solid #a4c3ca;
+    font: normal 13px 'trebuchet MS', arial, helvetica;
+    background: #f1f1f1;
+    border-radius: 50px 3px 3px 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+
+/* ----------------------- */
+
+#submit {
+    position: relative;
+    margin: auto;
+    background-color: #6cbb6b;
+    background-image: linear-gradient(#95d788, #6cbb6b);
+    border-radius: 3px 50px 50px 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #7eba7c #578e57 #447d43;
+    height: 23px;
+    padding: 0;
+    width: 85px;
+    cursor: pointer;
+    font: bold 12px Arial, Helvetica;
+    color: #23441e;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#submit:hover {
+    background-color: #95d788;
+    background-image: linear-gradient(#6cbb6b, #95d788);
+}
+
+#submit:active {
+    background: #95d788;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+#submit::-moz-focus-inner {
+    border: 0;
 }
 
 .inputTag {
@@ -208,7 +285,8 @@ footer {
 /*Input forms*/
 
 input,
-select {
+select,
+textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -216,11 +294,12 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .button {
     width: 100%;
-    background-color: #118C4E;
+    background-color: lightblue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -231,7 +310,7 @@ select {
 }
 
 .button:hover {
-    background-color: #17B765;
+    background-color: #9cc6d4;
 }
 
 .button:focus {

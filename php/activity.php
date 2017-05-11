@@ -15,6 +15,7 @@ $PStatisk = "statisk";
 $PBilde = "bilde";
 $PLengdegrad = "lengdegrad";
 $PBreddegrad = "breddegrad";
+$PDeltagelse = "deltagelse";
 
 $PTag1 = "tag_1";
 $PTag2 = "tag_2";
@@ -53,13 +54,24 @@ if($bruker)
                           $_POST[$PLengdegrad],
                           $_POST[$PBreddegrad]);
             
-            if(isset($_POST[$PTag1]) && isset($_POST[$PTag2]) && isset($_POST[$PTag3]) && isset($_POST[$PTagVekt1]) && isset($_POST[$PTagVekt2]) && isset($_POST[$PTagVekt3]))
+            if(isset($_POST[$PTag1]) && isset($_POST[$PTagVekt1]))
             {
                 // Tags
                 registrerAktivitetTag($id, $_POST[$PTag1], $_POST[$PTagVekt1]);
-                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
+            }
+            
+            if(isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2]))
+            {
+                // Tags
+                registrerAktivitetTag($id, $_POST[$PTagVekt1], $_POST[$PTagVekt1]);
+            }
+            
+            if(isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3]))
+            {
+                // Tags
                 registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
             }
+            
             echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
             header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=".$id);
         }else
@@ -86,6 +98,22 @@ if($bruker)
                 }else
                 {
                     slettStemme($bruker, $_GET[$GAktivitet]);
+                }
+            }
+        }
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }else if($action === "delta")
+    {
+        if(isset($_GET[$GAktivitet]) && isset($_POST[$PDeltagelse]))
+        {
+            if($bruker)
+            {
+                if(hentDeltagelse($bruker, $_GET[$GAktivitet]) !== -1)
+                {
+                    endreDeltagelse($bruker, $_GET[$GAktivitet], $_POST[$PDeltagelse]);
+                }else
+                {
+                    deltaAktivitet($bruker, $_GET[$GAktivitet], $_POST[$PDeltagelse]);
                 }
             }
         }
