@@ -38,12 +38,11 @@ footer {
     position: relative;
     height: 5%;
     width: 100%;
-    background: grey;
     bottom: 0;
     left: 0;
     margin: 0;
     padding-top: 5px;
-    background-color: #E1D5D2;
+    background: #E1D5D2;
     text-align: center;
 }
 
@@ -52,9 +51,7 @@ footer {
 #logout {}
 
 #delta {
-    border-style: solid;
-    border-width: 5px;
-    border-color: #6a6a6a;
+    border: 5px solid #6a6a6a;
 }
 
 #map {
@@ -81,9 +78,7 @@ footer {
     position: absolute;
     width: 125px;
     height: 200px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border: 1px solid black;
     text-align: center;
 }
 
@@ -138,19 +133,15 @@ footer {
 #textbox {
     width: 250px;
     height: 290px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
     text-align: left;
     padding-left: 3px;
+    border: 1px solid black;
 }
 
 #vannbilde {
     width: 250px;
     height: 200px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border: 1px solid black;
 }
 
 #wrap {
@@ -182,8 +173,7 @@ footer {
 
 #loggInnBoks {
     position: relative;
-    margin: auto;
-    margin-top: 2.5%;
+    margin: 2.5% auto auto;
     padding: 10px;
     width: 30%;
     height: 40%;
@@ -193,8 +183,7 @@ footer {
 
 #aktivitetBoks {
     position: relative;
-    margin: auto;
-    margin-top: 2.5%;
+    margin: 2.5% auto auto;
     padding: 10px;
     width: 60%;
     height: 70%;
@@ -295,10 +284,8 @@ nav > ul > li > div ul > li > a > .caret {
 }
 
 nav > ul > li > div ul > li > a > .caret {
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-left: 4px solid #f2f2f2;
+    border: 4px solid transparent;
+    border-left-color: #f2f2f2;
     margin: 0 0 0 8px;
 }
 
