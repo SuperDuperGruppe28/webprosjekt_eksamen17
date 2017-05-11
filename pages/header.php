@@ -4,7 +4,7 @@
         <nav>
             <ul>
                 <li>
-                    <a><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
+                    <a href="?side=main"><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
                 </li>
                 <li><a href="?side=main">Hjem</a></li>
                 <li>
@@ -52,7 +52,13 @@
                     </div>
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
-                <li><a href="?side=test">Søkefelt</a></li>
+                <li>
+                    <a <form id="searchbox" action="">
+                        <input id="search" type="text" placeholder="Type here">
+                        <input id="submit" type="submit" value="Search">
+                        </form>
+                    </a>
+                </li>
                 <?php
             if(erBrukerLoggetInn())
             {

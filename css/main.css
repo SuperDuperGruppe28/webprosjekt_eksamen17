@@ -5,8 +5,7 @@
 html,
 body {
     width: 100%;
-    height: auto;
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -23,7 +22,7 @@ h1 {
     margin-top: 0;
 }
 
-h3{
+h3 {
     text-align: center;
 }
 
@@ -46,19 +45,11 @@ footer {
     padding-top: 5px;
     background-color: #E1D5D2;
     text-align: center;
-}    
-
-
-#loginfo
-{
-    
 }
 
-#logout
-{
-    
+#loginfo {}
 
-}
+#logout {}
 
 #delta {
     border-style: solid;
@@ -66,8 +57,7 @@ footer {
     border-color: #6a6a6a;
 }
 
-#map
-{
+#map {
     position: relative;
     margin: auto;
     padding: 0;
@@ -75,10 +65,9 @@ footer {
     width: 300px;
 }
 
-#kalender
-{ 
-    top: 250px; 
-    left: 1200px;
+#kalender {
+    top: 320px;
+    left: 1050px;
     position: absolute;
 }
 
@@ -86,10 +75,9 @@ footer {
     width: 50px;
     height: 50px;
     text-align: left;
-}   
+}
 
-#katogorier 
-{
+#katogorier {
     position: absolute;
     width: 125px;
     height: 200px;
@@ -99,32 +87,28 @@ footer {
     text-align: center;
 }
 
-#topleft
-{
+#topleft {
     padding-left: 185px;
-    display: inline-block;  
+    display: inline-block;
     left: 350px;
     top: 150px;
 }
 
-#topcenter
-{
+#topcenter {
     padding-left: 185px;
     display: inline-block;
     left: 700px;
     top: 150px;
 }
 
-#topright
-{
+#topright {
     padding-left: 185px;
     display: inline-block;
     left: 1100px;
     top: 150px;
 }
 
-#bottomleft
-{
+#bottomleft {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -133,8 +117,7 @@ footer {
     top: 550px;
 }
 
-#bottomcenter
-{
+#bottomcenter {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -143,8 +126,7 @@ footer {
     top: 550px;
 }
 
-#bottomright
-{
+#bottomright {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -152,31 +134,30 @@ footer {
     left: 1050px;
     top: 550px;
 }
-#textbox
-{         
+
+#textbox {
     width: 250px;
     height: 290px;
     border-style: solid;
-    border-color: black;    
+    border-color: black;
     border-width: 1px;
     text-align: left;
     padding-left: 3px;
 }
 
-#vannbilde
-{ 
-    width:250px;
-    height:200px;  
+#vannbilde {
+    width: 250px;
+    height: 200px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
 }
 
-#wrap
-{
+#wrap {
     width: 125px;
     height: 100%;
 }
+
 #logout {
     background-color: darkred;
 }
@@ -188,20 +169,16 @@ footer {
 #headerContainer {}
 
 #headerContainer h1 {
-    color: WHITE;
+    color: whitesmoke;
 }
 
 #bodyContainer {
     position: relative;
-    margin: 0;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 }
 
-#footerContainer 
-{
-    
-}
+#footerContainer {}
 
 #loggInnBoks {
     position: relative;
