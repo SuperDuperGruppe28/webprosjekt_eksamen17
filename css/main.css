@@ -208,7 +208,6 @@ footer {
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;
     width: 280px;
-    height: 50%;
     padding: 1px;
     overflow: hidden;
 }
@@ -241,7 +240,7 @@ footer {
     border-style: solid;
     border-color: #7eba7c #578e57 #447d43;
     height: 23px;
-    padding: 0;
+    padding: 0px;
     width: 85px;
     cursor: pointer;
     font: bold 12px Arial, Helvetica;
