@@ -53,9 +53,9 @@
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
                 <li>
-                    <a <form>
-                        <input type="text" placeholder="Search..." required>
-                        <input type="button" value="Search">
+                    <a <form id="searchbox" action="">
+                        <input id="search" type="text" placeholder="Type here">
+                        <input id="submit" type="submit" value="Search">
                         </form>
                     </a>
                 </li>
