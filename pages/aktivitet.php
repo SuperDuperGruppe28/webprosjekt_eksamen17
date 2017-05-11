@@ -69,7 +69,7 @@
                 if($brukernavn)
                 {
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
-                        <input type="submit" value="Stem!" />
+                        <input type="submit" value="<?=!harStemtAktivitet($brukernavn, $id)? 'Liker!' : 'Liker ikke!';?>" />
                 </form>
     
                 <select name="deltagelse" form="deltaform">
