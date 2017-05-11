@@ -53,7 +53,7 @@
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
                 <li>
-                    <form id="searchbox" style='vertical-align: middle'>
+                    <form id="searchbox" style='vertical-align:middle'>
                         <input id="search" type="text" placeholder="Søk her . . .">
                         <input id="submit" type="submit" value="Søk">
                     </form>
