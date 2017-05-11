@@ -10,10 +10,11 @@ echo "<h3>Vulkanelva!(main body)</h3>";
  else
     echo "Ikke logget inn";
 ?>
-
+    <div id="maintext">
     <h3>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
 </h3>
+</div>
 
     <div id="map"></div>
 
