@@ -73,4 +73,4 @@ if(isset($_GET["action"]))
 }
 
 // Sender tilbake til forrige side
-echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
+echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=bruker"/></head></html>';

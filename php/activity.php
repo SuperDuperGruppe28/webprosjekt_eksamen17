@@ -108,7 +108,8 @@ if($bruker)
                 }
             }
             echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
         }else
         {
             echo "Mangler data";
@@ -119,8 +120,8 @@ if($bruker)
         {
             slettAktivitet($_GET[$GAktivitet]);
             echo "Slettet aktivitet!";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        }
+            // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';         }
     }else if($action === "stem")
     {
         if(isset($_GET[$GAktivitet]))
@@ -136,7 +137,8 @@ if($bruker)
                 }
             }
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
     }else if($action === "delta")
     {
         if(isset($_GET[$GAktivitet]) && isset($_POST[$PDeltagelse]))
@@ -152,13 +154,14 @@ if($bruker)
                 }
             }
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
     }
   
 }else
 {
     echo "<h1>Må være logget inn!</h1>";
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';      
 }
 
 // Sender tilbake til forrige side
