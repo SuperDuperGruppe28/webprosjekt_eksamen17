@@ -116,7 +116,7 @@
             
             <?php
             if(erAdmin($brukernavn))
-                echo '<label for="statisk">Statisk</label> <input type="number" id="statisk" name="statisk"><br/><br/>';    
+                echo '<label for="statisk">Statisk</label> <input type="checkbox" id="statisk" name="statisk" value="1"><br/><br/>';    
             ?>
             
             <div id="map"></div>

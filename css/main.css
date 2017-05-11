@@ -5,8 +5,7 @@
 html,
 body {
     width: 100%;
-    height: auto;
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -23,7 +22,7 @@ h1 {
     margin-top: 0;
 }
 
-h3{
+h3 {
     text-align: center;
     
 }
@@ -51,35 +50,23 @@ footer {
     position: relative;
     height: 5%;
     width: 100%;
-    background: grey;
     bottom: 0;
     left: 0;
     margin: 0;
     padding-top: 5px;
-    background-color: #E1D5D2;
+    background: white;
     text-align: center;
-}    
-
-
-#loginfo
-{
-    
 }
 
-#logout
-{
-    
+#loginfo {}
 
-}
+#logout {}
 
 #delta {
-    border-style: solid;
-    border-width: 5px;
-    border-color: #6a6a6a;
+    border: 5px solid #6a6a6a;
 }
 
-#map
-{
+#map {
     position: relative;
     margin: auto;
     padding: 0;
@@ -87,10 +74,9 @@ footer {
     width: 300px;
 }
 
-#kalender
-{ 
-    top: 250px; 
-    left: 1200px;
+#kalender {
+    top: 320px;
+    left: 1050px;
     position: absolute;
 }
 
@@ -98,45 +84,38 @@ footer {
     width: 50px;
     height: 50px;
     text-align: left;
-}   
+}
 
-#katogorier 
-{
+#katogorier {
     position: absolute;
     width: 125px;
     height: 200px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border: 1px solid black;
     text-align: center;
 }
 
-#topleft
-{
+#topleft {
     padding-left: 185px;
-    display: inline-block;  
+    display: inline-block;
     left: 350px;
     top: 150px;
 }
 
-#topcenter
-{
+#topcenter {
     padding-left: 185px;
     display: inline-block;
     left: 700px;
     top: 150px;
 }
 
-#topright
-{
+#topright {
     padding-left: 185px;
     display: inline-block;
     left: 1100px;
     top: 150px;
 }
 
-#bottomleft
-{
+#bottomleft {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -145,8 +124,7 @@ footer {
     top: 550px;
 }
 
-#bottomcenter
-{
+#bottomcenter {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -155,8 +133,7 @@ footer {
     top: 550px;
 }
 
-#bottomright
-{
+#bottomright {
     padding-left: 185px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -164,30 +141,25 @@ footer {
     left: 1050px;
     top: 550px;
 }
-#textbox
-{
+
+#textbox {
     width: 250px;
     height: 290px;
-    border-style: solid;
-    border-color: black;    
-    border-width: 1px;
+    border: 1px solid black;
     text-align: center;
 }
 
-#vannbilde
-{ 
-    width:250px;
-    height:200px;  
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+#vannbilde {
+    width: 250px;
+    height: 200px;
+    border: 1px solid black;
 }
 
-#wrap
-{
+#wrap {
     width: 125px;
     height: 100%;
 }
+
 #logout {
     background-color: darkred;
 }
@@ -199,42 +171,34 @@ footer {
 #headerContainer {}
 
 #headerContainer h1 {
-    color: WHITE;
+    color: whitesmoke;
 }
 
 #bodyContainer {
     position: relative;
-    margin: 0;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     
 }
 
-#footerContainer 
-{
-    
-}
+#footerContainer {}
 
 #loggInnBoks {
     position: relative;
-    margin: auto;
-    margin-top: 2.5%;
+    margin: 2.5% auto auto;
     padding: 10px;
     width: 30%;
     height: 40%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
 }
 
 #aktivitetBoks {
     position: relative;
-    margin: auto;
-    margin-top: 2.5%;
+    margin: 2.5% auto auto;
     padding: 10px;
     width: 60%;
     height: 70%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
 }
 
 .inputTag {
@@ -257,7 +221,7 @@ select {
 
 .button {
     width: 100%;
-    background-color: #118C4E;
+    background-color: lightblue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -268,7 +232,7 @@ select {
 }
 
 .button:hover {
-    background-color: #17B765;
+    background-color: #9cc6d4;
 }
 
 .button:focus {
@@ -330,10 +294,8 @@ nav > ul > li > div ul > li > a > .caret {
 }
 
 nav > ul > li > div ul > li > a > .caret {
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-left: 4px solid #f2f2f2;
+    border: 4px solid transparent;
+    border-left-color: #f2f2f2;
     margin: 0 0 0 8px;
 }
 

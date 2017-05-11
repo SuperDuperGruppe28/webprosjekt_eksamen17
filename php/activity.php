@@ -36,8 +36,11 @@ if($bruker)
     // Logge inn
     if($action === "reg")
     {
-        if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PStatisk]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
+        if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
         {
+            $statisk = 0;
+            if(isset($_POST[$PStatisk]))
+                $statisk = 1;
             // Registerer ny aktivitet
            $id = skapAktivitet($bruker,
                           $_POST[$PTittel],
@@ -45,7 +48,7 @@ if($bruker)
                           $_POST[$PApning],
                           $_POST[$PDato],
                           $_POST[$PPris],
-                          $_POST[$PStatisk],
+                          $statisk,
                           $_POST[$PBilde],
                           $_POST[$PLengdegrad],
                           $_POST[$PBreddegrad]);
