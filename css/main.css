@@ -176,8 +176,7 @@ footer {
     padding: 10px;
     width: 30%;
     height: 40%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
 }
 
 #aktivitetBoks {
@@ -186,8 +185,7 @@ footer {
     padding: 10px;
     width: 60%;
     height: 70%;
-    background: #E79A58;
-    border-radius: 25px;
+    border: 25px solid white;
 }
 
 .inputTag {
@@ -210,7 +208,7 @@ select {
 
 .button {
     width: 100%;
-    background-color: #118C4E;
+    background-color: lightblue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -221,7 +219,7 @@ select {
 }
 
 .button:hover {
-    background-color: #17B765;
+    background-color: #9cc6d4;
 }
 
 .button:focus {
