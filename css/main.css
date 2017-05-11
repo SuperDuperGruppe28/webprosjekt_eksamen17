@@ -190,7 +190,8 @@ footer {
     border-radius: 25px;
 }
 
-#searchbox {
+#searchbox 
+{
     position: relative;
     vertical-align: middle;
     background-color: #eaf8fc;
@@ -204,7 +205,6 @@ footer {
     padding: 5px;
     margin: auto;
     overflow: hidden;
-    /* Clear floats */
 }
 
 #search,
@@ -225,8 +225,6 @@ footer {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-
-/* ----------------------- */
 
 #submit {
     position: relative;

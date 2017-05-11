@@ -199,12 +199,12 @@ function hentDeltagelse($bruker, $aktivitet)
 }
 
 // Returnerer deltagelsen for gitt bruker i gitt aktivitet
-function hentAntallDeltagelser($aktivitet, $deltagelse)
+function hentAntallDeltagelser($aktivitet, $delta)
 {
-    if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
+    if(eksistererAktivitet($aktivitet))
     {
         $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
-        $deltagelse = $deltagelse->where("Deltagelse", "=", $deltagelse)->get();
+        $deltagelse = $deltagelse->where("Deltagelse", "=", $delta)->get();
         
         if($deltagelse !== null)
         {

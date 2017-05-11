@@ -53,11 +53,10 @@
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
                 <li>
-                    <a <form id="searchbox" action="">
+                    <form id="searchbox" action="">
                         <input id="search" type="text" placeholder="Søk her . . .">
                         <input id="submit" type="submit" value="Søk">
-                        </form>
-                    </a>
+                    </form>
                 </li>
                 <?php
             if(erBrukerLoggetInn())

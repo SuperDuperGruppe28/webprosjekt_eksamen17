@@ -59,10 +59,13 @@
                         {
                             echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
                         }
-                echo "Antall stemmer: " . antallStemmer($id);
+                echo "<br><b>Likes: </b>" . antallStemmer($id);
+                
+                echo "<br><b>Deltar ikke: </b>" . hentAntallDeltagelser($id, 0);
+                echo "<br><b>Deltar: </b>" . hentAntallDeltagelser($id, 1);
+                echo "<br><b>Deltar kanskje: </b>" . hentAntallDeltagelser($id, 2);
                 
                 $brukernavn = loggetInnBruker();
-                echo "Deltagelse:" . hentDeltagelse($brukernavn, $id);
                 if($brukernavn)
                 {
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
