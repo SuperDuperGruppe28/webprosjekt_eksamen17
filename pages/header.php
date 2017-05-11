@@ -4,7 +4,7 @@
         <nav>
             <ul>
                 <li>
-                    <a><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
+                    <a href="?side=main"><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
                 </li>
                 <li><a href="?side=main">Hjem</a></li>
                 <li>
