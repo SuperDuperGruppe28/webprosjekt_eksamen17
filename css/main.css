@@ -24,18 +24,16 @@ h1 {
 
 h3 {
     text-align: center;
-    
 }
 
 #cuntainer {
     position: relative;
     width: 60%;
     height: 90%;
-    padding: 5px; 
-    margin: auto; 
+    padding: 5px;
+    margin: auto;
     background-color: aqua;
     border-radius: 25px;
-    
 }
 
 header {
@@ -178,7 +176,6 @@ footer {
     position: relative;
     min-height: 100%;
     width: 100%;
-    
 }
 
 #footerContainer {}
@@ -202,7 +199,6 @@ footer {
 }
 
 #searchbox {
-    position: relative;
     vertical-align: middle;
     background-color: #eaf8fc;
     background-image: linear-gradient(#fff, #d4e8ec);
@@ -213,7 +209,6 @@ footer {
     width: 290px;
     height: 35px;
     padding: 5px;
-    margin: auto;
     overflow: hidden;
     /* Clear floats */
 }
@@ -280,7 +275,8 @@ footer {
 /*Input forms*/
 
 input,
-select, textarea {
+select,
+textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

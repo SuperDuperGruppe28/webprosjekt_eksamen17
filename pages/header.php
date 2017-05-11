@@ -55,7 +55,7 @@
                 <li>
                     <a <form id="searchbox" action="">
                         <input id="search" type="text" placeholder="Søk her . . .">
-                        <input id="submit" type="submit" value="Søk">
+                        <input id="submit" type="submit" value="Søk" style='vertical-align: middle'>
                         </form>
                     </a>
                 </li>
