@@ -70,6 +70,7 @@ footer {
     left: 800px;
     height: 40%;
     width: 30%;
+    border: solid 1px black;
 }
 
 #mapaktivitet
@@ -83,8 +84,8 @@ footer {
 
 #kalender {
     position: absolute;
-    top: 550px;
-    left: 1050px;
+    top: 420px;
+    left: 1055px;
 }
 
 #vulkanlogo {
