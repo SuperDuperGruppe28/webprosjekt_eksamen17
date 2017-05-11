@@ -26,13 +26,13 @@ h3 {
     text-align: center;
 }
 
-#cuntainer {
+#maintext {
     position: relative;
     width: 60%;
     height: 90%;
     padding: 5px;
     margin: auto;
-    background-color: aqua;
+    background-image: url(../img/weather.png);
     border-radius: 25px;
 }
 
