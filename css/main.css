@@ -72,6 +72,15 @@ footer {
     width: 500px;
 }
 
+#mapaktivitet
+{
+    position: relative;
+    margin: auto;
+    padding: 0;
+    height: 300px;
+    width: 300px;
+}
+
 #kalender {
     position: absolute;
     top: 550px;

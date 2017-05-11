@@ -12,7 +12,7 @@
                     styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
                 };
                 
-                var mapElement = document.getElementById('map');
+                var mapElement = document.getElementById('mapaktivitet');
                 var map = new google.maps.Map(mapElement, mapOptions);
                     marker = new google.maps.Marker({
                     position: new google.maps.LatLng(x, y),
@@ -94,7 +94,7 @@
                 </form>
                 <?php
                 }
-                echo "<div id='map'></div>";
+                echo "<div id='mapaktivitet'></div>";
                 
                 //<!--Laste google maps-->
                 echo "<script type='text/javascript'>startMaps(" . $akt->Breddegrad . ", " . $akt->Lengdegrad . ", false) </script>";
@@ -149,7 +149,7 @@
                 echo '<label for="statisk">Statisk</label> <input type="checkbox" id="statisk" name="statisk" value="1"><br/><br/>';    
             ?>
             
-            <div id="map"></div>
+            <div id="mapaktivitet"></div>
             <!--Laste google maps-->
             <script type='text/javascript'>startMaps(59.922425, 10.751672, true); </script>
             
