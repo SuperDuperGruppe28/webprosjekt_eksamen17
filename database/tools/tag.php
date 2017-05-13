@@ -77,11 +77,11 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
     if(!eksistererTag($tag))
         registrerTag($tag);
        
-    if(eksistererTag($tag) && !eksistererAktivitetTag($tag)) //  Sjekke om aktivitet eksisterer
+    if(eksistererTag($tag) && eksistererAktivitet($aktivitet)) //  Sjekke om aktivitet eksisterer
     {
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
-        $tags->Bruker = $bruker;
+        $tags->Aktivitet = $aktivitet;
         $tags->Vekt = $vekt;
 
         $tags->save();
@@ -102,4 +102,22 @@ function hentAktivitetTagVekt($aktivitet, $tag)
     $vekt = TagsAktivitet::where("Tag", "LIKE", $tag); 
     $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first(); 
     return $vekt->Vekt;
+}
+
+// Returnerer kommentarene i en aktivitet
+function hentAktivitetTags($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {        
+        $tags = TagsAktivitet::where("Aktivitet", "=", $aktivitet)->get();
+        
+        return $tags;
+    }
+    return false;
+}
+
+function hentAlleAktivitetTags()
+{
+        $tags = TagsAktivitet::All();
+        return $tags;
 }

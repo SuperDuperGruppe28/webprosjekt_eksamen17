@@ -32,7 +32,7 @@ function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $dato, $pris, $s
             
         // Oppretter kommentarfelt for aktivitet
         skapKommentarfelt($akti->id);
-        return true;
+        return $akti->id;
     }
     return false;
 }
@@ -77,61 +77,28 @@ function hentAktivitet($aktivitet)
     return Aktivitet::find($aktivitet);
 }
 
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetTittel($aktivitet, $tittel)
+//Redigerer aktivteten
+function redigerAktivitet($aktivitet, $tittel, $beskrivelse, $dato, $pris, $statisk, $bilde, $lon, $lat)
 {
-     if(eksistererAktivitet($aktivitet))
+    if(eksistererAktivitet($aktivitet))
     {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Tittel = $tittel;
-        $akt->save();
-        
+        $akti = hentAktivitet($aktivitet);
+        $akti->Tittel = $tittel;
+        $akti->Beskrivelse = $beskrivelse;
+        $akti->Dato = date("Y-m-d H:i:s", strtotime($dato));
+        $akti->Pris = $pris;
+        $akti->Statisk = $statisk;
+        $akti->Bilde = $bilde;
+        $akti->Lengdegrad = $lon;
+        $akti->Breddegrad = $lat;
+        $akti->save();
+            
+        // Oppretter kommentarfelt for aktivitet
         return true;
     }
     return false;
 }
 
-// Redigerer beskrivelsen til en gitt aktivitet
-function redigerAktivtetBeskrivelse($aktivitet, $beskrivelse)
-{
-     if(eksistererAktivitet($aktivitet))
-    {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Beskrivelse = $beskrivelse;
-        $akt->save();
-        
-        return true;
-    }
-    return false;
-}
-
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetApning($aktivitet, $apning)
-{
-     if(eksistererAktivitet($aktivitet))
-    {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Apning = $apning;
-        $akt->save();
-        
-        return true;
-    }
-    return false;
-}
-
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetPris($aktivitet, $pris)
-{
-     if(eksistererAktivitet($aktivitet))
-    {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Pris = $pris;
-        $akt->save();
-        
-        return true;
-    }
-    return false;
-}
 // Todo
 // Redigere aktivitetfelter
 
@@ -195,6 +162,22 @@ function hentDeltagelse($bruker, $aktivitet)
             return $deltagelse->Deltagelse;
         }
     }
+    return -1;
+}
+
+// Returnerer deltagelsen for gitt bruker i gitt aktivitet
+function hentAntallDeltagelser($aktivitet, $delta)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        $deltagelse = Deltagelse::where("Aktivitet", "=", $aktivitet);
+        $deltagelse = $deltagelse->where("Deltagelse", "=", $delta)->get();
+        
+        if($deltagelse !== null)
+        {
+            return count($deltagelse);
+        }
+    }
     return 0;
 }
 
@@ -203,7 +186,7 @@ function slettDeltagelse($bruker, $aktivitet)
 {
     if(eksistererAktivitet($aktivitet) && eksistererBruker($bruker))
     {
-        if(hentDeltagelse($bruker, $aktivitet) <= 0)
+        if(hentDeltagelse($bruker, $aktivitet) !== null)
         {
             $delta = Stemmer::where("Aktivitet", "=", $aktivitet);
             $delta = $delta->where("Bruker", "LIKE", $bruker)->first();
@@ -295,6 +278,16 @@ function slettStemmer($aktivitet)
         $stem->delete();
          
         return true;
+    }
+    return false;
+}
+
+// Returner antall stemmer en aktivitet har
+function antallStemmer($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {
+        return count(Stemmer::where("Aktivitet", "=", $aktivitet)->get());         
     }
     return false;
 }

@@ -1,47 +1,81 @@
-<?php
-require_once __DIR__ . '/../database/tools/bruker.php';
-require_once __DIR__ . '/../database/tools/kommentar.php';
-?>
-
 <div id="headerContainer">
     <center>
-      
-    <nav>
-    <ul>
-        <li><a href="?side=Home">Hjem</a></li>
-        <li>
-            <a href="?side=Activities">Aktiviteter <span class="caret"></span></a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="?side=Activities">Ting <span class="caret"></span></a>
-                        <div>
-                            <ul>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="?side=main"><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
+                </li>
+                <li><a href="?side=main">Hjem</a></li>
+                <li>
+                    <a href="?side=aktiviteter">Aktiviteter<span class="caret"></span></a>
+                    <div>
+                        <ul>
+                            <?php                                 
+                        foreach(Tags::All() as $tag) 
+                        {
+                            echo '<li><a href="#">' . $tag->Tag . '<span class="caret"></span></a>';
+                            echo '<div><ul>';
+                            
+                            $aktiviteter = TagsAktivitet::where("Tag", "=", $tag->Tag)->get();
+                            //echo '<pre>';
+                           // print_r($aktiviteter);
+                            foreach($aktiviteter as $aktivitet) {
+                                $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
+                                $aktivitet = hentAktivitet($aktivitet->Aktivitet);
                                 
-                                <li><a href="#">Arrangementer</a></li>
-                                <li><a href="#">Butikker</a></li>
-                                <li><a href="#">Restauranter</a></li>
-                                <li><a href="#">Fysisk aktivitet</a></li>
-                            </ul>
-                        </div>
+                                $deltagere = $aktivitet->deltagere()->get();
+                                $deltar = false;
+                                foreach($deltagere as $deltager)
+                                {
+                                    if ($deltager->Bruker == loggetInnBruker()) {
+                                        $deltar = true;
+                                        break;
+                                    }
+                                }
+                                
+                                //echo '<li><a href="'.$href.'">' . $aktivitet->Tittel . '</li>';
+                                $href = "?side=aktivitet&id=" . $aktivitet->id;
+                                if($deltar)
+                                {
+                                    echo '<li><a id="delta" href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                } else
+                                {
+                                    echo '<li><a href="'. $href .'">' . $aktivitet->Tittel . '</a></li>';
+                                }
+                            }
+                            
+                            echo '</ul></div></li>';
+                            
+                        }?>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="?side=aktivitet">Lag aktivitet</a></li>
+                <li>
+                    <form id="searchbox" style='vertical-align:middle'>
+                        <input id="search" type="text" placeholder="Søk her . . .">
+                        <input id="submit" type="submit" value="Søk">
+                    </form>
+
+                </li>
+                <?php
+            if(erBrukerLoggetInn())
+            {
+                echo '<li><a id="loginfo" href="?side=bruker">';
+                echo "<img style='vertical-align: middle' src=".hentBrukerBilde()." width='40px' height='40px'></img>";
+                echo ' '.loggetInnBruker();
+                echo '</a></li>';
+                
+                echo '<li><a id="logout" href="/php/user.php?action=out">Logg ut</a></li>';
+            }
+            else
+            {
+                echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
+            }
+        ?>
                     </li>
-                    <li><a href="?side=test">Tang</a></li>
-                    <?php 
-                                
-foreach(hentKommentarer(3) as $kom) 
-{
-    echo '<li><a href="#">' . $kom->Bruker . ": " . $kom->Tekst . '</a></li>';
-}                               ?>
-                </ul>
-            </div>
-        </li>
-        <li><a href="?side=test">Aktuelt</a></li>
-        <li><a href="?side=test">Om Vulkanelva</a>
-        <li><a href="?side=test">Min side</a></li>
-        <li><a href="?side=test">Søkefelt</a></li>
-                    
-        </li>
-    </ul>
-</nav>
+            </ul>
+        </nav>
     </center>
 </div>

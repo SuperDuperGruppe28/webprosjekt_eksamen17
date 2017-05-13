@@ -1,14 +1,10 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']  . '/vendor/autoload.php';
 require_once __DIR__ . '/databaseconfig.php';
-
 use Illuminate\Database\Eloquent\Model as mod;
-
-
 //
 // Bruker
 //
-
 class Bruker extends mod
 {
     public $table = "Bruker";
@@ -37,11 +33,9 @@ class Bruker extends mod
         return $this->belongsTo("Deltagelse", "Brukernavn", "Bruker");
     }
 }
-
 //
 // TagsBruker
 //
-
 class TagsBruker extends mod
 {
     public $table = "TagsBruker";
@@ -59,11 +53,9 @@ class TagsBruker extends mod
         return $this->hasMany("Bruker", "Brukernavn", "Bruker");
     }
 }
-
 //
 // Tags
 //
-
 class Tags extends mod
 {
     public $table = "Tags";
@@ -71,17 +63,14 @@ class Tags extends mod
     protected $dates = ["starts_at"];
     public $timestamps = false;
     public $incrementing = false;
-
     public function tagsBruker()
     {
         return $this->belongsTo("TagsBruker", "Tag", "Tag");
     }
 }
-
 //
 // Aktivitet
 //
-
 class Aktivitet extends mod
 {
     public $table = "Aktivitet";
@@ -111,15 +100,13 @@ class Aktivitet extends mod
     
     public function deltagere()
     {
-        return $this->belongsTo("Deltagre", "id", "Aktivitet");
+        
+        return $this->belongsTo("Deltagelse", "id", "Aktivitet");
     }
 }
-
-
 //
 // TagsAktivitet
 //
-
 class TagsAktivitet extends mod
 {
     public $table = "TagsAktivitet";
@@ -138,11 +125,9 @@ class TagsAktivitet extends mod
     }
     
 }
-
 //
 // Stemmer
 //
-
 class Stemmer extends mod
 {
     public $table = "Stemmer";
@@ -160,12 +145,9 @@ class Stemmer extends mod
         return $this->hasMany("Bruker", "Brukernavn", "Bruker");
     }
 }
-
-
 //
 // Kommentarfelt
 //
-
 class Kommentarfelt extends mod
 {
     public $table = "Kommentarfelt";
@@ -183,11 +165,9 @@ class Kommentarfelt extends mod
         return $this->belongsTo("Kommentar", "id", "Kommentar");
     }
 }
-
 //
 // Kommentar
 //
-
 class Kommentar extends mod
 {
     public $table = "Kommentar";
@@ -205,11 +185,9 @@ class Kommentar extends mod
         return $this->hasmany("Kommentarfelt", "id", "Kommentarfelt");
     }
 }
-
 //
 // Deltagelse
 //
-
 class Deltagelse extends mod
 {
     public $table = "Deltagelse";
