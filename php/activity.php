@@ -86,7 +86,7 @@ if($bruker)
             if($bruker)
             {
                 $aktivitetbruker = hentAktivitet($_GET[$GAktivitet])->Bruker;
-                if($bruker === $aktivitetbruker)
+                if($bruker === $aktivitetbruker || erAdmin($bruker))
                 {
                     if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
                     {                        
