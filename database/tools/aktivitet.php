@@ -80,7 +80,7 @@ function hentAktivitet($aktivitet)
 // Returnerer aktivitet med aktivitetsID
 function hentAlleAktiviteter()
 {
-    return Aktivitet::All();
+    return Aktivitet::All()->sortByDesc("Dato");
 }
 
 //Redigerer aktivteten

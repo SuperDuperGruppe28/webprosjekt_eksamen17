@@ -127,7 +127,6 @@ function hentAktivitetTagVekt($aktivitet, $tag)
     return $vekt->Vekt;
 }
 
-// Returnerer kommentarene i en aktivitet
 function hentAktivitetTags($aktivitet)
 {
     if(eksistererAktivitet($aktivitet))
@@ -143,4 +142,10 @@ function hentAlleAktivitetTags()
 {
     $tags = TagsAktivitet::All();
     return $tags;
+}
+
+// Returnerer aktivitene som tilhører gitt tag
+function hentAktiviteterFraTag($tag)
+{
+    return TagsAktivitet::where("Tag", "LIKE", $tag)->get();
 }
