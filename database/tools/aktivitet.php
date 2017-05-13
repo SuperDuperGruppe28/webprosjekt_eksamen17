@@ -105,9 +105,43 @@ function redigerAktivitet($aktivitet, $tittel, $beskrivelse, $dato, $pris, $stat
     return false;
 }
 
-// Todo
-// Redigere aktivitetfelter
-
+// Printer ut en liten Aktivitetsboks fra gitt aktivitet
+function printAktivitetBoks($aktivitet)
+{
+    if(eksistererAktivitet($aktivitet))
+    {   
+        $akt = hentAktivitet($aktivitet);
+        $pris = $akt->Pris > 0 ? $akt->Pris."kr" : "Gratis!";
+        $dato = new Carbon\Carbon($akt->Dato);
+    ?>
+        <div class="AktivitetLitenBoks">
+         <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet)?>">
+            <img class="bildeBoks" src="<?=tryggPrint($akt->Bilde)?>" />
+             <div class="bildeBoksLag"></div>
+        </a>
+        <div class="Tittel"><?=tryggPrint($akt->Tittel)?></div>
+        <a href="?side=bruker&id=<?=tryggPrint($akt->Bruker)?>">
+            <div class="Utgiver">
+                <b><?=tryggPrint($akt->Bruker)?></b> 
+                <img class="Ikoner" src="<?=hentBrukerBildeEx($akt->Bruker)?>"</img>
+            </div>
+        </a>
+        <div class="Dato"><?=$dato->diffForHumans()?></div>
+        <div class="Likes">
+            <b><?=tryggPrint(antallStemmer($aktivitet))?></b>
+            <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
+        </div>
+        <div class="Beskrivelse"><?=tryggPrint($akt->Beskrivelse)?></div>
+        <div class="Pris"><?=$pris?></div>
+    </div>
+    
+    <?php
+    }
+    else
+    {
+        echo "Fant ikke aktivtet: " . $aktivitet; 
+    }
+}
 //   ______           __   _                        __                
 //  |_   _ `.        [  | / |_                     [  |               
 //    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  
@@ -226,42 +260,7 @@ function hentBrukerDeltagelser($bruker, $deltagelse)
     }
 }
 
-function printAktivitetBoks($aktivitet)
-{
-    if(eksistererAktivitet($aktivitet))
-    {   
-        $akt = hentAktivitet($aktivitet);
-        $pris = $akt->Pris > 0 ? $akt->Pris."kr" : "Gratis!";
-        
-    ?>
-        <div class="AktivitetLitenBoks">
-         <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet)?>">
-            <img class="bildeBoks" src="<?=tryggPrint($akt->Bilde)?>" />
-             <div class="bildeBoksLag"></div>
-        </a>
-        <div class="Tittel"><?=tryggPrint($akt->Tittel)?></div>
-        <a href="?side=bruker&id=<?=tryggPrint($akt->Bruker)?>">
-            <div class="Utgiver">
-                <b><?=tryggPrint($akt->Bruker)?></b> 
-                <img class="Ikoner" src="<?=hentBrukerBildeEx($akt->Bruker)?>"</img>
-            </div>
-        </a>
-        <div class="Dato"><?=tryggPrint($akt->Dato)?></div>
-        <div class="Likes">
-            <b><?=tryggPrint(antallStemmer($aktivitet))?></b>
-            <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
-        </div>
-        <div class="Beskrivelse"><?=tryggPrint($akt->Beskrivelse)?></div>
-        <div class="Pris"><?=$pris?></div>
-    </div>
-    
-    <?php
-    }
-    else
-    {
-        echo "Fant ikke aktivtet: " . $aktivitet; 
-    }
-}
+
 
 //    ______    _                                                  
 //  .' ____ \  / |_                                                
