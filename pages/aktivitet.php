@@ -71,6 +71,12 @@
                 $brukernavn = loggetInnBruker();
                 if($brukernavn)
                 {
+                    // Loggføre besøket til brukeren
+                    foreach(hentAktivitetTags($id) as $akTag)
+                    {
+                        registrerBrukerBesok($brukernavn, $akTag->Tag);
+                    }
+                    
                     if($brukernavn === $akt->Bruker)
                     {
                         echo '<form action="?side=aktivitet&action=edit&id='.$id.'" method="post">

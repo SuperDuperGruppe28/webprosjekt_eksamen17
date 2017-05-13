@@ -36,7 +36,7 @@ function registrerBrukerTag($bruker, $tag, $score)
     if(!eksistererTag($tag))
         registrerTag($tag);
        
-    if(eksistererTag($tag) && !eksistererBrukerTag($tag) && eksistererBruker($bruker))
+    if(eksistererTag($tag) && eksistererBruker($bruker))
     {
         $tags = new TagsBruker();
         $tags->Tag = $tag;
@@ -50,9 +50,17 @@ function registrerBrukerTag($bruker, $tag, $score)
 }
 
 // Sjekker om en tag eksisterer
-function eksistererBrukerTag($tag)
+function eksistererBrukerTag($bruker, $tag)
 {
-    return (TagsBruker::where("Tag", "LIKE", $tag)->first()) !== null ? true : false;
+    $bTag = TagsBruker::where("Tag", "LIKE", $tag);
+    return ($bTag->where("Bruker", "LIKE", $bruker)->first()) !== null ? true : false;
+}
+
+// Returnerer brukertag
+function hentBrukerTag($bruker, $tag)
+{
+    $score = TagsBruker::where("Tag", "LIKE", $tag); 
+    return $score->where("Bruker", "LIKE", $bruker)->first(); 
 }
 
 // Henter brukerens score for gitt tag
@@ -69,6 +77,21 @@ function hentBrukerTagBesok($bruker, $tag)
     $besok = TagsBruker::where("Tag", "LIKE", $tag); 
     $besok = $besok->where("Bruker", "LIKE", $bruker)->first(); 
     return $besok->Besok;
+}
+
+function registrerBrukerBesok($bruker, $tag)
+{
+    if(!eksistererBrukerTag($bruker, $tag))
+        registrerBrukerTag($bruker, $tag, 0);
+    else
+    {
+        $bTag = hentBrukerTag($bruker, $tag);
+        $bTag->Besok = $bTag->Besok + 1;
+        $bTag->save();
+        
+        return true;
+    }
+    return false;
 }
 
 // Registrerer ny tag på aktivitet
