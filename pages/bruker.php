@@ -1,4 +1,4 @@
-<div id="aktivitetBoks">
+<div id="brukerBoks">
     
     <?php
         if(isset($_GET['id']))

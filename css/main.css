@@ -311,7 +311,16 @@ footer {
     padding: 10px;
     width: 30%;
     height: 70%;
-  }
+}
+
+#brukerBoks
+{
+    position: relative;
+    margin: 2.5% auto auto;
+    padding: 10px;
+    width: 50%;
+    height: 70%;
+}
 
 /*Input*/
 
