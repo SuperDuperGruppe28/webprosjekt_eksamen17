@@ -1,11 +1,11 @@
 <?php
         if(isset($_GET['tag']))
         {
-            $id = $_GET['tag'];
+            $tag = $_GET['tag'];
             
-            echo "<h3>Aktiviteter fra ".$id."</h3>";
+            echo "<h3>Aktiviteter fra ".$tag."</h3>";
             
-            foreach(hentAktiviteterFraTag($id) as $akt)
+            foreach(hentAktiviteterFraTag($tag) as $akt)
             {
                 printAktivitetBoks($akt->id);
             }
@@ -18,7 +18,4 @@
                 printAktivitetBoks($akt->id);
             }
         }
-
-
-
 ?>

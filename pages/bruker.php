@@ -18,13 +18,13 @@
                 echo "<b>Deltar i:</b><br>";
                 foreach($deltar as $d)
                 {
-                    echo tryggPrint(hentAktivitet($d->Aktivitet)->Tittel) . "<br>";
+                    printAktivitetBoks($d->Aktivitet);
                 }
                 
                 echo "<b>Deltar kanskje i:</b><br>";
                 foreach($deltarKanskje as $dK)
                 {
-                    echo tryggPrint(hentAktivitet($dK->Aktivitet)->Tittel) . "<br>";
+                    printAktivitetBoks($dK->Aktivitet);
                 }
                 
             }else
@@ -48,14 +48,15 @@
                 echo "<b>Deltar i:</b><br>";
                 foreach($deltar as $d)
                 {
-                    echo tryggPrint(hentAktivitet($d->Aktivitet)->Tittel) . "<br>";
+                    printAktivitetBoks($d->Aktivitet);
                 }
                 
-                echo "<b>Deltar kanskje i:</b><br>";
+                echo "<br><b>Deltar kanskje i:</b><br>";
                 foreach($deltarKanskje as $dK)
                 {
-                    echo tryggPrint(hentAktivitet($dK->Aktivitet)->Tittel) . "<br>";
+                    printAktivitetBoks($dK->Aktivitet);
                 }
+                
             }else
             {
                 echo "<h1>Logg inn for å se profilen din!";

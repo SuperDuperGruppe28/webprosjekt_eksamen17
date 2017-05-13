@@ -188,7 +188,8 @@
             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
             <input type="hidden" id="apning" name="apning" value="">
-            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
+            <?php $dato =  new DateTime(); ?>
+            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato" value="<?=$dato->format('Y-m-d\TH:i:s');?>"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
             

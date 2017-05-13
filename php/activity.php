@@ -63,7 +63,7 @@ if($bruker)
             if(isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2]))
             {
                 // Tags
-                registrerAktivitetTag($id, $_POST[$PTagVekt1], $_POST[$PTagVekt1]);
+                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
             }
             
             if(isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3]))
