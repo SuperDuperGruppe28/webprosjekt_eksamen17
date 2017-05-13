@@ -210,6 +210,16 @@ function slettDeltagelser($aktivitet)
     return false;
 }
 
+// Returnerer aktivtene en bruker deltar i
+function hentBrukerDeltagelser($bruker, $deltagelse)
+{
+    if(eksistererBruker($bruker))
+    {
+        $delta = Deltagelse::where("Bruker", "LIKE", $bruker);
+        return $delta->where("Deltagelse", "=", $deltagelse)->get();
+    }
+}
+
 //    ______    _                                                  
 //  .' ____ \  / |_                                                
 //  | (___ \_|`| |-'.---.  _ .--..--.   _ .--..--.  .---.  _ .--.  
