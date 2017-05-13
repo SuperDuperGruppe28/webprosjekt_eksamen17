@@ -58,7 +58,6 @@ if($bruker)
             echo "Mangler data";
         }
     }
-  
 }else
 {
     echo "<h1>Må være logget inn!</h1>";
