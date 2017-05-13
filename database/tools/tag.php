@@ -141,6 +141,6 @@ function hentAktivitetTags($aktivitet)
 
 function hentAlleAktivitetTags()
 {
-        $tags = TagsAktivitet::All();
-        return $tags;
+    $tags = TagsAktivitet::All();
+    return $tags;
 }
