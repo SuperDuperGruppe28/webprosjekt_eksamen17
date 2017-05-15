@@ -433,7 +433,7 @@ textarea {
     border: 1px solid black;
 }
 
-#tagsContainer .tagLink
+.tagLink
 {
     font-variant: small-caps;
     font-size: large;

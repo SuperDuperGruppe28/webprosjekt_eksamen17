@@ -127,7 +127,10 @@
                     echo "<div id='kommentarFelt'><h1>Kommentarer</h1>";
                     foreach(hentKommentarer($id) as $kom)
                     {
-                        echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=". $kom->Bruker . "'><img height='25px' width='25px' src='".hentBrukerBildeEx($kom->Bruker)."'/>".$kom->Bruker."</a></b>: " . tryggPrint($kom->Tekst);
+                         $klasse = "";
+                        if(erAdmin($kom->Bruker))
+                            $klasse = "tagLink";
+                        echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=". $kom->Bruker . "'><img height='25px' width='25px' src='".hentBrukerBildeEx($kom->Bruker)."'/><b class='".$klasse."'>".$kom->Bruker."</b></a></b>: " . tryggPrint($kom->Tekst);
                         echo "</div>";
                     }
                     echo "</div>";
