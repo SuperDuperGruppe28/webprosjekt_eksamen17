@@ -196,3 +196,19 @@ function sendVerifiseringsEmail($bruker)
     }
     return false;
 }
+
+// Returner resultat fra søk
+function sokBruker($sok)
+{
+    return Bruker::where(function ($query) use ($sok) 
+    {
+        $query->where('Brukernavn', 'LIKE', "%".$sok."%")
+          ->orWhere('Email', 'LIKE', "%".$sok."%");
+    })->get();
+}
+
+function printBrukerBoksFraArray($bruker)
+{
+    echo "<a href='?side=bruker&id=".$bruker."'>".$bruker."</a><br>";
+}
+
