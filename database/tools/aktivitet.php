@@ -180,7 +180,7 @@ function sokAktivitet($sok)
         $query->where('id', '=', $sok)
           ->orWhere('Tittel', 'LIKE', "%".$sok."%")
           ->orWhere('Bruker', 'LIKE', "%".$sok."%");
-    })->get();   
+    })->get(); //->unique();   
 }
 
 //   ______           __   _                        __                

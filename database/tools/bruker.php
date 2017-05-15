@@ -209,6 +209,6 @@ function sokBruker($sok)
 
 function printBrukerBoksFraArray($bruker)
 {
-    echo "<a href='?side=bruker&id=".$bruker."'>".$bruker."</a><br>";
+    echo "<a href='?side=bruker&id=".$bruker."'><img height='40px' width='40px' src='".hentBrukerBildeEx($bruker)."'/>".$bruker."</a><br>";
 }
 
