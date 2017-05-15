@@ -289,7 +289,7 @@ footer {
     position: relative;
     margin: 2.5% auto auto;
     padding: 10px;
-    width: 30%;
+    width: 40%;
     height: 70%;
 }
 
@@ -469,6 +469,21 @@ textarea {
     background: #51d351;
 }
 
+/*Kommentarfelt*/
+#kommentarFelt
+{
+    position: relative;
+    padding: 5px;
+    background: #efefef;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+#kommentarFelt .kommentar
+{
+    width: 100%;
+}
 
 /* Navigasjonsbar */
 nav {
