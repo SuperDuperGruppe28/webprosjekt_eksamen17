@@ -45,16 +45,22 @@
                 echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
                 echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukernavn)).'" height="100px width="100px"/><br>';
                 
-                echo "<b>Deltar i:</b><br>";
-                foreach($deltar as $d)
-                {
-                    printAktivitetBoks($d->Aktivitet);
+                if(count($deltar) != 0) {
+                    echo "<b>Deltar i4:</b><br>";
+                    foreach($deltar as $d)
+                    {
+                        printAktivitetBoks($d->Aktivitet);
+                    }
+                } else {
+                    echo "Deltar ikke i noen aktiviteter.";
                 }
-                
-                echo "<br><b>Deltar kanskje i:</b><br>";
-                foreach($deltarKanskje as $dK)
-                {
-                    printAktivitetBoks($dK->Aktivitet);
+                   
+                if(count($deltarKanskje) != 0) {
+                    echo "<br><b>Deltar kanskje i:</b><br>";
+                    foreach($deltarKanskje as $dK)
+                    {
+                        printAktivitetBoks($dK->Aktivitet);
+                    }
                 }
                 
             }else
