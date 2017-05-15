@@ -249,6 +249,13 @@ footer
     height: 70%;
 }
 
+/*Style*/
+.cursive {
+    font-style: italic;
+    border: none;
+    border-top: thin solid #fff;
+}
+
 /*Input*/
 
 input,
