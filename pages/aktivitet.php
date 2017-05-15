@@ -124,12 +124,13 @@
 
                 <?php
                 }
-                    echo "<h1>Kommentarer</h1>";
+                    echo "<div id='kommentarFelt'><h1>Kommentarer</h1>";
                     foreach(hentKommentarer($id) as $kom)
                     {
-                        echo "<b>" . $kom->Dato . " - " . tryggPrint($kom->Bruker) . "</b>: " . tryggPrint($kom->Tekst);
-                        echo "<br>";
+                        echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=". $kom->Bruker . "'><img height='25px' width='25px' src='".hentBrukerBildeEx($kom->Bruker)."'/>".$kom->Bruker."</a></b>: " . tryggPrint($kom->Tekst);
+                        echo "</div>";
                     }
+                    echo "</div>";
                     
                 // Redigeringsside
                 }else
