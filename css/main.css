@@ -213,6 +213,7 @@ footer {
     width: 270px;
     padding: 1px;
     overflow: hidden;
+    z-index: -10;
 }
 
 #search,
