@@ -26,6 +26,7 @@ h3 {
 }
 
 #maintext {
+    position: initial;
     width: 60%;
     height: 90%;
     padding: 5px;
