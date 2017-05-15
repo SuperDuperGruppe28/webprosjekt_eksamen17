@@ -4,6 +4,7 @@ $PSok = "sok";
 
 if(isset($_POST[$PSok]))
 {
+    echo '<div id="center">';
     echo "<h1>Aktiviteter</h1>";
     foreach(sokAktivitet($_POST[$PSok]) as $res)
     {
@@ -14,6 +15,7 @@ if(isset($_POST[$PSok]))
     {
         printBrukerBoksFraArray($res->Brukernavn);
     }
+    echo '</div>';
 }else
 {
     echo "Mangler søk..";
