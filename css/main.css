@@ -25,6 +25,12 @@ h3 {
     text-align: center;
 }
 
+.navPil
+{
+    display: inline;
+    font-size: 400%;
+}
+
 .center { margin: auto; text-align: center; }
 
 #maintext {

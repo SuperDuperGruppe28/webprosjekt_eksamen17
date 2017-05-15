@@ -10,6 +10,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
 require_once "bruker.php";
 require_once "kommentar.php";
 
+
+$AKTIVITETER_SIDE = 10;
+
 // Oppretter en ny aktivitet
 // Todo
 // Legge til tags, eller håndtere det i aktivitetskapelseforalle.php
@@ -113,6 +116,9 @@ function printAktivitetBoks($aktivitet)
         $akt = hentAktivitet($aktivitet);
         $pris = $akt->Pris > 0 ? $akt->Pris."kr" : "Gratis!";
         $dato = new Carbon\Carbon($akt->Dato);
+        $dato = $dato->diffForHumans();
+        if($akt->Statisk === 1)
+            $dato = "Statisk";
     ?>
         <div class="AktivitetLitenBoks">
          <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet)?>">
@@ -126,7 +132,7 @@ function printAktivitetBoks($aktivitet)
                 <img class="Ikoner" src="<?=hentBrukerBildeEx($akt->Bruker)?>"</img>
             </div>
         </a>
-        <div class="Dato"><?=$dato->diffForHumans()?></div>
+        <div class="Dato"><?=$dato?></div>
         <div class="Likes">
             <b><?=tryggPrint(antallStemmer($aktivitet))?></b>
             <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
@@ -148,6 +154,9 @@ function printAktivitetBoksFraArray($aktivitet)
         $akt = $aktivitet;
         $pris = $akt->Pris > 0 ? $akt->Pris."kr" : "Gratis!";
         $dato = new Carbon\Carbon($akt->Dato);
+        $dato = $dato->diffForHumans();
+        if($akt->Statisk === 1)
+            $dato = "Statisk";
     ?>
         <div class="AktivitetLitenBoks">
          <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet->id)?>">
@@ -161,7 +170,7 @@ function printAktivitetBoksFraArray($aktivitet)
                 <img class="Ikoner" src="<?=hentBrukerBildeEx($akt->Bruker)?>"</img>
             </div>
         </a>
-        <div class="Dato"><?=$dato->diffForHumans()?></div>
+        <div class="Dato"><?=$dato?></div>
         <div class="Likes">
             <b><?=tryggPrint(antallStemmer($aktivitet->id))?></b>
             <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
@@ -181,6 +190,22 @@ function sokAktivitet($sok)
           ->orWhere('Tittel', 'LIKE', "%".$sok."%")
           ->orWhere('Bruker', 'LIKE', "%".$sok."%");
     })->get(); //->unique();   
+}
+
+// Henter ut statiske aktiviteter, paged
+function hentStatiskeAktiviteter($side)
+{   
+    global $AKTIVITETER_SIDE;
+    $akt = Aktivitet::where("Statisk", "=", 1)->skip($side*$AKTIVITETER_SIDE)->take($AKTIVITETER_SIDE)->get();
+    return $akt;
+}
+
+// Henter ut alle aktiviteter, paged
+function hentAktiviteterFraSide($side)
+{   
+    global $AKTIVITETER_SIDE;
+    $akt = Aktivitet::skip($side*$AKTIVITETER_SIDE)->take($AKTIVITETER_SIDE)->get();
+    return $akt;
 }
 
 //   ______           __   _                        __                

@@ -143,9 +143,9 @@ function hentAlleAktivitetTags()
     $tags = TagsAktivitet::All();
     return $tags;
 }
-
-// Returnerer aktivitene som tilhører gitt tag
-function hentAktiviteterFraTag($tag)
+      
+function hentAktiviteterFraTag($tag, $side)
 {
-    return TagsAktivitet::where("Tag", "LIKE", $tag)->get();
+    global $AKTIVITETER_SIDE;
+    return TagsAktivitet::where("Tag", "LIKE", $tag)->skip($side*$AKTIVITETER_SIDE)->take($AKTIVITETER_SIDE)->get();
 }
