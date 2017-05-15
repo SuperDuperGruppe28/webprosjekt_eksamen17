@@ -49,7 +49,8 @@ header {
     margin: 0;
 }
 
-footer {
+footer 
+{
     position: relative;
     height: 8%;
     width: 100%;
@@ -122,14 +123,24 @@ footer {
     color: whitesmoke;
 }
 
-#bodyContainer {
+#bodyContainer 
+{
     position: relative;
     min-height: 100%;
     width: 100%;
-    padding: 10px;
+    padding: 3%;
+    overflow: auto;
 }
 
-#footerContainer {}
+#footerContainer
+{
+    position: relative;
+    height: 8%;
+    width: 100%;
+    margin: 0;
+    background: white;
+    text-align: center;
+}
 
 #loggInnBoks {
     position: relative;
@@ -187,8 +198,6 @@ footer {
 
     background-image: linear-gradient(lightblue, #9ebbc4);
 }
-
-
 
 #submit::-moz-focus-inner {
     border: 0;
@@ -404,6 +413,38 @@ textarea {
     display: table-cell;
     vertical-align: middle;
     background: #51d351;
+}
+
+/*AktiviteterContainer*/
+#tagsContainer
+{
+    position: absolute;
+    min-width: 10%;
+    height: 100%;
+    top: 0;
+    left: 2px;
+    border: 1px solid black;
+}
+
+#tagsContainer .tagLink
+{
+    font-variant: small-caps;
+    font-size: large;
+    color: gold;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+#aktiviteterContainer
+{
+    position: absolute;
+    min-width: 90%;
+    height: 100%;
+    top: 0;
+    left: 10%;
 }
 
 /*Kommentarfelt*/

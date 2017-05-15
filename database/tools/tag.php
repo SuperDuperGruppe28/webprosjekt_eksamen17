@@ -49,6 +49,11 @@ function registrerBrukerTag($bruker, $tag, $score)
     return false;
 }
 
+function hentAlleTags()
+{
+    return Tags::All();
+}
+
 // Sjekker om en tag eksisterer
 function eksistererBrukerTag($bruker, $tag)
 {
