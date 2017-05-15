@@ -4,7 +4,7 @@ $PSok = "sok";
 
 if(isset($_POST[$PSok]))
 {
-    echo '<div id="center">';
+    echo '<div class="center">';
     echo "<h1>Aktiviteter</h1>";
     foreach(sokAktivitet($_POST[$PSok]) as $res)
     {
