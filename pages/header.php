@@ -18,7 +18,7 @@
 
                             $tags = Tags::all();
                             $tags_count = $tags->count();
-                            $limit = 5;
+                            $limit = 10;
 
                             $tags_limit = min($tags_count, $limit);
 
