@@ -25,6 +25,8 @@ h3 {
     text-align: center;
 }
 
+#center { margin: auto; text-align: center; }
+
 #maintext {
     width: 160%;
     height: 90%;
