@@ -11,7 +11,9 @@
                 $deltarKanskje = hentBrukerDeltagelser($id, 2);
                 echo "<h1>" . tryggPrint($bruker->Brukernavn) . "</h1>";
                 echo "<b>Email: " . tryggPrint($bruker->Email) . "</b><br>";
-                echo "<b>Admin: " . tryggPrint($bruker->Admin) . "</b><br>";
+                
+                if($bruker->Admin > 0)
+                    echo "<b class='tagLink'>Admin</b><br>";
                 echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
                 echo '<img src="'.tryggPrint(hentBrukerBildeEx($id)).'" height="100px width="100px"/><br>';
                 
@@ -41,12 +43,14 @@
                 $bruker = hentBruker($brukernavn);
                 echo "<h1>" . tryggPrint($bruker->Brukernavn) . "</h1>";
                 echo "<b>Email: " . tryggPrint($bruker->Email) . "</b><br>";
-                echo "<b>Admin: " . tryggPrint($bruker->Admin) . "</b><br>";
+                
+                if($bruker->Admin > 0)
+                    echo "<b class='tagLink'>Admin</b><br>";
                 echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
                 echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukernavn)).'" height="100px width="100px"/><br>';
                 
                 if(count($deltar) != 0) {
-                    echo "<b>Deltar i4:</b><br>";
+                    echo "<b>Deltar i:</b><br>";
                     foreach($deltar as $d)
                     {
                         printAktivitetBoks($d->Aktivitet);
