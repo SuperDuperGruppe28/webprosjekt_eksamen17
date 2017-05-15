@@ -53,7 +53,7 @@
                    ?>
                     
                     <h1><?=tryggPrint($akt->Tittel);?></h1>
-                    <img style="width:100%; height:250px;" src="<?=tryggPrint($akt->Bilde);?>" />
+                    <img style="width:100%; height:100%;" src="<?=tryggPrint($akt->Bilde);?>" />
                     <a href="?side=bruker&id=<?=$akt->Bruker?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker)?>"/><?=$akt->Bruker?></a><br>
                     <b>Dato: <?=$akt->Dato?></b><br>
                     <b>Beskrivelse: <?=tryggPrint($akt->Beskrivelse);?></b><br>
