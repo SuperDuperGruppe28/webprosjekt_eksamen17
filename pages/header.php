@@ -4,6 +4,8 @@
         <nav>
             <ul>
                 <li>
+                    <img src="/img/westerdals.png" width="70px" height="70px" style="vertical-align: middle">        
+                </li>
                     <a href="?side=main"><img src="/img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
                 </li>
                 <li><a href="?side=main">Hjem</a></li>
@@ -50,7 +52,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="?side=aktivitet">Lag aktivitet</a></li>             
+                <li><a href="?side=aktivitet">Lag aktivitet</a></li>   
 
                 <?php
             if(erBrukerLoggetInn())
