@@ -11,6 +11,7 @@ echo "<h3>Vulkanelva!(main body)</h3>";
     echo "Ikke logget inn";
 ?>
 
+
 <div id="maintext">
     <h3>Vulkanelva er området fra Kubaparken og ned til Westerdals ACT i Chr. Kroghs gate 32.
         bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla
@@ -41,6 +42,3 @@ echo "<h3>Vulkanelva!(main body)</h3>";
             }
         </script>
 
-<div id="kalender"> 
-
-    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23c0c0c0&amp;src=btcl0vgqt65veto83jbvdtgtvk%40group.calendar.google.com&amp;color=%23333333&amp;ctz=Europe%2FBrussels" style="border:solid 1px #777" width="200" height="150" frameborder="0" scrolling="no"></iframe></div>
