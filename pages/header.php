@@ -57,7 +57,7 @@
                         <input id="submit" type="submit" value="Søk">
                     </form>
 
-                </li>
+                </li>                
                 <?php
             if(erBrukerLoggetInn())
             {
@@ -76,5 +76,11 @@
                     </li>
             </ul>
         </nav>
+   
+                    <form id="searchbox" style='vertical-align:middle'>
+                        <input id="search" type="text" placeholder="Søk her . . .">
+                        <input id="submit" type="submit" value="Søk">
+                    </form>
+               
     </center>
 </div>
