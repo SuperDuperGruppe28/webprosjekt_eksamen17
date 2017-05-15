@@ -16,7 +16,7 @@ $datbas->addConnection(
         'password' => 'MmU{@N}@(#2c',
         'database' => 'berseb16_aktivitet',
         'collation' => 'utf8_general_ci'
-        
+
     ]);
 
 $datbas->bootEloquent();
