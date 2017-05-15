@@ -9,7 +9,7 @@
             
             foreach(hentAktiviteterFraTag($tag) as $akt)
             {
-                printAktivitetBoks($akt->id);
+                printAktivitetBoks($akt->Aktivitet);
             }
            
         }else

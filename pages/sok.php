@@ -20,6 +20,3 @@ if(isset($_POST[$PSok]))
 {
     echo "Mangler søk..";
 }
-
-
-?>
