@@ -150,7 +150,7 @@ function printAktivitetBoksFraArray($aktivitet)
         $dato = new Carbon\Carbon($akt->Dato);
     ?>
         <div class="AktivitetLitenBoks">
-         <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet)?>">
+         <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet->id)?>">
             <img class="bildeBoks" src="<?=tryggPrint($akt->Bilde)?>" />
              <div class="bildeBoksLag"></div>
         </a>

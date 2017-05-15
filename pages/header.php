@@ -56,7 +56,6 @@
                         <input id="search" name="sok" type="text" placeholder="Søk her . . .">
                         <input id="submit" type="submit" value="Søk">
                     </form>
-
                 </li>                
                 <?php
             if(erBrukerLoggetInn())
