@@ -24,54 +24,52 @@ if ($tittel === "header" || $tittel === "footer")
 
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- HEAD -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Veldig bra side">
-    <meta name="author" content="Gruppe28">
+    <head>
+        <!-- HEAD -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Veldig bra side">
+        <meta name="author" content="Gruppe28">
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?= time(); ?>">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/../../css/main.css?v=<?= time(); ?>">
 
-    <!-- Ikoner -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+        <!-- Ikoner -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
 
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    <!--Scripts-->
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv50YQCrnKlbScV5RZkyfVwXtj9lIYklw"></script>
+        <!--Scripts-->
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv50YQCrnKlbScV5RZkyfVwXtj9lIYklw"></script>
 
-    <title><?php echo $tittel ?></title>
-</head>
+        <title><?php echo $tittel ?></title>
+    </head>
 
-<body>
+    <body>
+        <!-- HEADER -->
+        <header><?php require 'pages/header.php' ?></header>
 
-<!-- HEADER -->
-<header><?php require 'pages/header.php' ?></header>
+        <!-- BODY -->
+        <div id="bodyContainer">
 
-<!-- BODY -->
-<div id="bodyContainer">
+            <?php
+            // Henter angitt side
+            $page = 'pages/' . $tittel . '.php';
+            if (file_exists($page)) {
+                require $page;
+            } else {
+                require 'pages/main.php';
+            }
+            ?>
+        </div>
 
-    <?php
-    // Henter angitt side
-    $page = 'pages/' . $tittel . '.php';
-    if (file_exists($page)) {
-        require $page;
-    } else {
-        require 'pages/main.php';
-    }
-    ?>
-
-</div>
-
-<!-- FOOTER -->
-<?php require 'pages/footer.php' ?>
-</body>
+        <!-- FOOTER -->
+        <?php require 'pages/footer.php' ?>
+    </body>
 </html>
