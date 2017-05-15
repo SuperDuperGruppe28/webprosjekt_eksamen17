@@ -50,24 +50,26 @@
                 if(!isset($_GET['action']))
                 {
                     $tags = hentAktivitetTags($id);
-                    echo "<h1>" . tryggPrint($akt->Tittel) . "</h1>";
-                    echo "<b>Sjef: " . tryggPrint($akt->Bruker) . "</b><br>";
-                    echo "<b>" . tryggPrint($akt->Beskrivelse) . "</b><br>";
-                    echo "<b>" . tryggPrint($akt->Apningstider) . "</b><br>";
-                    echo "<b>" . tryggPrint($akt->Dato) . "</b><br>";
-                    echo "<b>" . tryggPrint($akt->Pris) . "kr</b><br>";
-                    echo '<img src="'.tryggPrint($akt->Bilde).'" height="100px width="100px"/><br>';
+                   ?>
+                    
+                    <h1><?=tryggPrint($akt->Tittel);?></h1>
+                    <img style="width:100%; height:250px;" src="<?=tryggPrint($akt->Bilde);?>" />
+                    <a href="?side=bruker&id=<?=$akt->Bruker?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker)?>"/><?=$akt->Bruker?></a><br>
+                    <b>Dato: <?=$akt->Dato?></b><br>
+                    <b>Beskrivelse: <?=$akt->Beskrivelse?></b><br>
+                    <b>Statisk: <?=$akt->Statisk?></b><br>
+
+                    <?php
                     foreach($tags as $tag)
-                            {
-                                echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
-                            }
+                    {
+                        echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
+                    }
 
                     echo "<br><b>Likes: </b>" . tryggPrint(antallStemmer($id));
 
                     echo "<br><b>Deltar ikke: </b>" . tryggPrint(hentAntallDeltagelser($id, 0));
                     echo "<br><b>Deltar: </b>" . tryggPrint(hentAntallDeltagelser($id, 1));
                     echo "<br><b>Deltar kanskje: </b>" . tryggPrint(hentAntallDeltagelser($id, 2));
-                
                 $brukernavn = loggetInnBruker();
                 if($brukernavn)
                 {

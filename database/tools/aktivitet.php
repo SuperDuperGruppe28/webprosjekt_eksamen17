@@ -163,7 +163,7 @@ function printAktivitetBoksFraArray($aktivitet)
         </a>
         <div class="Dato"><?=$dato->diffForHumans()?></div>
         <div class="Likes">
-            <b><?=tryggPrint(antallStemmer($aktivitet))?></b>
+            <b><?=tryggPrint(antallStemmer($aktivitet->id))?></b>
             <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
         </div>
         <div class="Beskrivelse"><?=tryggPrint($akt->Beskrivelse)?></div>
