@@ -199,8 +199,8 @@ footer {
     border: 25px solid white;
 }
 
-#searchbox {
-    position: relative;
+#searchbox 
+{
     margin: auto;
     vertical-align: middle;
     background-color: #eaf8fc;

@@ -50,13 +50,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="?side=aktivitet">Lag aktivitet</a></li>
-                <li>
-                    <form  action="?side=sok" method="post" id="searchbox" style='vertical-align:middle'>
-                        <input id="search" name="sok" type="text" placeholder="Søk her . . .">
-                        <input id="submit" type="submit" value="Søk">
-                    </form>
-                </li>                
+                <li><a href="?side=aktivitet">Lag aktivitet</a></li>             
 
                 <?php
             if(erBrukerLoggetInn())
