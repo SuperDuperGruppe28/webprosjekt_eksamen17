@@ -77,64 +77,71 @@ function hentAktivitet($aktivitet)
     return Aktivitet::find($aktivitet);
 }
 
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetTittel($aktivitet, $tittel)
+// Returnerer aktivitet med aktivitetsID
+function hentAlleAktiviteter()
 {
-     if(eksistererAktivitet($aktivitet))
+    return Aktivitet::All()->sortByDesc("Dato");
+}
+
+//Redigerer aktivteten
+function redigerAktivitet($aktivitet, $tittel, $beskrivelse, $dato, $pris, $statisk, $bilde, $lon, $lat)
+{
+    if(eksistererAktivitet($aktivitet))
     {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Tittel = $tittel;
-        $akt->save();
-        
+        $akti = hentAktivitet($aktivitet);
+        $akti->Tittel = $tittel;
+        $akti->Beskrivelse = $beskrivelse;
+        $akti->Dato = date("Y-m-d H:i:s", strtotime($dato));
+        $akti->Pris = $pris;
+        $akti->Statisk = $statisk;
+        $akti->Bilde = $bilde;
+        $akti->Lengdegrad = $lon;
+        $akti->Breddegrad = $lat;
+        $akti->save();
+            
+        // Oppretter kommentarfelt for aktivitet
         return true;
     }
     return false;
 }
 
-// Redigerer beskrivelsen til en gitt aktivitet
-function redigerAktivtetBeskrivelse($aktivitet, $beskrivelse)
+// Printer ut en liten Aktivitetsboks fra gitt aktivitet
+function printAktivitetBoks($aktivitet)
 {
-     if(eksistererAktivitet($aktivitet))
-    {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Beskrivelse = $beskrivelse;
-        $akt->save();
-        
-        return true;
+    if(eksistererAktivitet($aktivitet))
+    {   
+        $akt = hentAktivitet($aktivitet);
+        $pris = $akt->Pris > 0 ? $akt->Pris."kr" : "Gratis!";
+        $dato = new Carbon\Carbon($akt->Dato);
+    ?>
+        <div class="AktivitetLitenBoks">
+         <a href="?side=aktivitet&id=<?=tryggPrint($aktivitet)?>">
+            <img class="bildeBoks" src="<?=tryggPrint($akt->Bilde)?>" />
+             <div class="bildeBoksLag"></div>
+        </a>
+        <div class="Tittel"><?=tryggPrint($akt->Tittel)?></div>
+        <a href="?side=bruker&id=<?=tryggPrint($akt->Bruker)?>">
+            <div class="Utgiver">
+                <b><?=tryggPrint($akt->Bruker)?></b> 
+                <img class="Ikoner" src="<?=hentBrukerBildeEx($akt->Bruker)?>"</img>
+            </div>
+        </a>
+        <div class="Dato"><?=$dato->diffForHumans()?></div>
+        <div class="Likes">
+            <b><?=tryggPrint(antallStemmer($aktivitet))?></b>
+            <img class="Ikoner" src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
+        </div>
+        <div class="Beskrivelse"><?=tryggPrint($akt->Beskrivelse)?></div>
+        <div class="Pris"><?=$pris?></div>
+    </div>
+    
+    <?php
     }
-    return false;
-}
-
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetApning($aktivitet, $apning)
-{
-     if(eksistererAktivitet($aktivitet))
+    else
     {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Apning = $apning;
-        $akt->save();
-        
-        return true;
+        echo "Fant ikke aktivtet: " . $aktivitet; 
     }
-    return false;
 }
-
-// Redigerer tittelen til en gitt aktivitet
-function redigerAktivitetPris($aktivitet, $pris)
-{
-     if(eksistererAktivitet($aktivitet))
-    {
-        $akt = Aktivitet::find($aktivitet);
-        $akt->Pris = $pris;
-        $akt->save();
-        
-        return true;
-    }
-    return false;
-}
-// Todo
-// Redigere aktivitetfelter
-
 //   ______           __   _                        __                
 //  |_   _ `.        [  | / |_                     [  |               
 //    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  
@@ -242,6 +249,18 @@ function slettDeltagelser($aktivitet)
     }
     return false;
 }
+
+// Returnerer aktivtene en bruker deltar i
+function hentBrukerDeltagelser($bruker, $deltagelse)
+{
+    if(eksistererBruker($bruker))
+    {
+        $delta = Deltagelse::where("Bruker", "LIKE", $bruker);
+        return $delta->where("Deltagelse", "=", $deltagelse)->get();
+    }
+}
+
+
 
 //    ______    _                                                  
 //  .' ____ \  / |_                                                

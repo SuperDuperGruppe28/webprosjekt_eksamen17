@@ -47,28 +47,44 @@
             if(eksistererAktivitet($id))
             {
                 $akt = hentAktivitet($id);
-                $tags = hentAktivitetTags($id);
-                echo "<h1>" . $akt->Tittel . "</h1>";
-                echo "<b>Sjef: " . $akt->Bruker . "</b><br>";
-                echo "<b>" . $akt->Beskrivelse . "</b><br>";
-                echo "<b>" . $akt->Apningstider . "</b><br>";
-                echo "<b>" . $akt->Dato . "</b><br>";
-                echo "<b>" . $akt->Pris . "kr</b><br>";
-                echo '<img src="'.$akt->Bilde.'" height="100px width="100px"/><br>';
-                foreach($tags as $tag)
-                        {
-                            echo "<b>" . $tag->Tag . " = " . $tag->Vekt . "%</b>, ";
-                        }
+                if(!isset($_GET['action']))
+                {
+                    $tags = hentAktivitetTags($id);
+                    echo "<h1>" . tryggPrint($akt->Tittel) . "</h1>";
+                    echo "<b>Sjef: " . tryggPrint($akt->Bruker) . "</b><br>";
+                    echo "<b>" . tryggPrint($akt->Beskrivelse) . "</b><br>";
+                    echo "<b>" . tryggPrint($akt->Apningstider) . "</b><br>";
+                    echo "<b>" . tryggPrint($akt->Dato) . "</b><br>";
+                    echo "<b>" . tryggPrint($akt->Pris) . "kr</b><br>";
+                    echo '<img src="'.tryggPrint($akt->Bilde).'" height="100px width="100px"/><br>';
+                    foreach($tags as $tag)
+                            {
+                                echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
+                            }
 
-                echo "<br><b>Likes: </b>" . antallStemmer($id);
-                
-                echo "<br><b>Deltar ikke: </b>" . hentAntallDeltagelser($id, 0);
-                echo "<br><b>Deltar: </b>" . hentAntallDeltagelser($id, 1);
-                echo "<br><b>Deltar kanskje: </b>" . hentAntallDeltagelser($id, 2);
+                    echo "<br><b>Likes: </b>" . tryggPrint(antallStemmer($id));
+
+                    echo "<br><b>Deltar ikke: </b>" . tryggPrint(hentAntallDeltagelser($id, 0));
+                    echo "<br><b>Deltar: </b>" . tryggPrint(hentAntallDeltagelser($id, 1));
+                    echo "<br><b>Deltar kanskje: </b>" . tryggPrint(hentAntallDeltagelser($id, 2));
                 
                 $brukernavn = loggetInnBruker();
                 if($brukernavn)
                 {
+                    // Loggføre besøket til brukeren
+                    foreach(hentAktivitetTags($id) as $akTag)
+                    {
+                        registrerBrukerBesok($brukernavn, $akTag->Tag);
+                    }
+                    
+                    if($brukernavn === $akt->Bruker || erAdmin($brukernavn))
+                    {
+                        echo '<form action="?side=aktivitet&action=edit&id='.$id.'" method="post">
+                        
+                            <input type="submit" value="Rediger aktivitet" />
+                        </form>';
+                    }
+                    
                 ?><form action="php/activity.php?action=stem&akti=<?=$id?>" method="post">
                         <input type="submit" value="<?=!harStemtAktivitet($brukernavn, $id)? 'Liker!' : 'Liker ikke!';?>" />
                 </form>
@@ -82,18 +98,10 @@
                         
                         <input type="submit" value="Velg deltagelse" />
                 </form>
-    
-                <select name="deltagelse" form="deltaform">
-                  <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : '';?>>Deltar ikke</option>
-                  <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : '';?>>Deltar</option>
-                  <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : '';?>>Deltar kanskje</option>
-                </select>
-                <form action="php/activity.php?action=delta&akti=<?=$id?>" method="post" id="deltaform">
-                        
-                        <input type="submit" value="Velg deltagelse" />
-                </form>
                 <?php
                 }
+                    
+                
                 echo "<div id='mapaktivitet'></div>";
                 
                 //<!--Laste google maps-->
@@ -117,11 +125,55 @@
                     echo "<h1>Kommentarer</h1>";
                     foreach(hentKommentarer($id) as $kom)
                     {
-                        echo "<b>" . $kom->Dato . " - " . $kom->Bruker . "</b>: " . $kom->Tekst;
+                        echo "<b>" . $kom->Dato . " - " . tryggPrint($kom->Bruker) . "</b>: " . tryggPrint($kom->Tekst);
                         echo "<br>";
                     }
-                
-                
+                    
+                // Redigeringsside
+                }else
+                {
+                        $brukernavn = loggetInnBruker();
+                        if($brukernavn)
+                        {
+                            if($brukernavn === $akt->Bruker || erAdmin($brukernavn))
+                            {
+                                
+                            
+                            ?>
+                             <h1>Rediger <?=$akt->Tittel?></h1>
+                        <form action="php/activity.php?action=edit&akti=<?=$id?>" method="post">
+                            <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.." value="<?=$akt->Tittel;?>"><br/><br/>
+                            <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."><?=$akt->Beskrivelse;?></textarea><br/><br/>
+                            <?php $dato =  new DateTime($akt->Dato); ?>
+                            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato" value="<?=$dato->format('Y-m-d\TH:i:s');?>"><br><br>
+                            <label for="pris">Pris</label> <input type="number" id="pris" name="pris" value="<?=$akt->Pris;?>"><br/><br/>
+                            <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde" value="<?=$akt->Bilde;?>"><br/><br/>
+
+                            <!--Koordinater for GOOGLE MAPS KART-->
+                            <input type="hidden" id="lengdegrad" name="lengdegrad" value="<?=$akt->Lengdegrad;?>" />
+                            <input type="hidden" id="breddegrad" name="breddegrad" value="<?=$akt->Breddegrad;?>" />
+
+                            <?php
+                            if(erAdmin($brukernavn))
+                                echo '<label for="statisk">Statisk</label> <input type="checkbox" id="statisk" name="statisk"' . ($akt->Statisk === 1 ? 'checked="checked"' : '') . '><br/><br/>';    
+                            ?>
+
+                            <div id="mapaktivitet"></div>
+                            <!--Laste google maps-->
+                            <script type='text/javascript'>startMaps(<?=$akt->Breddegrad;?>, <?=$akt->Lengdegrad;?>, true); </script>
+
+                            <input class="button" type="submit" value="Registrer redigering"/>
+                        </form>
+
+                    <?php
+                            }
+                            else
+                                echo "<h1>HEY DETTE ER IKKE DIN SIDE!</h1>";
+                        }else
+                        {
+                            echo "<h1>Logg inn for å opprette en ny aktivitet!";
+                        }
+                }
             }else
             {
                 echo "<h1>Aktivitet med id " . $_GET['id'] . " eksisterer ikke!</h1>";
@@ -135,8 +187,9 @@
         <form action="php/activity.php?action=reg" method="post">
             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
-            <input type="hiddem" id="apning" name="apning" value="">
-            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato"><br><br>
+            <input type="hidden" id="apning" name="apning" value="">
+            <?php $dato =  new DateTime(); ?>
+            <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato" value="<?=$dato->format('Y-m-d\TH:i:s');?>"><br><br>
             <label for="pris">Pris</label> <input type="number" id="pris" name="pris"><br/><br/>
             <label for="bilde">Bilde</label> <input type="text" id="bilde" name="bilde"><br/><br/>
             

@@ -9,13 +9,12 @@ body {
     margin: 0;
     padding: 0;
     overflow: auto;
-    background-image: url("logo.png")
 }
 
 body {
     font-family: Roboto, sans-serif;
     min-height: 100%;
-    background-color: ghostwhite;
+    background-color: #fafaff;
 }
 
 h1 {
@@ -60,7 +59,8 @@ footer {
 
 #logout {}
 
-#delta {
+#delta 
+{
     border: 5px solid #6a6a6a;
 }
 
@@ -176,7 +176,9 @@ footer {
     background-color: lightblue;
 }
 
-#headerContainer {}
+#headerContainer {
+    vertical-align: middle;
+}
 
 #headerContainer h1 {
     color: whitesmoke;
@@ -200,6 +202,8 @@ footer {
 }
 
 #searchbox {
+    position: relative;
+    margin: auto;
     vertical-align: middle;
     background-color: #eaf8fc;
     background-image: linear-gradient(#fff, #d4e8ec);
@@ -207,7 +211,7 @@ footer {
     border-width: 1px;
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;
-    width: 280px;
+    width: 270px;
     padding: 1px;
     overflow: hidden;
 }
@@ -218,12 +222,10 @@ footer {
 }
 
 #search {
-    vertical-align: middle;
-    position: relative;
     margin: auto;
     padding: 5px 9px;
     height: 23px;
-    width: 190px;
+    width: 180px;
     border: 1px solid #a4c3ca;
     font: normal 13px 'trebuchet MS', arial, helvetica;
     background: #f1f1f1;
@@ -231,7 +233,6 @@ footer {
 }
 
 #submit {
-    position: relative;
     margin: auto;
     background-color: #6cbb6b;
     background-image: linear-gradient(#95d788, #6cbb6b);
@@ -268,8 +269,6 @@ footer {
 }
 
 #maintext {
-    vertical-align: middle;
-    position: absolute;
     top: 100px;
     left: 150px;
     width: 30%;
@@ -311,6 +310,26 @@ footer {
     color: white;
 }
 
+<<<<<<< HEAD
+=======
+#aktivitetBoks
+{
+    position: relative;
+    margin: 2.5% auto auto;
+    padding: 10px;
+    width: 30%;
+    height: 70%;
+}
+
+#brukerBoks
+{
+    position: relative;
+    margin: 2.5% auto auto;
+    padding: 10px;
+    width: 50%;
+    height: 70%;
+}
+>>>>>>> origin/master
 
 /*Input*/
 
@@ -355,9 +374,132 @@ textarea {
     background-color: #D33948;
 }
 
+/* Aktivitetboks */
+.AktivitetLitenBoks
+{
+    position: relative;
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+    background: #d8d8d8;
+    width: 300px;
+    height: 450px;
+    border: 1px solid black;
+}
+
+.AktivitetLitenBoks .bildeBoks
+{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid black;
+}
+
+.AktivitetLitenBoks .bildeBoksLag
+{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 40%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #a8a8a8;
+}
+
+.AktivitetLitenBoks:hover .bildeBoksLag
+{
+    opacity: .5;
+}
+
+.AktivitetLitenBoks .Tittel
+{
+    position: absolute;
+    margin: 0;
+    width: 50%;
+    height: 10%;
+    top: 40%;
+    left: 0;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.AktivitetLitenBoks .Utgiver
+{
+    position: absolute;
+    margin: 0;
+    padding: 2px;
+    width: 50%;
+    height: 10%;
+    top: 40%;
+    left: 50%;
+    text-align: right;
+}
+
+.AktivitetLitenBoks .Dato
+{
+    position: absolute;
+    margin: 0;
+    padding: 2px;
+    width: 70%;
+    height: 5%;
+    top: 50%;
+    left: 0%;
+    text-align: left;
+}
+
+.AktivitetLitenBoks .Likes
+{
+    position: absolute;
+    margin: 0;
+    padding: 2px;
+    width: 30%;
+    height: 5%;
+    top: 50%;
+    left: 70%;
+    text-align: right;
+}
+
+.AktivitetLitenBoks .Ikoner
+{
+    height: 100%;
+    vertical-align: middle;
+}
+
+.AktivitetLitenBoks .Beskrivelse
+{
+    position: absolute;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    height: 35%;
+    top: 55%;
+    left: 0;
+    overflow-y: hidden;
+}
+
+.AktivitetLitenBoks .Pris
+{
+    position: absolute;
+    margin: 0;
+    padding: 2px;
+    width: 100%;
+    height: 10%;
+    top: 90%;
+    left: 0;
+    font-size: x-large;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background: #51d351;
+}
+
 
 /* Navigasjonsbar */
-
 nav {
     background-color: #fff;
     border: 1px solid #dedede;

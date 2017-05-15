@@ -63,7 +63,7 @@ if($bruker)
             if(isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2]))
             {
                 // Tags
-                registrerAktivitetTag($id, $_POST[$PTagVekt1], $_POST[$PTagVekt1]);
+                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
             }
             
             if(isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3]))
@@ -78,14 +78,50 @@ if($bruker)
         {
             echo "Mangler data";
         }
+    // Redigere aktivitet
+    }else if($action === "edit")
+    {
+        if(isset($_GET[$GAktivitet]))
+        {
+            if($bruker)
+            {
+                $aktivitetbruker = hentAktivitet($_GET[$GAktivitet])->Bruker;
+                if($bruker === $aktivitetbruker || erAdmin($bruker))
+                {
+                    if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
+                    {                        
+                        $statisk = 0;
+                        if(isset($_POST[$PStatisk]))
+                            $statisk = 1;
+                        // Registerer ny aktivitet
+                       redigerAktivitet($_GET[$GAktivitet],
+                                      $_POST[$PTittel],
+                                      $_POST[$PBeskrivelse],
+                                      $_POST[$PDato],
+                                      $_POST[$PPris],
+                                      $statisk,
+                                      $_POST[$PBilde],
+                                      $_POST[$PLengdegrad],
+                                      $_POST[$PBreddegrad]);
+
+                    }
+                }
+            }
+            echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
+        }else
+        {
+            echo "Mangler data";
+        }
     }else if($action === "del")
     {
         if(isset($_GET[$GAktivitet]))
         {
             slettAktivitet($_GET[$GAktivitet]);
             echo "Slettet aktivitet!";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        }
+            // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';         }
     }else if($action === "stem")
     {
         if(isset($_GET[$GAktivitet]))
@@ -101,7 +137,8 @@ if($bruker)
                 }
             }
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
     }else if($action === "delta")
     {
         if(isset($_GET[$GAktivitet]) && isset($_POST[$PDeltagelse]))
@@ -117,13 +154,14 @@ if($bruker)
                 }
             }
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // Sender tilbake til forrige side
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$_GET[$GAktivitet].'"/></head></html>'; 
     }
   
 }else
 {
     echo "<h1>Må være logget inn!</h1>";
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';      
 }
 
 // Sender tilbake til forrige side

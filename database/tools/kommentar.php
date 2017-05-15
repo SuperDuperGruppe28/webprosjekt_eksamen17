@@ -123,3 +123,8 @@ function hentKommentarer($aktivitet)
     }
     return false;
 }
+
+function tryggPrint($inn)
+{
+    return htmlspecialchars($inn, ENT_QUOTES, 'UTF-8');
+}

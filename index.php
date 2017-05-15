@@ -68,6 +68,7 @@ if(isset($_GET[$GSide]))
         ?>
             
         </div>
+<<<<<<< HEAD
         
         <div id="sosialemedier">
             <a href="https://www.facebook.com/westerdalsosloact/" target="_blank" class="fa fa-facebook"></a>
@@ -75,6 +76,8 @@ if(isset($_GET[$GSide]))
             <a href="https://www.instagram.com/westerdalsact/" target="_blank" class="fa fa-instagram"></a>
         </div>
         
+=======
+>>>>>>> origin/master
             <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>

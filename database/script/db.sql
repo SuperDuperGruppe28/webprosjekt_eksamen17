@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Bruker (
 CREATE TABLE IF NOT EXISTS berseb16_aktivitet.Aktivitet (
   id int NOT NULL AUTO_INCREMENT,
   Tittel VARCHAR(45) NULL DEFAULT 'Ingen tittel',
-  Beskrivelse VARCHAR(45) NULL DEFAULT 'Ingen beskrivelse',
+  Beskrivelse VARCHAR(1024) NULL DEFAULT 'Ingen beskrivelse',
   Apningstider VARCHAR(45) NULL DEFAULT 'Ukjent',
   Dato DATETIME NULL,
   Pris FLOAT NULL DEFAULT 0,

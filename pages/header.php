@@ -14,12 +14,11 @@
                             <?php                                 
                         foreach(Tags::All() as $tag) 
                         {
-                            echo '<li><a href="#">' . $tag->Tag . '<span class="caret"></span></a>';
+                            echo '<li><a href="?side=aktiviteter&tag='.$tag->Tag.'">' . $tag->Tag . '<span class="caret"></span></a>';
                             echo '<div><ul>';
                             
                             $aktiviteter = TagsAktivitet::where("Tag", "=", $tag->Tag)->get();
-                            //echo '<pre>';
-                           // print_r($aktiviteter);
+                
                             foreach($aktiviteter as $aktivitet) {
                                 $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
                                 $aktivitet = hentAktivitet($aktivitet->Aktivitet);
@@ -53,7 +52,7 @@
                 </li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
                 <li>
-                    <form id="searchbox" style='vertical-align: middle'>
+                    <form id="searchbox" style='vertical-align:middle'>
                         <input id="search" type="text" placeholder="Søk her . . .">
                         <input id="submit" type="submit" value="Søk">
                     </form>
