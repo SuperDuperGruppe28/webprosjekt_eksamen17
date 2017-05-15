@@ -1,5 +1,5 @@
 <?php
-        echo '<div id="center">';
+        echo '<div class="center">';
         if(isset($_GET['tag']))
         {
             $tag = $_GET['tag'];
