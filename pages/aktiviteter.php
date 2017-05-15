@@ -1,4 +1,6 @@
 <?php
+
+// Frem og tilbakeknapper
     $sideTall = 0;
     $sideTallBak = 0;
     $sideTallFrem = 0;
@@ -9,6 +11,7 @@ if($sideTallBak - 1 >= 0)
     $sideTallBak = $sideTall - 1;
 $sideTallFrem = $sideTall + 1;
 
+    echo '<div id="aktiviteterContainer">';
         echo '<div class="center">';
         if(isset($_GET['tag']))
         {
@@ -35,4 +38,16 @@ $sideTallFrem = $sideTall + 1;
             echo '<a href="?side=aktiviteter&p='.$sideTallFrem.'"><div class="navPil">></div></a>';
         }
         echo "</div>";
+    echo "</div>";
+    
+    echo '<div id="tagsContainer">';
+        echo '<div class="center">';
+        echo '<h1>Tags</h1>';
+        foreach(hentAlleTags() as $tag)
+        {
+            echo '<a class="tagLink" href="?side=aktiviteter&tag='.$tag->Tag.'">'.$tag->Tag.'</a><br>';
+        }
+        echo "</div>";
+    echo "</div>";
+
 ?>

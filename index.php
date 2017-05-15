@@ -71,7 +71,8 @@ if($tittel === "header" || $tittel === "footer" )
         ?>
             
         </div>
-            <!-- FOOTER -->
-        <footer><?php require 'pages/footer.php'?></footer>
+        
+        <!-- FOOTER -->
+        <?php require 'pages/footer.php'?>
     </body>
 </html>
