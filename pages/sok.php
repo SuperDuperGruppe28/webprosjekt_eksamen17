@@ -6,15 +6,27 @@ if(isset($_POST[$PSok]))
 {
     echo '<div class="center">';
     echo "<h1>Aktiviteter</h1>";
-    foreach(sokAktivitet($_POST[$PSok]) as $res)
+    $aktitviteter = sokAktivitet($_POST[$PSok]);
+    
+    if(count($aktitviteter) > 0)
     {
-        printAktivitetBoksFraArray($res);
-    }
+        foreach( $aktitviteter as $res)
+        {
+            printAktivitetBoksFraArray($res);
+        }
+    }else
+        echo "Finner ingen aktiviteter..";
     echo "<h1>Brukere</h1>";
-    foreach(sokBruker($_POST[$PSok]) as $res)
+    $brukere = sokBruker($_POST[$PSok]);
+    if(count($brukere) > 0)
     {
-        printBrukerBoksFraArray($res->Brukernavn);
-    }
+       foreach($brukere as $res)
+        {
+            printBrukerBoksFraArray($res->Brukernavn);
+        } 
+    }else
+        echo "Finner ingen brukere..";
+    
     echo '</div>';
 }else
 {

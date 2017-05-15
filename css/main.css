@@ -87,72 +87,10 @@ footer {
     width: 300px;
 }
 
-#kalender {
-    position: absolute;
-    top: 420px;
-    left: 1055px;
-}
-
 #vulkanlogo {
     width: 50px;
     height: 50px;
     text-align: left;
-}
-
-#katogorier {
-    position: absolute;
-    width: 125px;
-    height: 200px;
-    border: 1px solid black;
-    text-align: center;
-}
-
-#topleft {
-    padding-left: 185px;
-    display: inline-block;
-    left: 350px;
-    top: 150px;
-}
-
-#topcenter {
-    padding-left: 185px;
-    display: inline-block;
-    left: 700px;
-    top: 150px;
-}
-
-#topright {
-    padding-left: 185px;
-    display: inline-block;
-    left: 1100px;
-    top: 150px;
-}
-
-#bottomleft {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 350px;
-    top: 550px;
-}
-
-#bottomcenter {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 700px;
-    top: 550px;
-}
-
-#bottomright {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 1050px;
-    top: 550px;
 }
 
 #textbox {
@@ -160,12 +98,6 @@ footer {
     height: 290px;
     text-align: left;
     padding-left: 3px;
-    border: 1px solid black;
-}
-
-#vannbilde {
-    width: 250px;
-    height: 200px;
     border: 1px solid black;
 }
 
@@ -194,6 +126,7 @@ footer {
     position: relative;
     min-height: 100%;
     width: 100%;
+    padding: 10px;
 }
 
 #footerContainer {}

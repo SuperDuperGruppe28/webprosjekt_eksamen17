@@ -17,6 +17,9 @@ $GSide = "side";
 $tittel = "main";
 if(isset($_GET[$GSide]))
     $tittel = $_GET[$GSide];
+
+if($tittel === "header" || $tittel === "footer" )
+    $tittel = "main";
 ?>
 
 <!DOCTYPE html>
