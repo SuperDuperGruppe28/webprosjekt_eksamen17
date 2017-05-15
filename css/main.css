@@ -66,7 +66,7 @@ footer
 
 #logout {}
 
-#delta 
+#delta
 {
     border: 5px solid #6a6a6a;
 }
@@ -151,15 +151,14 @@ footer
     border: 25px solid white;
 }
 
-#searchbox 
-{
+#searchbox {
     margin: auto;
     vertical-align: middle;
     border-width: 1px;
     border-style: hidden;
     border-color: #c4d9df #a4c3ca #83afb7;
     width: 385px;
-    padding: 0px;
+    padding: 0;
     overflow: hidden;
     z-index: -10;
 }
@@ -170,24 +169,24 @@ footer
 }
 
 #search {
-    border-radius: 0px;
+    border-radius: 0;
     margin: auto;
     padding: 5px 9px;
     height: 30px;
     width: 300px;
-   
+
     font: normal 13px 'trebuchet MS', arial, helvetica;
- 
+
 }
 
 #submit {
     margin: auto;
     border-style: hidden;
-    border-radius: 0px;
+    border-radius: 0;
     background-color:  lightblue;
- 
+
     height: 30px;
-    padding: 0px;
+    padding: 0;
     width: 85px;
     cursor: pointer;
     font: bold 12px Arial, Helvetica;
@@ -196,7 +195,7 @@ footer
 }
 
 #submit:hover {
-   
+
     background-image: linear-gradient(lightblue, #9ebbc4);
 }
 
@@ -272,7 +271,6 @@ textarea {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 25px;
     cursor: pointer;
     font-size: large;
 }
@@ -367,7 +365,7 @@ textarea {
     width: 70%;
     height: 5%;
     top: 50%;
-    left: 0%;
+    left: 0;
     text-align: left;
 }
 
@@ -473,7 +471,7 @@ nav {
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888;
     display: block;
-    margin: 0px 22px 8px 22px;
+    margin: 0 22px 8px 22px;
     overflow: hidden;
     width: 90%;
 }
