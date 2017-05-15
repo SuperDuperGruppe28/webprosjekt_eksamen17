@@ -34,10 +34,12 @@ if(isset($_GET[$GSide]))
         
         <!-- Ikoner -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
         
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato)" rel="stylesheet">
         
         <!--Scripts-->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
@@ -66,10 +68,6 @@ if(isset($_GET[$GSide]))
         ?>
             
         </div>
-    
-            <a href="https://www.facebook.com/westerdalsosloact/" target="_blank" class="fa fa-facebook"></a>
-            <a href="https://twitter.com/westerdals?lang=no" target="_blank" class="fa fa-twitter"></a>
-            <a href="https://www.instagram.com/westerdalsact/" target="_blank" class="fa fa-instagram"></a>
             <!-- FOOTER -->
         <footer><?php require 'pages/footer.php'?></footer>
     </body>

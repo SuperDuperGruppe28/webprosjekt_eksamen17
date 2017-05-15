@@ -63,7 +63,7 @@ if($bruker)
             if(isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2]))
             {
                 // Tags
-                registrerAktivitetTag($id, $_POST[$PTagVekt1], $_POST[$PTagVekt1]);
+                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
             }
             
             if(isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3]))
@@ -86,7 +86,7 @@ if($bruker)
             if($bruker)
             {
                 $aktivitetbruker = hentAktivitet($_GET[$GAktivitet])->Bruker;
-                if($bruker === $aktivitetbruker)
+                if($bruker === $aktivitetbruker || erAdmin($bruker))
                 {
                     if(isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad]))
                     {                        

@@ -14,12 +14,11 @@
                             <?php                                 
                         foreach(Tags::All() as $tag) 
                         {
-                            echo '<li><a href="#">' . $tag->Tag . '<span class="caret"></span></a>';
+                            echo '<li><a href="?side=aktiviteter&tag='.$tag->Tag.'">' . $tag->Tag . '<span class="caret"></span></a>';
                             echo '<div><ul>';
                             
                             $aktiviteter = TagsAktivitet::where("Tag", "=", $tag->Tag)->get();
-                            //echo '<pre>';
-                           // print_r($aktiviteter);
+                
                             foreach($aktiviteter as $aktivitet) {
                                 $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
                                 $aktivitet = hentAktivitet($aktivitet->Aktivitet);
