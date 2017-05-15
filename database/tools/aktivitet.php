@@ -301,8 +301,6 @@ function hentBrukerDeltagelser($bruker, $deltagelse)
     }
 }
 
-
-
 //    ______    _                                                  
 //  .' ____ \  / |_                                                
 //  | (___ \_|`| |-'.---.  _ .--..--.   _ .--..--.  .---.  _ .--.  

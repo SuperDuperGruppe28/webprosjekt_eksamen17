@@ -7,8 +7,8 @@
             if(eksistererBruker($id))
             {
                 $bruker = hentBruker($id);
-                $deltar = hentBrukerDeltagelser($bruker, 1);
-                $deltarKanskje = hentBrukerDeltagelser($bruker, 2);
+                $deltar = hentBrukerDeltagelser($id, 1);
+                $deltarKanskje = hentBrukerDeltagelser($id, 2);
                 echo "<h1>" . tryggPrint($bruker->Brukernavn) . "</h1>";
                 echo "<b>Email: " . tryggPrint($bruker->Email) . "</b><br>";
                 echo "<b>Admin: " . tryggPrint($bruker->Admin) . "</b><br>";
@@ -21,7 +21,7 @@
                     printAktivitetBoks($d->Aktivitet);
                 }
                 
-                echo "<b>Deltar kanskje i:</b><br>";
+                echo "<br><b>Deltar kanskje i:</b><br>";
                 foreach($deltarKanskje as $dK)
                 {
                     printAktivitetBoks($dK->Aktivitet);
