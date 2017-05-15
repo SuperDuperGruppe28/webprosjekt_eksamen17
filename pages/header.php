@@ -1,6 +1,5 @@
 <div id="headerContainer">
-    <center>
-
+    <div class="center">
         <nav>
             <ul>
 
@@ -78,7 +77,7 @@
                     echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
                 }
                 ?>
-                </li>
+               
             </ul>
         </nav>
 
@@ -87,6 +86,5 @@
             <input id="search" name="sok" type="text" placeholder="Søk her . . .">
             <input id="submit" type="submit" value="Søk">
         </form>
-
-    </center>
+    </div>
 </div>
