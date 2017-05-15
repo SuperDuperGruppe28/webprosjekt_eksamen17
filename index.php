@@ -39,7 +39,7 @@ if(isset($_GET[$GSide]))
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
-        <link href="http://fonts.googleapis.com/css?family=Lato)" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         
         <!--Scripts-->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
