@@ -20,8 +20,10 @@ if ($bruker) {
 
     // Poste kommentar
     if ($action === $GPost) {
-        if (isset($_POST[$PTekst]) && isset($_POST[$PAktivitet])) {
-            postKommentar($bruker, $_POST[$PAktivitet], $_POST[$PTekst]);
+        if (isset($_POST[$PTekst]) && isset($_POST[$PAktivitet])) 
+        {
+            if(kommentarDataValid($_POST[$PTekst]))
+                postKommentar($bruker, $_POST[$PAktivitet], $_POST[$PTekst]);
         } else {
             echo "Mangler data";
         }
@@ -29,8 +31,10 @@ if ($bruker) {
     } else if ($action === $GEdit) {
         if (isset($_POST[$PTekst]) && isset($_POST[$PKommentar])) {
             // bare admin eller eieren av kommentaren kan redigere kommentar
-            if (erAdmin($bruker) || finnKommentarEier($_POST[$PKommentar]) === $bruker) {
-                redigerKommentar($_POST[$PKommentar], $_POST[$PTekst]);
+            if (erAdmin($bruker) || finnKommentarEier($_POST[$PKommentar]) === $bruker) 
+            {
+                if(kommentarDataValid($_POST[$PTekst]))
+                    redigerKommentar($_POST[$PKommentar], $_POST[$PTekst]);
             }
         } else {
             echo "Mangler data";
@@ -39,7 +43,8 @@ if ($bruker) {
     } else if ($action === $GDelete) {
         if (isset($_POST[$PKommentar])) {
             // bare admin eller eieren av kommentaren kan slette kommentar
-            if (erAdmin($bruker) || finnKommentarEier($_POST[$PKommentar]) === $bruker) {
+            if (erAdmin($bruker) || finnKommentarEier($_POST[$PKommentar]) === $bruker)
+            {
                 slettKommentar($_POST[$PKommentar]);
             }
         } else {
@@ -52,3 +57,13 @@ if ($bruker) {
 
 // Sender tilbake til forrige side
 header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+
+// Validerer inputdataen før spørring
+function kommentarDataValid($tekst)
+{
+    if($tekst === "")
+        return false;
+        
+    return true;
+}

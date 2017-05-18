@@ -119,7 +119,7 @@ function printAktivitetBoks($aktivitet)
                 <img class="bildeBoks" src="<?= tryggPrint($akt->Bilde) ?>"/>
                 <div class="bildeBoksLag"></div>
             </a>
-            <div class="Tittel"><?= tryggPrint($akt->Tittel) ?></div>
+            <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
             <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
                 <div class="Utgiver">
                     <b><?= tryggPrint($akt->Bruker) ?></b>
@@ -156,7 +156,7 @@ function printAktivitetBoksFraArray($aktivitet)
             <img class="bildeBoks" src="<?= tryggPrint($akt->Bilde) ?>"/>
             <div class="bildeBoksLag"></div>
         </a>
-        <div class="Tittel"><?= tryggPrint($akt->Tittel) ?></div>
+        <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
         <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
             <div class="Utgiver">
                 <b><?= tryggPrint($akt->Bruker) ?></b>

@@ -40,7 +40,9 @@ if ($bruker) {
             if (isset($_POST[$PStatisk]))
                 $statisk = 1;
             // Registerer ny aktivitet
-            $id = skapAktivitet($bruker,
+            if(aktivitetDataValid($_POST[$PTittel], $_POST[$PBeskrivelse], $_POST[$PPris], $_POST[$PBilde]))
+            {
+                $id = skapAktivitet($bruker,
                 $_POST[$PTittel],
                 $_POST[$PBeskrivelse],
                 $_POST[$PApning],
@@ -50,24 +52,33 @@ if ($bruker) {
                 $_POST[$PBilde],
                 $_POST[$PLengdegrad],
                 $_POST[$PBreddegrad]);
+            
 
-            if (isset($_POST[$PTag1]) && isset($_POST[$PTagVekt1])) {
-                // Tags
-                registrerAktivitetTag($id, $_POST[$PTag1], $_POST[$PTagVekt1]);
+                if (isset($_POST[$PTag1]) && isset($_POST[$PTagVekt1])) {
+                    // Tags
+                    if(tagDataValid($_POST[$PTag1], $_POST[$PTagVekt1]))
+                        registrerAktivitetTag($id, $_POST[$PTag1], $_POST[$PTagVekt1]);
+                }
+
+                if (isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2])) {
+                    // Tags
+                    if(tagDataValid($_POST[$PTag2], $_POST[$PTagVekt2]))
+                        registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
+                }
+
+                if (isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3])) {
+                    // Tags
+                    if(tagDataValid($_POST[$PTag3], $_POST[$PTagVekt3]))
+                        registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
+                }
+
+                echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+                echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$id.'"/></head></html>';
+            }else
+            {
+                echo "Feil input data";
             }
-
-            if (isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2])) {
-                // Tags
-                registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
-            }
-
-            if (isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3])) {
-                // Tags
-                registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
-            }
-
-            echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
-            header('Location: ' . $_SERVER['HTTP_REFERER'] . "&id=" . $id);
+            
         } else {
             echo "Mangler data";
         }
@@ -81,25 +92,37 @@ if ($bruker) {
                         $statisk = 0;
                         if (isset($_POST[$PStatisk]))
                             $statisk = 1;
-                        // Registerer ny aktivitet
-                        redigerAktivitet($_GET[$GAktivitet],
-                            $_POST[$PTittel],
-                            $_POST[$PBeskrivelse],
-                            $_POST[$PDato],
-                            $_POST[$PPris],
-                            $statisk,
-                            $_POST[$PBilde],
-                            $_POST[$PLengdegrad],
-                            $_POST[$PBreddegrad]);
+                        
+                        if(aktivitetDataValid($_POST[$PTittel], $_POST[$PBeskrivelse], $_POST[$PPris], $_POST[$PBilde]))
+                        {
+                            // Registerer ny aktivitet
+                            redigerAktivitet($_GET[$GAktivitet],
+                                $_POST[$PTittel],
+                                $_POST[$PBeskrivelse],
+                                $_POST[$PDato],
+                                $_POST[$PPris],
+                                $statisk,
+                                $_POST[$PBilde],
+                                $_POST[$PLengdegrad],
+                                $_POST[$PBreddegrad]);
+                            echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+                            // Sender tilbake til forrige side
+                            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+                        }else
+                        {
+                             echo "Feil input  <b>" . $_POST[$PTittel] . "</b>.";
+                            // Sender tilbake til forrige side
+                            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+                        }
 
                     }
                 }
             }
-            echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
-            // Sender tilbake til forrige side
-            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+            
         } else {
             echo "Mangler data";
+            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';
+
         }
     } else if ($action === "del") {
         if (isset($_GET[$GAktivitet])) {
@@ -136,7 +159,33 @@ if ($bruker) {
 
 } else {
     echo "<h1>Må være logget inn!</h1>";
-    echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';
+    echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
 }
+
+// Validerer inputdataen før spørring
+function aktivitetDataValid($tittel, $beskrivelse, $pris, $bilde)
+{
+    if($tittel === "")
+        return false;
+    if($beskrivelse === "")
+        return false;
+    if($pris < 0)
+        return false;
+    if($bilde === "")
+        return false;
+        
+    return true;
+}
+
+// Validerer inputdataen før spørring
+function tagDataValid($tag, $vekt)
+{
+    if($tag === "")
+        return false;
+    if($vekt < 0 || $vekt > 100)
+        return false;
+    return true;
+}
+
 
 // Sender tilbake til forrige side

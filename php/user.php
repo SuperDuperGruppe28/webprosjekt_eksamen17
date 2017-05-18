@@ -41,24 +41,45 @@ if (isset($_GET["action"])) {
             $pass = $_POST[$PPassord];
             $email = $_POST[$PEmail];
 
-            if (!eksistererBruker($bruker)) {
-                if (registrerBruker($bruker, $email, $pass, 0)) {
-                    sendVerifiseringsEmail($bruker);
-                    echo $bruker . " har blitt registrert, sjekk din email for å verifisere konto!";
-                    $_SESSION[$Sstatus] = "regged";
-                } else {
-                    $_SESSION[$Sstatus] = "regged_failed";
-                    echo "Noe gikk galt";
-                }
+            if(brukerDataValid($bruker, $email, $pass))
+            {
+                if (!eksistererBruker($bruker)) 
+                {
+                    if (registrerBruker($bruker, $email, $pass, 0)) 
+                    {
+                        sendVerifiseringsEmail($bruker);
+                        echo $bruker . " har blitt registrert, sjekk din email for å verifisere konto!";
+                        $_SESSION[$Sstatus] = "regged";
+                    } else {
+                        $_SESSION[$Sstatus] = "regged_failed";
+                        echo "Noe gikk galt";
+                    }
 
-            } else {
-                $_SESSION[$Sstatus] = "regged_failed_exist";
-                echo "Bruker eksisterer allerede!";
+                } else {
+                    $_SESSION[$Sstatus] = "regged_failed_exist";
+                    echo "Bruker eksisterer allerede!";
+                }
+            }else
+            {
+                echo "Feil input";
+                echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
             }
         }
-        echo "Registred";
     }
 }
 
 // Sender tilbake til forrige side
 echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=bruker"/></head></html>';
+
+// Validerer inputdataen før spørring
+function brukerDataValid($bruker, $email, $passord)
+{
+    if($bruker === "")
+        return false;
+    if($email === "")
+        return false;
+    if($passord === "")
+        return false;
+  
+    return true;
+}
