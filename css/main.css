@@ -436,14 +436,19 @@ textarea {
 #kommentarFelt {
     position: relative;
     padding: 5px;
-    background: #efefef;
+    background: #fcfcfc;
     width: 100%;
     border: 1px solid black;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 #kommentarFelt .kommentar {
     width: 100%;
+}
+
+#kommentarFelt .kommentar img {
+    vertical-align: middle;
+    margin: 3px; 
 }
 
 /* Navigasjonsbar */

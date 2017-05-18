@@ -78,6 +78,10 @@
             $akt = hentAktivitet($id);
             if (!isset($_GET['action'])) {
                 $tags = hentAktivitetTags($id);
+                
+                $dato = $akt->Dato;
+                if ($akt->Statisk === 1)
+                    $dato = "Statisk";
                 ?>
 
                 <h1><?= tryggPrint($akt->Tittel); ?></h1>
@@ -85,7 +89,7 @@
                 <a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px'
                                                                    src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?>
                 </a><br>
-                <b>Dato: <?= $akt->Dato ?></b><br>
+                <b>Dato: <?= $dato ?></b><br>
                 <b>Beskrivelse: <?= tryggPrint($akt->Beskrivelse); ?></b><br>
                 <b>Statisk: <?= $akt->Statisk ?></b><br>
 
@@ -158,13 +162,22 @@
                     <?php
                 }
                 echo "<div id='kommentarFelt'><h1>Kommentarer</h1>";
-                foreach (hentKommentarer($id) as $kom) {
-                    $klasse = "";
-                    if (erAdmin($kom->Bruker))
-                        $klasse = "adminSkrift";
-                    echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=" . $kom->Bruker . "'><img height='25px' width='25px' src='" . hentBrukerBildeEx($kom->Bruker) . "'/><b class='" . $klasse . "'>" . $kom->Bruker . "</b></a></b>: " . tryggPrint($kom->Tekst);
-                    echo "</div>";
+                $kommentarer = hentKommentarer($id);
+                if(count($kommentarer) > 0)
+                {
+                     foreach ($kommentarer as $kom)
+                     {
+                        $klasse = "";
+                        if (erAdmin($kom->Bruker))
+                            $klasse = "adminSkrift";
+                        echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=" . $kom->Bruker . "'><img height='25px' width='25px' src='" . hentBrukerBildeEx($kom->Bruker) . "'/><b class='" . $klasse . "'>" . $kom->Bruker . "</b></a></b>: " . tryggPrint($kom->Tekst);
+                        echo "</div>";
+                     }
+                }else
+                {
+                    echo "Ingen kommentarer...";
                 }
+               
                 echo "</div>";
 
                 // Redigeringsside
