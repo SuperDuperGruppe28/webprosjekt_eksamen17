@@ -1,9 +1,13 @@
 <div id="brukerBoks">
 
     <?php
-        if(isset($_GET['id']))
+    $Gid = "id";
+    $GAction = "action";
+    if(!isset($_GET[$GAction]))
+    {
+        if(isset($_GET[$Gid]))
         {
-            $id = $_GET['id'];
+            $id = $_GET[$Gid];
             if(eksistererBruker($id))
             {
                 $bruker = hentBruker($id);
@@ -31,7 +35,7 @@
 
             }else
             {
-                echo "<h1>Bruker med id " . $_GET['id'] . " eksisterer ikke!</h1>";
+                echo "<h1>Bruker med id " . $_GET[$Gid] . " eksisterer ikke!</h1>";
             }
         }else
         {
@@ -72,6 +76,32 @@
                 echo "<h1>Logg inn for å se profilen din!";
             }
         }
+    }
+    else
+    {
+        if($_GET[$GAction] === "edit")
+        {
+            $brukernavn = loggetInnBruker();
+           
+            if($brukernavn)
+            {
+                $bruker = hentBruker($brukernavn);
+            ?>
+                <h1>Rediger <?=$brukernavn?></h1>
+                <form action="php/user.php?action=reg" method="post">
+                    Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
+                    Email<br><input type="email" id="email" name="email"><br>
+                    Passord<br><input type="password" id="passord" name="passord"><br>
+                    <input class="button" type="submit" value="Registrer bruker"/>
+                </form>
+            <?php
+            }else
+            {
+                echo "Logg inn for å redigere bruker..";
+            }
+        }
+    }
+        
     ?>
 
 </div>	

@@ -201,6 +201,13 @@ function hentAktiviteterFraSide($side)
     return $akt;
 }
 
+// henter de nyeste aktivitetene
+function hentNyesteAktiviteter($antall)
+{
+    $akt = Aktivitet::orderBy('Registrert', 'desc')->take($antall)->get();
+    return $akt;
+}
+
 //   ______           __   _                        __                
 //  |_   _ `.        [  | / |_                     [  |               
 //    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  

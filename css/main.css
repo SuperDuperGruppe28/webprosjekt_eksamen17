@@ -35,9 +35,10 @@ h3 {
     text-align: center;
 }
 
-#maintext {
-    width: 160%;
-    height: 90%;
+#mainBoks {
+    position: relative;
+    width: 60%;
+    height: 10%;
     padding: 5px;
     margin: auto;
     border: 1px solid black;
@@ -205,16 +206,6 @@ footer {
 
 .inputTag {
     width: 50%;
-}
-
-#maintext {
-    display: inline-block;
-    top: 100px;
-    left: 150px;
-    width: 60%;
-    height: 40%;
-    text-align: left;
-    border: 1px solid black;
 }
 
 #sosialemedier {
@@ -391,6 +382,7 @@ textarea {
     height: 35%;
     top: 55%;
     left: 0;
+    text-align: left;
     overflow-y: hidden;
 }
 
