@@ -72,7 +72,7 @@
                     echo ' ' . loggetInnBruker();
                     echo '</a></li>';
 
-                    echo '<li><a id="logout" href="/php/user.php?action=out">Logg ut</a></li>';
+                    echo '<li><a id="logout" href="php/user.php?action=out">Logg ut</a></li>';
                 } else {
                     echo '<li><a id="login" href="?side=logginn">Logg inn</a></li>';
                 }

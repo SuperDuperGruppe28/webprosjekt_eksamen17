@@ -177,7 +177,7 @@ function sendVerifiseringsEmail($bruker)
     if (eksistererBruker($bruker)) {
         $email = hentEmail($bruker);
         $veri = hentVerifikasjonsHash($bruker);
-        $url = "http://localhost/php/email.php?user=" . $bruker . "&ver=" . $veri;
+        $url = "http://tek.westerdals.no/~berseb16/vulkanelva/php/email.php?user=" . $bruker . "&ver=" . $veri;
         $message = "Trykk på lenken for å verifisere din emailadresse: " . $url . " \n Ha en fin dag!";
         mail($email, "Verifiser din emailadresse", $message);
         return true;
