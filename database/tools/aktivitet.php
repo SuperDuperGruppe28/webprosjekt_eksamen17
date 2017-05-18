@@ -160,7 +160,7 @@ function printAktivitetBoksFraArray($aktivitet)
         <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
             <div class="Utgiver">
                 <b><?= tryggPrint($akt->Bruker) ?></b>
-                <!--<img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>-->
+                <img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>
             </div>
         </a>
         <div class="Dato"><?= $dato ?></div>
