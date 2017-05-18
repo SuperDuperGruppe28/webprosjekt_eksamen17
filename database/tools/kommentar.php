@@ -6,7 +6,7 @@
 //   _| |  \ \_| \__. | | | | | | |  | | | | | || \__., | | | | | |,// | |, | |     
 //  |____||____|'.__.' [___||__||__][___||__||__]'.__.'[___||__]\__/\'-;__/[___]    
 //                                                                                                                          
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+require_once __DIR__  . '/../models.php';
 require_once "bruker.php";
 require_once "aktivitet.php";
 

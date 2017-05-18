@@ -7,7 +7,7 @@
 //    |_____| \'-;__/.',__`  
 //                  ( ( __)) 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+require_once __DIR__  . '/../models.php';
 require_once "bruker.php";
 
 // Registerer en ny tag

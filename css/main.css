@@ -419,10 +419,20 @@ textarea {
     border: 1px solid black;
 }
 
-.tagLink {
+.adminSkrift {
     font-variant: small-caps;
     font-size: large;
     color: gold;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.tagLink {
+    font-variant: small-caps;
+    font-size: large;
+    color: #e8e8e8;
     text-shadow: -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,

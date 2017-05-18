@@ -4,8 +4,8 @@
 //   |  _ \| '__| | | | |/ / _ \ '__|
 //   | |_) | |  | |_| |   <  __/ |   
 //   |____/|_|   \__,_|_|\_\___|_|   
-//    
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+// 
+require_once __DIR__  . '/../models.php';
 
 // Starter session
 if (session_status() == PHP_SESSION_NONE)
@@ -198,6 +198,6 @@ function printBrukerBoksFraArray($bruker)
 {
     $klasse = "";
     if (erAdmin($bruker))
-        $klasse = "tagLink";
+        $klasse = "adminSkrift";
     echo "<a class='" . $klasse . "' href='?side=bruker&id=" . $bruker . "'><img height='40px' width='40px' src='" . hentBrukerBildeEx($bruker) . "'/>" . $bruker . "</a><br>";
 }

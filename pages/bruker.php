@@ -13,7 +13,7 @@
                 echo "<b>Email: " . tryggPrint($bruker->Email) . "</b><br>";
 
                 if($bruker->Admin > 0)
-                    echo "<b class='tagLink'>Admin</b><br>";
+                    echo "<b class='adminSkrift'>Admin</b><br>";
                 echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
                 echo '<img src="'.tryggPrint(hentBrukerBildeEx($id)).'" height="100px width="100px"/><br>';
 
@@ -45,7 +45,7 @@
                 echo "<b>Email: " . tryggPrint($bruker->Email) . "</b><br>";
 
                 if($bruker->Admin > 0)
-                    echo "<b class='tagLink'>Admin</b><br>";
+                    echo "<b class='adminSkrift'>Admin</b><br>";
                 echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
                 echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukernavn)).'" height="100px" width="100px"/><br>';
 

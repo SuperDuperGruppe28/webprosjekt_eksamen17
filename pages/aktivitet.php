@@ -161,7 +161,7 @@
                 foreach (hentKommentarer($id) as $kom) {
                     $klasse = "";
                     if (erAdmin($kom->Bruker))
-                        $klasse = "tagLink";
+                        $klasse = "adminSkrift";
                     echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=" . $kom->Bruker . "'><img height='25px' width='25px' src='" . hentBrukerBildeEx($kom->Bruker) . "'/><b class='" . $klasse . "'>" . $kom->Bruker . "</b></a></b>: " . tryggPrint($kom->Tekst);
                     echo "</div>";
                 }

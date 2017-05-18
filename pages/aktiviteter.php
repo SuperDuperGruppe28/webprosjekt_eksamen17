@@ -36,6 +36,7 @@ if (isset($_GET['tag'])) {
 echo "</div>";
 echo "</div>";
 
+// Boks med tags
 echo '<div id="tagsContainer">';
 echo '<div class="center">';
 echo '<h1>Tags</h1>';

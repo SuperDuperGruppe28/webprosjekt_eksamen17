@@ -5,8 +5,7 @@
 //    / ___ \|   <| |_| |\ V /| | ||  __/ |_ 
 //   /_/   \_\_|\_\\__|_| \_/ |_|\__\___|\__|
 //                                           
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+require_once __DIR__  . '/../models.php';
 require_once "bruker.php";
 require_once "kommentar.php";
 
@@ -161,7 +160,7 @@ function printAktivitetBoksFraArray($aktivitet)
         <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
             <div class="Utgiver">
                 <b><?= tryggPrint($akt->Bruker) ?></b>
-                <img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>
+                <!--<img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>-->
             </div>
         </a>
         <div class="Dato"><?= $dato ?></div>
