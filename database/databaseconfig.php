@@ -3,7 +3,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 
 
 // Om kjører lokalt true, på webserver false
-$LOKAL = false;
+$LOKAL = true;
 $WEBSIDEMAPPE = !$LOKAL ? "/~berseb16/vulkanelva/" : "/";
 
 // Setter tidssone til Oslo
