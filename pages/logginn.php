@@ -33,14 +33,14 @@
     } else {
         ?>
         <h3>Logg inn</h3>
-        <form action="php/user.php?action=in" method="post">
+        <form name="form_logginn" action="php/user.php?action=in" onsubmit="return validerLogginn()" method="post">
             Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
             Passord<br><input type="password" id="passord" name="passord"><br>
             <input class="button" type="submit" value="Logg inn"/>
         </form>
 
         <h3>Registrer ny bruker</h3>
-        <form action="php/user.php?action=reg" method="post">
+        <form name="form_reg" action="php/user.php?action=reg" onsubmit="return validerBrukerRegistrering()"  method="post">
             Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
             Email<br><input type="email" id="email" name="email"><br>
             Passord<br><input type="password" id="passord" name="passord"><br>

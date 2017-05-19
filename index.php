@@ -45,9 +45,11 @@ if ($tittel === "header" || $tittel === "footer")
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
         <!--Scripts-->
-        <script type="text/javascript"
+         <script type="text/javascript"
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv50YQCrnKlbScV5RZkyfVwXtj9lIYklw"></script>
-
+        <script type="text/javascript" src="js/maps.js"></script>
+        <script type="text/javascript" src="js/validerig.js"></script>
+       
         <title><?php echo $tittel ?></title>
     </head>
 
