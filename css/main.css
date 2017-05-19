@@ -444,6 +444,7 @@ textarea {
 
 #kommentarFelt .kommentar {
     width: 100%;
+    word-break: break-all;
 }
 
 #kommentarFelt .kommentar img {
