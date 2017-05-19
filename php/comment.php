@@ -64,6 +64,8 @@ function kommentarDataValid($tekst)
 {
     if($tekst === "")
         return false;
+    if(strlen($tekst) > 512)
+        return false;
         
     return true;
 }

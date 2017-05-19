@@ -173,6 +173,13 @@ function aktivitetDataValid($tittel, $beskrivelse, $pris, $bilde)
         return false;
     if($bilde === "")
         return false;
+    
+    if(strlen($tittel) > 45)
+        return false;
+    if(strlen($beskrivelse) > 1024)
+        return false;
+    if(strlen($bilde) > 512)
+        return false;
         
     return true;
 }
@@ -182,6 +189,9 @@ function tagDataValid($tag, $vekt)
 {
     if($tag === "")
         return false;
+    if(strlen($tag) > 45)
+        return false;
+    
     if($vekt < 0 || $vekt > 100)
         return false;
     return true;

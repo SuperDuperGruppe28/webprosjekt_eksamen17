@@ -7,7 +7,7 @@ $sideTallFrem = 0;
 if (isset($_GET['p']))
     $sideTall = $_GET['p'];
 
-if ($sideTall - 1 >= 0)
+if ($sideTall - 1 > 0)
     $sideTallBak = $sideTall - 1;
 $sideTallFrem = $sideTall + 1;
 

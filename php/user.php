@@ -29,7 +29,8 @@ if (isset($_GET["action"])) {
             }
         }
         // Logge ut
-    } else if ($action === "out") {
+    } else if ($action === "out")
+    {
         session_unset();
         session_destroy();
         echo "logger ut..";
@@ -79,6 +80,13 @@ function brukerDataValid($bruker, $email, $passord)
     if($email === "")
         return false;
     if($passord === "")
+        return false;
+    
+    if(strlen($bruker) > 30)
+        return false;
+    if(strlen($email) > 70)
+        return false;
+    if(strlen($passord) > 60)
         return false;
   
     return true;

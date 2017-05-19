@@ -89,9 +89,7 @@
             ?>
                 <h1>Rediger <?=$brukernavn?></h1>
                 <form action="php/user.php?action=reg" method="post">
-                    Brukernavn<br><input type="username" id="bruker" name="bruker"><br>
                     Email<br><input type="email" id="email" name="email"><br>
-                    Passord<br><input type="password" id="passord" name="passord"><br>
                     <input class="button" type="submit" value="Registrer bruker"/>
                 </form>
             <?php
