@@ -46,25 +46,32 @@ function validerBrukerRegistrering()
 // Validerer input i logginnboks
 function valdierAktivitet()
 {
-    var tittel = document.forms["form_reg"]["bruker"].value;
-    var passord = document.forms["form_reg"]["passord"].value;
-    var email = document.forms["form_reg"]["email"].value;
-    
-    if(bruker === "" || bruker.length > 30)
+    var tittel = document.forms["form_aktivitet"]["tittel"].value;
+    var beskrivelse = document.forms["form_aktivitet"]["beskrivelse"].value;
+    var pris = document.forms["form_aktivitet"]["pris"].value;
+    var bilde = document.forms["form_aktivitet"]["bilde"].value;
+   
+    if(tittel === "" || tittel.length > 45)
     {
-        alert("Skriv inn brukernavn ordentlig!");
+        alert("Skriv inn tittel ordentlig!");
         return false;
     }
     
-    if(email === "" || email.length > 70)
+    if(beskrivelse === "" || beskrivelse.length > 1024)
     {
-        alert("Skriv inn email ordentlig!");
+        alert("Skriv inn beskrivelse ordentlig!");
         return false;
     }
         
-    if(passord === "" || passord.length > 60)
+    if(bilde === "" || bilde.length > 512)
     {
-        alert("Skriv inn passord ordentlig!");
+        alert("Skriv inn bildeURL ordentlig!");
+        return false;
+    }
+    
+    if(pris < 0 || pris > 10000)
+    {
+        alert("Skriv inn pris ordentlig!");
         return false;
     }
 }
