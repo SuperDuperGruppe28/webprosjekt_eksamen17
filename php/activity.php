@@ -73,7 +73,7 @@ if ($bruker) {
                 }
 
                 echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
-                echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id='.$id.'"/></head></html>';
+                echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id='.$id.'"/></head></html>';
             }else
             {
                 echo "Feil input data";
@@ -107,12 +107,12 @@ if ($bruker) {
                                 $_POST[$PBreddegrad]);
                             echo "Redigerte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
                             // Sender tilbake til forrige side
-                            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+                            echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
                         }else
                         {
                              echo "Feil input  <b>" . $_POST[$PTittel] . "</b>.";
                             // Sender tilbake til forrige side
-                            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+                            echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
                         }
 
                     }
@@ -121,15 +121,16 @@ if ($bruker) {
             
         } else {
             echo "Mangler data";
-            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';
+            echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=main"/></head></html>';
 
         }
     } else if ($action === "del") {
-        if (isset($_GET[$GAktivitet])) {
+        if (isset($_GET[$GAktivitet]))
+        {
             slettAktivitet($_GET[$GAktivitet]);
             echo "Slettet aktivitet!";
             // Sender tilbake til forrige side
-            echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=main"/></head></html>';
+            echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=main"/></head></html>';
         }
     } else if ($action === "stem") {
         if (isset($_GET[$GAktivitet])) {
@@ -142,7 +143,7 @@ if ($bruker) {
             }
         }
         // Sender tilbake til forrige side
-        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+        echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
     } else if ($action === "delta") {
         if (isset($_GET[$GAktivitet]) && isset($_POST[$PDeltagelse])) {
             if ($bruker) {
@@ -154,12 +155,12 @@ if ($bruker) {
             }
         }
         // Sender tilbake til forrige side
-        echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+        echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
     }
 
 } else {
     echo "<h1>Må være logget inn!</h1>";
-    echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
+    echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=logginn"/></head></html>';
 }
 
 // Validerer inputdataen før spørring

@@ -63,14 +63,14 @@ if (isset($_GET["action"])) {
             }else
             {
                 echo "Feil input";
-                echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=logginn"/></head></html>';
+                echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=logginn"/></head></html>';
             }
         }
     }
 }
 
 // Sender tilbake til forrige side
-echo '<html><head><meta http-equiv="refresh" content="0;URL=/?side=bruker"/></head></html>';
+echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=bruker"/></head></html>';
 
 // Validerer inputdataen før spørring
 function brukerDataValid($bruker, $email, $passord)

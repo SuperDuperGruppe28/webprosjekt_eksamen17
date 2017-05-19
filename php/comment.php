@@ -56,8 +56,7 @@ if ($bruker) {
 }
 
 // Sender tilbake til forrige side
-header('Location: ' . $_SERVER['HTTP_REFERER']);
-
+echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id='.$_POST[$PAktivitet].'"/></head></html>';
 
 // Validerer inputdataen før spørring
 function kommentarDataValid($tekst)

@@ -1,6 +1,11 @@
 <?php
 use Illuminate\Database\Capsule\Manager as DB;
 
+
+// Om kjører lokalt true, på webserver false
+$LOKAL = true;
+$WEBSIDEMAPPE = !$LOKAL ? "/vulkanelva/" : "/";
+
 // Setter tidssone til Oslo
 define("TIDSSONE", "Europe/Oslo");
 date_default_timezone_set(TIDSSONE);
