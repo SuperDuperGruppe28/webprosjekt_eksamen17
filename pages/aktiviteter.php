@@ -21,7 +21,12 @@ if (isset($_GET['tag'])) {
     foreach (hentAktiviteterFraTag($tag, $sideTall) as $akt) {
         printAktivitetBoks($akt->Aktivitet);
     }
-
+    // Loggføre besøk av tag
+    $brukernavn = loggetInnBruker();
+    if ($brukernavn)
+    {
+        registrerBrukerBesok($brukernavn, $tag);
+    }
     echo '<br><a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallBak . '"><div class="navPil"><</div></a><div class="navPil">-</div>';
     echo '<a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallFrem . '"><div class="navPil">></div></a>';
 } else {
