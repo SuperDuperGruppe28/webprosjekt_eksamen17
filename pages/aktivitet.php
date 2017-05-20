@@ -30,10 +30,13 @@
                 }
 
                 echo "<br><b>Likes: </b>" . tryggPrint(antallStemmer($id));
-
-                echo "<br><b>Deltar ikke: </b>" . tryggPrint(hentAntallDeltagelser($id, 0));
-                echo "<br><b>Deltar: </b>" . tryggPrint(hentAntallDeltagelser($id, 1));
-                echo "<br><b>Deltar kanskje: </b>" . tryggPrint(hentAntallDeltagelser($id, 2));
+                
+                if ($akt->Statisk !== 1)
+                {
+                        echo "<br><b>Deltar ikke: </b>" . tryggPrint(hentAntallDeltagelser($id, 0));
+                        echo "<br><b>Deltar: </b>" . tryggPrint(hentAntallDeltagelser($id, 1));
+                        echo "<br><b>Deltar kanskje: </b>" . tryggPrint(hentAntallDeltagelser($id, 2));
+                }
                 $brukernavn = loggetInnBruker();
                 if ($brukernavn) {
                     // Loggføre besøket til brukeren
@@ -57,23 +60,28 @@
                 <input type="submit" value="<?= !harStemtAktivitet($brukernavn, $id) ? 'Liker!' : 'Liker ikke!'; ?>" />
             </form>
 
-            <select name="deltagelse" form="deltaform">
-                        <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : ''; ?>>
-                            Deltar ikke
-                        </option>
-                        <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : ''; ?>>
-                            Deltar
-                        </option>
-                        <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : ''; ?>>
-                            Deltar kanskje
-                        </option>
-                    </select>
-            <form action="php/activity.php?action=delta&akti=<?= $id ?>" method="post" id="deltaform">
+                <?php
+                // Vise deltagelseknapp om aktivitet er statisk        
+                if ($akt->Statisk !== 1)
+                {?>
+                    <select name="deltagelse" form="deltaform">
+                                <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : ''; ?>>
+                                    Deltar ikke
+                                </option>
+                                <option value="1" <?= hentDeltagelse($brukernavn, $id) === 1 ? ' selected="selected"' : ''; ?>>
+                                    Deltar
+                                </option>
+                                <option value="2" <?= hentDeltagelse($brukernavn, $id) === 2 ? ' selected="selected"' : ''; ?>>
+                                    Deltar kanskje
+                                </option>
+                            </select>
+                    <form action="php/activity.php?action=delta&akti=<?= $id ?>" method="post" id="deltaform">
 
-                <input type="submit" value="Velg deltagelse" />
-            </form>
-            <?php
+                        <input type="submit" value="Velg deltagelse" />
+                    </form>
+                    <?php
                 }
+            }
 
 
                 echo "<div id='mapaktivitet'></div>";
