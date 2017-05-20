@@ -43,6 +43,7 @@ function slettAktivitet($aktivitet)
 {
     if (eksistererAktivitet($aktivitet)) {
         $akt = Aktivitet::find($aktivitet);
+        slettAktivitetTag($aktivitet);
         slettDeltagelser($aktivitet);
         slettStemmer($aktivitet);
         slettKommentarer($aktivitet);

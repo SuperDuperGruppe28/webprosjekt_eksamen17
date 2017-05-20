@@ -32,14 +32,18 @@
                                     $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;
                                     $aktivitet = hentAktivitet($aktivitet->Aktivitet);
 
-                                    $deltagere = $aktivitet->deltagere()->get();
-                                    $deltar = false;
-                                    foreach ($deltagere as $deltager) {
-                                        if ($deltager->Bruker == loggetInnBruker()) {
-                                            $deltar = true;
-                                            break;
-                                        }
+                                    $deltagereObj = $aktivitet->deltagere()->get();
+                                    $deltar = true;
+                                    if($deltagereObj !== null)
+                                    {
+                                        foreach ($deltagereObj as $deltager) {
+                                            if ($deltager->Bruker == loggetInnBruker()) {
+                                                $deltar = true;
+                                                break;
+                                            }
                                     }
+                                    }
+                                    
 
                                     //echo '<li><a href="'.$href.'">' . $aktivitet->Tittel . '</li>';
                                     $href = "?side=aktivitet&id=" . $aktivitet->id;

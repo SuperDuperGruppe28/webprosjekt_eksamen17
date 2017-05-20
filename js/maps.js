@@ -1,5 +1,3 @@
-  google.maps.event.addDomListener(window, 'load', init);
-
   function init() {
       var mapOptions = {
           zoom: 14,
@@ -151,3 +149,5 @@
       document.getElementById("breddegrad").value = x;
       document.getElementById("lengdegrad").value = y;
   }
+
+  google.maps.event.addDomListener(window, 'load', init);

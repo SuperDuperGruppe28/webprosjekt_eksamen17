@@ -127,10 +127,18 @@ if ($bruker) {
     } else if ($action === "del") {
         if (isset($_GET[$GAktivitet]))
         {
-            slettAktivitet($_GET[$GAktivitet]);
-            echo "Slettet aktivitet!";
-            // Sender tilbake til forrige side
-            echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=main"/></head></html>';
+            $akt = hentAktivitet($_GET[$GAktivitet]);
+            if(erAdmin($bruker) || $brukernavn === $akt->Bruker)
+            {
+                 slettAktivitet($_GET[$GAktivitet]);
+                echo "Slettet aktivitet!";
+                // Sender tilbake til forrige side
+                echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=main"/></head></html>';
+            }else
+            {
+                echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id=' . $_GET[$GAktivitet] . '"/></head></html>';
+            }
+           
         }
     } else if ($action === "stem") {
         if (isset($_GET[$GAktivitet])) {

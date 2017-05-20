@@ -115,6 +115,15 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
     return false;
 }
 
+// Sletter aktivitetTag
+function slettAktivitetTag($aktivitet)
+{
+     if (eksistererAktivitet($aktivitet))
+     {
+        $tags = TagsAktivitet::where("Aktivitet", "=", $aktivitet);
+        $tags->delete();
+    }
+}
 // Sjekker om en tag eksisterer
 function eksistererAktivitetTag($tag)
 {

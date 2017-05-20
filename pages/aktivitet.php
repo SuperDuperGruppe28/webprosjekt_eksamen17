@@ -46,6 +46,10 @@
                         
                             <input type="submit" value="Rediger aktivitet" />
                         </form>';
+                         echo '<form action="php/activity.php?action=del&akti=' . $id . '" method="post">
+                        
+                            <input type="submit" value="Slett aktivitet" />
+                        </form>';
                     }
 
                     ?>
