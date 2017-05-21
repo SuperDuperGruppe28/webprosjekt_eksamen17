@@ -112,6 +112,8 @@ function printAktivitetBoks($aktivitet)
         $pris = $akt->Pris > 0 ? $akt->Pris . "kr" : "Gratis!";
         $dato = new Carbon\Carbon($akt->Dato);
         $dato = $dato->diffForHumans();
+        $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
+
         if ($akt->Statisk === 1)
             $dato = "Statisk";
         ?>
@@ -134,7 +136,7 @@ function printAktivitetBoks($aktivitet)
                      src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
             </div>
             <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
-            <div class="Pris"><?= $pris ?></div>
+        <div class="<?=$prisFarge?>"><?= $pris ?></div>
         </div>
 
         <?php
@@ -149,6 +151,8 @@ function printAktivitetBoksFraArray($aktivitet)
     $pris = $akt->Pris > 0 ? $akt->Pris . "kr" : "Gratis!";
     $dato = new Carbon\Carbon($akt->Dato);
     $dato = $dato->diffForHumans();
+    $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
+    
     if ($akt->Statisk === 1)
         $dato = "Statisk";
     ?>
@@ -171,7 +175,7 @@ function printAktivitetBoksFraArray($aktivitet)
                  src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
         </div>
         <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
-        <div class="Pris"><?= $pris ?></div>
+        <div class="<?=$prisFarge?>"><?= $pris ?></div>
     </div>
     <?php
 }

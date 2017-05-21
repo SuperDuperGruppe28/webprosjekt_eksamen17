@@ -393,6 +393,11 @@ textarea {
     background: #51d351;
 }
 
+.Pris.Rod 
+{
+    background: #d35151;
+}
+
 /*AktiviteterContainer*/
 #tagsContainer {
     position: absolute;
