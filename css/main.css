@@ -25,9 +25,19 @@ h3 {
     text-align: center;
 }
 
+a
+{
+    text-decoration: none;
+}
+
 .navPil {
     display: inline;
     font-size: 400%;
+    color: slategrey;
+}
+
+.navPil:hover {
+    color: #4a5d6f;
 }
 
 .center {
@@ -254,17 +264,17 @@ textarea {
 
 .button {
     width: 100%;
-    background-color: lightblue;
-    color: white;
+    background-color: #28a8d1;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    font-size: large;
+    font-size: x-large;
+    color: #e6e6e6;
 }
 
 .button:hover {
-    background-color: #9cc6d4;
+    background-color: #02a0d3;
 }
 
 .button:focus {

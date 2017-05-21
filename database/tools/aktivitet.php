@@ -213,6 +213,26 @@ function hentNyesteAktiviteter($antall)
     return $akt;
 }
 
+// henter anbefalte aktiviteter for bruker
+function hentAnbefalteAktiviteter($antall)
+{
+    $bruker = loggetInnBruker();
+    $res = null;
+    if($bruker)
+    {
+        $favorittTags = TagsBruker::where("Bruker", "LIKE", $bruker)->orderBy("Besok", "DESC")->take($antall)->get();
+        
+        $res = array();
+        foreach($favorittTags as $tag)
+        {
+            $tagsAkt = TagsAktivitet::where("Tag", "LIKE", $tag->Tag)->inRandomOrder()->first();
+    
+            array_push($res, $tagsAkt->Aktivitet);
+        }
+    }
+    return $res;
+}
+
 //   ______           __   _                        __                
 //  |_   _ `.        [  | / |_                     [  |               
 //    | | `. \ .---.  | |`| |-',--.   .--./) .---.  | |  .--.  .---.  
