@@ -13,9 +13,11 @@
                     $dato = "Statisk";
                 ?>
 
-        <h1>
-            <?= tryggPrint($akt->Tittel); ?>
-        </h1>
+        <h1><?= tryggPrint($akt->Tittel); ?></h1>
+        <?php
+            if(!erVerifisert(loggetInnBruker()))
+                echo "<i>Verifiser emailen din for å kommentere, like og delta i aktiviteten!</i>";
+        ?>
         <img style="width:100%; height:100%;" src="<?= tryggPrint($akt->Bilde); ?>" onerror="this.src='img/default_aktivitet.png'" />
         <a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px'
                                                                    src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?>
@@ -55,14 +57,17 @@
                         </form>';
                     }
 
+                    // Kun verifiserte brukere kan stemme
+                    if(erVerifisert($brukernavn))
+                    {
                     ?>
-            <form action="php/activity.php?action=stem&akti=<?= $id ?>" method="post">
-                <input type="submit" value="<?= !harStemtAktivitet($brukernavn, $id) ? 'Liker!' : 'Liker ikke!'; ?>" />
-            </form>
-
-                <?php
+                    <form action="php/activity.php?action=stem&akti=<?= $id ?>" method="post">
+                        <input type="submit" value="<?= !harStemtAktivitet($brukernavn, $id) ? 'Liker!' : 'Liker ikke!'; ?>" />
+                    </form>
+                    <?php
+                    }
                 // Vise deltagelseknapp om aktivitet er statisk        
-                if ($akt->Statisk !== 1)
+                if ($akt->Statisk !== 1 && erVerifisert($brukernavn))
                 {?>
                     <select name="deltagelse" form="deltaform">
                                 <option value="0" <?= hentDeltagelse($brukernavn, $id) === 0 ? ' selected="selected"' : ''; ?>>
@@ -92,7 +97,7 @@
                 // Kommentarfelt
                 $brukernavn = loggetInnBruker();
                 // Sjekke om bruker er logget inn
-                if ($brukernavn) {
+                if ($brukernavn && erVerifisert($brukernavn)) {
                     ?>
                 <h1>Post kommentar</h1>
                 <form name="form_kommentar" action="php/comment.php?action=post" onsubmit="return validerKommentar()" method="post">
@@ -173,6 +178,8 @@
     } else {
         $brukernavn = loggetInnBruker();
         if ($brukernavn) {
+            if(erVerifisert($brukernavn))
+            {
             ?>
                         <h1>Lag ny aktivitet</h1>
                         <form name="form_aktivitet"  action="php/activity.php?action=reg" onsubmit="return valdierAktivitet()"  method="post">
@@ -210,8 +217,13 @@
                         </form>
 
                         <?php
+                
+                }else
+                {
+                    echo "<h1>Verifiser emailadressen din for å opprette en ny aktivtet!</h1>";
+                }
         } else {
-            echo "<h1>Logg inn for å opprette en ny aktivitet!";
+            echo "<h1>Logg inn for å opprette en ny aktivitet!</h1>";
         }
     }
     ?>

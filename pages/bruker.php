@@ -59,6 +59,8 @@
         if($bruker->Admin > 0)
             echo "<b class='adminSkrift'>Admin</b><br>";
         echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
+        if($bruker->Verifisert === 0)
+            echo "Verifiser emailadressen din for å kommentere, like og delta på aktiviteter.<br>";
         echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukerid)).'" height="100px" width="100px"/><br>';
         
         if($brukerid === loggetInnBruker())
