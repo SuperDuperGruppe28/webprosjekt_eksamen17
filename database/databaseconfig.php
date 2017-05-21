@@ -1,7 +1,6 @@
 <?php
 use Illuminate\Database\Capsule\Manager as DB;
 
-
 // Om kjører lokalt true, på webserver false
 $LOKAL = true;
 $WEBSIDEMAPPE = !$LOKAL ? "/~berseb16/vulkanelva/" : "/";
