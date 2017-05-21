@@ -68,17 +68,21 @@
             echo "<b>Deltar i:</b><br>";
             foreach($deltar as $d)
             {
-                printAktivitetBoks($d->Aktivitet);
+                $akt = hentAktivitet($d->Aktivitet);
+                if(strtotime($akt->Dato) > time())
+                    printAktivitetBoksFraArray($akt);
             }
         } else {
-            echo "Deltar ikke i noen aktiviteter.";
+            echo "Deltar ikke i noen kommende aktiviteter.";
         }
             if(count($deltarKanskje) != 0)
             {
                 echo "<br><b>Deltar kanskje i:</b><br>";
                 foreach($deltarKanskje as $dK)
                 {
-                    printAktivitetBoks($dK->Aktivitet);
+                    $akt = hentAktivitet($dK->Aktivitet);
+                    if(strtotime($akt->Dato) > time())
+                        printAktivitetBoksFraArray($akt);
                 }
             }
     }
