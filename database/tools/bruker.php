@@ -54,6 +54,19 @@ function registrerBruker($brukernavn, $email, $passord, $admin)
     return false;
 }
 
+
+// Redigerer brukeremail
+function redigerBrukerEmail($bruker, $email)
+{
+    if (eksistererBruker($bruker)) {
+        $bru = Bruker::find($bruker);
+        $bru->Email = $email;
+        $bru->save();
+
+        return true;
+    }
+    return false;
+}
 // Returnerer om brukeren eksisterer i databasen
 function eksistererBruker($bruker)
 {

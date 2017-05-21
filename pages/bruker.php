@@ -35,11 +35,9 @@
             {
                 $bruker = hentBruker($brukernavn);
             ?>
-        <h1>Rediger
-            <?=$brukernavn?>
-        </h1>
-        <form action="php/user.php?action=reg" method="post">
-            Email<br><input type="email" id="email" name="email"><br>
+        <h1>Rediger <?=$brukernavn?></h1>
+        <form action="php/user.php?action=edit" method="post">
+            Email<br><input type="email" id="email" name="email" value="<?= $bruker->Email?>"><br>
             <input class="button" type="submit" value="Registrer bruker" />
         </form>
         <?php
@@ -62,6 +60,13 @@
             echo "<b class='adminSkrift'>Admin</b><br>";
         echo "<b>Registrert: " . tryggPrint($bruker->Registrert) . "</b><br>";
         echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukerid)).'" height="100px" width="100px"/><br>';
+        
+        if($brukerid === loggetInnBruker())
+        {
+            echo '<form action="?side=bruker&action=edit" method="post">
+                    <input class="button" type="submit" value="Rediger bruker" />
+                  </form>';
+        }
 
         if(count($deltar) != 0)
         {

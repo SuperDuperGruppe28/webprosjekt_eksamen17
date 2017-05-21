@@ -66,6 +66,25 @@ if (isset($_GET["action"])) {
                 echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=logginn"/></head></html>';
             }
         }
+    // Redigere brukeren
+    } else if ($action === "edit")
+    {
+        $bruker = loggetInnBruker();
+        if($bruker)
+        {
+            if (isset($_POST[$PEmail])) 
+            {
+                $email = $_POST[$PEmail];
+                if(brukerEditValid($email))
+                {
+                    if(redigerBrukerEmail($bruker, $email))
+                    {
+                        settVerifisert($bruker, 0);
+                        sendVerifiseringsEmail($bruker);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -89,5 +108,17 @@ function brukerDataValid($bruker, $email, $passord)
     if(strlen($passord) > 60)
         return false;
   
+    return true;
+}
+
+// Validerer inputdataen før spørring
+function brukerEditValid($email )
+{
+    if($email === "")
+        return false;
+
+    if(strlen($email) > 70)
+        return false;
+
     return true;
 }
