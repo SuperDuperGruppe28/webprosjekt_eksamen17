@@ -73,6 +73,11 @@ class Tags extends mod
     {
         return $this->belongsTo("TagsBruker", "Tag", "Tag");
     }
+    
+     public function tagsAktivitet()
+    {
+        return $this->belongsTo("TagsAktivitet", "Tag", "Tag");
+    }
 }
 
 //

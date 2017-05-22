@@ -15,8 +15,8 @@
                         <ul>
                             <?php
 
-                            $tags = Tags::all();
-                            $tags_count = $tags->count();
+                            $tags = hentPopTags();
+                            $tags_count = count($tags);
                             $limit = 10;
 
                             $tags_limit = min($tags_count, $limit);
@@ -24,10 +24,10 @@
                             for ($i = 0; $i < $tags_limit; $i++) //foreach(Tags::All() as $tag)
                             {
                                 $tag = $tags[$i];
-                                echo '<li><a href="?side=aktiviteter&tag=' . $tag->Tag . '">' . $tag->Tag . '<span class="caret"></span></a>';
+                                echo '<li><a href="?side=aktiviteter&tag=' . tryggPrint($tag['Tag']) . '">' . tryggPrint($tag['Tag']) . '<span class="caret"></span></a>';
                                 echo '<div><ul>';
 
-                                $aktiviteter = TagsAktivitet::where("Tag", "=", $tag->Tag)->get();
+                                $aktiviteter = TagsAktivitet::where("Tag", "=", $tag['Tag'])->get();
 
                                 foreach ($aktiviteter as $aktivitet) {
                                     $href = "?side=aktivitet&id=" . $aktivitet->Aktivitet;

@@ -49,7 +49,8 @@ if ($bruker) {
                 $_POST[$PBilde],
                 $_POST[$PLengdegrad],
                 $_POST[$PBreddegrad]);
-            
+                
+                // Henter tagstrengen og splitter tagsene opp
                 if (isset($_POST[$PTag]))
                 {
                     echo $_POST[$PTag];

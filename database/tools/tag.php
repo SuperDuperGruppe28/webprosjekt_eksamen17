@@ -143,3 +143,26 @@ function hentAktiviteterFraTag($tag, $side)
     global $AKTIVITETER_SIDE;
     return TagsAktivitet::where("Tag", "LIKE", $tag)->skip($side * $AKTIVITETER_SIDE)->take($AKTIVITETER_SIDE)->get();
 }
+
+// Returnerer array over mest populære tags
+function hentPopTags()
+{
+    $tags = hentAlleTags();
+    $tagsArr = array();
+    foreach($tags as $tag)
+    {
+        $verdier = array(
+                            "Tag" => $tag->Tag,
+                            "Antall" => count($tag->tagsAktivitet()->get())
+                        );
+        $tagsArr[] = $verdier;
+    }
+    usort($tagsArr, 'sorterArray');
+
+    return $tagsArr;
+}
+
+function sorterArray($a, $b)
+{
+    return $b['Antall'] - $a['Antall'];
+}
