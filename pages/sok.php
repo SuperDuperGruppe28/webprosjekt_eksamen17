@@ -16,9 +16,11 @@ if (isset($_POST[$PSok])) {
     echo "<h1>Brukere</h1>";
     $brukere = sokBruker($_POST[$PSok]);
     if (count($brukere) > 0) {
+        echo "<div style='display: inline-block;text-align: left;'>";
         foreach ($brukere as $res) {
             printBrukerBoksFraArray($res->Brukernavn);
         }
+        echo '</div>';
     } else
         echo "Finner ingen brukere..";
 
