@@ -8,6 +8,7 @@
                 <a href="?side=main"><img src="img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
 
                 <li><a href="?side=main">Hjem</a></li>
+                <li><a href="?side=info">Info</a></li>
                 <li>
                     <a href="?side=aktiviteter">Aktiviteter<span class="caret"></span></a>
                     <div>
