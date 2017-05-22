@@ -162,7 +162,7 @@ function hentBrukerBildeEx($bruker)
 {
     if (eksistererBruker($bruker)) {
         $email = hentEmail($bruker);
-        $default = "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_960_720.jpg";
+        $default = "http://tek.westerdals.no/~berseb16/vulkanelva/img/default_user.jpg";
         $size = 40;
         $grav_url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
         if ($grav_url == '') $grav_url = $default;
@@ -176,7 +176,7 @@ function hentBrukerBilde()
 {
     if (erBrukerLoggetInn()) {
         $email = hentEmail(loggetInnBruker());
-        $default = "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_960_720.jpg";
+        $default = "http://tek.westerdals.no/~berseb16/vulkanelva/img/default_user.jpg";
         $size = 40;
         $grav_url = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
         if ($grav_url == '') $grav_url = $default;

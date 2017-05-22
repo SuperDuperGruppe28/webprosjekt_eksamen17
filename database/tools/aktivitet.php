@@ -133,7 +133,7 @@ function printAktivitetBoks($aktivitet)
             <div class="Likes">
                 <b><?= tryggPrint(antallStemmer($aktivitet)) ?></b>
                 <img class="Ikoner"
-                     src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
+                     src="img/ikon_hjerte.png"</img>
             </div>
             <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
@@ -172,7 +172,7 @@ function printAktivitetBoksFraArray($aktivitet)
         <div class="Likes">
             <b><?= tryggPrint(antallStemmer($aktivitet->id)) ?></b>
             <img class="Ikoner"
-                 src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_heart-2-512.png"</img>
+                 src="img/ikon_hjerte.png"</img>
         </div>
         <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
