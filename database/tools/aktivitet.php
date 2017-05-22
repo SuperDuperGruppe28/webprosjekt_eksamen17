@@ -115,7 +115,7 @@ function printAktivitetBoks($aktivitet)
         $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
 
         if ($akt->Statisk === 1)
-            $dato = "<img class='Ikoner' src='img/ikon_lock.png'/>";
+            $dato = "<img class='Ikoner' src='img/ikon_lock.png' alt='Statisk aktiviet'/>";
         ?>
         <div class="AktivitetLitenBoks">
             <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet) ?>">
@@ -132,8 +132,7 @@ function printAktivitetBoks($aktivitet)
             <div class="Dato"><?= $dato ?></div>
             <div class="Likes">
                 <b><?= tryggPrint(antallStemmer($aktivitet)) ?></b>
-                <img class="Ikoner"
-                     src="img/ikon_hjerte.png"</img>
+                <img class="Ikoner" src="img/ikon_hjerte.png" alt="Likes"</img>
             </div>
             <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
@@ -154,7 +153,7 @@ function printAktivitetBoksFraArray($aktivitet)
     $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
     
     if ($akt->Statisk === 1)
-        $dato = "<img class='Ikoner' src='img/ikon_lock.png'/>";
+        $dato = "<img class='Ikoner' src='img/ikon_lock.png' alt='Statisk aktiviet'/>";
     ?>
     <div class="AktivitetLitenBoks">
         <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet->id) ?>">
@@ -172,7 +171,7 @@ function printAktivitetBoksFraArray($aktivitet)
         <div class="Likes">
             <b><?= tryggPrint(antallStemmer($aktivitet->id)) ?></b>
             <img class="Ikoner"
-                 src="img/ikon_hjerte.png"</img>
+                 src="img/ikon_hjerte.png" alt="Likes"</img>
         </div>
         <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
