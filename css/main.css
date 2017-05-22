@@ -231,6 +231,16 @@ footer {
     height: 70%;
 }
 
+#aktivitetBoks .Right {
+    display: inline-block;
+    float: right;
+}
+
+#aktivitetBoks .Left {
+    display: inline-block;
+    float: left;
+}
+
 #brukerBoks {
     position: relative;
     margin: 2.5% auto auto;
