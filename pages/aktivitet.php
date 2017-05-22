@@ -10,7 +10,7 @@
                 
                 $dato = $akt->Dato;
                 if ($akt->Statisk === 1)
-                    $dato = "Statisk";
+                    $dato = "<img class='Ikoner' height='15px' width='15px' src='img/ikon_lock.png' alt='Statisk aktiviet'/>";
                 ?>
 
         <h1><?= tryggPrint($akt->Tittel); ?></h1>
@@ -19,7 +19,7 @@
                 echo "<i>Verifiser emailen din for å kommentere, like og delta i aktiviteten!</i>";
         ?>
         <img style="width:100%; height:100%;" src="<?= tryggPrint($akt->Bilde); ?>" onerror="this.src='img/default_aktivitet.png'" />
-    <div class="Left"><b>Dato: </b><?= $dato ?></div>
+    <div class="Left"><?= $dato ?></div>
             <div class="Right"><a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a></div>
         <br>
         <br>
