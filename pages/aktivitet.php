@@ -19,13 +19,10 @@
                 echo "<i>Verifiser emailen din for å kommentere, like og delta i aktiviteten!</i>";
         ?>
         <img style="width:100%; height:100%;" src="<?= tryggPrint($akt->Bilde); ?>" onerror="this.src='img/default_aktivitet.png'" />
-        <a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px'
-                                                                   src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?>
-                </a><br>
-        <b>Dato: <?= $dato ?></b><br>
+        <b>Dato: <?= $dato ?></b>
+        <a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a>
+        <br>
         <b>Beskrivelse: <?= tryggPrint($akt->Beskrivelse); ?></b><br>
-        <b>Statisk: <?= $akt->Statisk ?></b><br>
-
         <?php
                 foreach ($tags as $tag) {
                     echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
@@ -93,7 +90,6 @@
 
                 //<!--Laste google maps-->
                 echo "<script type='text/javascript'>startMaps(" . $akt->Breddegrad . ", " . $akt->Lengdegrad . ", false) </script>";
-
                 // Kommentarfelt
                 $brukernavn = loggetInnBruker();
                 // Sjekke om bruker er logget inn
