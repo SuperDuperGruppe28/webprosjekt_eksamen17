@@ -19,23 +19,28 @@
                 echo "<i>Verifiser emailen din for å kommentere, like og delta i aktiviteten!</i>";
         ?>
         <img style="width:100%; height:100%;" src="<?= tryggPrint($akt->Bilde); ?>" onerror="this.src='img/default_aktivitet.png'" />
-        <b>Dato: <?= $dato ?></b>
-        <a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a>
+    <div class="Left"><b>Dato: </b><?= $dato ?></div>
+            <div class="Right"><a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a></div>
         <br>
-        <b>Beskrivelse: <?= tryggPrint($akt->Beskrivelse); ?></b><br>
+        <br>
+        <div class="Left"><b><?=tryggPrint(antallStemmer($id))?></b><img height="20px" width="20px" src="/img/ikon_hjerte.png"/></div>
+        <br>
+        <?php
+        if ($akt->Statisk !== 1)
+                {
+                    echo "<b>Deltagelser</b><br><img height='20px' width='20px' src='/img/ikon_deltarikke.png'/>" . tryggPrint(hentAntallDeltagelser($id, 0));
+                    echo "<img height='20px' width='20px' src='/img/ikon_deltar.png'/>" . tryggPrint(hentAntallDeltagelser($id, 1));
+                    echo "<img height='20px' width='20px' src='/img/ikon_deltarkanskje.png'/>" . tryggPrint(hentAntallDeltagelser($id, 2));
+                }
+        ?>
+        <br>
+        <br>
+        <?= tryggPrint($akt->Beskrivelse); ?><br>
         <?php
                 foreach ($tags as $tag) {
                     echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
                 }
-
-                echo "<br><b>Likes: </b>" . tryggPrint(antallStemmer($id));
                 
-                if ($akt->Statisk !== 1)
-                {
-                        echo "<br><b>Deltar ikke: </b>" . tryggPrint(hentAntallDeltagelser($id, 0));
-                        echo "<br><b>Deltar: </b>" . tryggPrint(hentAntallDeltagelser($id, 1));
-                        echo "<br><b>Deltar kanskje: </b>" . tryggPrint(hentAntallDeltagelser($id, 2));
-                }
                 $brukernavn = loggetInnBruker();
                 if ($brukernavn) {
                     // Loggføre besøket til brukeren
