@@ -2,21 +2,29 @@
 
 $PSok = "sok";
 
-if(isset($_POST[$PSok]))
-{
+if (isset($_POST[$PSok])) {
     echo '<div class="center">';
     echo "<h1>Aktiviteter</h1>";
-    foreach(sokAktivitet($_POST[$PSok]) as $res)
-    {
-        printAktivitetBoksFraArray($res);
-    }
+    $aktitviteter = sokAktivitet($_POST[$PSok]);
+
+    if (count($aktitviteter) > 0) {
+        foreach ($aktitviteter as $res) {
+            printAktivitetBoksFraArray($res);
+        }
+    } else
+        echo "Finner ingen aktiviteter..";
     echo "<h1>Brukere</h1>";
-    foreach(sokBruker($_POST[$PSok]) as $res)
-    {
-        printBrukerBoksFraArray($res->Brukernavn);
-    }
+    $brukere = sokBruker($_POST[$PSok]);
+    if (count($brukere) > 0) {
+        echo "<div style='display: inline-block;text-align: left;'>";
+        foreach ($brukere as $res) {
+            printBrukerBoksFraArray($res->Brukernavn);
+        }
+        echo '</div>';
+    } else
+        echo "Finner ingen brukere..";
+
     echo '</div>';
-}else
-{
+} else {
     echo "Mangler søk..";
 }

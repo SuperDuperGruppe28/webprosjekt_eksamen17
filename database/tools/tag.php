@@ -7,18 +7,17 @@
 //    |_____| \'-;__/.',__`  
 //                  ( ( __)) 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/models.php';
+require_once __DIR__  . '/../models.php';
 require_once "bruker.php";
 
 // Registerer en ny tag
 function registrerTag($tag)
 {
-    if(!eksistererTag($tag))
-    {
+    if (!eksistererTag($tag)) {
         $tags = new Tags();
         $tags->Tag = $tag;
         $tags->save();
-        
+
         return true;
     }
     return false;
@@ -33,20 +32,24 @@ function eksistererTag($tag)
 // Registrerer ny tag på bruker
 function registrerBrukerTag($bruker, $tag, $score)
 {
-    if(!eksistererTag($tag))
+    if (!eksistererTag($tag))
         registrerTag($tag);
-       
-    if(eksistererTag($tag) && eksistererBruker($bruker))
-    {
+
+    if (eksistererTag($tag) && eksistererBruker($bruker)) {
         $tags = new TagsBruker();
         $tags->Tag = $tag;
         $tags->Bruker = $bruker;
         $tags->Score = $score;
         $tags->save();
-        
+
         return true;
     }
     return false;
+}
+
+function hentAlleTags()
+{
+    return Tags::All();
 }
 
 // Sjekker om en tag eksisterer
@@ -59,36 +62,35 @@ function eksistererBrukerTag($bruker, $tag)
 // Returnerer brukertag
 function hentBrukerTag($bruker, $tag)
 {
-    $score = TagsBruker::where("Tag", "LIKE", $tag); 
-    return $score->where("Bruker", "LIKE", $bruker)->first(); 
+    $score = TagsBruker::where("Tag", "LIKE", $tag);
+    return $score->where("Bruker", "LIKE", $bruker)->first();
 }
 
 // Henter brukerens score for gitt tag
 function hentBrukerTagScore($bruker, $tag)
 {
-    $score = TagsBruker::where("Tag", "LIKE", $tag); 
-    $score = $score->where("Bruker", "LIKE", $bruker)->first(); 
+    $score = TagsBruker::where("Tag", "LIKE", $tag);
+    $score = $score->where("Bruker", "LIKE", $bruker)->first();
     return $score->Score;
 }
 
 // Henter brukerens besok for gitt tag
 function hentBrukerTagBesok($bruker, $tag)
 {
-    $besok = TagsBruker::where("Tag", "LIKE", $tag); 
-    $besok = $besok->where("Bruker", "LIKE", $bruker)->first(); 
+    $besok = TagsBruker::where("Tag", "LIKE", $tag);
+    $besok = $besok->where("Bruker", "LIKE", $bruker)->first();
     return $besok->Besok;
 }
 
 function registrerBrukerBesok($bruker, $tag)
 {
-    if(!eksistererBrukerTag($bruker, $tag))
+    if (!eksistererBrukerTag($bruker, $tag))
         registrerBrukerTag($bruker, $tag, 0);
-    else
-    {
+    else {
         $bTag = hentBrukerTag($bruker, $tag);
         $bTag->Besok = $bTag->Besok + 1;
         $bTag->save();
-        
+
         return true;
     }
     return false;
@@ -97,10 +99,10 @@ function registrerBrukerBesok($bruker, $tag)
 // Registrerer ny tag på aktivitet
 function registrerAktivitetTag($aktivitet, $tag, $vekt)
 {
-    if(!eksistererTag($tag))
+    if (!eksistererTag($tag))
         registrerTag($tag);
-       
-    if(eksistererTag($tag) && eksistererAktivitet($aktivitet)) //  Sjekke om aktivitet eksisterer
+
+    if (eksistererTag($tag) && eksistererAktivitet($aktivitet)) //  Sjekke om aktivitet eksisterer
     {
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
@@ -113,6 +115,15 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
     return false;
 }
 
+// Sletter aktivitetTag
+function slettAktivitetTag($aktivitet)
+{
+     if (eksistererAktivitet($aktivitet))
+     {
+        $tags = TagsAktivitet::where("Aktivitet", "=", $aktivitet);
+        $tags->delete();
+    }
+}
 // Sjekker om en tag eksisterer
 function eksistererAktivitetTag($tag)
 {
@@ -122,17 +133,16 @@ function eksistererAktivitetTag($tag)
 // Henter aktivitetens vekt for gitt tag
 function hentAktivitetTagVekt($aktivitet, $tag)
 {
-    $vekt = TagsAktivitet::where("Tag", "LIKE", $tag); 
-    $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first(); 
+    $vekt = TagsAktivitet::where("Tag", "LIKE", $tag);
+    $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first();
     return $vekt->Vekt;
 }
 
 function hentAktivitetTags($aktivitet)
 {
-    if(eksistererAktivitet($aktivitet))
-    {        
+    if (eksistererAktivitet($aktivitet)) {
         $tags = TagsAktivitet::where("Aktivitet", "=", $aktivitet)->get();
-        
+
         return $tags;
     }
     return false;
@@ -144,8 +154,8 @@ function hentAlleAktivitetTags()
     return $tags;
 }
 
-// Returnerer aktivitene som tilhører gitt tag
-function hentAktiviteterFraTag($tag)
+function hentAktiviteterFraTag($tag, $side)
 {
-    return TagsAktivitet::where("Tag", "LIKE", $tag)->get();
+    global $AKTIVITETER_SIDE;
+    return TagsAktivitet::where("Tag", "LIKE", $tag)->skip($side * $AKTIVITETER_SIDE)->take($AKTIVITETER_SIDE)->get();
 }

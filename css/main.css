@@ -25,8 +25,37 @@ h3 {
     text-align: center;
 }
 
-.center { margin: auto; text-align: center; }
+a
+{
+    text-decoration: none;
+}
 
+.navPil {
+    display: inline;
+    font-size: 400%;
+    color: slategrey;
+}
+
+<<<<<<< HEAD
+=======
+.navPil:hover {
+    color: #4a5d6f;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+#mainBoks {
+    position: relative;
+    width: 60%;
+    height: 25%;
+    padding: 5px;
+    margin: auto;
+    border: 1px solid black;
+}
+>>>>>>> origin/master
 
 header {
     position: relative;
@@ -48,15 +77,13 @@ footer {
     text-align: center;
 }
 
-#loginfo {}
-
-#logout {}
-
-#delta 
-{
-    border: 5px solid #6a6a6a;
+#loginfo {
 }
 
+#logout {
+}
+
+<<<<<<< HEAD
 #map {
     position: relative;
     left: 60%;
@@ -64,20 +91,19 @@ footer {
     height: 300px;
     width: 300px;
     border: solid 1px black;
+=======
+#delta {
+    border: 5px solid #6a6a6a;
+>>>>>>> origin/master
 }
 
-#mapaktivitet {
+#mapaktivitet, #map {
     position: relative;
     margin: auto;
     padding: 0;
     height: 300px;
     width: 300px;
-}
-
-#kalender {
-    position: absolute;
-    top: 420px;
-    left: 1055px;
+    border: 1px solid black;
 }
 
 #vulkanlogo {
@@ -86,73 +112,11 @@ footer {
     text-align: left;
 }
 
-#katogorier {
-    position: absolute;
-    width: 125px;
-    height: 200px;
-    border: 1px solid black;
-    text-align: center;
-}
-
-#topleft {
-    padding-left: 185px;
-    display: inline-block;
-    left: 350px;
-    top: 150px;
-}
-
-#topcenter {
-    padding-left: 185px;
-    display: inline-block;
-    left: 700px;
-    top: 150px;
-}
-
-#topright {
-    padding-left: 185px;
-    display: inline-block;
-    left: 1100px;
-    top: 150px;
-}
-
-#bottomleft {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 350px;
-    top: 550px;
-}
-
-#bottomcenter {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 700px;
-    top: 550px;
-}
-
-#bottomright {
-    padding-left: 185px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: inline-block;
-    left: 1050px;
-    top: 550px;
-}
-
 #textbox {
     width: 250px;
     height: 290px;
     text-align: left;
     padding-left: 3px;
-    border: 1px solid black;
-}
-
-#vannbilde {
-    width: 250px;
-    height: 200px;
     border: 1px solid black;
 }
 
@@ -181,9 +145,18 @@ footer {
     position: relative;
     min-height: 100%;
     width: 100%;
+    padding: 3%;
+    overflow: auto;
 }
 
-#footerContainer {}
+#footerContainer {
+    position: relative;
+    height: 8%;
+    width: 100%;
+    margin: 0;
+    background: white;
+    text-align: center;
+}
 
 #loggInnBoks {
     position: relative;
@@ -194,15 +167,14 @@ footer {
     border: 25px solid white;
 }
 
-#searchbox 
-{
+#searchbox {
     margin: auto;
     vertical-align: middle;
     border-width: 1px;
     border-style: hidden;
     border-color: #c4d9df #a4c3ca #83afb7;
     width: 385px;
-    padding: 0px;
+    padding: 0;
     overflow: hidden;
     z-index: -10;
 }
@@ -213,24 +185,24 @@ footer {
 }
 
 #search {
-    border-radius: 0px;
+    border-radius: 0;
     margin: auto;
     padding: 5px 9px;
     height: 30px;
     width: 300px;
-   
+
     font: normal 13px 'trebuchet MS', arial, helvetica;
- 
+
 }
 
 #submit {
     margin: auto;
     border-style: hidden;
-    border-radius: 0px;
-    background-color:  lightblue;
- 
+    border-radius: 0;
+    background-color: lightblue;
+
     height: 30px;
-    padding: 0px;
+    padding: 0;
     width: 85px;
     cursor: pointer;
     font: bold 12px Arial, Helvetica;
@@ -239,11 +211,9 @@ footer {
 }
 
 #submit:hover {
-   
+
     background-image: linear-gradient(lightblue, #9ebbc4);
 }
-
-
 
 #submit::-moz-focus-inner {
     border: 0;
@@ -253,6 +223,7 @@ footer {
     width: 50%;
 }
 
+<<<<<<< HEAD
 #maintext {
     position: relative;
     left: 10%;
@@ -263,6 +234,8 @@ footer {
     border: 1px solid black;
 }
 
+=======
+>>>>>>> origin/master
 #sosialemedier {
     width: 100%;
     margin: 0 auto;
@@ -277,22 +250,27 @@ footer {
     opacity: 0.7;
 }
 
-#aktivitetBoks
-{
+#aktivitetBoks {
     position: relative;
     margin: 2.5% auto auto;
     padding: 10px;
-    width: 30%;
+    width: 60%;
     height: 70%;
 }
 
-#brukerBoks
-{
+#brukerBoks {
     position: relative;
     margin: 2.5% auto auto;
     padding: 10px;
     width: 50%;
     height: 70%;
+}
+
+/*Style*/
+.cursive {
+    font-style: italic;
+    border: none;
+    border-top: thin solid #fff;
 }
 
 /*Input*/
@@ -312,18 +290,17 @@ textarea {
 
 .button {
     width: 100%;
-    background-color: lightblue;
-    color: white;
+    background-color: #28a8d1;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 25px;
     cursor: pointer;
-    font-size: large;
+    font-size: x-large;
+    color: #e6e6e6;
 }
 
 .button:hover {
-    background-color: #9cc6d4;
+    background-color: #02a0d3;
 }
 
 .button:focus {
@@ -339,20 +316,18 @@ textarea {
 }
 
 /* Aktivitetboks */
-.AktivitetLitenBoks
-{
+.AktivitetLitenBoks {
     position: relative;
     display: inline-block;
     margin: 3px;
     padding: 5px;
     background: #d8d8d8;
-    width: 300px;
-    height: 450px;
+    width: 15vw;
+    height: 45vh;
     border: 1px solid black;
 }
 
-.AktivitetLitenBoks .bildeBoks
-{
+.AktivitetLitenBoks .bildeBoks {
     position: absolute;
     margin: 0;
     width: 100%;
@@ -362,8 +337,7 @@ textarea {
     border-bottom: 1px solid black;
 }
 
-.AktivitetLitenBoks .bildeBoksLag
-{
+.AktivitetLitenBoks .bildeBoksLag {
     position: absolute;
     margin: 0;
     width: 100%;
@@ -375,13 +349,11 @@ textarea {
     background-color: #a8a8a8;
 }
 
-.AktivitetLitenBoks:hover .bildeBoksLag
-{
+.AktivitetLitenBoks:hover .bildeBoksLag {
     opacity: .5;
 }
 
-.AktivitetLitenBoks .Tittel
-{
+.AktivitetLitenBoks .Tittel {
     position: absolute;
     margin: 0;
     width: 50%;
@@ -392,8 +364,7 @@ textarea {
     font-size: 1vw;
 }
 
-.AktivitetLitenBoks .Utgiver
-{
+.AktivitetLitenBoks .Utgiver {
     position: absolute;
     margin: 0;
     padding: 2px;
@@ -402,22 +373,22 @@ textarea {
     top: 40%;
     left: 50%;
     text-align: right;
+    font-size: 1vw;
 }
 
-.AktivitetLitenBoks .Dato
-{
+.AktivitetLitenBoks .Dato {
     position: absolute;
     margin: 0;
     padding: 2px;
     width: 70%;
     height: 5%;
     top: 50%;
-    left: 0%;
+    left: 0;
     text-align: left;
+    font-size: .8vw;
 }
 
-.AktivitetLitenBoks .Likes
-{
+.AktivitetLitenBoks .Likes {
     position: absolute;
     margin: 0;
     padding: 2px;
@@ -426,16 +397,15 @@ textarea {
     top: 50%;
     left: 70%;
     text-align: right;
+    font-size: .8vw;
 }
 
-.AktivitetLitenBoks .Ikoner
-{
+.AktivitetLitenBoks .Ikoner {
     height: 100%;
     vertical-align: middle;
 }
 
-.AktivitetLitenBoks .Beskrivelse
-{
+.AktivitetLitenBoks .Beskrivelse {
     position: absolute;
     margin: 0;
     padding: 10px;
@@ -443,11 +413,12 @@ textarea {
     height: 35%;
     top: 55%;
     left: 0;
+    text-align: left;
     overflow-y: hidden;
+    font-size: .8vw;
 }
 
-.AktivitetLitenBoks .Pris
-{
+.AktivitetLitenBoks .Pris {
     position: absolute;
     margin: 0;
     padding: 2px;
@@ -455,13 +426,77 @@ textarea {
     height: 10%;
     top: 90%;
     left: 0;
-    font-size: x-large;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
     background: #51d351;
+    font-size: 1vw;
+
 }
 
+.Pris.Rod 
+{
+    background: #d35151;
+}
+
+/*AktiviteterContainer*/
+#tagsContainer {
+    position: absolute;
+    min-width: 10%;
+    height: 100%;
+    top: 0;
+    left: 2px;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+.adminSkrift {
+    font-variant: small-caps;
+    font-size: large;
+    color: gold;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.tagLink {
+    font-variant: small-caps;
+    font-size: large;
+    color: #e8e8e8;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#aktiviteterContainer {
+    position: absolute;
+    min-width: 90%;
+    height: 100%;
+    top: 0;
+    left: 10%;
+}
+
+/*Kommentarfelt*/
+#kommentarFelt {
+    position: relative;
+    padding: 5px;
+    background: #fcfcfc;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#kommentarFelt .kommentar {
+    width: 100%;
+    word-break: break-all;
+}
+
+#kommentarFelt .kommentar img {
+    vertical-align: middle;
+    margin: 3px; 
+}
 
 /* Navigasjonsbar */
 nav {
@@ -471,7 +506,7 @@ nav {
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888;
     display: block;
-    margin: 0px 22px 8px 22px;
+    margin: 0 22px 8px 22px;
     overflow: hidden;
     width: 90%;
 }
@@ -522,15 +557,15 @@ nav > ul > li > a {
 }
 
 nav > ul > li:hover {
-    background-color: rgb( 40, 44, 47);
+    background-color: rgb(40, 44, 47);
 }
 
 nav > ul > li:hover > a {
-    color: rgb( 255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 nav > ul > li:hover > a > .caret {
-    border-top-color: rgb( 255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
 }
 
 nav > ul > li > div ul > li:hover > a > .caret {
@@ -539,7 +574,7 @@ nav > ul > li > div ul > li:hover > a > .caret {
 
 nav > ul > li > div,
 nav > ul > li > div ul > li > div {
-    background-color: rgb( 40, 44, 47);
+    background-color: rgb(40, 44, 47);
     border-top: 0;
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
@@ -557,7 +592,7 @@ nav > ul > li > div ul > li > div {
 }
 
 nav > ul > li > div ul > li > div {
-    background-color: rgb( 40, 44, 47);
+    background-color: rgb(40, 44, 47);
     border-radius: 0 4px 4px 4px;
     box-shadow: inset 2px 0 5px rgba(0, 0, 0, .15);
     margin-top: -42px;
@@ -586,5 +621,5 @@ nav > ul > li > div ul > li > div ul > li > a {
 }
 
 nav > ul > li > div ul > li:hover > a {
-    background-color: rgba( 255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
