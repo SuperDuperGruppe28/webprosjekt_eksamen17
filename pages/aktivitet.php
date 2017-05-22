@@ -102,9 +102,10 @@
                     ?>
                 <h1>Kommentarer</h1>
                 <form name="form_kommentar" action="php/comment.php?action=post" onsubmit="return validerKommentar()" method="post">
-                    <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea><br/><br/>
+                    <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea>
                     <input type="hidden" id="aktivitet" name="aktivitet" value="<?= $id ?>" />
                     <input class="button" type="submit" value="Post" />
+                    <br> <br>
                 </form>
 
                 <?php
