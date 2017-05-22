@@ -18,7 +18,8 @@ if (isset($_GET['tag'])) {
 
     echo "<h3>Aktiviteter fra " . $tag . "</h3>";
 
-    foreach (hentAktiviteterFraTag($tag, $sideTall) as $akt) {
+    $tagAkt = hentAktiviteterFraTag($tag, $sideTall);
+    foreach ($tagAkt as $akt) {
         printAktivitetBoks($akt->Aktivitet);
     }
     // Loggføre besøk av tag
@@ -27,17 +28,25 @@ if (isset($_GET['tag'])) {
     {
         registrerBrukerBesok($brukernavn, $tag);
     }
-    echo '<br><a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallBak . '"><div class="navPil"><</div></a><div class="navPil">-</div>';
-    echo '<a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallFrem . '"><div class="navPil">></div></a>';
+        echo '<br>';
+        if($sideTall > 0)
+            echo '<a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallBak . '"><div class="navPil"><</div></a><div class="navPil"> </div>';
+        if(count($tagAkt) >= $AKTIVITETER_SIDE && count($tagAkt) >= $AKTIVITETER_SIDE)
+            echo '<a href="?side=aktiviteter&tag=' . $tag . '&p=' . $sideTallFrem . '"><div class="navPil">></div></a>';
+        
 } else {
     echo "<h3>Aktiviteter</h3>";
-    foreach (hentAktiviteterFraSide($sideTall) as $akt) {
+    $alleAkt = hentAktiviteterFraSide($sideTall);
+    foreach ($alleAkt as $akt) {
         printAktivitetBoks($akt->id);
     }
-
-    echo '<br><a href="?side=aktiviteter&p=' . $sideTallBak . '"><div class="navPil"><</div></a><div class="navPil">-</div>';
-    echo '<a href="?side=aktiviteter&p=' . $sideTallFrem . '"><div class="navPil">></div></a>';
-}
+        echo '<br>';
+        if($sideTall > 0)
+            echo '<a href="?side=aktiviteter&p=' . $sideTallBak . '"><div class="navPil"><</div></a><div class="navPil">-</div>';
+        if(count($alleAkt) >= $AKTIVITETER_SIDE  && count($alleAkt) >= $AKTIVITETER_SIDE)
+            echo '<a href="?side=aktiviteter&p=' . $sideTallFrem . '"><div class="navPil">></div></a>';    
+    }
+    
 echo "</div>";
 echo "</div>";
 

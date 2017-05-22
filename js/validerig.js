@@ -58,7 +58,7 @@ function valdierAktivitet() {
         return false;
     }
 
-    if (pris < 0 || pris > 10000) {
+    if (pris < 0 || pris > 100000) {
         alert("Skriv inn pris ordentlig!");
         return false;
     }
