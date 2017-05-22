@@ -210,10 +210,8 @@
                                 </script>
 
                                 <!--TAGS-->
-                                <h3>Tags - Vekt</h3>
-                                <input class="inputTag" type="text" id="tag_1" name="tag_1"><br>
-                                <input class="inputTag" type="text" id="tag_2" name="tag_2"><br>
-                                <input class="inputTag" type="text" id="tag_3" name="tag_3"><br>
+                                <h3>Tags, skill med mellomrom</h3>
+                                <input class="inputTag" type="text" id="tag" name="tag"><br>
 
                                 <input class="button" type="submit" value="Registrer aktivitet" />
                         </form>

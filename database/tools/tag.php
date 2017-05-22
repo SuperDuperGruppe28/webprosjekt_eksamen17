@@ -39,7 +39,6 @@ function registrerBrukerTag($bruker, $tag)
         $tags = new TagsBruker();
         $tags->Tag = $tag;
         $tags->Bruker = $bruker;
-        $tags->Score = $score;
         $tags->save();
 
         return true;
@@ -94,7 +93,8 @@ function registrerAktivitetTag($aktivitet, $tag)
     if (!eksistererTag($tag))
         registrerTag($tag);
 
-    if (eksistererTag($tag) && eksistererAktivitet($aktivitet)) //  Sjekke om aktivitet eksisterer
+    //  Sjekke om aktivitet eksisterer
+    if (eksistererTag($tag) && eksistererAktivitet($aktivitet) && !eksistererAktivitetTag($tag, $aktivitet))
     {
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
@@ -116,9 +116,10 @@ function slettAktivitetTag($aktivitet)
     }
 }
 // Sjekker om en tag eksisterer
-function eksistererAktivitetTag($tag)
+function eksistererAktivitetTag($tag, $aktivitet)
 {
-    return (TagsAktivitet::where("Tag", "LIKE", $tag)->first()) !== null ? true : false;
+    $tagsAkt = TagsAktivitet::where("Tag", "LIKE", $tag);
+    return ($tagsAkt->where("Aktivitet", "=", $aktivitet)->first()) !== null ? true : false;
 }
 
 function hentAktivitetTags($aktivitet)

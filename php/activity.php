@@ -6,6 +6,8 @@ require_once __DIR__ . '/../database/tools/tag.php';
 $bruker = loggetInnBruker();
 
 // Konstanter
+$MAX_TAGS = 5;
+
 $PTittel = "tittel";
 $PBeskrivelse = "beskrivelse";
 $PApning = "apning";
@@ -17,9 +19,7 @@ $PLengdegrad = "lengdegrad";
 $PBreddegrad = "breddegrad";
 $PDeltagelse = "deltagelse";
 
-$PTag1 = "tag_1";
-$PTag2 = "tag_2";
-$PTag3 = "tag_3";
+$PTag = "tag";
 
 $GAction = "action";
 $GAktivitet = "akti";
@@ -50,23 +50,18 @@ if ($bruker) {
                 $_POST[$PLengdegrad],
                 $_POST[$PBreddegrad]);
             
-
-                if (isset($_POST[$PTag1])) {
+                if (isset($_POST[$PTag]))
+                {
+                    echo $_POST[$PTag];
+                    $tagArray = explode( ' ', $_POST[$PTag] );
                     // Tags
-                    if(tagDataValid($_POST[$PTag1], $_POST[$PTagVekt1]))
-                        registrerAktivitetTag($id, $_POST[$PTag1]);
-                }
-
-                if (isset($_POST[$PTag2])) {
-                    // Tags
-                    if(tagDataValid($_POST[$PTag2]))
-                        registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
-                }
-
-                if (isset($_POST[$PTag3])) {
-                    // Tags
-                    if(tagDataValid($_POST[$PTag3]))
-                        registrerAktivitetTag($id, $_POST[$PTag3]);
+                    for($i = 0; $i < count($tagArray); $i++)
+                    {
+                        if ($i >= $MAX_TAGS)
+                            break;
+                         if(tagDataValid($tagArray[$i]))
+                            registrerAktivitetTag($id, $tagArray[$i]);
+                    }
                 }
 
                 echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
