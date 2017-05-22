@@ -20,9 +20,6 @@ $PDeltagelse = "deltagelse";
 $PTag1 = "tag_1";
 $PTag2 = "tag_2";
 $PTag3 = "tag_3";
-$PTagVekt1 = "tag_vekt1";
-$PTagVekt2 = "tag_vekt2";
-$PTagVekt3 = "tag_vekt3";
 
 $GAction = "action";
 $GAktivitet = "akti";
@@ -54,22 +51,22 @@ if ($bruker) {
                 $_POST[$PBreddegrad]);
             
 
-                if (isset($_POST[$PTag1]) && isset($_POST[$PTagVekt1])) {
+                if (isset($_POST[$PTag1])) {
                     // Tags
                     if(tagDataValid($_POST[$PTag1], $_POST[$PTagVekt1]))
-                        registrerAktivitetTag($id, $_POST[$PTag1], $_POST[$PTagVekt1]);
+                        registrerAktivitetTag($id, $_POST[$PTag1]);
                 }
 
-                if (isset($_POST[$PTag2]) && isset($_POST[$PTagVekt2])) {
+                if (isset($_POST[$PTag2])) {
                     // Tags
-                    if(tagDataValid($_POST[$PTag2], $_POST[$PTagVekt2]))
+                    if(tagDataValid($_POST[$PTag2]))
                         registrerAktivitetTag($id, $_POST[$PTag2], $_POST[$PTagVekt2]);
                 }
 
-                if (isset($_POST[$PTag3]) && isset($_POST[$PTagVekt3])) {
+                if (isset($_POST[$PTag3])) {
                     // Tags
-                    if(tagDataValid($_POST[$PTag3], $_POST[$PTagVekt3]))
-                        registrerAktivitetTag($id, $_POST[$PTag3], $_POST[$PTagVekt3]);
+                    if(tagDataValid($_POST[$PTag3]))
+                        registrerAktivitetTag($id, $_POST[$PTag3]);
                 }
 
                 echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
@@ -194,15 +191,13 @@ function aktivitetDataValid($tittel, $beskrivelse, $pris, $bilde)
 }
 
 // Validerer inputdataen før spørring
-function tagDataValid($tag, $vekt)
+function tagDataValid($tag)
 {
     if($tag === "")
         return false;
     if(strlen($tag) > 45)
         return false;
     
-    if($vekt < 0 || $vekt > 100)
-        return false;
     return true;
 }
 

@@ -30,7 +30,7 @@ function eksistererTag($tag)
 }
 
 // Registrerer ny tag på bruker
-function registrerBrukerTag($bruker, $tag, $score)
+function registrerBrukerTag($bruker, $tag)
 {
  /*   if (!eksistererTag($tag))
         registrerTag($tag);*/
@@ -66,14 +66,6 @@ function hentBrukerTag($bruker, $tag)
     return $score->where("Bruker", "LIKE", $bruker)->first();
 }
 
-// Henter brukerens score for gitt tag
-function hentBrukerTagScore($bruker, $tag)
-{
-    $score = TagsBruker::where("Tag", "LIKE", $tag);
-    $score = $score->where("Bruker", "LIKE", $bruker)->first();
-    return $score->Score;
-}
-
 // Henter brukerens besok for gitt tag
 function hentBrukerTagBesok($bruker, $tag)
 {
@@ -85,7 +77,7 @@ function hentBrukerTagBesok($bruker, $tag)
 function registrerBrukerBesok($bruker, $tag)
 {
     if (!eksistererBrukerTag($bruker, $tag))
-        registrerBrukerTag($bruker, $tag, 0);
+        registrerBrukerTag($bruker, $tag);
     else {
         $bTag = hentBrukerTag($bruker, $tag);
         $bTag->Besok = $bTag->Besok + 1;
@@ -97,7 +89,7 @@ function registrerBrukerBesok($bruker, $tag)
 }
 
 // Registrerer ny tag på aktivitet
-function registrerAktivitetTag($aktivitet, $tag, $vekt)
+function registrerAktivitetTag($aktivitet, $tag)
 {
     if (!eksistererTag($tag))
         registrerTag($tag);
@@ -107,7 +99,6 @@ function registrerAktivitetTag($aktivitet, $tag, $vekt)
         $tags = new TagsAktivitet();
         $tags->Tag = $tag;
         $tags->Aktivitet = $aktivitet;
-        $tags->Vekt = $vekt;
 
         $tags->save();
         return true;
@@ -128,14 +119,6 @@ function slettAktivitetTag($aktivitet)
 function eksistererAktivitetTag($tag)
 {
     return (TagsAktivitet::where("Tag", "LIKE", $tag)->first()) !== null ? true : false;
-}
-
-// Henter aktivitetens vekt for gitt tag
-function hentAktivitetTagVekt($aktivitet, $tag)
-{
-    $vekt = TagsAktivitet::where("Tag", "LIKE", $tag);
-    $vekt = $vekt->where("Aktivitet", "=", $aktivitet)->first();
-    return $vekt->Vekt;
 }
 
 function hentAktivitetTags($aktivitet)

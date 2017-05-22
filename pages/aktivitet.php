@@ -38,7 +38,7 @@
         <?= tryggPrint($akt->Beskrivelse); ?><br>
         <?php
                 foreach ($tags as $tag) {
-                    echo "<b>" . tryggPrint($tag->Tag) . " = " . tryggPrint($tag->Vekt) . "%</b>, ";
+                    echo "<a href='?side=aktiviteter&tag=" . $tag->Tag . "'>".$tag->Tag." </a>";
                 }
                 
                 $brukernavn = loggetInnBruker();
@@ -211,9 +211,9 @@
 
                                 <!--TAGS-->
                                 <h3>Tags - Vekt</h3>
-                                <input class="inputTag" type="text" id="tag_1" name="tag_1"><input class="inputTag" type="number" id="tag_vekt1" name="tag_vekt1"><br>
-                                <input class="inputTag" type="text" id="tag_2" name="tag_2"><input class="inputTag" type="number" id="tag_vekt2" name="tag_vekt2"><br>
-                                <input class="inputTag" type="text" id="tag_3" name="tag_3"><input class="inputTag" type="number" id="tag_vekt3" name="tag_vekt3"><br>
+                                <input class="inputTag" type="text" id="tag_1" name="tag_1"><br>
+                                <input class="inputTag" type="text" id="tag_2" name="tag_2"><br>
+                                <input class="inputTag" type="text" id="tag_3" name="tag_3"><br>
 
                                 <input class="button" type="submit" value="Registrer aktivitet" />
                         </form>
