@@ -296,8 +296,8 @@ textarea {
     margin: 3px;
     padding: 5px;
     background: #d8d8d8;
-    width: 300px;
-    height: 450px;
+    width: 15vw;
+    height: 45vh;
     border: 1px solid black;
 }
 
@@ -347,6 +347,7 @@ textarea {
     top: 40%;
     left: 50%;
     text-align: right;
+    font-size: 1vw;
 }
 
 .AktivitetLitenBoks .Dato {
@@ -358,6 +359,7 @@ textarea {
     top: 50%;
     left: 0;
     text-align: left;
+    font-size: .8vw;
 }
 
 .AktivitetLitenBoks .Likes {
@@ -369,6 +371,7 @@ textarea {
     top: 50%;
     left: 70%;
     text-align: right;
+    font-size: .8vw;
 }
 
 .AktivitetLitenBoks .Ikoner {
@@ -386,6 +389,7 @@ textarea {
     left: 0;
     text-align: left;
     overflow-y: hidden;
+    font-size: .8vw;
 }
 
 .AktivitetLitenBoks .Pris {
@@ -396,11 +400,12 @@ textarea {
     height: 10%;
     top: 90%;
     left: 0;
-    font-size: x-large;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
     background: #51d351;
+    font-size: 1vw;
+
 }
 
 .Pris.Rod 
