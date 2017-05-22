@@ -36,8 +36,6 @@ a
     color: slategrey;
 }
 
-<<<<<<< HEAD
-=======
 .navPil:hover {
     color: #4a5d6f;
 }
@@ -55,7 +53,6 @@ a
     margin: auto;
     border: 1px solid black;
 }
->>>>>>> origin/master
 
 header {
     position: relative;
@@ -81,20 +78,6 @@ footer {
 }
 
 #logout {
-}
-
-<<<<<<< HEAD
-#map {
-    position: relative;
-    left: 60%;
-    top: 40%;
-    height: 300px;
-    width: 300px;
-    border: solid 1px black;
-=======
-#delta {
-    border: 5px solid #6a6a6a;
->>>>>>> origin/master
 }
 
 #mapaktivitet, #map {
@@ -223,7 +206,6 @@ footer {
     width: 50%;
 }
 
-<<<<<<< HEAD
 #maintext {
     position: relative;
     left: 10%;
@@ -234,8 +216,6 @@ footer {
     border: 1px solid black;
 }
 
-=======
->>>>>>> origin/master
 #sosialemedier {
     width: 100%;
     margin: 0 auto;
