@@ -38,7 +38,7 @@
         <h1>Rediger <?=$brukernavn?></h1>
         <form action="php/user.php?action=edit" method="post">
             Email<br><input type="email" id="email" name="email" value="<?= $bruker->Email?>"><br>
-            <input class="button" type="submit" value="Registrer bruker" />
+            <input class="button" type="submit" value="Oppdater email" />
         </form>
         <?php
             }else
