@@ -95,16 +95,16 @@
                 // Sjekke om bruker er logget inn
                 if ($brukernavn && erVerifisert($brukernavn)) {
                     ?>
-                <h1>Post kommentar</h1>
+                <h1>Kommentarer</h1>
                 <form name="form_kommentar" action="php/comment.php?action=post" onsubmit="return validerKommentar()" method="post">
                     <textarea id="tekst" name="tekst" rows="5" cols="70"></textarea><br/><br/>
                     <input type="hidden" id="aktivitet" name="aktivitet" value="<?= $id ?>" />
-                    <input class="button" type="submit" value="post kommentar" />
+                    <input class="button" type="submit" value="Post" />
                 </form>
 
                 <?php
                 }
-                echo "<div id='kommentarFelt'><h1>Kommentarer</h1>";
+                echo "<div id='kommentarFelt'>";
                 $kommentarer = hentKommentarer($id);
                 if(count($kommentarer) > 0)
                 {
