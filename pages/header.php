@@ -42,7 +42,6 @@
                                         }
                                      }
                                     
-
                                     //echo '<li><a href="'.$href.'">' . $aktivitet->Tittel . '</li>';
                                     $href = "?side=aktivitet&id=" . $aktivitet->id;
                                     if ($deltar) {
