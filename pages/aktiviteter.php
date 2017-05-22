@@ -55,7 +55,7 @@ echo '<div id="tagsContainer">';
 echo '<div class="center">';
 echo '<h1>Tags</h1>';
 foreach (hentAlleTags() as $tag) {
-    echo '<a class="tagLink" href="?side=aktiviteter&tag=' . $tag->Tag . '">' . $tag->Tag . '</a><br>';
+    echo '<a class="tagLink" href="?side=aktiviteter&tag=' . $tag->Tag . '">' . tryggPrint($tag->Tag) . '</a><br>';
 }
 echo "</div>";
 echo "</div>";

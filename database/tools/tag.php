@@ -32,8 +32,8 @@ function eksistererTag($tag)
 // Registrerer ny tag på bruker
 function registrerBrukerTag($bruker, $tag, $score)
 {
-    if (!eksistererTag($tag))
-        registrerTag($tag);
+ /*   if (!eksistererTag($tag))
+        registrerTag($tag);*/
 
     if (eksistererTag($tag) && eksistererBruker($bruker)) {
         $tags = new TagsBruker();
