@@ -115,7 +115,7 @@ function printAktivitetBoks($aktivitet)
         $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
 
         if ($akt->Statisk === 1)
-            $dato = "Statisk";
+            $dato = "<img class='Ikoner' src='img/ikon_lock.png'/>";
         ?>
         <div class="AktivitetLitenBoks">
             <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet) ?>">
@@ -154,7 +154,7 @@ function printAktivitetBoksFraArray($aktivitet)
     $prisFarge = $akt->Pris > 0 ? "Pris Rod" : "Pris";
     
     if ($akt->Statisk === 1)
-        $dato = "Statisk";
+        $dato = "<img class='Ikoner' src='img/ikon_lock.png'/>";
     ?>
     <div class="AktivitetLitenBoks">
         <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet->id) ?>">
