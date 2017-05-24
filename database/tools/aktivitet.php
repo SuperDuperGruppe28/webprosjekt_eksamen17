@@ -122,7 +122,7 @@ function printAktivitetBoks($aktivitet)
                 <div class="bildeBoksLag"></div>
             </a>
             <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
-            <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
+            <a class="link" href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
                 <div class="Utgiver">
                     <b><?= tryggPrint($akt->Bruker) ?></b>
                     <img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>
@@ -131,7 +131,7 @@ function printAktivitetBoks($aktivitet)
             <div class="Dato"><?= $dato ?></div>
             <div class="Likes">
                 <b><?= tryggPrint(antallStemmer($aktivitet)) ?></b>
-                <img class="Ikoner" src="img/ikon_hjerte.png" alt="Likes"</img>
+                <img class="Ikoner" src="img/ikon_hjerte.png" alt="Antall likes"</img>
             </div>
             <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
@@ -160,7 +160,7 @@ function printAktivitetBoksFraArray($aktivitet)
             <div class="bildeBoksLag"></div>
         </a>
         <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
-        <a href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
+        <a class="link" href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
             <div class="Utgiver">
                 <b><?= tryggPrint($akt->Bruker) ?></b>
                 <img class="Ikoner" src="<?= hentBrukerBildeEx($akt->Bruker) ?>"</img>
@@ -170,7 +170,7 @@ function printAktivitetBoksFraArray($aktivitet)
         <div class="Likes">
             <b><?= tryggPrint(antallStemmer($aktivitet->id)) ?></b>
             <img class="Ikoner"
-                 src="img/ikon_hjerte.png" alt="Likes"</img>
+                 src="img/ikon_hjerte.png" alt="Antall likes"</img>
         </div>
         <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>

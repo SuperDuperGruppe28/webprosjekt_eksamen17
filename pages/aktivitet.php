@@ -23,14 +23,14 @@
             <div class="Right"><a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a></div>
         <br>
         <br>
-        <div class="Left"><b><?=tryggPrint(antallStemmer($id))?></b><img height="20px" width="20px" src="img/ikon_hjerte.png"/></div>
+        <div class="Left"><b><?=tryggPrint(antallStemmer($id))?></b><img height="20px" width="20px" src="img/ikon_hjerte.png" alt="Antall likes"/></div>
         <br>
         <?php
         if ($akt->Statisk !== 1)
                 {
-                    echo "<b>Deltagelser</b><br><img height='20px' width='20px' src='img/ikon_deltarikke.png'/>" . tryggPrint(hentAntallDeltagelser($id, 0));
-                    echo "<img height='20px' width='20px' src='img/ikon_deltar.png'/>" . tryggPrint(hentAntallDeltagelser($id, 1));
-                    echo "<img height='20px' width='20px' src='img/ikon_deltarkanskje.png'/>" . tryggPrint(hentAntallDeltagelser($id, 2));
+                    echo "<b>Deltagelser</b><br><img height='20px' width='20px' src='img/ikon_deltarikke.png' alt='Deltar ikke'/>" . tryggPrint(hentAntallDeltagelser($id, 0));
+                    echo "<img height='20px' width='20px' src='img/ikon_deltar.png'  alt='Deltar'/>" . tryggPrint(hentAntallDeltagelser($id, 1));
+                    echo "<img height='20px' width='20px' src='img/ikon_deltarkanskje.png' alt='Deltar kanskje'/>" . tryggPrint(hentAntallDeltagelser($id, 2));
                 }
         ?>
         <br>

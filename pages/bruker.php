@@ -1,6 +1,7 @@
 <div id="brukerBoks">
+    <div class="center">
 
-    <?php
+        <?php
     $Gid = "id";
     $GAction = "action";
     $funnetBruker = false;
@@ -35,12 +36,15 @@
             {
                 $bruker = hentBruker($brukernavn);
             ?>
-        <h1>Rediger <?=$brukernavn?></h1>
-        <form action="php/user.php?action=edit" method="post">
-            Email<br><input type="email" id="email" name="email" value="<?= $bruker->Email?>"><br>
-            <input class="button" type="submit" value="Oppdater email" />
-        </form>
-        <?php
+            <h1>Rediger <?=$brukernavn?></h1>
+            <form action="php/user.php?action=edit" method="post">
+                Email
+                <br>
+                <input type="email" id="email" name="email" value="<?= $bruker->Email?>">
+                <br>
+                <input class="button" type="submit" value="Oppdater email" />
+            </form>
+            <?php
             }else
             {
                 echo "Logg inn for å redigere bruker..";
@@ -65,8 +69,9 @@
         
         if($brukerid === loggetInnBruker())
         {
+            echo "<a class='link' href='https://gravatar.com'><b>Endre profilbilde her</b></a><br>";
             echo '<form action="?side=bruker&action=edit" method="post">
-                    <input class="button" type="submit" value="Rediger bruker" />
+                    <input class="button" type="submit" width="25px" value="Rediger bruker" />
                   </form>';
         }
 
@@ -95,4 +100,4 @@
     }
     ?>
 
-</div>
+    </div>

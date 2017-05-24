@@ -29,6 +29,15 @@ a {
     text-decoration: none;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    color: #6d6f6f;
+}
+
 .navPil {
     display: inline;
     font-size: 400%;
@@ -50,7 +59,9 @@ a {
     height: 25%;
     padding: 5px;
     margin: auto;
+    margin-top: 1%;
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 header {
@@ -60,22 +71,6 @@ header {
     width: 100%;
     margin: auto;
 }
-
-footer {
-    position: relative;
-    height: 8%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding-top: 5px;
-    background: white;
-    text-align: center;
-}
-
-#loginfo {}
-
-#logout {}
 
 #mapaktivitet,
 #map {
@@ -126,13 +121,12 @@ footer {
     position: relative;
     min-height: 100%;
     width: 100%;
-    padding: 3%;
     overflow: auto;
 }
 
 #footerContainer {
     position: relative;
-    height: 8%;
+    height: 6%;
     width: 100%;
     margin: 0;
     background: white;
@@ -206,9 +200,10 @@ footer {
 }
 
 #sosialemedier {
-    width: 100%;
-    margin: 0 auto;
-    text-align: inherit;
+    margin: 5px;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
     background-color: white;
 }
 
@@ -218,7 +213,22 @@ footer {
     opacity: 0.7;
 }
 
+#copyright {
+    display: inline-block;
+    float: inherit;
+    vertical-align: middle;
+}
+
+#kontakt {
+    margin: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    float: right;
+}
+
+
 /*Aktivitetsboks på Aktivitetsiden*/
+
 #aktivitetBoks {
     position: relative;
     margin: auto auto;
@@ -271,7 +281,7 @@ textarea {
 }
 
 .button {
-    width: 100%;
+    width: 75%;
     background-color: #28a8d1;
     padding: 14px 20px;
     margin: 8px 0;
@@ -309,6 +319,7 @@ textarea {
     width: 15vw;
     height: 45vh;
     border: 1px solid black;
+    border-radius: 3px;
 }
 
 .AktivitetLitenBoks .bildeBoks {
@@ -442,17 +453,12 @@ textarea {
 }
 
 .tagLink {
-    font-variant: small-caps;
     font-size: large;
-    color: #b6cce2;
-    text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    color: #585858;
 }
 
-.tagLink:hover{
-    color: #e0e0e0;
+.tagLink:hover {
+    color: #7b7b7b;
 }
 
 #aktiviteterContainer {
@@ -487,6 +493,7 @@ textarea {
 
 
 /* Navigasjonsbar */
+
 nav {
     background-color: #fff;
     border: 1px solid #dedede;

@@ -23,7 +23,6 @@ if (isset($_POST[$PSok])) {
         echo '</div>';
     } else
         echo "Finner ingen brukere..";
-
     echo '</div>';
 } else {
     echo "Mangler søk..";
