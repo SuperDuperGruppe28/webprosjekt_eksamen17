@@ -50,7 +50,9 @@ a {
     height: 25%;
     padding: 5px;
     margin: auto;
+    margin-top: 1%;
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 header {
@@ -60,24 +62,6 @@ header {
     width: 100%;
     margin: auto;
 }
-
-<<<<<<< HEAD
-#loginfo {}
-
-#logout {}
-=======
-footer {
-    position: relative;
-    height: 8%;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding-top: 5px;
-    background: white;
-    text-align: center;
-}
->>>>>>> origin/master
 
 #mapaktivitet,
 #map {
@@ -128,7 +112,6 @@ footer {
     position: relative;
     min-height: 100%;
     width: 100%;
-    padding: 3%;
     overflow: auto;
 }
 
