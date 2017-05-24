@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="632d099a-5dbf-4d20-91e7-618e81dbc613" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,8 +74,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="426" column="24" lean-forward="true" selection-start-line="426" selection-start-column="24" selection-end-line="426" selection-end-column="24" />
+            <state relative-caret-position="386">
+              <caret line="289" column="20" lean-forward="true" selection-start-line="289" selection-start-column="20" selection-end-line="289" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -442,7 +441,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9958000" />
+    <option name="totallyTimeSpent" value="10776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1117,8 +1116,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="426" column="24" lean-forward="true" selection-start-line="426" selection-start-column="24" selection-end-line="426" selection-end-column="24" />
+        <state relative-caret-position="386">
+          <caret line="289" column="20" lean-forward="true" selection-start-line="289" selection-start-column="20" selection-end-line="289" selection-end-column="20" />
           <folding />
         </state>
       </provider>

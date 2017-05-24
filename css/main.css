@@ -283,12 +283,14 @@ textarea {
 .button {
     width: 75%;
     background-color: #28a8d1;
+    background-color: lightblue;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     font-size: x-large;
-    color: #e6e6e6;
+    color: white;
+    width: 100%;
 }
 
 .button:hover {
