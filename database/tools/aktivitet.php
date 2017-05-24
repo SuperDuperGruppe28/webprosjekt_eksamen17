@@ -15,14 +15,13 @@ $AKTIVITETER_SIDE = 10;
 // Oppretter en ny aktivitet
 // Todo
 // Legge til tags, eller håndtere det i aktivitetskapelseforalle.php
-function skapAktivitet($bruker, $tittel, $beskrivelse, $apning, $dato, $pris, $statisk, $bilde, $lon, $lat)
+function skapAktivitet($bruker, $tittel, $beskrivelse, $dato, $pris, $statisk, $bilde, $lon, $lat)
 {
     if (eksistererBruker($bruker)) {
         $akti = new Aktivitet();
         $akti->Bruker = $bruker;
         $akti->Tittel = $tittel;
         $akti->Beskrivelse = $beskrivelse;
-        $akti->Apningstider = $apning;
         $akti->Dato = date("Y-m-d H:i:s", strtotime($dato));
         $akti->Pris = $pris;
         $akti->Statisk = $statisk;

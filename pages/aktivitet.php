@@ -187,7 +187,6 @@
                         <form name="form_aktivitet"  action="php/activity.php?action=reg" onsubmit="return valdierAktivitet()"  method="post">
                             <label for="tittel">Tittel</label> <input type="text" id="tittel" name="tittel" placeholder="Tittel.."><br/><br/>
                             <label for="beskrivelse">Beskrivelse</label> <textarea id="beskrivelse" name="beskrivelse" rows="20" cols="100" placeholder="Beskrivelse.."></textarea><br/><br/>
-                            <input type="hidden" id="apning" name="apning" value="">
                             <?php $dato = new DateTime(); ?>
                             <label for="dato">Dato</label> <input type="datetime-local" name="dato" id="dato" value="<?= $dato->format('Y-m-d\TH:i:s'); ?>"><br><br>
                             <label for="pris">Pris</label> <input type="number" id="pris" name="pris" value="0"><br/><br/>

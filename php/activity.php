@@ -10,7 +10,6 @@ $MAX_TAGS = 5;
 
 $PTittel = "tittel";
 $PBeskrivelse = "beskrivelse";
-$PApning = "apning";
 $PDato = "dato";
 $PPris = "pris";
 $PStatisk = "statisk";
@@ -32,7 +31,7 @@ if ($bruker) {
 
     // Logge inn
     if ($action === "reg") {
-        if (isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PApning]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad])) {
+        if (isset($_POST[$PTittel]) && isset($_POST[$PBeskrivelse]) && isset($_POST[$PDato]) && isset($_POST[$PPris]) && isset($_POST[$PBilde]) && isset($_POST[$PLengdegrad]) && isset($_POST[$PBreddegrad])) {
             $statisk = 0;
             if (isset($_POST[$PStatisk]))
                 $statisk = 1;
@@ -42,7 +41,6 @@ if ($bruker) {
                 $id = skapAktivitet($bruker,
                 $_POST[$PTittel],
                 $_POST[$PBeskrivelse],
-                $_POST[$PApning],
                 $_POST[$PDato],
                 $_POST[$PPris],
                 $statisk,
