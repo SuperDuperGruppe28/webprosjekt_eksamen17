@@ -29,8 +29,7 @@ a {
     text-decoration: none;
 }
 
-.link
-{
+.link {
     text-decoration: none;
     color: black;
 }
@@ -74,7 +73,6 @@ header {
 }
 
 #mapaktivitet,
-
 #map {
     position: relative;
     margin: auto;
@@ -228,7 +226,9 @@ header {
     float: right;
 }
 
+
 /*Aktivitetsboks på Aktivitetsiden*/
+
 #aktivitetBoks {
     position: relative;
     margin: auto auto;
@@ -281,7 +281,7 @@ textarea {
 }
 
 .button {
-    width: 100%;
+    width: 75%;
     background-color: #28a8d1;
     padding: 14px 20px;
     margin: 8px 0;
@@ -457,7 +457,7 @@ textarea {
     color: #585858;
 }
 
-.tagLink:hover{
+.tagLink:hover {
     color: #7b7b7b;
 }
 
@@ -493,6 +493,7 @@ textarea {
 
 
 /* Navigasjonsbar */
+
 nav {
     background-color: #fff;
     border: 1px solid #dedede;
