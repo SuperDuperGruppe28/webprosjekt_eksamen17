@@ -261,7 +261,7 @@ header {
 .cursive {
     font-style: italic;
     border: none;
-    border-top: thin solid #fff;
+    border-top: thin inset #fff;
 }
 
 
@@ -315,10 +315,10 @@ textarea {
     display: inline-block;
     margin: 3px;
     padding: 5px;
-    background: #d8d8d8;
+    background: white;
     width: 15vw;
     height: 45vh;
-    border: 1px solid black;
+    border: 1px solid lightblue;
     border-radius: 3px;
 }
 
@@ -329,7 +329,6 @@ textarea {
     height: 40%;
     top: 0;
     left: 0;
-    border-bottom: 1px solid black;
 }
 
 .AktivitetLitenBoks .bildeBoksLag {
@@ -425,11 +424,13 @@ textarea {
     display: table-cell;
     vertical-align: middle;
     background: #51d351;
+    background: #a4daa4;
     font-size: 1vw;
 }
 
 .Pris.Rod {
     background: #d35151;
+    background: #ff3939;
 }
 
 
