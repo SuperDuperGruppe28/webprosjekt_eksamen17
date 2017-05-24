@@ -23,8 +23,9 @@ if ($tittel === "header" || $tittel === "footer")
     $tittel = "main";
 ?>
 
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
+
     <head>
         <!-- HEAD -->
         <meta charset="utf-8">
@@ -34,7 +35,8 @@ if ($tittel === "header" || $tittel === "footer")
         <meta name="author" content="Gruppe28">
 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/main.css?v=<?= time(); ?>">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css" href="css/main.css?v=<?= time(); ?>">
+
 
         <!-- Ikoner -->
         <link rel="icon" type="image/png" href="/img/westerdals.png">
@@ -47,17 +49,20 @@ if ($tittel === "header" || $tittel === "footer")
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
 
         <!--Scripts-->
-         <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv50YQCrnKlbScV5RZkyfVwXtj9lIYklw"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv50YQCrnKlbScV5RZkyfVwXtj9lIYklw"></script>
         <script type="text/javascript" src="js/maps.js"></script>
         <script type="text/javascript" src="js/validerig.js"></script>
-       
-        <title><?php echo $tittel ?></title>
+
+        <title>
+            <?php echo $tittel ?>
+        </title>
     </head>
 
     <body>
         <!-- HEADER -->
-        <header><?php require 'pages/header.php' ?></header>
+        <header>
+            <?php require 'pages/header.php' ?>
+        </header>
 
         <!-- BODY -->
         <div id="bodyContainer">
@@ -76,4 +81,5 @@ if ($tittel === "header" || $tittel === "footer")
         <!-- FOOTER -->
         <?php require 'pages/footer.php' ?>
     </body>
-</html>
+
+    </html>
