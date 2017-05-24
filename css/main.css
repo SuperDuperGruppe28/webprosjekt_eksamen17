@@ -446,7 +446,8 @@ textarea {
     top: 0;
     left: 2px;
     overflow-y: auto;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 1px;
+    border: thin solid lightblue;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 2px;
     background: white;
 }
 
