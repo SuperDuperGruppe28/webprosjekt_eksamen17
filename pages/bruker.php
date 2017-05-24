@@ -65,7 +65,7 @@
         
         if($brukerid === loggetInnBruker())
         {
-            echo "<a href='https://gravatar.com'><b>Endre profilbilde her</b></a><br>";
+            echo "<a class='link' href='https://gravatar.com'><b>Endre profilbilde her</b></a><br>";
             echo '<form action="?side=bruker&action=edit" method="post">
                     <input class="button" type="submit" value="Rediger bruker" />
                   </form>';
