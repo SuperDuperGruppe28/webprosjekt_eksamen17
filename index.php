@@ -36,8 +36,7 @@ if ($tittel === "header" || $tittel === "footer")
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="css/main.css?v=<?= time(); ?>">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+        
         <!-- Ikoner -->
         <link rel="icon" type="image/png" href="/img/westerdals.png">
 
