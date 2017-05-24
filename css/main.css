@@ -438,17 +438,12 @@ textarea {
 }
 
 .tagLink {
-    font-variant: small-caps;
     font-size: large;
-    color: #b6cce2;
-    text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    color: #585858;
 }
 
 .tagLink:hover{
-    color: #e0e0e0;
+    color: #7b7b7b;
 }
 
 #aktiviteterContainer {
