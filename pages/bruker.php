@@ -62,6 +62,7 @@
         if($bruker->Verifisert === 0)
             echo "Verifiser emailadressen din for å kommentere, like og delta på aktiviteter.<br>";
         echo '<img src="'.tryggPrint(hentBrukerBildeEx($brukerid)).'" height="100px" width="100px"/><br>';
+        echo "<a href='https://gravatar.com'><b>Endre profilbilde her</b></a>";
         
         if($brukerid === loggetInnBruker())
         {
