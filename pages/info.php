@@ -10,6 +10,9 @@
         Tobias<br>
         <a class="link" href="?side=bruker&id=sebto">Sebastian</a><br>
     </p>
+    <h2>Github Repository</h2>
+    <a class="link" href="https://github.com/SuperDuperGruppe28/webprosjekt_eksamen17">Github</a><br>
+
     <h3>Her finner du oss!</h3>
     <div id="map"></div>
 </div>
