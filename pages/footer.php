@@ -8,6 +8,6 @@
             SuperDuperGruppe28©2017
         </div>
     <div id="kontakt">
-        <a href="mailto:kopknu16@student.westerdals.no?subject=Tilbakemelding om Vulkanelva">Kontakt Oss</a>
+        <a class="link" href="mailto:kopknu16@student.westerdals.no?subject=Tilbakemelding om Vulkanelva">Kontakt oss</a>
     </div>
 </div>

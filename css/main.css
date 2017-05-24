@@ -29,6 +29,16 @@ a {
     text-decoration: none;
 }
 
+.link
+{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    color: #6d6f6f;
+}
+
 .navPil {
     display: inline;
     font-size: 400%;
