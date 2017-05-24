@@ -1,5 +1,6 @@
-<div id="brukerBoks">
-    <div class="center">
+<div class="center">
+    <div id="brukerBoks">
+ 
 
         <?php
     $Gid = "id";
@@ -101,3 +102,4 @@
     ?>
 
     </div>
+</div>

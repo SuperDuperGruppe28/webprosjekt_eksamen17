@@ -51,7 +51,6 @@ if ($bruker) {
                 // Henter tagstrengen og splitter tagsene opp
                 if (isset($_POST[$PTag]))
                 {
-                    echo $_POST[$PTag];
                     $tagArray = explode( ' ', $_POST[$PTag] );
                     // Tags
                     for($i = 0; $i < count($tagArray); $i++)
