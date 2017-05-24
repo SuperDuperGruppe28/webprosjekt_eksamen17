@@ -35,7 +35,7 @@ if ($tittel === "header" || $tittel === "footer")
         <meta name="author" content="Gruppe28">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css" href="css/main.css?v=<?= time(); ?>">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css"href="css/main.css?v=<?= time(); ?>">
 
 
         <!-- Ikoner -->
