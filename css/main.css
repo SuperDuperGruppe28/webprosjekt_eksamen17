@@ -319,6 +319,7 @@ textarea {
     width: 15vw;
     height: 45vh;
     border: 1px solid black;
+    border-radius: 3px;
 }
 
 .AktivitetLitenBoks .bildeBoks {
