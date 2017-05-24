@@ -36,7 +36,12 @@ if ($tittel === "header" || $tittel === "footer")
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="css/main.css?v=<?= time(); ?>">
+<<<<<<< HEAD
+
+
+=======
         
+>>>>>>> origin/master
         <!-- Ikoner -->
         <link rel="icon" type="image/png" href="/img/westerdals.png">
 
