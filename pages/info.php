@@ -5,10 +5,10 @@
     <h2>Utviklere</h2>
     <p>
         Christian<br>
-        Espen<br>
-        Knut<br>
+        <a href="?side=bruker&id=espen">Espen</a><br>
+        <a href="?side=bruker&id=kanuto">Knut</a><br>
         Tobias<br>
-        Sebastian<br>
+        <a href="?side=bruker&id=sebto">Sebastian</a><br>
     </p>
     <h3>Her finner du oss!</h3>
     <div id="map"></div>
