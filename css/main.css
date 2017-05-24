@@ -322,6 +322,7 @@ textarea {
     height: 45vh;
     border: 1px solid lightblue;
     border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
 .AktivitetLitenBoks .bildeBoks {
