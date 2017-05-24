@@ -1,9 +1,8 @@
 <div id="mainBoks">
     <h1>Vulkanelva</h1>
-    <p>Hallo og velkommen til Vulkanelva, her vil du finne alt av aktiviteter og ting en kan bedrive tiden med i næromrodet til Campus Vulkan!</p>
+    <p>Velkommen til Vulkanelva. Her kan du registrere deg og ta del i alle aktivitetene rundt Vulkanområdet. Om du registrerer deg vil du også få oppslag av relevante aktiviteter som vi har skreddersydd for akkurat deg! Lag deg en bruker nå, eller surf nettsiden og les om alle de spennende aktivitetene du kan ta del i!</p>
     
-    
-    <h3>Utviklere</h3>
+    <h2>Utviklere</h2>
     <p>
         Christian<br>
         Espen<br>
