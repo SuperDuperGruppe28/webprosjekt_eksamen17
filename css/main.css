@@ -314,9 +314,8 @@ textarea {
 
 /* Twitter */
 
-#twitter-timeline {
-    vertical-align: middle;
-    position: absolute;
+.twitter-timeline {
+    position: relative;
 }
 
 
