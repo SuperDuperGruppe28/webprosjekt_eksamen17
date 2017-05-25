@@ -312,6 +312,14 @@ textarea {
 }
 
 
+/* Twitter */
+
+#twitter-timeline {
+    vertical-align: middle;
+    position: absolute;
+}
+
+
 /* Aktivitetboks */
 
 .AktivitetLitenBoks {
