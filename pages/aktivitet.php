@@ -20,7 +20,7 @@
         ?>
         <img style="width:100%; height:100%;" src="<?= tryggPrint($akt->Bilde); ?>" onerror="this.src='img/default_aktivitet.png'" />
     <div class="Left"><?= $dato ?></div>
-            <div class="Right"><a href="?side=bruker&id=<?= $akt->Bruker ?>"><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/><?= $akt->Bruker ?></a></div>
+            <div class="Right"><a class="link" href="?side=bruker&id=<?= $akt->Bruker ?>"><?= $akt->Bruker ?><img height='40px' width='40px' src="<?= hentBrukerBildeEx($akt->Bruker) ?>"/></a></div>
         <br>
         <br>
         <div class="Left"><b><?=tryggPrint(antallStemmer($id))?></b><img height="20px" width="20px" src="img/ikon_hjerte.png" alt="Antall likes"/></div>
