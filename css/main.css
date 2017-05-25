@@ -31,7 +31,7 @@ a {
 
 .link {
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 .link:hover {
@@ -41,11 +41,11 @@ a {
 .navPil {
     display: inline;
     font-size: 400%;
-    color: slategrey;
+    color: 000000;
 }
 
 .navPil:hover {
-    color: #4a5d6f;
+    color: #6d6f6f;
 }
 
 .center {
@@ -104,7 +104,7 @@ header {
 }
 
 #logout {
-    background-color: darkred;
+    background-color: #d35151;
 }
 
 #login {
@@ -285,7 +285,7 @@ textarea {
 .button {
     width: 75%;
     background-color: #28a8d1;
-    background-color: lightblue;
+    background-color: #add8e6;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -443,7 +443,6 @@ textarea {
 
 .Pris.Rod {
     background: #d35151;
-    background: #ff3939;
 }
 
 
@@ -465,7 +464,7 @@ textarea {
 .adminSkrift {
     font-variant: small-caps;
     font-size: large;
-    color: gold;
+    color: #ffd700;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
