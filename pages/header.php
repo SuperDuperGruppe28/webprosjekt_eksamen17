@@ -82,7 +82,7 @@
 
 
         <form action="?side=sok" method="post" id="searchbox" style='vertical-align:middle'>
-            <input id="search" name="sok" type="text" placeholder="Søk her . . .">
+            <input id="search" name="sok" type="text" placeholder="Søk etter aktivitet eller bruker . . .">
             <input id="submit" type="submit" value="Søk">
         </form>
     </div>

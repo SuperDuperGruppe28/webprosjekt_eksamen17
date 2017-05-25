@@ -18,20 +18,21 @@
     <a class="link" href="https://github.com/SuperDuperGruppe28/webprosjekt_eksamen17">Github</a>
     <br>
 
-    <a class="twitter-timeline" href="https://twitter.com/hashtag/babes" data-widget-id="867712070208430081"></a>
-    <script>
-        ! function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, "script", "twitter-wjs");
-    </script>
-
+    <div>
+        <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081"></a>
+        <script>
+            ! function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
+    </div>
 
 
 
