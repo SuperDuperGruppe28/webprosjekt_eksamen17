@@ -53,6 +53,48 @@ a {
     text-align: center;
 }
 
+@media screen and (max-width: 1024px){
+    #tagsContainer {
+        visibility: hidden;
+        width: 0px;
+    }
+    #aktiviteterContainer {
+        left: 0%;
+        min-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    #tagsContainer {
+        min-width: 10%;
+    }
+    #aktiviteterContainer {
+        min-width: 90%;
+        top: 10%;
+    }
+}
+
+#tagsContainer {
+    position: absolute;
+    
+    height: 100%;
+    top: 0;
+    left: 2px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+}
+
+#aktiviteterContainer {
+    position: absolute;
+    
+    height: 100%;
+    top: 0;
+    
+}
+
 #mainBoks {
     position: relative;
     width: 60%;
@@ -322,8 +364,8 @@ textarea {
     margin: 3px;
     padding: 5px;
     background: white;
-    width: 15vw;
-    height: 45vh;
+    width: 300px;
+    height: 450px;
     border: 1px solid lightblue;
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
@@ -362,7 +404,6 @@ textarea {
     top: 40%;
     left: 0;
     text-align: center;
-    font-size: 1vw;
 }
 
 .AktivitetLitenBoks .Utgiver {
@@ -374,7 +415,7 @@ textarea {
     top: 40%;
     left: 50%;
     text-align: right;
-    font-size: 1vw;
+ 
 }
 
 .AktivitetLitenBoks .Dato {
@@ -386,7 +427,7 @@ textarea {
     top: 50%;
     left: 0;
     text-align: left;
-    font-size: .8vw;
+
 }
 
 .AktivitetLitenBoks .Likes {
@@ -398,7 +439,6 @@ textarea {
     top: 50%;
     left: 70%;
     text-align: right;
-    font-size: .8vw;
 }
 
 .AktivitetLitenBoks .Ikoner {
@@ -416,7 +456,7 @@ textarea {
     left: 0;
     text-align: left;
     overflow-y: hidden;
-    font-size: .8vw;
+    
 }
 
 .AktivitetLitenBoks .Pris {
@@ -431,7 +471,6 @@ textarea {
     display: table-cell;
     vertical-align: middle;
     background: #a4daa4;
-    font-size: 1vw;
 }
 
 .Pris.Rod {
@@ -441,18 +480,7 @@ textarea {
 
 /*AktiviteterContainer*/
 
-#tagsContainer {
-    position: absolute;
-    min-width: 10%;
-    height: 100%;
-    top: 0;
-    left: 2px;
-    overflow-y: auto;
-    background-color: #fff;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-}
+
 
 .adminSkrift {
     font-variant: small-caps;
@@ -470,13 +498,7 @@ textarea {
     color: #7b7b7b;
 }
 
-#aktiviteterContainer {
-    position: absolute;
-    min-width: 90%;
-    height: 100%;
-    top: 0;
-    left: 10%;
-}
+
 
 
 /*Kommentarfelt*/
