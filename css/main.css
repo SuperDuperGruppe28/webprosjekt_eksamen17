@@ -41,7 +41,7 @@ a {
 .navPil {
     display: inline;
     font-size: 400%;
-    color: 000000;
+    color: #000;
 }
 
 .navPil:hover {
