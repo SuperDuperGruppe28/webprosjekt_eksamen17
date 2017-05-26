@@ -133,7 +133,7 @@ function printAktivitetBoks($aktivitet)
                 <b><?= tryggPrint(antallStemmer($aktivitet)) ?></b>
                 <img class="Ikoner" src="img/ikon_hjerte.png" alt="Antall likes"</img>
             </div>
-            <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
+        <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>    
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
         </div>
 
