@@ -114,11 +114,17 @@ header {
 #mapaktivitet,
 #map {
     position: relative;
+    display: inline-block;
     margin: auto;
     padding: 0;
     height: 300px;
     width: 300px;
     border: 1px solid black;
+}
+
+#transport {
+    position: relative;
+    display: inline-block;
 }
 
 #vulkanlogo {
