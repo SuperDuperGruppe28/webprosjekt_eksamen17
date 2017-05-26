@@ -2,7 +2,7 @@
     <h1>Vulkanelva</h1>
     <p>Velkommen til Vulkanelva. Her kan du registrere deg og ta del i alle aktivitetene rundt Vulkanområdet. Om du registrerer deg vil du også få oppslag av relevante aktiviteter som vi har skreddersydd for akkurat deg! Lag deg en bruker nå, eller surf nettsiden og les om alle de spennende aktivitetene du kan ta del i!</p>
 
-    <div id="transport" <h2>Slik kommer du deg til Vulkanelva</h2>
+    <div id="transport" <h2> Slik kommer du deg til Vulkanelva </h2>
         <p>Trikk 11, 12 og 13 stopper på Schous plass. Her tar man seg enkelt ned til Nordre gate og over broen til Vulkan.
             <p>
 
@@ -30,7 +30,7 @@
     <br>
 
     <div>
-        <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="95%" float="center"></a>
+        <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="90%" float="center"></a>
         <script>
             ! function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0],
