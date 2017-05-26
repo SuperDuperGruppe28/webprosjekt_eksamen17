@@ -52,6 +52,7 @@ if ($tittel === "header" || $tittel === "footer")
         <script type="text/javascript" src="js/maps.js"></script>
         <script type="text/javascript" src="js/validerig.js"></script>
 
+
         <title>
             <?php echo "VulkanElva: " . $tittel ?>
         </title>
