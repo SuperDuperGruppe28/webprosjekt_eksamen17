@@ -125,6 +125,12 @@ header {
     margin: auto;
 }
 
+#maps {
+    position: relative;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
 #mapaktivitet,
 #map {
     position: relative;
@@ -467,7 +473,7 @@ textarea {
     height: 70%;
     text-align: left;
     overflow-y: hidden;
-    opacity: 0; 
+    opacity: 0;
     transition: .5s ease;
     font-size: 12px;
 }
