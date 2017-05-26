@@ -38,7 +38,7 @@ a {
     color: #6d6f6f;
 }
 
-.LinkBeskrivelse{
+.LinkBeskrivelse {
     color: black;
 }
 
@@ -110,7 +110,7 @@ a {
     height: 25%;
     padding: 5px;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 0.5%;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -278,6 +278,7 @@ header {
     display: inline-block;
     float: inherit;
     vertical-align: middle;
+    font-size: 13px;
 }
 
 #kontakt {
@@ -285,6 +286,7 @@ header {
     vertical-align: middle;
     display: inline-block;
     float: right;
+    font-size: 13px;
 }
 
 
