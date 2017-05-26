@@ -117,9 +117,12 @@ function printAktivitetBoks($aktivitet)
             $dato = "<img class='Ikoner' src='img/ikon_lock.png' alt='Statisk aktiviet'/>";
         ?>
         <div class="AktivitetLitenBoks">
-            <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet) ?>">
+            
+            <a class="LinkBeskrivelse" href="?side=aktivitet&id=<?= tryggPrint($aktivitet) ?>">
                 <img class="bildeBoks" src="<?= tryggPrint($akt->Bilde) ?>" onerror="this.src='img/default_aktivitet.png'"/>
+                
                 <div class="bildeBoksLag"></div>
+                <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
             </a>
             <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
             <a class="link" href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
@@ -132,8 +135,8 @@ function printAktivitetBoks($aktivitet)
             <div class="Likes">
                 <b><?= tryggPrint(antallStemmer($aktivitet)) ?></b>
                 <img class="Ikoner" src="img/ikon_hjerte.png" alt="Antall likes"</img>
-            </div>
-        <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>    
+        </div>
+            
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
         </div>
 
@@ -155,10 +158,8 @@ function printAktivitetBoksFraArray($aktivitet)
         $dato = "<img class='Ikoner' src='img/ikon_lock.png' alt='Statisk aktiviet'/>";
     ?>
     <div class="AktivitetLitenBoks">
-        <a href="?side=aktivitet&id=<?= tryggPrint($aktivitet->id) ?>">
             <img class="bildeBoks" src="<?= tryggPrint($akt->Bilde) ?>" onerror="this.src='img/default_aktivitet.png'"/>
             <div class="bildeBoksLag"></div>
-        </a>
         <div class="Tittel"><b><?= tryggPrint($akt->Tittel) ?></b></div>
         <a class="link" href="?side=bruker&id=<?= tryggPrint($akt->Bruker) ?>">
             <div class="Utgiver">
@@ -172,7 +173,8 @@ function printAktivitetBoksFraArray($aktivitet)
             <img class="Ikoner"
                  src="img/ikon_hjerte.png" alt="Antall likes"</img>
         </div>
-        <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div>
+            <a class="LinkBeskrivelse" href="?side=aktivitet&id=<?= tryggPrint($aktivitet->id) ?>">
+        <div class="Beskrivelse"><?= tryggPrint($akt->Beskrivelse) ?></div></a>
         <div class="<?=$prisFarge?>"><?= $pris ?></div>
     </div>
     <?php

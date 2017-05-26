@@ -38,6 +38,15 @@ a {
     color: #6d6f6f;
 }
 
+.LinkBeskrivelse{
+    color: black;
+}
+
+.LinkBeskrivelse:hover {
+    text-decoration: underline;
+    color: black;
+}
+
 .navPil {
     display: inline;
     font-size: 400%;
@@ -409,7 +418,7 @@ textarea {
     top: 70%;
     left: 0;
     text-align: left;
-    font-size: 0.85vw;
+    font-size: 12.5px;
 }
 
 .AktivitetLitenBoks .Utgiver {
@@ -456,13 +465,11 @@ textarea {
     padding: 10px;
     width: 100%;
     height: 70%;
-    top: 0;
-    left: 0;
     text-align: left;
     overflow-y: hidden;
     opacity: 0; 
     transition: .5s ease;
-    font-size: 0.80vw;
+    font-size: 12px;
 }
 
 .AktivitetLitenBoks .Beskrivelse:hover {
