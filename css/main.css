@@ -126,9 +126,8 @@ header {
 }
 
 #maps {
-    position: relative;
-    border: 5px solid white;
-    border-radius: 10px;
+    width:100vw;
+    height:75vh;
 }
 
 #mapaktivitet,

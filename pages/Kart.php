@@ -4,7 +4,7 @@
 
     
 
-    <div id="maps" class="center" style="width: 500px; height: 400px;"></div>
+    <div id="maps" class="center" style=""></div>
 
     <script type="text/javascript">
         var locations = [
@@ -14,6 +14,8 @@
           
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
+                    if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
+                    
                             
                                     $breddegrad = $aktivitet->Breddegrad;
                                     $lengdegrad = $aktivitet->Lengdegrad;
@@ -29,7 +31,7 @@
     ];
 
         var map = new google.maps.Map(document.getElementById('maps'), {
-            zoom: 14,
+            zoom: 15,
             center: new google.maps.LatLng(59.922425, 10.751672),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
