@@ -30,7 +30,7 @@
     <br>
 
     <div>
-        <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081"></a>
+        <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="95%" float="center"></a>
         <script>
             ! function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0],
