@@ -209,7 +209,7 @@ function sokBruker($sok)
 
 function printBrukerBoksFraArray($bruker)
 {
-    $klasse = "";
+    $klasse = "link";
     if (erAdmin($bruker))
         $klasse = "adminSkrift";
     echo "<a class='" . $klasse . "' href='?side=bruker&id=" . $bruker . "'><img height='40px' width='40px' src='" . hentBrukerBildeEx($bruker) . "'/>" . $bruker . "</a><br>";
