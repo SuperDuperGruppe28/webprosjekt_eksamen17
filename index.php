@@ -57,6 +57,7 @@ if ($tittel === "header" || $tittel === "footer")
         </title>
     </head>
 
+
     <body>
         <!-- HEADER -->
         <header>
