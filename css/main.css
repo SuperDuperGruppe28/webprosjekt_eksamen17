@@ -367,9 +367,6 @@ textarea {
 /* Google Maps multilokasjon */
 
 
-}
-
-
 /* Aktivitetboks */
 
 .AktivitetLitenBoks {
@@ -469,7 +466,7 @@ textarea {
     left: 0;
     text-align: left;
     overflow-y: hidden;
-    opacity: 0; 
+    opacity: 0;
     transition: .5s ease;
     font-size: 0.80vw;
 }
