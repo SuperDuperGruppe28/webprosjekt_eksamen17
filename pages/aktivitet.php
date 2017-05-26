@@ -177,7 +177,7 @@
                 }
             }
         } else {
-            echo '<div class="center"><h1>Aktivitet med id " . $_GET['id'] . " eksisterer ikke!</h1></div>';
+            echo '<div class="center"><h1>Aktivitet med id ' . $_GET['id'] . ' eksisterer ikke!</h1></div>';
         }
     } else {
         $brukernavn = loggetInnBruker();
@@ -221,7 +221,7 @@
                 
                 }else
                 {
-                    echo "<div class="center"><h1>Verifiser emailadressen din for å opprette en ny aktivtet!</h1></div>";
+                    echo '<div class="center"><h1>Verifiser emailadressen din for å opprette en ny aktivtet!</h1></div>';
                 }
         } else {
             echo '<div class="center"><h1>Logg inn for å opprette en ny aktivitet!</h1></div>';
