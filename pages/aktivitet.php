@@ -47,7 +47,9 @@
                     foreach (hentAktivitetTags($id) as $akTag) {
                         registrerBrukerBesok($brukernavn, $akTag->Tag);
                     }
-
+                    // vis pris
+                    if ($akt->Pris > 0) 
+                        echo '<div id="pris">Pris: ' . tryggPrint($akt->Pris) . 'kr</div>';
                     if ($brukernavn === $akt->Bruker || erAdmin($brukernavn)) {
                         echo '<form action="?side=aktivitet&action=edit&id=' . $id . '" method="post">
                         

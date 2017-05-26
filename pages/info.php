@@ -12,6 +12,23 @@
 
                 <p> T-bane/tog: Ønsker du å ta t-bane eller tog, er det kun en 15 minutters rusletur fra Jernbanetorget </p>
 
+    <h2>Utviklere</h2>
+    <p>
+        <a class="link" href="?side=bruker&id=bruker">Christian</a>
+        <br>
+        <a class="link" href="?side=bruker&id=espen">Espen</a>
+        <br>
+        <a class="link" href="?side=bruker&id=kanuto">Knut</a>
+        <br>
+        <a class="link" href="?side=bruker&id=meltob">Tobias</a>
+        <br>
+        <a class="link" href="?side=bruker&id=sebto">Sebastian</a>
+        <br>
+    </p>
+
+    <h2>Github Repository</h2>
+    <a class="link" href="https://github.com/SuperDuperGruppe28/webprosjekt_eksamen17">Github</a>
+    <br>
                 <div id="map"></div>
 
                 <h2>Utviklere</h2>
