@@ -278,6 +278,7 @@ header {
     display: inline-block;
     float: inherit;
     vertical-align: middle;
+    font-size: 13px;
 }
 
 #kontakt {
@@ -285,6 +286,7 @@ header {
     vertical-align: middle;
     display: inline-block;
     float: right;
+    font-size: 13px;
 }
 
 
