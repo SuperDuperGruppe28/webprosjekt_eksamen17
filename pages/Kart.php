@@ -6,7 +6,7 @@
     <title>Google Maps Multiple Markers</title>
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
-    <div id="map" style="width: 500px; height: 400px;"></div>
+    <div id="maps" class="center" style="width: 500px; height: 400px;"></div>
 
     <script type="text/javascript">
         var locations = [
@@ -17,7 +17,7 @@
       ['Maroubra Beach', -33.950198, 151.259302, 1]
     ];
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('maps'), {
             zoom: 10,
             center: new google.maps.LatLng(-33.92, 151.25),
             mapTypeId: google.maps.MapTypeId.ROADMAP
