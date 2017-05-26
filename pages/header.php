@@ -3,9 +3,9 @@
         <nav>
             <ul>
 
-                <a href="https://www.westerdals.no/" target="_blank"><img src="img/westerdals.png" width="70px" height="70px" style="vertical-align: middle"></a>
+                <a href="https://www.westerdals.no/" target="_blank"><img src="img/westerdals.png" alt="Westerdals logo" width="70px" height="70px" style="vertical-align: middle"></a>
 
-                <a href="?side=main"><img src="img/logo.png" width="200px" Height="40px" style="vertical-align: middle"></a>
+                <a href="?side=main"><img src="img/logo.png" alt="Vulkanelva logo - du vil trenge mer fritid" width="200px" Height="40px" style="vertical-align: middle"></a>
 
                 <li><a href="?side=main">Hjem</a></li>
                 <li><a href="?side=info">Info</a></li>
