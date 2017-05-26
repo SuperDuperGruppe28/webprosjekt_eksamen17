@@ -70,7 +70,7 @@ a {
     }
     #aktiviteterContainer {
         min-width: 90%;
-        top: 10%;
+         left: 150px;
     }
 }
 
@@ -78,7 +78,6 @@ a {
     position: absolute;
     
     height: 100%;
-    top: 0;
     left: 2px;
     overflow-y: auto;
     background-color: #fff;
@@ -91,8 +90,6 @@ a {
     position: absolute;
     
     height: 100%;
-    top: 0;
-    
 }
 
 #mainBoks {
