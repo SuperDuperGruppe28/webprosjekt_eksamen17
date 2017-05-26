@@ -3,7 +3,12 @@
     <p>Velkommen til Vulkanelva. Her kan du registrere deg og ta del i alle aktivitetene rundt Vulkanområdet. Om du registrerer deg vil du også få oppslag av relevante aktiviteter som vi har skreddersydd for akkurat deg! Lag deg en bruker nå, eller surf nettsiden og les om alle de spennende aktivitetene du kan ta del i!</p>
 
     <h2>Slik kommer du deg til Vulkanelva</h2>
-    <p>Om du </p>
+    <p>Trikk 11, 12 og 13 stopper på Schous plass. Her tar man seg enkelt ned til Nordre gate og over broen til Vulkan.<p>
+        
+        <p> Buss 54 og 34 stopper i Møllerveien. Gå ned Møllerveien og sving inn ved Dansens Hus.</p>
+       
+        
+        <p> T-bane/tog: Ønsker du å ta t-bane eller tog, er det kun en 15 minutters rusletur fra Jernbanetorget </p>
 
     <h2>Utviklere</h2>
     <p>
