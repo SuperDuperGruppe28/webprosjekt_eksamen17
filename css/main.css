@@ -102,6 +102,7 @@ header {
     width: 125px;
     height: 100%;
 }
+}
 
 #logout {
     background-color: #d35151;
@@ -313,6 +314,9 @@ textarea {
     background-color: #D33948;
 }
 
+#twitter {
+    
+}
 
 /* Aktivitetboks */
 
