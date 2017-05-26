@@ -12,7 +12,7 @@ body {
 }
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: neuzeit-grotesk, sans-serif;
     min-height: 100%;
     background-color: #fafaff;
 }
@@ -92,11 +92,11 @@ a {
 
 #mainBoks {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 25%;
     padding: 5px;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 1%;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -119,6 +119,11 @@ header {
     height: 300px;
     width: 300px;
     border: 1px solid black;
+}
+
+#transport {
+    position: relative;
+    display: inline-block;
 }
 
 #vulkanlogo {
