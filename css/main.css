@@ -53,7 +53,7 @@ a {
     text-align: center;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     #tagsContainer {
         visibility: hidden;
         width: 0px;
@@ -64,19 +64,18 @@ a {
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     #tagsContainer {
         min-width: 10%;
     }
     #aktiviteterContainer {
         min-width: 90%;
-         left: 150px;
+        left: 150px;
     }
 }
 
 #tagsContainer {
     position: absolute;
-    
     height: 100%;
     left: 2px;
     overflow-y: auto;
@@ -88,17 +87,16 @@ a {
 
 #aktiviteterContainer {
     position: absolute;
-    
     height: 100%;
 }
 
 #mainBoks {
     position: relative;
-    width: 60%;
+    width: 80%;
     height: 25%;
     padding: 5px;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 2%;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -141,24 +139,21 @@ header {
     width: 125px;
     height: 100%;
 }
-}
 
+
+}
 #logout {
     background-color: #d35151;
 }
-
 #login {
     background-color: lightblue;
 }
-
 #headerContainer {
     vertical-align: middle;
 }
-
 #headerContainer h1 {
     color: whitesmoke;
 }
-
 #bodyContainer {
     position: relative;
     min-height: 100%;
@@ -167,7 +162,6 @@ header {
     margin-top: 3%;
     margin-bottom: 3%;
 }
-
 #footerContainer {
     position: relative;
     height: 6%;
@@ -176,7 +170,6 @@ header {
     background: white;
     text-align: center;
 }
-
 #loggInnBoks {
     position: relative;
     margin: 2.5% auto auto;
@@ -185,7 +178,6 @@ header {
     height: 40%;
     border: 25px solid white;
 }
-
 #searchbox {
     margin: auto;
     vertical-align: middle;
@@ -197,12 +189,10 @@ header {
     overflow: hidden;
     z-index: -10;
 }
-
 #search,
 #submit {
     float: left;
 }
-
 #search {
     border-radius: 0;
     margin: auto;
@@ -211,7 +201,6 @@ header {
     width: 300px;
     font: normal 13px 'trebuchet MS', arial, helvetica;
 }
-
 #submit {
     margin: auto;
     border-style: hidden;
@@ -224,15 +213,12 @@ header {
     font: bold 12px Arial, Helvetica;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
-
 #submit:hover {
     background-image: linear-gradient(lightblue, #9ebbc4);
 }
-
 #submit::-moz-focus-inner {
     border: 0;
 }
-
 #maintext {
     position: relative;
     left: 10%;
@@ -242,7 +228,6 @@ header {
     text-align: left;
     border: 1px solid black;
 }
-
 #sosialemedier {
     margin: 5px;
     display: inline-block;
@@ -250,19 +235,15 @@ header {
     vertical-align: middle;
     background-color: white;
 }
-
 .so {}
-
 .so:hover {
     opacity: 0.7;
 }
-
 #copyright {
     display: inline-block;
     float: inherit;
     vertical-align: middle;
 }
-
 #kontakt {
     margin: 5px;
     vertical-align: middle;
@@ -270,9 +251,7 @@ header {
     float: right;
 }
 
-
 /*Aktivitetsboks på Aktivitetsiden*/
-
 #aktivitetBoks {
     position: relative;
     margin: auto auto;
@@ -280,17 +259,14 @@ header {
     width: 60%;
     height: 70%;
 }
-
 #aktivitetBoks .Right {
     display: inline-block;
     float: right;
 }
-
 #aktivitetBoks .Left {
     display: inline-block;
     float: left;
 }
-
 #brukerBoks {
     position: relative;
     margin: 2.5% auto auto;
@@ -299,18 +275,14 @@ header {
     height: 70%;
 }
 
-
 /*Style*/
-
 .cursive {
     font-style: italic;
     border: none;
     border-top: thin inset #fff;
 }
 
-
 /*Input*/
-
 input,
 select,
 textarea {
@@ -323,7 +295,6 @@ textarea {
     box-sizing: border-box;
     background-color: white;
 }
-
 .button {
     width: 75%;
     background-color: #28a8d1;
@@ -336,29 +307,21 @@ textarea {
     color: white;
     width: 100%;
 }
-
 .button:hover {
     background-color: #02a0d3;
 }
-
 .button:focus {
     outline: 0;
 }
-
 .buttonRed {
     background-color: #AD2D39;
 }
-
 .buttonRed:hover {
     background-color: #D33948;
 }
-
-#twitter {
-    
-}
+#twitter {}
 
 /* Aktivitetboks */
-
 .AktivitetLitenBoks {
     position: relative;
     display: inline-block;
@@ -371,7 +334,6 @@ textarea {
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
-
 .AktivitetLitenBoks .bildeBoks {
     position: absolute;
     margin: 0;
@@ -380,7 +342,6 @@ textarea {
     top: 0;
     left: 0;
 }
-
 .AktivitetLitenBoks .bildeBoksLag {
     position: absolute;
     margin: 0;
@@ -392,11 +353,9 @@ textarea {
     transition: .5s ease;
     background-color: #a8a8a8;
 }
-
 .AktivitetLitenBoks:hover .bildeBoksLag {
     opacity: .5;
 }
-
 .AktivitetLitenBoks .Tittel {
     position: absolute;
     margin: 0;
@@ -406,7 +365,6 @@ textarea {
     left: 0;
     text-align: center;
 }
-
 .AktivitetLitenBoks .Utgiver {
     position: absolute;
     margin: 0;
@@ -416,9 +374,7 @@ textarea {
     top: 40%;
     left: 50%;
     text-align: right;
- 
 }
-
 .AktivitetLitenBoks .Dato {
     position: absolute;
     margin: 0;
@@ -428,9 +384,7 @@ textarea {
     top: 50%;
     left: 0;
     text-align: left;
-
 }
-
 .AktivitetLitenBoks .Likes {
     position: absolute;
     margin: 0;
@@ -441,12 +395,10 @@ textarea {
     left: 70%;
     text-align: right;
 }
-
 .AktivitetLitenBoks .Ikoner {
     height: 100%;
     vertical-align: middle;
 }
-
 .AktivitetLitenBoks .Beskrivelse {
     position: absolute;
     margin: 0;
@@ -457,9 +409,7 @@ textarea {
     left: 0;
     text-align: left;
     overflow-y: hidden;
-    
 }
-
 .AktivitetLitenBoks .Pris {
     position: absolute;
     margin: 0;
@@ -473,37 +423,26 @@ textarea {
     vertical-align: middle;
     background: #a4daa4;
 }
-
 .Pris.Rod {
     background: #d35151;
 }
 
-
 /*AktiviteterContainer*/
-
-
-
 .adminSkrift {
     font-variant: small-caps;
     font-size: large;
     color: #ffd700;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-
 .tagLink {
     font-size: large;
     color: #585858;
 }
-
 .tagLink:hover {
     color: #7b7b7b;
 }
 
-
-
-
 /*Kommentarfelt*/
-
 #kommentarFelt {
     position: relative;
     padding: 5px;
@@ -512,20 +451,16 @@ textarea {
     border: 1px solid black;
     border-radius: 5px;
 }
-
 #kommentarFelt .kommentar {
     width: 100%;
     word-break: break-all;
 }
-
 #kommentarFelt .kommentar img {
     vertical-align: middle;
     margin: 3px;
 }
 
-
 /* Navigasjonsbar */
-
 nav {
     background-color: #fff;
     border: 1px solid #dedede;
@@ -537,12 +472,10 @@ nav {
     overflow: hidden;
     width: 90%;
 }
-
 nav ul {
     margin: 0;
     padding: 0;
 }
-
 nav ul li {
     display: inline-block;
     list-style-type: none;
@@ -552,7 +485,6 @@ nav ul li {
     -o-transition: all 0.2s;
     transition: all 0.2s;
 }
-
 nav > ul > li > a > .caret,
 nav > ul > li > div ul > li > a > .caret {
     border-top: 4px solid #aaa;
@@ -568,13 +500,11 @@ nav > ul > li > div ul > li > a > .caret {
     -o-transition: color 0.1s linear;
     transition: color 0.1s linear;
 }
-
 nav > ul > li > div ul > li > a > .caret {
     border: 4px solid transparent;
     border-left-color: #f2f2f2;
     margin: 0 0 0 8px;
 }
-
 nav > ul > li > a {
     color: #aaa;
     display: block;
@@ -582,23 +512,18 @@ nav > ul > li > a {
     padding: 0 24px;
     text-decoration: none;
 }
-
 nav > ul > li:hover {
     background-color: rgb(40, 44, 47);
 }
-
 nav > ul > li:hover > a {
     color: rgb(255, 255, 255);
 }
-
 nav > ul > li:hover > a > .caret {
     border-top-color: rgb(255, 255, 255);
 }
-
 nav > ul > li > div ul > li:hover > a > .caret {
     border-left-color: rgb(255, 255, 255);
 }
-
 nav > ul > li > div,
 nav > ul > li > div ul > li > div {
     background-color: rgb(40, 44, 47);
@@ -611,13 +536,12 @@ nav > ul > li > div ul > li > div {
     position: absolute;
     width: 165px;
     visibility: hidden;
-    -webkit-transiton: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     -ms-transition: opacity 0.2s;
     -o-transition: opacity 0.2s;
     -transition: opacity 0.2s;
 }
-
 nav > ul > li > div ul > li > div {
     background-color: rgb(40, 44, 47);
     border-radius: 0 4px 4px 4px;
@@ -625,20 +549,17 @@ nav > ul > li > div ul > li > div {
     margin-top: -42px;
     right: -165px;
 }
-
 nav > ul > li:hover > div,
 nav > ul > li > div ul > li:hover > div {
     display: block;
     opacity: 1;
     visibility: visible;
 }
-
 nav > ul > li > div ul > li,
 nav > ul > li > div ul > li > div ul > li {
     display: block;
     position: relative;
 }
-
 nav > ul > li > div ul > li > a,
 nav > ul > li > div ul > li > div ul > li > a {
     color: #fff;
@@ -646,7 +567,6 @@ nav > ul > li > div ul > li > div ul > li > a {
     padding: 12px 24px;
     text-decoration: none;
 }
-
 nav > ul > li > div ul > li:hover > a {
     background-color: rgba(255, 255, 255, 0.1);
 }
