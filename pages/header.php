@@ -63,7 +63,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="?side=lokasjon">Her skjer det</a></li>
+                    <a href="?side=Kart">Her skjer det</a></li>
                 <li><a href="?side=aktivitet">Lag aktivitet</a></li>
 
                 <?php
