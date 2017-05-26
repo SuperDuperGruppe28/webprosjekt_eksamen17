@@ -1,3 +1,4 @@
+<div class="center">
 <div id="mainBoks">
     <h1>Vulkanelva</h1>
     <p>Velkommen til Vulkanelva. Her kan du registrere deg og ta del i alle aktivitetene rundt Vulkanområdet. Om du registrerer deg vil du også få oppslag av relevante aktiviteter som vi har skreddersydd for akkurat deg! Lag deg en bruker nå, eller surf nettsiden og les om alle de spennende aktivitetene du kan ta del i!</p>
