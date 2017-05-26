@@ -74,6 +74,11 @@ a {
     }
 }
 
+#pris {
+    font-weight: bolder;
+    margin: 10px;
+}
+
 #tagsContainer {
     position: absolute;
     height: 100%;
