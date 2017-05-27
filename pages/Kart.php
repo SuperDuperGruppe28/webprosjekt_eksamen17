@@ -11,10 +11,10 @@
     <?php
             $aktiviteter = hentAlleAktiviteter();
 
-            $statisk_gratis = "/img/rod-pointer.png";
-            $dynamisk_gratis = "/img/blaa-pointer.png";
-            $statisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
-            $dynamisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+            $statisk_gratis = "/img/statisk_gratis.png";
+            $dynamisk_gratis = "/img/dynamisk_gratis.png";
+            $statisk = "/img/statisk.png";
+            $dynamisk = "/img/dynamisk.png";
         
             echo "['Fjerdingen', 0.0, 0.0 , 0 ,'/img/Skole-pointer.png'],";
             echo "['Vulkan', 0.0, 0.0 ,0,'/img/Skole-pointer.png'],";
