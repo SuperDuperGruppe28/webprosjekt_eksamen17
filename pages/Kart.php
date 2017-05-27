@@ -30,7 +30,7 @@
                                     $id = $aktivitet->id;
                                     echo "['" . $tittel . "'," . $breddegrad . "," . $lengdegrad . "," . $id;
                 
-                                    $bGratis = ($aktivitet->Pris > 0);
+                                    $bGratis = ($aktivitet->Pris <= 0);
                                     $bStatisk = $aktivitet->Statisk;
                                     if($bGratis && $bStatisk)
                                         echo ",'" . $statisk_gratis;
