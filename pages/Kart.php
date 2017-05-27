@@ -16,9 +16,9 @@
             $statisk = "/img/statisk.png";
             $dynamisk = "/img/dynamisk.png";
         
-            echo "['Fjerdingen', 59.916207, 10.759697, 0, '/img/Skole-pointer.png', '/img/a.png'],";
-            echo "['Vulkan', 59.923393, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png'],";
-            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png'],";
+            echo "['Fjerdingen', 59.916207, 10.759697, 0, '/img/Skole-pointer.png', '/img/a.png', 0],";
+            echo "['Vulkan', 59.923393, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png', 0],";
+            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png', 0],";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
@@ -45,7 +45,10 @@
                                     $bilde = $aktivitet->Bilde;
                                     echo ",'" . $bilde . "'";
                 
-                                    if($i==count($aktiviteter))
+                                    $pris = $aktivitet->Pris;
+                                    echo "," . $pris;
+                
+                                    if($i==count($aktiviteter)-1)
                                         echo "]";
                                     else
                                         echo "],";
@@ -77,7 +80,9 @@
                 return function () {
                     infowindow.setContent(
                         '<img style="width:150px;height:150px" src="'+locations[i][5]+'"><br>' +
-                        '<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>');
+                        '<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>' +
+                        '<div class="pris">' + locations[i][6].toString() + "</div>"
+                    );
                     infowindow.open(map, marker);
                 }
             })(marker, i));
