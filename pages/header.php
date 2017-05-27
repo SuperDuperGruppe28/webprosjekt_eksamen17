@@ -64,10 +64,9 @@
                 </li>
                 <li>
                     <a href="?side=Kart">Her skjer det</a></li>
-                <li><a href="?side=aktivitet">Lag aktivitet</a></li>
-
                 <?php
                 if (erBrukerLoggetInn()) {
+                    echo '<li><a href="?side=aktivitet">Lag aktivitet</a></li>';
                     echo '<li><a id="loginfo" href="?side=bruker">';
                     echo "<img style='vertical-align: middle' src=" . hentBrukerBilde() . " width='40px' height='40px'></img>";
                     echo ' ' . loggetInnBruker();
