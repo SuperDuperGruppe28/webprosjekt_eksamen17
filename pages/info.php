@@ -45,3 +45,5 @@
                         }(document, "script", "twitter-wjs");
                     </script>
                 </div>
+    </div>
+</div>
