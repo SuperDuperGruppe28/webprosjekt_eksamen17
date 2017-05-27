@@ -110,7 +110,6 @@ a {
     height: 25%;
     padding: 5px;
     margin: auto;
-    margin-top: 0.5%;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -126,8 +125,8 @@ header {
 }
 
 #maps {
-    width:95vw;
-    height:75vh;
+    width: 95vw;
+    height: 75vh;
 }
 
 #mapaktivitet,
@@ -180,7 +179,7 @@ header {
     min-height: 100%;
     width: 100%;
     overflow: auto;
-    margin-top: 3%;
+    margin-top: 0.5%;
     margin-bottom: 3%;
 }
 
