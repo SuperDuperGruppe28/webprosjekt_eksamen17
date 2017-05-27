@@ -16,8 +16,8 @@
             $statisk = "/img/statisk.png";
             $dynamisk = "/img/dynamisk.png";
         
-            echo "['Fjerdingen', 0.0, 0.0 , 0 ,'/img/Skole-pointer.png'],";
-            echo "['Vulkan', 0.0, 0.0 ,0,'/img/Skole-pointer.png'],";
+            echo "['Fjerdingen', 59.916207, 10.759697, 0, '/img/Skole-pointer.png'],";
+            echo "['Vulkan', 59.923393, 10.752508, 0, '/img/Skole-pointer.png'],";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
