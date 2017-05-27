@@ -13,6 +13,8 @@ $GAction = "action";
 $GPost = "post";
 $GEdit = "edit";
 $GDelete = "del";
+$GKommentar = "kommentar";
+$GAktivitet = "aktivitet";
 
 // Om bruker er logget inn
 if ($bruker) {
@@ -41,11 +43,11 @@ if ($bruker) {
         }
         // Slette kommentar
     } else if ($action === $GDelete) {
-        if (isset($_POST[$PKommentar])) {
+        if (isset($_GET[$GKommentar])) {
             // bare admin eller eieren av kommentaren kan slette kommentar
-            if (erAdmin($bruker) || finnKommentarEier($_POST[$PKommentar]) === $bruker)
+            if (erAdmin($bruker) || finnKommentarEier($_GET[$GKommentar]) === $bruker)
             {
-                slettKommentar($_POST[$PKommentar]);
+                slettKommentar($_GET[$GKommentar]);
             }
         } else {
             echo "Mangler data";
@@ -55,8 +57,15 @@ if ($bruker) {
     echo "<h1>Må være logget inn!</h1>";
 }
 
+$akt = "0";
+if (!isset($_POST[$PAktivitet]))
+    $akt = $_GET[$GAktivitet];
+else
+    $akt = $_POST[$PAktivitet];
+
+
 // Sender tilbake til forrige side
-echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id='.$_POST[$PAktivitet].'"/></head></html>';
+echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id='.$akt.'"/></head></html>';
 
 // Validerer inputdataen før spørring
 function kommentarDataValid($tekst)

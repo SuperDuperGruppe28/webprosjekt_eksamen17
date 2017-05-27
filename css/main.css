@@ -352,7 +352,7 @@ textarea {
     border: none;
     cursor: pointer;
     font-size: x-large;
-    color: white;
+    color: black;
     width: 100%;
 }
 
@@ -545,6 +545,16 @@ textarea {
     margin: 3px;
 }
 
+.slettKommentar
+{
+    color: #AD2D39;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.slettKommentar:hover
+{
+    color: #96484f;
+}
 
 /* Navigasjonsbar */
 

@@ -115,14 +115,20 @@
                 }
                 echo "<div id='kommentarFelt'>";
                 $kommentarer = hentKommentarer($id);
+                $slettKommentar = "";
                 if(count($kommentarer) > 0)
                 {
                      foreach ($kommentarer as $kom)
                      {
+                         if (erAdmin($brukernavn) || $kom->Bruker === $brukernavn)
+                              $slettKommentar = "<a class='slettKommentar' alt='Slett kommentar' href='php/comment.php?action=del&kommentar=".$kom->id."&aktivitet=".$id."'>X </a>";
+                         else
+                             $slettKommentar = "";
+                           
                         $klasse = "";
                         if (erAdmin($kom->Bruker))
                             $klasse = "adminSkrift";
-                        echo "<div class='kommentar'><b>" . $kom->Dato . " - <a href='?side=bruker&id=" . $kom->Bruker . "'><img height='25px' width='25px' src='" . hentBrukerBildeEx($kom->Bruker) . "'/><b class='" . $klasse . "'>" . $kom->Bruker . "</b></a></b>: " . tryggPrint($kom->Tekst);
+                        echo "<div class='kommentar'><b>" . $slettKommentar . $kom->Dato . " - <a class='link' href='?side=bruker&id=" . $kom->Bruker . "'><img height='25px' width='25px' src='" . hentBrukerBildeEx($kom->Bruker) . "'/><b class='" . $klasse . "'>" . $kom->Bruker . "</b></a></b>: " . tryggPrint($kom->Tekst);
                         echo "</div>";
                      }
                 }else
