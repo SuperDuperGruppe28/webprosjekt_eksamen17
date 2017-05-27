@@ -78,11 +78,20 @@
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
+                    var content = "";
+                    
+                    if(locations[i][3] != 0)
+                        content += '<img style="width:150px;height:150px" src="'+locations[i][5]+'"><br>';
+            
+                    content += '<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>';
+                    
+                    if (locations[i][6] > 0)
+                        content += '<div class="pris">Pris: ' + locations[i][6].toString() + "kr</div>";
+                    
                     infowindow.setContent(
-                        '<img style="width:150px;height:150px" src="'+locations[i][5]+'"><br>' +
-                        '<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>' +
-                        '<div class="pris">' + locations[i][6].toString() + "</div>"
+                         content
                     );
+                    
                     infowindow.open(map, marker);
                 }
             })(marker, i));
