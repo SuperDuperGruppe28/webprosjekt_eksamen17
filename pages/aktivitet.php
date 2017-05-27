@@ -77,11 +77,11 @@
                 if ($akt->Statisk !== 1 && erVerifisert($brukernavn))
                 {?>
                             <select name="deltagelse" form="deltaform">
-                                <option value="0" <?=h entDeltagelse($brukernavn, $id)===0 ? ' selected="selected"' : ''; ?>> Deltar ikke
+                                <option value="0" <?= hentDeltagelse($brukernavn, $id)=== 0 ? ' selected="selected"' : ''; ?>> Deltar ikke
                                 </option>
-                                <option value="1" <?=h entDeltagelse($brukernavn, $id)===1 ? ' selected="selected"' : ''; ?>> Deltar
+                                <option value="1" <?= hentDeltagelse($brukernavn, $id)=== 1 ? ' selected="selected"' : ''; ?>> Deltar
                                 </option>
-                                <option value="2" <?=h entDeltagelse($brukernavn, $id)===2 ? ' selected="selected"' : ''; ?>> Deltar kanskje
+                                <option value="2" <?= hentDeltagelse($brukernavn, $id)=== 2 ? ' selected="selected"' : ''; ?>> Deltar kanskje
                                 </option>
                             </select>
                             <form action="php/activity.php?action=delta&akti=<?= $id ?>" method="post" id="deltaform">
@@ -242,7 +242,7 @@
                                                     </script>
 
                                                     <!--TAGS-->
-                                                    <h3>Skill tag med mellomrom</h3>
+                                                    <h3>Skill tags med mellomrom:</h3>
                                                     <input class="inputTag" type="text" id="tag" name="tag">
                                                     <br>
 
