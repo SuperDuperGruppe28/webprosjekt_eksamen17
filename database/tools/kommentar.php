@@ -68,7 +68,7 @@ function redigerKommentar($kommentar, $tekst)
 function slettKommentar($kommentar)
 {
     if (eksistererKommentar($kommentar)) {
-        $kom = Kommentar::find($kommentar)->first();
+        $kom = Kommentar::where("id", "=", $kommentar)->first();
         $kom->delete();
 
         return true;
