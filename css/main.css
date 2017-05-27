@@ -127,6 +127,7 @@ header {
 #maps {
     width: 90vw;
     height: 75vh;
+    border-radius: 15px;
 }
 
 #mapaktivitet,
