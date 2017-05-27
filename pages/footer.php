@@ -1,8 +1,8 @@
 <div id="footerContainer">
     <div id="sosialemedier">
-        <a href="https://www.facebook.com/westerdalsosloact/" alt="Facebook" target="_blank" class="so"><img src="img/facebook.png" width="25" height="25" style="border-radius: 3px"></a>
-        <a href="https://twitter.com/vulkanelva" alt="Twitter" target="_blank" class="so"><img src="img/twitter.png" width="25" height="25" style="border-radius: 3px"></a>
-        <a href="https://www.instagram.com/westerdalsact/" alt="Instagram" target="_blank" class="so"><img src="img/instagram.png" width="25" height="25" style="border-radius: 3px"></a>
+        <a href="https://www.facebook.com/westerdalsosloact/" alt="Facebook" target="_blank" class="so"><img src="img/facebook.png" width="20" height="20" style="border-radius: 3px"></a>
+        <a href="https://twitter.com/vulkanelva" alt="Twitter" target="_blank" class="so"><img src="img/twitter.png" width="20" height="20" style="border-radius: 3px"></a>
+        <a href="https://www.instagram.com/westerdalsact/" alt="Instagram" target="_blank" class="so"><img src="img/instagram.png" width="20" height="20" style="border-radius: 3px"></a>
     </div>
     <div id="copyright">
         <b>"Du vil trenge mer fritid!" </b>
