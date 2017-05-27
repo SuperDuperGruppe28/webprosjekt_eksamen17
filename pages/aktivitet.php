@@ -221,8 +221,9 @@
                                                 <input type="number" id="pris" name="pris" value="0">
                                                 <br/>
                                                 <br/>
-                                                <label for="bilde">Bilde URL</label>
+                                                <label for="bilde">Bilde URL*</label>
                                                 <input type="text" id="bilde" name="bilde">
+                                                <center>*Ved å opprette dette arrangementet erkjenner jeg at bildet ikke strider imot noen form for opphavsrett</center>
                                                 <br/>
                                                 <br/>
 
