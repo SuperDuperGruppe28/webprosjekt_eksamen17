@@ -27,7 +27,8 @@
                                     $breddegrad = $aktivitet->Breddegrad;
                                     $lengdegrad = $aktivitet->Lengdegrad;
                                     $tittel = $aktivitet->Tittel;
-                                    echo "['" . $tittel . "'," . $breddegrad . "," . $lengdegrad . "," . $i;
+                                    $id = $aktivitet->id;
+                                    echo "['" . $tittel . "'," . $breddegrad . "," . $lengdegrad . "," . $id;
                 
                                     $bGratis = ($aktivitet->Pris > 0);
                                     $bStatisk = $aktivitet->Statisk;
@@ -70,7 +71,7 @@
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    infowindow.setContent(locations[i][0]);
+                    infowindow.setContent('<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>');
                     infowindow.open(map, marker);
                 }
             })(marker, i));
