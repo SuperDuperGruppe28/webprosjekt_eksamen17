@@ -31,7 +31,7 @@
                 <br>
 
                 <div>
-                    <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="50%" float="center"></a>
+                    <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="40%" height="40%" float="center" data-chrome="nofooter noborders noscrollbar" data-tweet-limit="3"></a>
                     <script>
                         ! function (d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0],
