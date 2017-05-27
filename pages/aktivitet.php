@@ -221,8 +221,14 @@
                                                 <input type="number" id="pris" name="pris" value="0">
                                                 <br/>
                                                 <br/>
+<<<<<<< HEAD
                                                 <label for="bilde">Bilde URL</label>
                                                 <input type="text" id="bilde" name="bilde">
+=======
+                                                <label for="bilde">Bilde URL*</label>
+                                                <input type="text" id="bilde" name="bilde">
+                                                <center>*Ved å opprette dette arrangementet erkjenner jeg at bildet ikke strider imot noen form for opphavsrett</center>
+>>>>>>> 90c795b6f88e7a9a79dbf9340f984dcf7a807352
                                                 <br/>
                                                 <br/>
 
