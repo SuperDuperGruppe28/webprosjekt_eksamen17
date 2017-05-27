@@ -12,25 +12,8 @@
 
                 <p> T-bane/tog: Ønsker du å ta t-bane eller tog, er det kun en 15 minutters rusletur fra Jernbanetorget </p>
 
-    <h2>Utviklere</h2>
-    <p>
-        <a class="link" href="?side=bruker&id=bruker">Christian</a>
-        <br>
-        <a class="link" href="?side=bruker&id=espen">Espen</a>
-        <br>
-        <a class="link" href="?side=bruker&id=kanuto">Knut</a>
-        <br>
-        <a class="link" href="?side=bruker&id=meltob">Tobias</a>
-        <br>
-        <a class="link" href="?side=bruker&id=sebto">Sebastian</a>
-        <br>
-    </p>
-
-    <h2>Github Repository</h2>
-    <a class="link" href="https://github.com/SuperDuperGruppe28/webprosjekt_eksamen17">Github</a>
-    <br>
-                <div id="map"></div>
-
+     <div id="map"></div>
+        <h3>Her finner du oss!</h3>
                 <h2>Utviklere</h2>
                 <p>
                     Christian
@@ -48,7 +31,7 @@
                 <br>
 
                 <div>
-                    <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="90%" float="center"></a>
+                    <a class="twitter-timeline" href="https://twitter.com/hashtag/vulkanelva" data-widget-id="867712070208430081" width="50%" float="center"></a>
                     <script>
                         ! function (d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0],
@@ -62,10 +45,3 @@
                         }(document, "script", "twitter-wjs");
                     </script>
                 </div>
-
-
-
-
-                <h3>Her finner du oss!</h3>
-
-    </div>
