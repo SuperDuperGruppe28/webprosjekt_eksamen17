@@ -11,8 +11,8 @@
     <?php
             $aktiviteter = hentAlleAktiviteter();
 
-            $statisk_gratis = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
-            $dynamisk_gratis = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+            $statisk_gratis = "/img/rod-pointer.png";
+            $dynamisk_gratis = "/img/blaa-pointer.png";
             $statisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
             $dynamisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
             for($i = 0; $i < count($aktiviteter); $i++) {
