@@ -15,6 +15,10 @@
             $dynamisk_gratis = "/img/blaa-pointer.png";
             $statisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
             $dynamisk = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
+            
+            $fjerdingen_lat = 0;
+            $fjerdingen_lng = 0;
+            echo "['Fjerdingen'," . $fjerdingen_lat . "," .$fjerdingen_lng . ",0,'/img/Skole-pointer.png'],";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
