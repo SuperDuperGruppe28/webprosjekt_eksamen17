@@ -16,9 +16,9 @@
             $statisk = "/img/statisk.png";
             $dynamisk = "/img/dynamisk.png";
         
-            echo "['Fjerdingen', 59.916207, 10.759697, 0, '/img/Skole-pointer.png'],";
-            echo "['Vulkan', 59.923393, 10.752508, 0, '/img/Skole-pointer.png'],";
-            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, '/img/Skole-pointer.png'],";
+            echo "['Fjerdingen', 59.916207, 10.759697, 0, '/img/Skole-pointer.png', '/img/a.png'],";
+            echo "['Vulkan', 59.923393, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png'],";
+            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, '/img/Skole-pointer.png', '/img/a.png'],";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
@@ -27,7 +27,8 @@
                                     $breddegrad = $aktivitet->Breddegrad;
                                     $lengdegrad = $aktivitet->Lengdegrad;
                                     $tittel = $aktivitet->Tittel;
-                                    echo "['" . $tittel . "'," . $breddegrad . "," . $lengdegrad . "," . $i;
+                                    $id = $aktivitet->id;
+                                    echo "['" . $tittel . "'," . $breddegrad . "," . $lengdegrad . "," . $id;
                 
                                     $bGratis = ($aktivitet->Pris > 0);
                                     $bStatisk = $aktivitet->Statisk;
@@ -39,11 +40,15 @@
                                         echo ",'" . $statisk;
                                     else if(!$bGratis && !$bStatisk)
                                         echo ",'" . $dynamisk;
+                                    echo "'";
+                
+                                    $bilde = $aktivitet->Bilde;
+                                    echo ",'" . $bilde . "'";
                 
                                     if($i==count($aktiviteter))
-                                        echo "']";
+                                        echo "]";
                                     else
-                                        echo "'],";
+                                        echo "],";
                     }
             ?>
       
@@ -70,7 +75,9 @@
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    infowindow.setContent(locations[i][0]);
+                    infowindow.setContent(
+                        '<img style="width:150px;height:150px" src="'+locations[i][5]+'"><br>' +
+                        '<a class="center" href="?side=aktivitet&id='+locations[i][3]+'">'+locations[i][0]+'</a>');
                     infowindow.open(map, marker);
                 }
             })(marker, i));
