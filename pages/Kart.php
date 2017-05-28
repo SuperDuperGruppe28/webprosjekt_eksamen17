@@ -18,7 +18,7 @@
         
             echo "['Fjerdingen', 59.916207, 10.759697, 0, 'img/skole_pointer.png', 'img/fjerdingen.png', 0],";
             echo "['Vulkan', 59.923393, 10.752508, 0, 'img/skole_pointer.png', 'img/vulkan.png', 0],";
-            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, 'img/skole_pointer.png', 'img/brenneriveien.png', 0],";
+            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, 'img/skole_pointer.png', 'img/brenneriveien.png', 0]";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
@@ -71,18 +71,29 @@
         var marker, i;
 
         for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map,
-                icon: locations[i][4],
-                
-            });
+            if (locations[i][3] == 0) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: locations[i][4],
+                    optimized: false,
+                    zIndex: 100
+                });
+            }
+            else {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: locations[i][4],
+
+                });
+            }
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
                     var content = "";
 
-                    if (locations[i][3] != 0)
+                    //if (locations[i][3] != 0)
                         content += '<img style="width:150px;height:150px" src="' + locations[i][5] + '"><br>';
 
                     content += '<a class="center" href="?side=aktivitet&id=' + locations[i][3] + '">' + locations[i][0] + '</a>';
