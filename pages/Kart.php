@@ -1,12 +1,6 @@
 <?php
 ?>
-<<<<<<< HEAD
 
-
-    
-
-=======
->>>>>>> origin/master
     <div id="maps" class="center" style=""></div>
 
     <script type="text/javascript">
