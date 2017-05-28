@@ -209,7 +209,8 @@ header {
     border-width: 1px;
     border-style: hidden;
     border-color: #c4d9df #a4c3ca #83afb7;
-    width: 385px;
+    border-top: none;
+    width: 400px;
     padding: 0;
     overflow: hidden;
     z-index: -10;
