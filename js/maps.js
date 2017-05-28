@@ -68,7 +68,7 @@
 
   function startMaps(x, y, side) {
       var mapOptions = {
-          zoom: 14,
+          zoom: 16,
 
             center: new google.maps.LatLng(x, y), // Vulkan, Oslo
          styles: [
