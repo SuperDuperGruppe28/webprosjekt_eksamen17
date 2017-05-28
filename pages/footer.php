@@ -5,7 +5,7 @@
         <a href="https://www.instagram.com/westerdalsact/" alt="Instagram" target="_blank" class="so"><img src="img/instagram.png" width="20" height="20" style="border-radius: 3px"></a>
     </div>
     <div id="copyright">
-        <b>"Du vil trenge mer fritid!" </b>
+        <b>"Du vil trenge mer fritid!"</b>
         <br>
         Gruppe 28 © 2017
     </div>
