@@ -213,6 +213,7 @@ header {
     padding: 0;
     overflow: hidden;
     z-index: -10;
+    margin-top: -1px;
 }
 
 #search,
@@ -227,6 +228,8 @@ header {
     height: 30px;
     width: 300px;
     font: normal 13px 'trebuchet MS', arial, helvetica;
+    border-top: hidden;
+    top: -1px;
 }
 
 #submit {
