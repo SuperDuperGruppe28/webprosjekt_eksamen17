@@ -62,7 +62,7 @@ if ($bruker) {
                     }
                 }
 
-                echo "Skapte aktivtetet <b>" . $_POST[$PTittel] . "</b>.";
+                echo "Skapte aktiviteten <b>" . $_POST[$PTittel] . "</b>.";
                 echo '<html><head><meta http-equiv="refresh" content="0;URL='.$WEBSIDEMAPPE.'?side=aktivitet&id='.$id.'"/></head></html>';
             }else
             {
