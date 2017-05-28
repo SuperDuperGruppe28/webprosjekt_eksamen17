@@ -208,12 +208,14 @@ header {
     vertical-align: middle;
     border-width: 1px;
     border-style: hidden;
-    border-color: #c4d9df #a4c3ca #83afb7;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     width: 385px;
     padding: 0;
     overflow: hidden;
     z-index: -10;
     margin-top: -1px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 }
 
 #search,
