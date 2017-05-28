@@ -63,6 +63,7 @@
             zoom: 15,
             center: new google.maps.LatLng(59.920188, 10.754633),
             mapTypeId: google.maps.MapTypeId.ROADMAP
+            
         });
 
         var infowindow = new google.maps.InfoWindow();
@@ -73,7 +74,8 @@
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map,
-                icon: locations[i][4]
+                icon: locations[i][4],
+                
             });
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
