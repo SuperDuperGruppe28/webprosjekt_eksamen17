@@ -230,7 +230,7 @@
 
                                                 <label for="bilde">Bilde URL*</label>
                                                 <input type="text" id="bilde" name="bilde">
-                                                <center>*Ved å opprette dette arrangementet erkjenner jeg at bildet ikke strider imot noen form for opphavsrett</center>
+                                                <div class="center">*Ved å opprette dette arrangementet erkjenner jeg at bildet ikke strider imot noen form for opphavsrett</div>
                                                 <br/>
                                                 <br/>
 
