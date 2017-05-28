@@ -12,7 +12,7 @@ body {
 }
 
 body {
-    font-family: neuzeit-grotesk, sans-serif;
+    font-family: "Lato";
     min-height: 100%;
     background-color: #fafaff;
 }
@@ -208,12 +208,14 @@ header {
     vertical-align: middle;
     border-width: 1px;
     border-style: hidden;
-    border-color: #c4d9df #a4c3ca #83afb7;
-    border-top: none;
-    width: 400px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 385px;
     padding: 0;
     overflow: hidden;
     z-index: -10;
+    margin-top: -1px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 }
 
 #search,
@@ -228,6 +230,8 @@ header {
     height: 30px;
     width: 300px;
     font: normal 13px 'trebuchet MS', arial, helvetica;
+    border-top: hidden;
+    top: -1px;
 }
 
 #submit {
