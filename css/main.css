@@ -482,7 +482,7 @@ textarea {
     font-size: 12px;
 }
 
-.AktivitetLitenBoks .Beskrivelse:hover {
+.AktivitetLitenBoks:hover .Beskrivelse {
     opacity: 1;
 }
 
