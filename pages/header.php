@@ -52,7 +52,6 @@
                                 }
 
                                 echo '</ul></div></li>';
-
                             }
                             // vis alle aktiviteter knapp hvis det er flere enn $limit
                             if ($tags_count > $limit) {
