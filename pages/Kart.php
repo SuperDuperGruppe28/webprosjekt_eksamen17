@@ -1,9 +1,5 @@
 <?php
 ?>
-
-
-    <h2><b><center>Vulkan</b></h2></center>
-
     <div id="maps" class="center" style=""></div>
 
     <script type="text/javascript">
@@ -16,9 +12,11 @@
             $statisk = "img/statisk.png";
             $dynamisk = "img/dynamisk.png";
         
-            echo "['Fjerdingen', 59.916207, 10.759697, 0, 'img/skole_pointer_hvit.png', 'img/fjerdingen.png', 0],";
-            echo "['Vulkan', 59.923393, 10.752508, 0, 'img/skole_pointer_hvit.png', 'img/vulkan.png', 0],";
-            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, 'img/skole_pointer_hvit.png', 'img/brenneriveien.png', 0]";
+
+
+            echo "['Fjerdingen', 59.916207, 10.759697, 0, 'img/skole_pointer.png', 'img/campus-fjerdingen.jpg', 0],";
+            echo "['Vulkan', 59.923393, 10.752508, 0, 'img/skole_pointer.png', 'img/campus-vulkan.jpg', 0],";
+            echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, 'img/skole_pointer.png', 'img/campus-brenneriveien.jpg', 0],";
             for($i = 0; $i < count($aktiviteter); $i++) {
                     $aktivitet = $aktiviteter[$i];
                     if(strtotime($aktivitet->Dato) <= time() && $aktivitet->Statisk != 1) continue; 
