@@ -89,8 +89,6 @@
 
                     if (locations[i][6] > 0)
                         content += '<div id="pris">Pris: ' + locations[i][6].toString() + "kr</div>";
-                    else
-                        content += '<div id="pris">Gratis!</div>';
                     
                     infowindow.setContent(
                         content
