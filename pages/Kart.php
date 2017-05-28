@@ -1,9 +1,5 @@
 <?php
 ?>
-
-
-    <h2><b><center>Vulkan</b></h2></center>
-
     <div id="maps" class="center" style=""></div>
 
     <script type="text/javascript">
@@ -16,6 +12,8 @@
             $statisk = "img/statisk.png";
             $dynamisk = "img/dynamisk.png";
         
+
+
             echo "['Fjerdingen', 59.916207, 10.759697, 0, 'img/skole_pointer.png', 'img/campus-fjerdingen.jpg', 0],";
             echo "['Vulkan', 59.923393, 10.752508, 0, 'img/skole_pointer.png', 'img/campus-vulkan.jpg', 0],";
             echo "['Campus Brenneriveien', 59.920460, 10.752508, 0, 'img/skole_pointer.png', 'img/campus-brenneriveien.jpg', 0],";
