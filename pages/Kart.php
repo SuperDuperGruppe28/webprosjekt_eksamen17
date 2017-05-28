@@ -86,8 +86,10 @@
                     content += '<a class="center" href="?side=aktivitet&id=' + locations[i][3] + '">' + locations[i][0] + '</a>';
 
                     if (locations[i][6] > 0)
-                        content += '<div class="pris">Pris: ' + locations[i][6].toString() + "kr</div>";
-
+                        content += '<div id="pris">Pris: ' + locations[i][6].toString() + "kr</div>";
+                    else
+                        content += '<div id="pris">Gratis!</div>';
+                    
                     infowindow.setContent(
                         content
                     );
