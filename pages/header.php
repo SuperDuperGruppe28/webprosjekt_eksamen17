@@ -65,7 +65,7 @@
                     <a href="?side=aktivitet">Lag aktivitet</a>
                 </li>
                 <li>
-                    <a href="?side=Kart">Her skjer det</a>
+                    <a href="?side=Kart">Aktivitetskart</a>
                 </li>
                 <?php
                 if (erBrukerLoggetInn()) {
